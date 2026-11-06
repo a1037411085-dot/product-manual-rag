@@ -23,7 +23,7 @@ $env:RAG_ANSWER_MODE = "extractive"
 
 ## 汇报材料
 
-- `projects/midterm_integrated/exports/产品说明书智能问答系统_期中汇报_整合版.pptx`：整合版期中汇报。
+- `projects/midterm_integrated/exports/产品说明书智能问答系统_期中汇报.pptx`：整合版期中汇报。
 - 根目录 `产品说明书智能问答系统_期中汇报_演示动画.html`：下载后用浏览器打开，方向键翻页，F 全屏。
 - `评估与可视化_A30 v3是最新生成的报告`：评估材料及问题集。
 
