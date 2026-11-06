@@ -1,0 +1,99 @@
+<svg xmlns="http://www.w3.org/2000/svg" version="1.1" width="1280" height="720" viewBox="0 0 1280 720" font-family="Arial, &quot;Microsoft YaHei&quot;, sans-serif"><rect x="0" y="0" width="1280" height="720" fill="#FAFAF8" />
+<g id="shape-19" data-pptx-object="group" data-pptx-frame="80.4 48.33 1117.6 646.05" data-pptx-source-ref="slide:19">
+<g id="shape-2" data-pptx-object="shape" data-pptx-frame="80.4 48.33 455.93 61.6" data-pptx-prst="rect" data-pptx-source-ref="slide:2" data-pptx-semantic-object="shape">
+<path d="M 80.4 48.33 L 536.33 48.33 L 536.33 109.93 L 80.4 109.93 Z" fill="none" stroke="none" data-pptx-part="geometry" />
+
+
+<text x="80.4" y="87" text-anchor="start" xml:space="preserve" font-size="40" fill="#162B3B" font-weight="bold" data-pptx-text-baseline="metrics-v1">答错的 6 kg 是怎么来的</text>
+</g>
+<g id="shape-3" data-pptx-object="shape" data-pptx-frame="81.04 114.33 459.84 36.96" data-pptx-prst="rect" data-pptx-source-ref="slide:3" data-pptx-semantic-object="shape">
+<path d="M 81.04 114.33 L 540.88 114.33 L 540.88 151.29 L 81.04 151.29 Z" fill="none" stroke="none" data-pptx-part="geometry" />
+
+
+<text x="81.04" y="137" text-anchor="start" xml:space="preserve" font-size="24" fill="#4B6C7A" data-pptx-text-baseline="metrics-v1">同一份说明书里，有多个不同含义的容量</text>
+</g>
+<g id="shape-4" data-pptx-object="shape" data-pptx-frame="82 162 1116 1" data-pptx-prst="rect" data-pptx-source-ref="slide:4" data-pptx-semantic-object="shape">
+<path d="M 82 162 L 1198 162 L 1198 163 L 82 163 Z" fill="#D8E0E2" stroke="none" data-pptx-part="geometry" />
+
+</g>
+<g id="shape-5" data-pptx-object="shape" data-pptx-frame="81.04 204.33 52.8 36.96" data-pptx-prst="rect" data-pptx-source-ref="slide:5" data-pptx-semantic-object="shape">
+<path d="M 81.04 204.33 L 133.84 204.33 L 133.84 241.29 L 81.04 241.29 Z" fill="none" stroke="none" data-pptx-part="geometry" />
+
+
+<text x="81.04" y="227" text-anchor="start" xml:space="preserve" font-size="24" fill="#2F6675" font-weight="bold" data-pptx-text-baseline="metrics-v1">问题</text>
+</g>
+<g id="shape-6" data-pptx-object="shape" data-pptx-frame="248.72 196.33 443.52 49.28" data-pptx-prst="rect" data-pptx-source-ref="slide:6" data-pptx-semantic-object="shape">
+<path d="M 248.72 196.33 L 692.24 196.33 L 692.24 245.61 L 248.72 245.61 Z" fill="none" stroke="none" data-pptx-part="geometry" />
+
+
+<text x="248.72" y="227" text-anchor="start" xml:space="preserve" font-size="32" fill="#162B3B" font-weight="bold" data-pptx-text-baseline="metrics-v1">洗衣机额定洗涤容量是多少？</text>
+</g>
+<g id="shape-7" data-pptx-object="shape" data-pptx-frame="82 270 1116 1" data-pptx-prst="rect" data-pptx-source-ref="slide:7" data-pptx-semantic-object="shape">
+<path d="M 82 270 L 1198 270 L 1198 271 L 82 271 Z" fill="#D8E0E2" stroke="none" data-pptx-part="geometry" />
+
+</g>
+<g id="shape-8" data-pptx-object="shape" data-pptx-frame="81.04 307.33 103.68 36.96" data-pptx-prst="rect" data-pptx-source-ref="slide:8" data-pptx-semantic-object="shape">
+<path d="M 81.04 307.33 L 184.72 307.33 L 184.72 344.29 L 81.04 344.29 Z" fill="none" stroke="none" data-pptx-part="geometry" />
+
+
+<text x="81.04" y="330" text-anchor="start" xml:space="preserve" font-size="24" fill="#2F6675" font-weight="bold" data-pptx-text-baseline="metrics-v1">系统回答</text>
+</g>
+<g id="shape-9" data-pptx-object="shape" data-pptx-frame="248.4 291.33 90.01 61.6" data-pptx-prst="rect" data-pptx-source-ref="slide:9" data-pptx-semantic-object="shape">
+<path d="M 248.4 291.33 L 338.41 291.33 L 338.41 352.93 L 248.4 352.93 Z" fill="none" stroke="none" data-pptx-part="geometry" />
+
+
+<text x="248.4" y="330" text-anchor="start" xml:space="preserve" font-size="40" fill="#162B3B" font-weight="bold" data-pptx-text-baseline="metrics-v1">6 kg</text>
+</g>
+<g id="shape-10" data-pptx-object="shape" data-pptx-frame="419.92 304.67 261.96 41.58" data-pptx-prst="rect" data-pptx-source-ref="slide:10" data-pptx-semantic-object="shape">
+<path d="M 419.92 304.67 L 681.88 304.67 L 681.88 346.25 L 419.92 346.25 Z" fill="none" stroke="none" data-pptx-part="geometry" />
+
+
+<text x="419.92" y="330" text-anchor="start" xml:space="preserve" font-size="26.93" fill="#4B6C7A" data-pptx-text-baseline="metrics-v1">对应“智能清洗”程序</text>
+</g>
+<g id="shape-11" data-pptx-object="shape" data-pptx-frame="81.04 400.33 129.12 36.96" data-pptx-prst="rect" data-pptx-source-ref="slide:11" data-pptx-semantic-object="shape">
+<path d="M 81.04 400.33 L 210.16 400.33 L 210.16 437.29 L 81.04 437.29 Z" fill="none" stroke="none" data-pptx-part="geometry" />
+
+
+<text x="81.04" y="423" text-anchor="start" xml:space="preserve" font-size="24" fill="#2F6675" font-weight="bold" data-pptx-text-baseline="metrics-v1">说明书答案</text>
+</g>
+<g id="shape-12" data-pptx-object="shape" data-pptx-frame="248.4 384.33 90.01 61.6" data-pptx-prst="rect" data-pptx-source-ref="slide:12" data-pptx-semantic-object="shape">
+<path d="M 248.4 384.33 L 338.41 384.33 L 338.41 445.93 L 248.4 445.93 Z" fill="none" stroke="none" data-pptx-part="geometry" />
+
+
+<text x="248.4" y="423" text-anchor="start" xml:space="preserve" font-size="40" fill="#162B3B" font-weight="bold" data-pptx-text-baseline="metrics-v1">9 kg</text>
+</g>
+<g id="shape-13" data-pptx-object="shape" data-pptx-frame="419.92 397.67 287.65 41.58" data-pptx-prst="rect" data-pptx-source-ref="slide:13" data-pptx-semantic-object="shape">
+<path d="M 419.92 397.67 L 707.57 397.67 L 707.57 439.25 L 419.92 439.25 Z" fill="none" stroke="none" data-pptx-part="geometry" />
+
+
+<text x="419.92" y="423" text-anchor="start" xml:space="preserve" font-size="26.93" fill="#4B6C7A" data-pptx-text-baseline="metrics-v1">对应整机额定洗涤容量</text>
+</g>
+<g id="shape-14" data-pptx-object="shape" data-pptx-frame="81 491 586.55 38.6" data-pptx-prst="rect" data-pptx-source-ref="slide:14" data-pptx-semantic-object="shape">
+<path d="M 81 491 L 667.55 491 L 667.55 529.6 L 81 529.6 Z" fill="none" stroke="none" data-pptx-part="geometry" />
+
+
+<text x="81" y="515" text-anchor="start" xml:space="preserve" font-size="25.07" fill="#162B3B" data-pptx-text-baseline="metrics-v1">表格拍平后，参数名脱离了原来的行和适用条件。</text>
+</g>
+<g id="shape-15" data-pptx-object="shape" data-pptx-frame="81 536 722.07 38.6" data-pptx-prst="rect" data-pptx-source-ref="slide:15" data-pptx-semantic-object="shape">
+<path d="M 81 536 L 803.07 536 L 803.07 574.6 L 81 574.6 Z" fill="none" stroke="none" data-pptx-part="geometry" />
+
+
+<text x="81" y="560" text-anchor="start" xml:space="preserve" font-size="25.07" fill="#162B3B" data-pptx-text-baseline="metrics-v1">另一个问题：问“冰箱卖多少钱”，系统返回了食物冷却说明。</text>
+</g>
+<g id="shape-16" data-pptx-object="shape" data-pptx-frame="81.28 604.67 282.87 27.72" data-pptx-prst="rect" data-pptx-source-ref="slide:16" data-pptx-semantic-object="shape">
+<path d="M 81.28 604.67 L 364.15 604.67 L 364.15 632.39 L 81.28 632.39 Z" fill="none" stroke="none" data-pptx-part="geometry" />
+
+
+<text x="81.28" y="622" text-anchor="start" xml:space="preserve" font-size="18" fill="#4B6C7A" data-pptx-text-baseline="metrics-v1">来源：v3 评估报告 §6.2、表 3。</text>
+</g>
+<g id="shape-17" data-pptx-object="shape" data-pptx-frame="82 652 1116 1" data-pptx-prst="rect" data-pptx-source-ref="slide:17" data-pptx-semantic-object="shape">
+<path d="M 82 652 L 1198 652 L 1198 653 L 82 653 Z" fill="#D8E0E2" stroke="none" data-pptx-part="geometry" />
+
+</g>
+<g id="shape-18" data-pptx-object="shape" data-pptx-frame="1156.28 666.67 22.43 27.72" data-pptx-prst="rect" data-pptx-source-ref="slide:18" data-pptx-semantic-object="shape">
+<path d="M 1156.28 666.67 L 1178.71 666.67 L 1178.71 694.39 L 1156.28 694.39 Z" fill="none" stroke="none" data-pptx-part="geometry" />
+
+
+<text x="1156.28" y="684" text-anchor="start" xml:space="preserve" font-size="18" fill="#4B6C7A" data-pptx-text-baseline="metrics-v1">09</text>
+</g>
+</g></svg>

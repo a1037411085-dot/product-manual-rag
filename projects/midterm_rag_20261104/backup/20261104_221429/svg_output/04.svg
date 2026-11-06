@@ -1,0 +1,20 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1280" height="720" viewBox="0 0 1280 720" font-family="Microsoft YaHei, Arial, sans-serif" data-pptx-page-role="content">
+<rect x="0" y="0" width="1280" height="720" rx="0" fill="#FAFAF8" data-pptx-role="background" id="background" />
+<g id="content" data-pptx-bounds="0 0 1280 720"><rect x="64" y="52" width="8" height="47" rx="0" fill="#2F6675" />
+<text x="90" y="91" font-size="40" fill="#162B3B" font-weight="bold">说明书怎么进入知识库</text>
+<text x="92" y="139" font-size="24" fill="#4B6C7A" font-weight="normal">数据处理与特征工程</text>
+<rect x="92" y="190" width="1096" height="82" rx="12" fill="#FAFAF8" />
+<text x="116" y="242" font-size="24" fill="#2F6675" font-weight="bold">01</text>
+<text x="170" y="242" font-size="26" fill="#162B3B" font-weight="normal">清洗：规范化文本、去除页码及相邻重复行</text>
+<rect x="92" y="295" width="1096" height="82" rx="12" fill="#FAFAF8" />
+<text x="116" y="347" font-size="24" fill="#2F6675" font-weight="bold">02</text>
+<text x="170" y="347" font-size="26" fill="#162B3B" font-weight="normal">切片：保留标题，处理长文本；表格结构仍需改善</text>
+<rect x="92" y="400" width="1096" height="82" rx="12" fill="#FAFAF8" />
+<text x="116" y="452" font-size="24" fill="#2F6675" font-weight="bold">03</text>
+<text x="170" y="452" font-size="26" fill="#162B3B" font-weight="normal">检索：字符 n-gram 哈希与覆盖评分；可选语义向量和 FAISS</text>
+<rect x="92" y="505" width="1096" height="82" rx="12" fill="#FAFAF8" />
+<text x="116" y="557" font-size="24" fill="#2F6675" font-weight="bold">04</text>
+<text x="170" y="557" font-size="26" fill="#162B3B" font-weight="normal">约束：按产品与版本过滤，减少不同资料之间串用</text>
+<text x="92" y="679" font-size="18" fill="#607884" font-weight="normal">产品说明书智能问答系统  |  期中汇报</text>
+<text x="1150" y="679" font-size="18" fill="#607884" font-weight="normal">04</text>
+</g></svg>

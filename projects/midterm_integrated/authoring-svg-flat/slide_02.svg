@@ -1,0 +1,93 @@
+<svg xmlns="http://www.w3.org/2000/svg" version="1.1" width="1280" height="720" viewBox="0 0 1280 720" font-family="Arial, &quot;Microsoft YaHei&quot;, sans-serif"><rect x="0" y="0" width="1280" height="720" fill="#FAFAF8" />
+<g id="shape-18" data-pptx-object="group" data-pptx-frame="80.4 48.33 1117.6 646.05" data-pptx-source-ref="slide:18">
+<g id="shape-2" data-pptx-object="shape" data-pptx-frame="80.4 48.33 469.6 61.6" data-pptx-prst="rect" data-pptx-source-ref="slide:2" data-pptx-semantic-object="shape">
+<path d="M 80.4 48.33 L 550 48.33 L 550 109.93 L 80.4 109.93 Z" fill="none" stroke="none" data-pptx-part="geometry" />
+
+
+<text x="80.4" y="87" text-anchor="start" xml:space="preserve" font-size="40" fill="#162B3B" font-weight="bold" data-pptx-text-baseline="metrics-v1">说明书有答案，但不好找</text>
+</g>
+<g id="shape-3" data-pptx-object="shape" data-pptx-frame="81.04 114.33 561.6 36.96" data-pptx-prst="rect" data-pptx-source-ref="slide:3" data-pptx-semantic-object="shape">
+<path d="M 81.04 114.33 L 642.64 114.33 L 642.64 151.29 L 81.04 151.29 Z" fill="none" stroke="none" data-pptx-part="geometry" />
+
+
+<text x="81.04" y="137" text-anchor="start" xml:space="preserve" font-size="24" fill="#4B6C7A" data-pptx-text-baseline="metrics-v1">说明书里有答案，用户需要快速找到适用的那一条</text>
+</g>
+<g id="shape-4" data-pptx-object="shape" data-pptx-frame="82 162 1116 1" data-pptx-prst="rect" data-pptx-source-ref="slide:4" data-pptx-semantic-object="shape">
+<path d="M 82 162 L 1198 162 L 1198 163 L 82 163 Z" fill="#D8E0E2" stroke="none" data-pptx-part="geometry" />
+
+</g>
+<g id="shape-5" data-pptx-object="shape" data-pptx-frame="82 212 1116 102" data-pptx-prst="rect" data-pptx-source-ref="slide:5" data-pptx-semantic-object="shape">
+<path d="M 82 212 L 1198 212 L 1198 314 L 82 314 Z" fill="#EEF2F4" stroke="none" data-pptx-part="geometry" />
+
+</g>
+<g id="shape-6" data-pptx-object="shape" data-pptx-frame="106.56 243.33 657.51 55.44" data-pptx-prst="rect" data-pptx-source-ref="slide:6" data-pptx-semantic-object="shape">
+<path d="M 106.56 243.33 L 764.07 243.33 L 764.07 298.77 L 106.56 298.77 Z" fill="none" stroke="none" data-pptx-part="geometry" />
+
+
+<text x="106.56" y="278" text-anchor="start" xml:space="preserve" font-size="36" fill="#162B3B" font-weight="bold" data-pptx-text-baseline="metrics-v1">“这款洗衣机的额定洗涤容量是多少？”</text>
+</g>
+<g id="shape-7" data-pptx-object="shape" data-pptx-frame="82.96 361.67 152.83 40.04" data-pptx-prst="rect" data-pptx-source-ref="slide:7" data-pptx-semantic-object="shape">
+<path d="M 82.96 361.67 L 235.79 361.67 L 235.79 401.71 L 82.96 401.71 Z" fill="none" stroke="none" data-pptx-part="geometry" />
+
+
+<text x="82.96" y="387" text-anchor="start" xml:space="preserve" font-size="26" fill="#2F6675" font-weight="bold" data-pptx-text-baseline="metrics-v1">01 确认型号</text>
+</g>
+<g id="shape-8" data-pptx-object="shape" data-pptx-frame="459.96 361.67 152.83 40.04" data-pptx-prst="rect" data-pptx-source-ref="slide:8" data-pptx-semantic-object="shape">
+<path d="M 459.96 361.67 L 612.79 361.67 L 612.79 401.71 L 459.96 401.71 Z" fill="none" stroke="none" data-pptx-part="geometry" />
+
+
+<text x="459.96" y="387" text-anchor="start" xml:space="preserve" font-size="26" fill="#2F6675" font-weight="bold" data-pptx-text-baseline="metrics-v1">02 找到依据</text>
+</g>
+<g id="shape-9" data-pptx-object="shape" data-pptx-frame="834.96 361.67 152.83 40.04" data-pptx-prst="rect" data-pptx-source-ref="slide:9" data-pptx-semantic-object="shape">
+<path d="M 834.96 361.67 L 987.79 361.67 L 987.79 401.71 L 834.96 401.71 Z" fill="none" stroke="none" data-pptx-part="geometry" />
+
+
+<text x="834.96" y="387" text-anchor="start" xml:space="preserve" font-size="26" fill="#2F6675" font-weight="bold" data-pptx-text-baseline="metrics-v1">03 给出结果</text>
+</g>
+<g id="shape-10" data-pptx-object="shape" data-pptx-frame="82.92 418.67 202.01 41.58" data-pptx-prst="rect" data-pptx-source-ref="slide:10" data-pptx-semantic-object="shape">
+<path d="M 82.92 418.67 L 284.93 418.67 L 284.93 460.25 L 82.92 460.25 Z" fill="none" stroke="none" data-pptx-part="geometry" />
+
+
+<text x="82.92" y="444" text-anchor="start" xml:space="preserve" font-size="26.93" fill="#162B3B" data-pptx-text-baseline="metrics-v1">避免拿其他型号</text>
+</g>
+<g id="shape-11" data-pptx-object="shape" data-pptx-frame="82.92 458.67 173.46 41.58" data-pptx-prst="rect" data-pptx-source-ref="slide:11" data-pptx-semantic-object="shape">
+<path d="M 82.92 458.67 L 256.38 458.67 L 256.38 500.25 L 82.92 500.25 Z" fill="none" stroke="none" data-pptx-part="geometry" />
+
+
+<text x="82.92" y="484" text-anchor="start" xml:space="preserve" font-size="26.93" fill="#162B3B" data-pptx-text-baseline="metrics-v1">的参数来回答</text>
+</g>
+<g id="shape-12" data-pptx-object="shape" data-pptx-frame="459.92 418.67 202.01 41.58" data-pptx-prst="rect" data-pptx-source-ref="slide:12" data-pptx-semantic-object="shape">
+<path d="M 459.92 418.67 L 661.93 418.67 L 661.93 460.25 L 459.92 460.25 Z" fill="none" stroke="none" data-pptx-part="geometry" />
+
+
+<text x="459.92" y="444" text-anchor="start" xml:space="preserve" font-size="26.93" fill="#162B3B" data-pptx-text-baseline="metrics-v1">返回数值和来源</text>
+</g>
+<g id="shape-13" data-pptx-object="shape" data-pptx-frame="459.92 458.67 202.01 41.58" data-pptx-prst="rect" data-pptx-source-ref="slide:13" data-pptx-semantic-object="shape">
+<path d="M 459.92 458.67 L 661.93 458.67 L 661.93 500.25 L 459.92 500.25 Z" fill="none" stroke="none" data-pptx-part="geometry" />
+
+
+<text x="459.92" y="484" text-anchor="start" xml:space="preserve" font-size="26.93" fill="#162B3B" data-pptx-text-baseline="metrics-v1">方便回查原资料</text>
+</g>
+<g id="shape-14" data-pptx-object="shape" data-pptx-frame="834.92 418.67 202.01 41.58" data-pptx-prst="rect" data-pptx-source-ref="slide:14" data-pptx-semantic-object="shape">
+<path d="M 834.92 418.67 L 1036.93 418.67 L 1036.93 460.25 L 834.92 460.25 Z" fill="none" stroke="none" data-pptx-part="geometry" />
+
+
+<text x="834.92" y="444" text-anchor="start" xml:space="preserve" font-size="26.93" fill="#162B3B" data-pptx-text-baseline="metrics-v1">资料不足就拒答</text>
+</g>
+<g id="shape-15" data-pptx-object="shape" data-pptx-frame="834.92 458.67 230.55 41.58" data-pptx-prst="rect" data-pptx-source-ref="slide:15" data-pptx-semantic-object="shape">
+<path d="M 834.92 458.67 L 1065.47 458.67 L 1065.47 500.25 L 834.92 500.25 Z" fill="none" stroke="none" data-pptx-part="geometry" />
+
+
+<text x="834.92" y="484" text-anchor="start" xml:space="preserve" font-size="26.93" fill="#162B3B" data-pptx-text-baseline="metrics-v1">退款、投诉转人工</text>
+</g>
+<g id="shape-16" data-pptx-object="shape" data-pptx-frame="82 652 1116 1" data-pptx-prst="rect" data-pptx-source-ref="slide:16" data-pptx-semantic-object="shape">
+<path d="M 82 652 L 1198 652 L 1198 653 L 82 653 Z" fill="#D8E0E2" stroke="none" data-pptx-part="geometry" />
+
+</g>
+<g id="shape-17" data-pptx-object="shape" data-pptx-frame="1156.28 666.67 22.43 27.72" data-pptx-prst="rect" data-pptx-source-ref="slide:17" data-pptx-semantic-object="shape">
+<path d="M 1156.28 666.67 L 1178.71 666.67 L 1178.71 694.39 L 1156.28 694.39 Z" fill="none" stroke="none" data-pptx-part="geometry" />
+
+
+<text x="1156.28" y="684" text-anchor="start" xml:space="preserve" font-size="18" fill="#4B6C7A" data-pptx-text-baseline="metrics-v1">02</text>
+</g>
+</g></svg>

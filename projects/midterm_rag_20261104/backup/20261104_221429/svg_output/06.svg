@@ -1,0 +1,20 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1280" height="720" viewBox="0 0 1280 720" font-family="Microsoft YaHei, Arial, sans-serif" data-pptx-page-role="content">
+<rect x="0" y="0" width="1280" height="720" rx="0" fill="#FAFAF8" data-pptx-role="background" id="background" />
+<g id="content" data-pptx-bounds="0 0 1280 720"><rect x="64" y="52" width="8" height="47" rx="0" fill="#2F6675" />
+<text x="90" y="91" font-size="40" fill="#162B3B" font-weight="bold">我们怎样测试系统</text>
+<text x="92" y="139" font-size="24" fill="#4B6C7A" font-weight="normal">同一批问题比较两种系统配置</text>
+<rect x="92" y="190" width="1096" height="82" rx="12" fill="#FAFAF8" />
+<text x="116" y="242" font-size="24" fill="#2F6675" font-weight="bold">01</text>
+<text x="170" y="242" font-size="26" fill="#162B3B" font-weight="normal">语料：5 份产品说明书，约 7.1 万字、1,940 个片段</text>
+<rect x="92" y="295" width="1096" height="82" rx="12" fill="#FAFAF8" />
+<text x="116" y="347" font-size="24" fill="#2F6675" font-weight="bold">02</text>
+<text x="170" y="347" font-size="26" fill="#162B3B" font-weight="normal">问题：138 条应答、15 条拒答、5 条转人工</text>
+<rect x="92" y="400" width="1096" height="82" rx="12" fill="#FAFAF8" />
+<text x="116" y="452" font-size="24" fill="#2F6675" font-weight="bold">03</text>
+<text x="170" y="452" font-size="26" fill="#162B3B" font-weight="normal">离线：字符检索 + 原文回退；在线：语义检索 + 模型生成</text>
+<rect x="92" y="505" width="1096" height="82" rx="12" fill="#FAFAF8" />
+<text x="116" y="557" font-size="24" fill="#2F6675" font-weight="bold">04</text>
+<text x="170" y="557" font-size="26" fill="#162B3B" font-weight="normal">指标：片段 Hit@K、状态与关键词命中、拒答和延迟</text>
+<text x="92" y="679" font-size="18" fill="#607884" font-weight="normal">产品说明书智能问答系统  |  期中汇报</text>
+<text x="1150" y="679" font-size="18" fill="#607884" font-weight="normal">06</text>
+</g></svg>

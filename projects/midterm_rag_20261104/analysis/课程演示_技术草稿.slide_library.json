@@ -1,0 +1,749 @@
+{
+  "schema": "pptx_intake_slide_library.v1",
+  "source_pptx": "C:\\Users\\T9\\Desktop\\珠海学院人工智能\\RAG\\projects\\midterm_rag_20261104\\sources\\课程演示_技术草稿.pptx",
+  "slide_count": 13,
+  "canvas_px": {
+    "width": 1280,
+    "height": 720
+  },
+  "slides": [
+    {
+      "slide_index": 1,
+      "page_type": "cover_candidate",
+      "text_summary": "领域知识库问答系统\n• 语义 Embedding + FAISS + 检索增强生成\n• 课程演示技术草稿｜2026-11-03\n• 成员姓名、分工与真实模型结果由团队补充\nRAG 课程项目｜技术草稿｜1/13",
+      "slots": [
+        {
+          "slot_id": "s01_sh2",
+          "role": "title_candidate",
+          "text": "领域知识库问答系统",
+          "paragraph_count": 1,
+          "geometry": {
+            "x": 67,
+            "y": 48,
+            "width": 1152,
+            "height": 96
+          },
+          "text_metrics": {
+            "font_size_px": 42.67,
+            "paragraph_count": 1
+          }
+        },
+        {
+          "slot_id": "s01_sh3",
+          "role": "label_candidate",
+          "text": "• 语义 Embedding + FAISS + 检索增强生成\n• 课程演示技术草稿｜2026-11-03\n• 成员姓名、分工与真实模型结果由团队补充",
+          "paragraph_count": 3,
+          "geometry": {
+            "x": 82,
+            "y": 173,
+            "width": 1123,
+            "height": 461
+          },
+          "text_metrics": {
+            "font_size_px": 32.0,
+            "paragraph_count": 3
+          }
+        },
+        {
+          "slot_id": "s01_sh4",
+          "role": "label_candidate",
+          "text": "RAG 课程项目｜技术草稿｜1/13",
+          "paragraph_count": 1,
+          "geometry": {
+            "x": 67,
+            "y": 672,
+            "width": 1152,
+            "height": 29
+          },
+          "text_metrics": {
+            "font_size_px": null,
+            "paragraph_count": 1
+          }
+        }
+      ],
+      "tables": [],
+      "charts": [],
+      "diagrams": []
+    },
+    {
+      "slide_index": 2,
+      "page_type": "content_candidate",
+      "text_summary": "问题与应用场景\n• 基于指定产品文档或校园手册回答领域问题\n• 按产品与版本检索，减少知识串用\n• 回答带来源；资料不足拒答，敏感业务转人工\nRAG 课程项目｜技术草稿｜2/13",
+      "slots": [
+        {
+          "slot_id": "s02_sh2",
+          "role": "title_candidate",
+          "text": "问题与应用场景",
+          "paragraph_count": 1,
+          "geometry": {
+            "x": 67,
+            "y": 48,
+            "width": 1152,
+            "height": 96
+          },
+          "text_metrics": {
+            "font_size_px": 42.67,
+            "paragraph_count": 1
+          }
+        },
+        {
+          "slot_id": "s02_sh3",
+          "role": "label_candidate",
+          "text": "• 基于指定产品文档或校园手册回答领域问题\n• 按产品与版本检索，减少知识串用\n• 回答带来源；资料不足拒答，敏感业务转人工",
+          "paragraph_count": 3,
+          "geometry": {
+            "x": 82,
+            "y": 173,
+            "width": 1123,
+            "height": 461
+          },
+          "text_metrics": {
+            "font_size_px": 32.0,
+            "paragraph_count": 3
+          }
+        },
+        {
+          "slot_id": "s02_sh4",
+          "role": "label_candidate",
+          "text": "RAG 课程项目｜技术草稿｜2/13",
+          "paragraph_count": 1,
+          "geometry": {
+            "x": 67,
+            "y": 672,
+            "width": 1152,
+            "height": 29
+          },
+          "text_metrics": {
+            "font_size_px": null,
+            "paragraph_count": 1
+          }
+        }
+      ],
+      "tables": [],
+      "charts": [],
+      "diagrams": []
+    },
+    {
+      "slide_index": 3,
+      "page_type": "content_candidate",
+      "text_summary": "语料与处理\n• 自建虚构语料 6 份，原文 1027 字符\n• 清洗、标题保留、切分后 31 个片段\n• 演示规则不对应真实学校或真实产品；语料可公开复现\nRAG 课程项目｜技术草稿｜3/13",
+      "slots": [
+        {
+          "slot_id": "s03_sh2",
+          "role": "title_candidate",
+          "text": "语料与处理",
+          "paragraph_count": 1,
+          "geometry": {
+            "x": 67,
+            "y": 48,
+            "width": 1152,
+            "height": 96
+          },
+          "text_metrics": {
+            "font_size_px": 42.67,
+            "paragraph_count": 1
+          }
+        },
+        {
+          "slot_id": "s03_sh3",
+          "role": "label_candidate",
+          "text": "• 自建虚构语料 6 份，原文 1027 字符\n• 清洗、标题保留、切分后 31 个片段\n• 演示规则不对应真实学校或真实产品；语料可公开复现",
+          "paragraph_count": 3,
+          "geometry": {
+            "x": 82,
+            "y": 173,
+            "width": 1123,
+            "height": 461
+          },
+          "text_metrics": {
+            "font_size_px": 32.0,
+            "paragraph_count": 3
+          }
+        },
+        {
+          "slot_id": "s03_sh4",
+          "role": "label_candidate",
+          "text": "RAG 课程项目｜技术草稿｜3/13",
+          "paragraph_count": 1,
+          "geometry": {
+            "x": 67,
+            "y": 672,
+            "width": 1152,
+            "height": 29
+          },
+          "text_metrics": {
+            "font_size_px": null,
+            "paragraph_count": 1
+          }
+        }
+      ],
+      "tables": [],
+      "charts": [],
+      "diagrams": []
+    },
+    {
+      "slide_index": 4,
+      "page_type": "content_candidate",
+      "text_summary": "系统架构\n• 浏览器 → FastAPI → 会话编排\n• 文档清洗 → 分块 → 语义 Embedding → 向量持久化\n• 产品/版本过滤 → FAISS Top-K → LLM 或原文回答\n• 结果 → 指标与人评 → 失败分析与知识补充\nRAG 课程项目｜技术草稿｜4/13",
+      "slots": [
+        {
+          "slot_id": "s04_sh2",
+          "role": "title_candidate",
+          "text": "系统架构",
+          "paragraph_count": 1,
+          "geometry": {
+            "x": 67,
+            "y": 48,
+            "width": 1152,
+            "height": 96
+          },
+          "text_metrics": {
+            "font_size_px": 42.67,
+            "paragraph_count": 1
+          }
+        },
+        {
+          "slot_id": "s04_sh3",
+          "role": "body_candidate",
+          "text": "• 浏览器 → FastAPI → 会话编排\n• 文档清洗 → 分块 → 语义 Embedding → 向量持久化\n• 产品/版本过滤 → FAISS Top-K → LLM 或原文回答\n• 结果 → 指标与人评 → 失败分析与知识补充",
+          "paragraph_count": 4,
+          "geometry": {
+            "x": 82,
+            "y": 173,
+            "width": 1123,
+            "height": 461
+          },
+          "text_metrics": {
+            "font_size_px": 32.0,
+            "paragraph_count": 4
+          }
+        },
+        {
+          "slot_id": "s04_sh4",
+          "role": "label_candidate",
+          "text": "RAG 课程项目｜技术草稿｜4/13",
+          "paragraph_count": 1,
+          "geometry": {
+            "x": 67,
+            "y": 672,
+            "width": 1152,
+            "height": 29
+          },
+          "text_metrics": {
+            "font_size_px": null,
+            "paragraph_count": 1
+          }
+        }
+      ],
+      "tables": [],
+      "charts": [],
+      "diagrams": []
+    },
+    {
+      "slide_index": 5,
+      "page_type": "content_candidate",
+      "text_summary": "向量与索引\n• 保留 4096 维字符哈希作为基线\n• 新增多语言 SentenceTransformer，也可接兼容 Embedding API\n• 归一化 float32 向量 + FAISS IndexFlatIP\n• 按模型标识隔离；增量建库；删除级联；索引按范围重建\nRAG 课程项目｜技术草稿｜5/13",
+      "slots": [
+        {
+          "slot_id": "s05_sh2",
+          "role": "title_candidate",
+          "text": "向量与索引",
+          "paragraph_count": 1,
+          "geometry": {
+            "x": 67,
+            "y": 48,
+            "width": 1152,
+            "height": 96
+          },
+          "text_metrics": {
+            "font_size_px": 42.67,
+            "paragraph_count": 1
+          }
+        },
+        {
+          "slot_id": "s05_sh3",
+          "role": "body_candidate",
+          "text": "• 保留 4096 维字符哈希作为基线\n• 新增多语言 SentenceTransformer，也可接兼容 Embedding API\n• 归一化 float32 向量 + FAISS IndexFlatIP\n• 按模型标识隔离；增量建库；删除级联；索引按范围重建",
+          "paragraph_count": 4,
+          "geometry": {
+            "x": 82,
+            "y": 173,
+            "width": 1123,
+            "height": 461
+          },
+          "text_metrics": {
+            "font_size_px": 32.0,
+            "paragraph_count": 4
+          }
+        },
+        {
+          "slot_id": "s05_sh4",
+          "role": "label_candidate",
+          "text": "RAG 课程项目｜技术草稿｜5/13",
+          "paragraph_count": 1,
+          "geometry": {
+            "x": 67,
+            "y": 672,
+            "width": 1152,
+            "height": 29
+          },
+          "text_metrics": {
+            "font_size_px": null,
+            "paragraph_count": 1
+          }
+        }
+      ],
+      "tables": [],
+      "charts": [],
+      "diagrams": []
+    },
+    {
+      "slide_index": 6,
+      "page_type": "content_candidate",
+      "text_summary": "检索与回答模式\n• 页面下拉选择 OpenRouter / Groq / Gemini / 自定义\n• auto：FAQ 优先；extractive：返回 Top-1 原文\n• llm：严格调用模型，失败不冒充生成成功\n• 自备 Key，保存并测试连接；密钥不随代码包提交\nRAG 课程项目｜技术草稿｜6/13",
+      "slots": [
+        {
+          "slot_id": "s06_sh2",
+          "role": "title_candidate",
+          "text": "检索与回答模式",
+          "paragraph_count": 1,
+          "geometry": {
+            "x": 67,
+            "y": 48,
+            "width": 1152,
+            "height": 96
+          },
+          "text_metrics": {
+            "font_size_px": 42.67,
+            "paragraph_count": 1
+          }
+        },
+        {
+          "slot_id": "s06_sh3",
+          "role": "body_candidate",
+          "text": "• 页面下拉选择 OpenRouter / Groq / Gemini / 自定义\n• auto：FAQ 优先；extractive：返回 Top-1 原文\n• llm：严格调用模型，失败不冒充生成成功\n• 自备 Key，保存并测试连接；密钥不随代码包提交",
+          "paragraph_count": 4,
+          "geometry": {
+            "x": 82,
+            "y": 173,
+            "width": 1123,
+            "height": 461
+          },
+          "text_metrics": {
+            "font_size_px": 32.0,
+            "paragraph_count": 4
+          }
+        },
+        {
+          "slot_id": "s06_sh4",
+          "role": "label_candidate",
+          "text": "RAG 课程项目｜技术草稿｜6/13",
+          "paragraph_count": 1,
+          "geometry": {
+            "x": 67,
+            "y": 672,
+            "width": 1152,
+            "height": 29
+          },
+          "text_metrics": {
+            "font_size_px": null,
+            "paragraph_count": 1
+          }
+        }
+      ],
+      "tables": [],
+      "charts": [],
+      "diagrams": []
+    },
+    {
+      "slide_index": 7,
+      "page_type": "content_candidate",
+      "text_summary": "现场演示步骤\n• 配置页查看检索/生成状态并补建语义索引\n• 查询借阅上限、证明领取地点与版本差异\n• 对比未知功能或考试周时间的回答与证据\n• 运行 45 题实验，查看失败样本与评分表\nRAG 课程项目｜技术草稿｜7/13",
+      "slots": [
+        {
+          "slot_id": "s07_sh2",
+          "role": "title_candidate",
+          "text": "现场演示步骤",
+          "paragraph_count": 1,
+          "geometry": {
+            "x": 67,
+            "y": 48,
+            "width": 1152,
+            "height": 96
+          },
+          "text_metrics": {
+            "font_size_px": 42.67,
+            "paragraph_count": 1
+          }
+        },
+        {
+          "slot_id": "s07_sh3",
+          "role": "body_candidate",
+          "text": "• 配置页查看检索/生成状态并补建语义索引\n• 查询借阅上限、证明领取地点与版本差异\n• 对比未知功能或考试周时间的回答与证据\n• 运行 45 题实验，查看失败样本与评分表",
+          "paragraph_count": 4,
+          "geometry": {
+            "x": 82,
+            "y": 173,
+            "width": 1123,
+            "height": 461
+          },
+          "text_metrics": {
+            "font_size_px": 32.0,
+            "paragraph_count": 4
+          }
+        },
+        {
+          "slot_id": "s07_sh4",
+          "role": "label_candidate",
+          "text": "RAG 课程项目｜技术草稿｜7/13",
+          "paragraph_count": 1,
+          "geometry": {
+            "x": 67,
+            "y": 672,
+            "width": 1152,
+            "height": 29
+          },
+          "text_metrics": {
+            "font_size_px": null,
+            "paragraph_count": 1
+          }
+        }
+      ],
+      "tables": [],
+      "charts": [],
+      "diagrams": []
+    },
+    {
+      "slide_index": 8,
+      "page_type": "content_candidate",
+      "text_summary": "实验设置\n• 45 个固定问题：36 可回答、8 无答案、1 转人工\n• 同一临时语料库、同一原文模式比较两种检索方案\n• 固定阈值：字符 0.16、语义 0.35；未在本测试集调参\n• 真实 LLM 方案依赖服务配置；未执行项明确标记\nRAG 课程项目｜技术草稿｜8/13",
+      "slots": [
+        {
+          "slot_id": "s08_sh2",
+          "role": "title_candidate",
+          "text": "实验设置",
+          "paragraph_count": 1,
+          "geometry": {
+            "x": 67,
+            "y": 48,
+            "width": 1152,
+            "height": 96
+          },
+          "text_metrics": {
+            "font_size_px": 42.67,
+            "paragraph_count": 1
+          }
+        },
+        {
+          "slot_id": "s08_sh3",
+          "role": "body_candidate",
+          "text": "• 45 个固定问题：36 可回答、8 无答案、1 转人工\n• 同一临时语料库、同一原文模式比较两种检索方案\n• 固定阈值：字符 0.16、语义 0.35；未在本测试集调参\n• 真实 LLM 方案依赖服务配置；未执行项明确标记",
+          "paragraph_count": 4,
+          "geometry": {
+            "x": 82,
+            "y": 173,
+            "width": 1123,
+            "height": 461
+          },
+          "text_metrics": {
+            "font_size_px": 32.0,
+            "paragraph_count": 4
+          }
+        },
+        {
+          "slot_id": "s08_sh4",
+          "role": "label_candidate",
+          "text": "RAG 课程项目｜技术草稿｜8/13",
+          "paragraph_count": 1,
+          "geometry": {
+            "x": 67,
+            "y": 672,
+            "width": 1152,
+            "height": 29
+          },
+          "text_metrics": {
+            "font_size_px": null,
+            "paragraph_count": 1
+          }
+        }
+      ],
+      "tables": [],
+      "charts": [],
+      "diagrams": []
+    },
+    {
+      "slide_index": 9,
+      "page_type": "chapter_candidate",
+      "text_summary": "实际结果：召回改善与拒答退化\nRAG 课程项目｜技术草稿｜9/13",
+      "slots": [
+        {
+          "slot_id": "s09_sh2",
+          "role": "title_candidate",
+          "text": "实际结果：召回改善与拒答退化",
+          "paragraph_count": 1,
+          "geometry": {
+            "x": 67,
+            "y": 48,
+            "width": 1152,
+            "height": 96
+          },
+          "text_metrics": {
+            "font_size_px": 42.67,
+            "paragraph_count": 1
+          }
+        },
+        {
+          "slot_id": "s09_sh4",
+          "role": "label_candidate",
+          "text": "RAG 课程项目｜技术草稿｜9/13",
+          "paragraph_count": 1,
+          "geometry": {
+            "x": 67,
+            "y": 672,
+            "width": 1152,
+            "height": 29
+          },
+          "text_metrics": {
+            "font_size_px": null,
+            "paragraph_count": 1
+          }
+        }
+      ],
+      "tables": [],
+      "charts": [],
+      "diagrams": []
+    },
+    {
+      "slide_index": 10,
+      "page_type": "content_candidate",
+      "text_summary": "失败案例：有来源仍可能答非所问\n• “工作日几点开放”被字符检索匹配到证明办理工作日\n• “普通图书借多久”被语义检索匹配到续借 15 天\n• “参考书能外借吗”被匹配到普通图书续借操作\n• 说明主体、属性、时间条件和否定表达需要专项评测\nRAG 课程项目｜技术草稿｜10/13",
+      "slots": [
+        {
+          "slot_id": "s10_sh2",
+          "role": "title_candidate",
+          "text": "失败案例：有来源仍可能答非所问",
+          "paragraph_count": 1,
+          "geometry": {
+            "x": 67,
+            "y": 48,
+            "width": 1152,
+            "height": 96
+          },
+          "text_metrics": {
+            "font_size_px": 42.67,
+            "paragraph_count": 1
+          }
+        },
+        {
+          "slot_id": "s10_sh3",
+          "role": "body_candidate",
+          "text": "• “工作日几点开放”被字符检索匹配到证明办理工作日\n• “普通图书借多久”被语义检索匹配到续借 15 天\n• “参考书能外借吗”被匹配到普通图书续借操作\n• 说明主体、属性、时间条件和否定表达需要专项评测",
+          "paragraph_count": 4,
+          "geometry": {
+            "x": 82,
+            "y": 173,
+            "width": 1123,
+            "height": 461
+          },
+          "text_metrics": {
+            "font_size_px": 32.0,
+            "paragraph_count": 4
+          }
+        },
+        {
+          "slot_id": "s10_sh4",
+          "role": "label_candidate",
+          "text": "RAG 课程项目｜技术草稿｜10/13",
+          "paragraph_count": 1,
+          "geometry": {
+            "x": 67,
+            "y": 672,
+            "width": 1152,
+            "height": 29
+          },
+          "text_metrics": {
+            "font_size_px": null,
+            "paragraph_count": 1
+          }
+        }
+      ],
+      "tables": [],
+      "charts": [],
+      "diagrams": []
+    },
+    {
+      "slide_index": 11,
+      "page_type": "content_candidate",
+      "text_summary": "失败案例：相似资料不能证明有答案\n• 语音转写和价格问题仍可能返回相似但无关片段\n• 考试周另行公告，不能套用工作日/周末时间\n• 语义方案通过更多题，但无答案拒答准确率更低\n• 下一步：证据充分性、重排、独立开发集校准\nRAG 课程项目｜技术草稿｜11/13",
+      "slots": [
+        {
+          "slot_id": "s11_sh2",
+          "role": "title_candidate",
+          "text": "失败案例：相似资料不能证明有答案",
+          "paragraph_count": 1,
+          "geometry": {
+            "x": 67,
+            "y": 48,
+            "width": 1152,
+            "height": 96
+          },
+          "text_metrics": {
+            "font_size_px": 42.67,
+            "paragraph_count": 1
+          }
+        },
+        {
+          "slot_id": "s11_sh3",
+          "role": "body_candidate",
+          "text": "• 语音转写和价格问题仍可能返回相似但无关片段\n• 考试周另行公告，不能套用工作日/周末时间\n• 语义方案通过更多题，但无答案拒答准确率更低\n• 下一步：证据充分性、重排、独立开发集校准",
+          "paragraph_count": 4,
+          "geometry": {
+            "x": 82,
+            "y": 173,
+            "width": 1123,
+            "height": 461
+          },
+          "text_metrics": {
+            "font_size_px": 32.0,
+            "paragraph_count": 4
+          }
+        },
+        {
+          "slot_id": "s11_sh4",
+          "role": "label_candidate",
+          "text": "RAG 课程项目｜技术草稿｜11/13",
+          "paragraph_count": 1,
+          "geometry": {
+            "x": 67,
+            "y": 672,
+            "width": 1152,
+            "height": 29
+          },
+          "text_metrics": {
+            "font_size_px": null,
+            "paragraph_count": 1
+          }
+        }
+      ],
+      "tables": [],
+      "charts": [],
+      "diagrams": []
+    },
+    {
+      "slide_index": 12,
+      "page_type": "content_candidate",
+      "text_summary": "质量评估与局限\n• 关键词匹配与证据 Hit@K 分开统计\n• 忠实度/相关性采用 0–2 分评阅，附依据和覆盖率\n• 未进行的人评、真实 LLM 运行不填入假数据\n• 小规模自建语料；无独立测试集；无生产性能结论\nRAG 课程项目｜技术草稿｜12/13",
+      "slots": [
+        {
+          "slot_id": "s12_sh2",
+          "role": "title_candidate",
+          "text": "质量评估与局限",
+          "paragraph_count": 1,
+          "geometry": {
+            "x": 67,
+            "y": 48,
+            "width": 1152,
+            "height": 96
+          },
+          "text_metrics": {
+            "font_size_px": 42.67,
+            "paragraph_count": 1
+          }
+        },
+        {
+          "slot_id": "s12_sh3",
+          "role": "body_candidate",
+          "text": "• 关键词匹配与证据 Hit@K 分开统计\n• 忠实度/相关性采用 0–2 分评阅，附依据和覆盖率\n• 未进行的人评、真实 LLM 运行不填入假数据\n• 小规模自建语料；无独立测试集；无生产性能结论",
+          "paragraph_count": 4,
+          "geometry": {
+            "x": 82,
+            "y": 173,
+            "width": 1123,
+            "height": 461
+          },
+          "text_metrics": {
+            "font_size_px": 32.0,
+            "paragraph_count": 4
+          }
+        },
+        {
+          "slot_id": "s12_sh4",
+          "role": "label_candidate",
+          "text": "RAG 课程项目｜技术草稿｜12/13",
+          "paragraph_count": 1,
+          "geometry": {
+            "x": 67,
+            "y": 672,
+            "width": 1152,
+            "height": 29
+          },
+          "text_metrics": {
+            "font_size_px": null,
+            "paragraph_count": 1
+          }
+        }
+      ],
+      "tables": [],
+      "charts": [],
+      "diagrams": []
+    },
+    {
+      "slide_index": 13,
+      "page_type": "ending_candidate",
+      "text_summary": "提交与成员答辩\n• 代码、语料、Prompt、结果与文档可复现打包\n• 报告至少 5000 字；每人贡献说明 500–1000 字\n• 成员真实分工、互评、服务配置与人评仍需团队填写\n• 可选 GraphRAG、微调；当前优先完成模型实验闭环\nRAG 课程项目｜技术草稿｜13/13",
+      "slots": [
+        {
+          "slot_id": "s13_sh2",
+          "role": "title_candidate",
+          "text": "提交与成员答辩",
+          "paragraph_count": 1,
+          "geometry": {
+            "x": 67,
+            "y": 48,
+            "width": 1152,
+            "height": 96
+          },
+          "text_metrics": {
+            "font_size_px": 42.67,
+            "paragraph_count": 1
+          }
+        },
+        {
+          "slot_id": "s13_sh3",
+          "role": "body_candidate",
+          "text": "• 代码、语料、Prompt、结果与文档可复现打包\n• 报告至少 5000 字；每人贡献说明 500–1000 字\n• 成员真实分工、互评、服务配置与人评仍需团队填写\n• 可选 GraphRAG、微调；当前优先完成模型实验闭环",
+          "paragraph_count": 4,
+          "geometry": {
+            "x": 82,
+            "y": 173,
+            "width": 1123,
+            "height": 461
+          },
+          "text_metrics": {
+            "font_size_px": 32.0,
+            "paragraph_count": 4
+          }
+        },
+        {
+          "slot_id": "s13_sh4",
+          "role": "label_candidate",
+          "text": "RAG 课程项目｜技术草稿｜13/13",
+          "paragraph_count": 1,
+          "geometry": {
+            "x": 67,
+            "y": 672,
+            "width": 1152,
+            "height": 29
+          },
+          "text_metrics": {
+            "font_size_px": null,
+            "paragraph_count": 1
+          }
+        }
+      ],
+      "tables": [],
+      "charts": [],
+      "diagrams": []
+    }
+  ]
+}

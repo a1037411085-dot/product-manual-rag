@@ -1,0 +1,74 @@
+<svg xmlns="http://www.w3.org/2000/svg" version="1.1" width="1280" height="720" viewBox="0 0 1280 720" font-family="Arial, &quot;Microsoft YaHei&quot;, sans-serif"><rect x="0" y="0" width="1280" height="720" fill="#FAFAF8" />
+<g id="shape-15" data-pptx-object="group" data-pptx-frame="76.3 48.33 1121.7 646.05" data-pptx-source-ref="slide:15">
+<g id="shape-2" data-pptx-object="shape" data-pptx-frame="80.4 48.33 469.6 61.6" data-pptx-prst="rect" data-pptx-source-ref="slide:2" data-pptx-semantic-object="shape">
+<path d="M 80.4 48.33 L 550 48.33 L 550 109.93 L 80.4 109.93 Z" fill="none" stroke="none" data-pptx-part="geometry" />
+
+
+<text x="80.4" y="87" text-anchor="start" xml:space="preserve" font-size="40" fill="#162B3B" font-weight="bold" data-pptx-text-baseline="metrics-v1">离线配置在这批题上更稳</text>
+</g>
+<g id="shape-3" data-pptx-object="shape" data-pptx-frame="81.04 114.33 332.64 36.96" data-pptx-prst="rect" data-pptx-source-ref="slide:3" data-pptx-semantic-object="shape">
+<path d="M 81.04 114.33 L 413.68 114.33 L 413.68 151.29 L 81.04 151.29 Z" fill="none" stroke="none" data-pptx-part="geometry" />
+
+
+<text x="81.04" y="137" text-anchor="start" xml:space="preserve" font-size="24" fill="#4B6C7A" data-pptx-text-baseline="metrics-v1">对比的是两套配置的整体表现</text>
+</g>
+<g id="shape-4" data-pptx-object="shape" data-pptx-frame="82 162 1116 1" data-pptx-prst="rect" data-pptx-source-ref="slide:4" data-pptx-semantic-object="shape">
+<path d="M 82 162 L 1198 162 L 1198 163 L 82 163 Z" fill="#D8E0E2" stroke="none" data-pptx-part="geometry" />
+
+</g>
+<g id="shape-5" data-pptx-object="picture" data-pptx-frame="76.3 177 801.39 432" data-pptx-source-ref="slide:5">
+<image data-pptx-object="picture" data-pptx-frame="76.3 177 801.39 432" href="../images/image2.png" x="76.3" y="177" width="801.39" height="432" preserveAspectRatio="none" />
+</g>
+<g id="shape-6" data-pptx-object="shape" data-pptx-frame="906.6 200.67 107.78 53.9" data-pptx-prst="rect" data-pptx-source-ref="slide:6" data-pptx-semantic-object="shape">
+<path d="M 906.6 200.67 L 1014.38 200.67 L 1014.38 254.57 L 906.6 254.57 Z" fill="none" stroke="none" data-pptx-part="geometry" />
+
+
+<text x="906.6" y="234" text-anchor="start" xml:space="preserve" font-size="34.93" fill="#162B3B" font-weight="bold" data-pptx-text-baseline="metrics-v1">23 ms</text>
+</g>
+<g id="shape-7" data-pptx-object="shape" data-pptx-frame="907.12 256.67 143.09 33.88" data-pptx-prst="rect" data-pptx-source-ref="slide:7" data-pptx-semantic-object="shape">
+<path d="M 907.12 256.67 L 1050.21 256.67 L 1050.21 290.55 L 907.12 290.55 Z" fill="none" stroke="none" data-pptx-part="geometry" />
+
+
+<text x="907.12" y="278" text-anchor="start" xml:space="preserve" font-size="22" fill="#4B6C7A" data-pptx-text-baseline="metrics-v1">离线问答 P50</text>
+</g>
+<g id="shape-8" data-pptx-object="shape" data-pptx-frame="906.6 333.67 171.93 53.9" data-pptx-prst="rect" data-pptx-source-ref="slide:8" data-pptx-semantic-object="shape">
+<path d="M 906.6 333.67 L 1078.53 333.67 L 1078.53 387.57 L 906.6 387.57 Z" fill="none" stroke="none" data-pptx-part="geometry" />
+
+
+<text x="906.6" y="367" text-anchor="start" xml:space="preserve" font-size="34.93" fill="#162B3B" font-weight="bold" data-pptx-text-baseline="metrics-v1">1,738 ms</text>
+</g>
+<g id="shape-9" data-pptx-object="shape" data-pptx-frame="907.12 389.67 143.09 33.88" data-pptx-prst="rect" data-pptx-source-ref="slide:9" data-pptx-semantic-object="shape">
+<path d="M 907.12 389.67 L 1050.21 389.67 L 1050.21 423.55 L 907.12 423.55 Z" fill="none" stroke="none" data-pptx-part="geometry" />
+
+
+<text x="907.12" y="411" text-anchor="start" xml:space="preserve" font-size="22" fill="#4B6C7A" data-pptx-text-baseline="metrics-v1">在线问答 P50</text>
+</g>
+<g id="shape-10" data-pptx-object="shape" data-pptx-frame="907.04 479.33 180 36.96" data-pptx-prst="rect" data-pptx-source-ref="slide:10" data-pptx-semantic-object="shape">
+<path d="M 907.04 479.33 L 1087.04 479.33 L 1087.04 516.29 L 907.04 516.29 Z" fill="none" stroke="none" data-pptx-part="geometry" />
+
+
+<text x="907.04" y="502" text-anchor="start" xml:space="preserve" font-size="24" fill="#2F6675" data-pptx-text-baseline="metrics-v1">检索和回答方式</text>
+</g>
+<g id="shape-11" data-pptx-object="shape" data-pptx-frame="907.04 517.33 180 36.96" data-pptx-prst="rect" data-pptx-source-ref="slide:11" data-pptx-semantic-object="shape">
+<path d="M 907.04 517.33 L 1087.04 517.33 L 1087.04 554.29 L 907.04 554.29 Z" fill="none" stroke="none" data-pptx-part="geometry" />
+
+
+<text x="907.04" y="540" text-anchor="start" xml:space="preserve" font-size="24" fill="#2F6675" data-pptx-text-baseline="metrics-v1">都发生了变化。</text>
+</g>
+<g id="shape-12" data-pptx-object="shape" data-pptx-frame="81.28 611.67 594.83 27.72" data-pptx-prst="rect" data-pptx-source-ref="slide:12" data-pptx-semantic-object="shape">
+<path d="M 81.28 611.67 L 676.11 611.67 L 676.11 639.39 L 81.28 639.39 Z" fill="none" stroke="none" data-pptx-part="geometry" />
+
+
+<text x="81.28" y="629" text-anchor="start" xml:space="preserve" font-size="18" fill="#4B6C7A" data-pptx-text-baseline="metrics-v1">来源：v3 评估报告图 8、表 4。图中的在线关键词命中按数值等价计。</text>
+</g>
+<g id="shape-13" data-pptx-object="shape" data-pptx-frame="82 652 1116 1" data-pptx-prst="rect" data-pptx-source-ref="slide:13" data-pptx-semantic-object="shape">
+<path d="M 82 652 L 1198 652 L 1198 653 L 82 653 Z" fill="#D8E0E2" stroke="none" data-pptx-part="geometry" />
+
+</g>
+<g id="shape-14" data-pptx-object="shape" data-pptx-frame="1156.28 666.67 22.43 27.72" data-pptx-prst="rect" data-pptx-source-ref="slide:14" data-pptx-semantic-object="shape">
+<path d="M 1156.28 666.67 L 1178.71 666.67 L 1178.71 694.39 L 1156.28 694.39 Z" fill="none" stroke="none" data-pptx-part="geometry" />
+
+
+<text x="1156.28" y="684" text-anchor="start" xml:space="preserve" font-size="18" fill="#4B6C7A" data-pptx-text-baseline="metrics-v1">08</text>
+</g>
+</g></svg>

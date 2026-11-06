@@ -1,0 +1,18 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1280" height="720" viewBox="0 0 1280 720" font-family="Microsoft YaHei, Arial, sans-serif" data-pptx-page-role="content">
+<rect x="0" y="0" width="1280" height="720" rx="0" fill="#08172B" data-pptx-role="background" id="background" />
+<g id="content" data-pptx-bounds="0 0 1280 720"><rect x="64" y="52" width="8" height="47" rx="0" fill="#21C9C3" />
+<text x="90" y="91" font-size="40" fill="#F3F8FF" font-weight="bold">团队分工</text>
+<text x="92" y="139" font-size="24" fill="#75A9FF" font-weight="normal">各环节协作完成项目</text>
+<rect x="92" y="190" width="1096" height="65" rx="12" fill="#122D47" />
+<text x="118" y="232" font-size="25" fill="#F3F8FF" font-weight="normal">黄健｜数据收集与清洗：原始语料、测试集</text>
+<rect x="92" y="272" width="1096" height="65" rx="12" fill="#122D47" />
+<text x="118" y="314" font-size="25" fill="#F3F8FF" font-weight="normal">周欣宇｜特征与上下文：切片、向量化、混合评分、Prompt</text>
+<rect x="92" y="354" width="1096" height="65" rx="12" fill="#122D47" />
+<text x="118" y="396" font-size="25" fill="#F3F8FF" font-weight="normal">郑岳展｜模型与系统：架构设计、训练相关工作、代码实现</text>
+<rect x="92" y="436" width="1096" height="65" rx="12" fill="#122D47" />
+<text x="118" y="478" font-size="25" fill="#F3F8FF" font-weight="normal">徐明宇｜评估与可视化；王军｜测试整合</text>
+<rect x="92" y="518" width="1096" height="65" rx="12" fill="#122D47" />
+<text x="118" y="560" font-size="25" fill="#F3F8FF" font-weight="normal">廖松涛｜报告整合、案例展示与汇报</text>
+<text x="92" y="679" font-size="18" fill="#A9C0CF" font-weight="normal">产品说明书智能问答系统  |  期中汇报</text>
+<text x="1150" y="679" font-size="18" fill="#A9C0CF" font-weight="normal">11</text>
+</g></svg>

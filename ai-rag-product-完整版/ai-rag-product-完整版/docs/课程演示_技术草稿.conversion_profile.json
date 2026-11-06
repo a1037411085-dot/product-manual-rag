@@ -1,0 +1,28 @@
+{
+  "schema": "ppt-master.source_to_md.profile.v1",
+  "converter": "ppt_to_md.py",
+  "conversion_type": "pptx",
+  "source": {
+    "path": "课程演示_技术草稿.pptx",
+    "name": "课程演示_技术草稿.pptx",
+    "suffix": ".pptx",
+    "kind": "file",
+    "exists": true,
+    "size_bytes": 136946
+  },
+  "outputs": {
+    "markdown": "课程演示_技术草稿.md",
+    "asset_dir": "课程演示_技术草稿_files",
+    "image_manifest": "课程演示_技术草稿_files/image_manifest.json",
+    "image_count": 1
+  },
+  "markdown": {
+    "line_count": 174,
+    "char_count": 1913,
+    "heading_count": 14,
+    "table_count": 0,
+    "image_ref_count": 1,
+    "link_count": 0
+  },
+  "warnings": []
+}

@@ -1,0 +1,95 @@
+<svg xmlns="http://www.w3.org/2000/svg" version="1.1" width="1280" height="720" viewBox="0 0 1280 720" font-family="Arial, &quot;Microsoft YaHei&quot;, sans-serif"><rect x="0" y="0" width="1280" height="720" fill="#FAFAF8" />
+<g id="shape-19" data-pptx-object="group" data-pptx-frame="80.4 48.33 1117.6 646.05" data-pptx-source-ref="slide:19">
+<g id="shape-2" data-pptx-object="shape" data-pptx-frame="80.4 48.33 427.2 61.6" data-pptx-prst="rect" data-pptx-source-ref="slide:2" data-pptx-semantic-object="shape">
+<path d="M 80.4 48.33 L 507.6 48.33 L 507.6 109.93 L 80.4 109.93 Z" fill="none" stroke="none" data-pptx-part="geometry" />
+
+
+<text x="80.4" y="87" text-anchor="start" xml:space="preserve" font-size="40" fill="#162B3B" font-weight="bold" data-pptx-text-baseline="metrics-v1">说明书怎么进入知识库</text>
+</g>
+<g id="shape-3" data-pptx-object="shape" data-pptx-frame="81.04 114.33 408.96 36.96" data-pptx-prst="rect" data-pptx-source-ref="slide:3" data-pptx-semantic-object="shape">
+<path d="M 81.04 114.33 L 490 114.33 L 490 151.29 L 81.04 151.29 Z" fill="none" stroke="none" data-pptx-part="geometry" />
+
+
+<text x="81.04" y="137" text-anchor="start" xml:space="preserve" font-size="24" fill="#4B6C7A" data-pptx-text-baseline="metrics-v1">切片决定了检索时能看到多少上下文</text>
+</g>
+<g id="shape-4" data-pptx-object="shape" data-pptx-frame="82 162 1116 1" data-pptx-prst="rect" data-pptx-source-ref="slide:4" data-pptx-semantic-object="shape">
+<path d="M 82 162 L 1198 162 L 1198 163 L 82 163 Z" fill="#D8E0E2" stroke="none" data-pptx-part="geometry" />
+
+</g>
+<g id="shape-5" data-pptx-object="shape" data-pptx-frame="82 204 1116 1" data-pptx-prst="rect" data-pptx-source-ref="slide:5" data-pptx-semantic-object="shape">
+<path d="M 82 204 L 1198 204 L 1198 205 L 82 205 Z" fill="#D8E0E2" stroke="none" data-pptx-part="geometry" />
+
+</g>
+<g id="shape-6" data-pptx-object="shape" data-pptx-frame="80.88 219.33 61.6 43.12" data-pptx-prst="rect" data-pptx-source-ref="slide:6" data-pptx-semantic-object="shape">
+<path d="M 80.88 219.33 L 142.48 219.33 L 142.48 262.45 L 80.88 262.45 Z" fill="none" stroke="none" data-pptx-part="geometry" />
+
+
+<text x="80.88" y="246" text-anchor="start" xml:space="preserve" font-size="28" fill="#2F6675" font-weight="bold" data-pptx-text-baseline="metrics-v1">清洗</text>
+</g>
+<g id="shape-7" data-pptx-object="shape" data-pptx-frame="278.88 219.33 477.12 43.12" data-pptx-prst="rect" data-pptx-source-ref="slide:7" data-pptx-semantic-object="shape">
+<path d="M 278.88 219.33 L 756 219.33 L 756 262.45 L 278.88 262.45 Z" fill="none" stroke="none" data-pptx-part="geometry" />
+
+
+<text x="278.88" y="246" text-anchor="start" xml:space="preserve" font-size="28" fill="#162B3B" data-pptx-text-baseline="metrics-v1">规范化文本，去除页码和相邻重复行</text>
+</g>
+<g id="shape-8" data-pptx-object="shape" data-pptx-frame="279.04 261.33 408.96 36.96" data-pptx-prst="rect" data-pptx-source-ref="slide:8" data-pptx-semantic-object="shape">
+<path d="M 279.04 261.33 L 688 261.33 L 688 298.29 L 279.04 298.29 Z" fill="none" stroke="none" data-pptx-part="geometry" />
+
+
+<text x="279.04" y="284" text-anchor="start" xml:space="preserve" font-size="24" fill="#4B6C7A" data-pptx-text-baseline="metrics-v1">标题保留下来，长文本按规则切片。</text>
+</g>
+<g id="shape-9" data-pptx-object="shape" data-pptx-frame="82 343 1116 1" data-pptx-prst="rect" data-pptx-source-ref="slide:9" data-pptx-semantic-object="shape">
+<path d="M 82 343 L 1198 343 L 1198 344 L 82 344 Z" fill="#D8E0E2" stroke="none" data-pptx-part="geometry" />
+
+</g>
+<g id="shape-10" data-pptx-object="shape" data-pptx-frame="80.88 358.33 61.6 43.12" data-pptx-prst="rect" data-pptx-source-ref="slide:10" data-pptx-semantic-object="shape">
+<path d="M 80.88 358.33 L 142.48 358.33 L 142.48 401.45 L 80.88 401.45 Z" fill="none" stroke="none" data-pptx-part="geometry" />
+
+
+<text x="80.88" y="385" text-anchor="start" xml:space="preserve" font-size="28" fill="#2F6675" font-weight="bold" data-pptx-text-baseline="metrics-v1">检索</text>
+</g>
+<g id="shape-11" data-pptx-object="shape" data-pptx-frame="278.88 358.33 480.09 43.12" data-pptx-prst="rect" data-pptx-source-ref="slide:11" data-pptx-semantic-object="shape">
+<path d="M 278.88 358.33 L 758.97 358.33 L 758.97 401.45 L 278.88 401.45 Z" fill="none" stroke="none" data-pptx-part="geometry" />
+
+
+<text x="278.88" y="385" text-anchor="start" xml:space="preserve" font-size="28" fill="#162B3B" data-pptx-text-baseline="metrics-v1">离线用字符 n-gram 哈希与覆盖评分</text>
+</g>
+<g id="shape-12" data-pptx-object="shape" data-pptx-frame="279.04 400.33 472.38 36.96" data-pptx-prst="rect" data-pptx-source-ref="slide:12" data-pptx-semantic-object="shape">
+<path d="M 279.04 400.33 L 751.42 400.33 L 751.42 437.29 L 279.04 437.29 Z" fill="none" stroke="none" data-pptx-part="geometry" />
+
+
+<text x="279.04" y="423" text-anchor="start" xml:space="preserve" font-size="24" fill="#4B6C7A" data-pptx-text-baseline="metrics-v1">语义路径用多语言 Embedding 和 FAISS。</text>
+</g>
+<g id="shape-13" data-pptx-object="shape" data-pptx-frame="82 482 1116 1" data-pptx-prst="rect" data-pptx-source-ref="slide:13" data-pptx-semantic-object="shape">
+<path d="M 82 482 L 1198 482 L 1198 483 L 82 483 Z" fill="#D8E0E2" stroke="none" data-pptx-part="geometry" />
+
+</g>
+<g id="shape-14" data-pptx-object="shape" data-pptx-frame="80.88 497.33 120.96 43.12" data-pptx-prst="rect" data-pptx-source-ref="slide:14" data-pptx-semantic-object="shape">
+<path d="M 80.88 497.33 L 201.84 497.33 L 201.84 540.45 L 80.88 540.45 Z" fill="none" stroke="none" data-pptx-part="geometry" />
+
+
+<text x="80.88" y="524" text-anchor="start" xml:space="preserve" font-size="28" fill="#2F6675" font-weight="bold" data-pptx-text-baseline="metrics-v1">限定范围</text>
+</g>
+<g id="shape-15" data-pptx-object="shape" data-pptx-frame="278.88 497.33 358.4 43.12" data-pptx-prst="rect" data-pptx-source-ref="slide:15" data-pptx-semantic-object="shape">
+<path d="M 278.88 497.33 L 637.28 497.33 L 637.28 540.45 L 278.88 540.45 Z" fill="none" stroke="none" data-pptx-part="geometry" />
+
+
+<text x="278.88" y="524" text-anchor="start" xml:space="preserve" font-size="28" fill="#162B3B" data-pptx-text-baseline="metrics-v1">检索前先按产品和版本过滤</text>
+</g>
+<g id="shape-16" data-pptx-object="shape" data-pptx-frame="279.04 539.33 612.48 36.96" data-pptx-prst="rect" data-pptx-source-ref="slide:16" data-pptx-semantic-object="shape">
+<path d="M 279.04 539.33 L 891.52 539.33 L 891.52 576.29 L 279.04 576.29 Z" fill="none" stroke="none" data-pptx-part="geometry" />
+
+
+<text x="279.04" y="562" text-anchor="start" xml:space="preserve" font-size="24" fill="#4B6C7A" data-pptx-text-baseline="metrics-v1">多型号表格被拍平时，字段和值仍可能失去对应关系。</text>
+</g>
+<g id="shape-17" data-pptx-object="shape" data-pptx-frame="82 652 1116 1" data-pptx-prst="rect" data-pptx-source-ref="slide:17" data-pptx-semantic-object="shape">
+<path d="M 82 652 L 1198 652 L 1198 653 L 82 653 Z" fill="#D8E0E2" stroke="none" data-pptx-part="geometry" />
+
+</g>
+<g id="shape-18" data-pptx-object="shape" data-pptx-frame="1156.28 666.67 22.43 27.72" data-pptx-prst="rect" data-pptx-source-ref="slide:18" data-pptx-semantic-object="shape">
+<path d="M 1156.28 666.67 L 1178.71 666.67 L 1178.71 694.39 L 1156.28 694.39 Z" fill="none" stroke="none" data-pptx-part="geometry" />
+
+
+<text x="1156.28" y="684" text-anchor="start" xml:space="preserve" font-size="18" fill="#4B6C7A" data-pptx-text-baseline="metrics-v1">04</text>
+</g>
+</g></svg>

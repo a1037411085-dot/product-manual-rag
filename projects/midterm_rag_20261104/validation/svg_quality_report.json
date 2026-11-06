@@ -1,0 +1,845 @@
+{
+  "schema": "ppt-master.svg-quality-report.v1",
+  "stage": "final",
+  "target": "C:\\Users\\T9\\Desktop\\珠海学院人工智能\\RAG\\projects\\midterm_rag_20261104",
+  "source_fingerprint": {
+    "algorithm": "sha256",
+    "digest": "ca5fb00752ae27c48540a9c6672d70cf65bd945bac28105e006aaa6fed07b75e",
+    "file_count": 11,
+    "files": [
+      {
+        "file": "01.svg",
+        "sha256": "1462c36e124b94093836e90032a824e72f650527390094cdaf8da43ec0896e31"
+      },
+      {
+        "file": "02.svg",
+        "sha256": "76dfaf2a89db6c743ffb44fbb53af9ceeb0881759bcf0aec46b224d11a1e51ee"
+      },
+      {
+        "file": "03.svg",
+        "sha256": "7b62bbafeeb4c12ee37313a9f8b1f209409b67ea839a25440bba02d7a70d0827"
+      },
+      {
+        "file": "04.svg",
+        "sha256": "6bf805b6a87fcdeccafe74d9c47c83c758fa1afe92e5c15e852e917b4b4b4b1c"
+      },
+      {
+        "file": "05.svg",
+        "sha256": "6ba3b60c61f47834e57cbe3170e92afb999e5cf9c129fa7f02a97a1507808f03"
+      },
+      {
+        "file": "06.svg",
+        "sha256": "49cb19d737bfdcbf1a89c09e9d47f7a9c16f7d1f92d495e4cb75761712033609"
+      },
+      {
+        "file": "07.svg",
+        "sha256": "84f36447e8c88a9b4376b0f4da3bb677ef025b57f07b2d4b018eddf92f294ddc"
+      },
+      {
+        "file": "08.svg",
+        "sha256": "254ed06b47f51aea3b88fd4791c222837706547d0affedec67d4da54670676e2"
+      },
+      {
+        "file": "09.svg",
+        "sha256": "baa5bf0db4f28bbebe282dd82c6a1817e232b2496260d279bb8974a60448baef"
+      },
+      {
+        "file": "10.svg",
+        "sha256": "722e03d5047c4b727a19d52485770457ad2963f0830a1471123ccfe7a056e07e"
+      },
+      {
+        "file": "11.svg",
+        "sha256": "7a873351c0d18297d88606f6ea94b6dab7d9157278a2c9c8ea2e91974ec28540"
+      }
+    ]
+  },
+  "summary": {
+    "total": 11,
+    "passed": 7,
+    "warnings": 4,
+    "errors": 0
+  },
+  "issue_types": {},
+  "categories": {
+    "blocking": {
+      "count": 0,
+      "issues": []
+    },
+    "introduced": {
+      "count": 4,
+      "issues": [
+        {
+          "file": "02.svg",
+          "message": "Detected 1 paragraph-like line run(s) split across sibling <text> elements (<g id=\"content\"> x=836.0, y=444.0..484.0, 2 lines). If each run is one prose paragraph, combine it into one <text>: keep its first line as direct text and use direct <tspan> children with the parent x and positive relative dy values for later lines. An all-<tspan> form may start with dy=\"0\". Keep semantically independent text frames separate."
+        },
+        {
+          "file": "06.svg",
+          "message": "Detected 1 paragraph-like line run(s) split across sibling <text> elements (<g id=\"content\"> x=82.0, y=291.0..337.0, 2 lines). If each run is one prose paragraph, combine it into one <text>: keep its first line as direct text and use direct <tspan> children with the parent x and positive relative dy values for later lines. An all-<tspan> form may start with dy=\"0\". Keep semantically independent text frames separate."
+        },
+        {
+          "file": "07.svg",
+          "message": "Detected 1 paragraph-like line run(s) split across sibling <text> elements (<g id=\"content\"> x=903.0, y=278.0..350.0, 3 lines). If each run is one prose paragraph, combine it into one <text>: keep its first line as direct text and use direct <tspan> children with the parent x and positive relative dy values for later lines. An all-<tspan> form may start with dy=\"0\". Keep semantically independent text frames separate."
+        },
+        {
+          "file": "11.svg",
+          "message": "Detected 4 paragraph-like line run(s) split across sibling <text> elements (<g id=\"content\"> x=82.0, y=428.0..459.0, 2 lines; <g id=\"content\"> x=82.0, y=558.0..589.0, 2 lines; <g id=\"content\"> x=656.0, y=298.0..329.0, 2 lines; +1 more). If each run is one prose paragraph, combine it into one <text>: keep its first line as direct text and use direct <tspan> children with the parent x and positive relative dy values for later lines. An all-<tspan> form may start with dy=\"0\". Keep semantically independent text frames separate."
+        }
+      ]
+    },
+    "inherited": {
+      "count": 0,
+      "issues": []
+    },
+    "source-import": {
+      "count": 0,
+      "summary": {
+        "warning_count": 0,
+        "by_code": {}
+      }
+    }
+  },
+  "drift": {
+    "colors": {},
+    "fonts": {},
+    "sizes": {
+      "32": [
+        "05.svg",
+        "09.svg"
+      ],
+      "34": [
+        "07.svg"
+      ],
+      "35": [
+        "08.svg"
+      ],
+      "36": [
+        "02.svg"
+      ]
+    }
+  },
+  "carrier_receipt": {
+    "scope": "informational-not-a-quota",
+    "pages": 11,
+    "totals": {
+      "text_elements": 144,
+      "image_placements": 2,
+      "icons": 0,
+      "svg_geometry_elements": 60,
+      "preset_shapes": 0,
+      "page_frame_elements": 11,
+      "marker_uses": 0,
+      "inline_emphasis_runs": 0,
+      "gradient_uses": 0,
+      "filter_uses": 0,
+      "text_effects": 0
+    },
+    "pages_with": {
+      "images": 2,
+      "icons": 0,
+      "presets": 0,
+      "charts": 0,
+      "tables": 0,
+      "formulas": 0,
+      "inline_emphasis_runs": 0,
+      "gradient_uses": 0,
+      "filter_uses": 0,
+      "text_effects": 0
+    },
+    "relationship_pages": 0,
+    "geometry_elements": {
+      "circle": 0,
+      "ellipse": 0,
+      "line": 0,
+      "path": 0,
+      "polygon": 0,
+      "polyline": 0,
+      "rect": 60
+    },
+    "preset_names": {},
+    "native_objects": {
+      "chart": 0,
+      "formula_block": 0,
+      "formula_inline": 0,
+      "other": 0,
+      "table": 0
+    },
+    "image_page_max_frame_share_range": [
+      0.3515,
+      0.3759
+    ]
+  },
+  "project_issues": {
+    "template": [],
+    "animation": [],
+    "illustration": [],
+    "communication_trace": [],
+    "pptx_structure": []
+  },
+  "files": [
+    {
+      "file": "01.svg",
+      "path": "projects\\midterm_rag_20261104\\svg_output\\01.svg",
+      "exists": true,
+      "errors": [],
+      "warnings": [],
+      "info": {
+        "viewbox": "0 0 1280 720",
+        "carrier_receipt": {
+          "text_elements": 7,
+          "images": {
+            "placements": 0,
+            "files": [],
+            "max_frame_share": 0.0
+          },
+          "icons": 0,
+          "effects": {
+            "inline_emphasis_runs": 0,
+            "gradient_uses": 0,
+            "filter_uses": 0,
+            "text_effects": 0
+          },
+          "geometry": {
+            "svg_elements": {
+              "rect": 4,
+              "circle": 0,
+              "ellipse": 0,
+              "line": 0,
+              "polyline": 0,
+              "polygon": 0,
+              "path": 0
+            },
+            "preset_shapes": 0,
+            "preset_names": {},
+            "page_frame_elements": 1,
+            "marker_uses": {
+              "start": 0,
+              "mid": 0,
+              "end": 0
+            }
+          },
+          "native_objects": {
+            "chart": 0,
+            "table": 0,
+            "formula_block": 0,
+            "formula_inline": 0,
+            "other": 0
+          }
+        },
+        "fonts": [
+          "Microsoft YaHei, Arial, sans-serif"
+        ],
+        "text_elements": 7,
+        "tspan_elements": 0
+      },
+      "passed": true,
+      "source_sha256": "1462c36e124b94093836e90032a824e72f650527390094cdaf8da43ec0896e31"
+    },
+    {
+      "file": "02.svg",
+      "path": "projects\\midterm_rag_20261104\\svg_output\\02.svg",
+      "exists": true,
+      "errors": [],
+      "warnings": [
+        "Detected 1 paragraph-like line run(s) split across sibling <text> elements (<g id=\"content\"> x=836.0, y=444.0..484.0, 2 lines). If each run is one prose paragraph, combine it into one <text>: keep its first line as direct text and use direct <tspan> children with the parent x and positive relative dy values for later lines. An all-<tspan> form may start with dy=\"0\". Keep semantically independent text frames separate."
+      ],
+      "info": {
+        "viewbox": "0 0 1280 720",
+        "carrier_receipt": {
+          "text_elements": 13,
+          "images": {
+            "placements": 0,
+            "files": [],
+            "max_frame_share": 0.0
+          },
+          "icons": 0,
+          "effects": {
+            "inline_emphasis_runs": 0,
+            "gradient_uses": 0,
+            "filter_uses": 0,
+            "text_effects": 0
+          },
+          "geometry": {
+            "svg_elements": {
+              "rect": 4,
+              "circle": 0,
+              "ellipse": 0,
+              "line": 0,
+              "polyline": 0,
+              "polygon": 0,
+              "path": 0
+            },
+            "preset_shapes": 0,
+            "preset_names": {},
+            "page_frame_elements": 1,
+            "marker_uses": {
+              "start": 0,
+              "mid": 0,
+              "end": 0
+            }
+          },
+          "native_objects": {
+            "chart": 0,
+            "table": 0,
+            "formula_block": 0,
+            "formula_inline": 0,
+            "other": 0
+          }
+        },
+        "fonts": [
+          "Microsoft YaHei, Arial, sans-serif"
+        ],
+        "text_elements": 13,
+        "tspan_elements": 0,
+        "sparse_typography_sizes": {
+          "36": 1
+        }
+      },
+      "passed": true,
+      "source_sha256": "76dfaf2a89db6c743ffb44fbb53af9ceeb0881759bcf0aec46b224d11a1e51ee"
+    },
+    {
+      "file": "03.svg",
+      "path": "projects\\midterm_rag_20261104\\svg_output\\03.svg",
+      "exists": true,
+      "errors": [],
+      "warnings": [],
+      "info": {
+        "viewbox": "0 0 1280 720",
+        "carrier_receipt": {
+          "text_elements": 20,
+          "images": {
+            "placements": 0,
+            "files": [],
+            "max_frame_share": 0.0
+          },
+          "icons": 0,
+          "effects": {
+            "inline_emphasis_runs": 0,
+            "gradient_uses": 0,
+            "filter_uses": 0,
+            "text_effects": 0
+          },
+          "geometry": {
+            "svg_elements": {
+              "rect": 11,
+              "circle": 0,
+              "ellipse": 0,
+              "line": 0,
+              "polyline": 0,
+              "polygon": 0,
+              "path": 0
+            },
+            "preset_shapes": 0,
+            "preset_names": {},
+            "page_frame_elements": 1,
+            "marker_uses": {
+              "start": 0,
+              "mid": 0,
+              "end": 0
+            }
+          },
+          "native_objects": {
+            "chart": 0,
+            "table": 0,
+            "formula_block": 0,
+            "formula_inline": 0,
+            "other": 0
+          }
+        },
+        "fonts": [
+          "Microsoft YaHei, Arial, sans-serif"
+        ],
+        "text_elements": 20,
+        "tspan_elements": 0
+      },
+      "passed": true,
+      "source_sha256": "7b62bbafeeb4c12ee37313a9f8b1f209409b67ea839a25440bba02d7a70d0827"
+    },
+    {
+      "file": "04.svg",
+      "path": "projects\\midterm_rag_20261104\\svg_output\\04.svg",
+      "exists": true,
+      "errors": [],
+      "warnings": [],
+      "info": {
+        "viewbox": "0 0 1280 720",
+        "carrier_receipt": {
+          "text_elements": 12,
+          "images": {
+            "placements": 0,
+            "files": [],
+            "max_frame_share": 0.0
+          },
+          "icons": 0,
+          "effects": {
+            "inline_emphasis_runs": 0,
+            "gradient_uses": 0,
+            "filter_uses": 0,
+            "text_effects": 0
+          },
+          "geometry": {
+            "svg_elements": {
+              "rect": 6,
+              "circle": 0,
+              "ellipse": 0,
+              "line": 0,
+              "polyline": 0,
+              "polygon": 0,
+              "path": 0
+            },
+            "preset_shapes": 0,
+            "preset_names": {},
+            "page_frame_elements": 1,
+            "marker_uses": {
+              "start": 0,
+              "mid": 0,
+              "end": 0
+            }
+          },
+          "native_objects": {
+            "chart": 0,
+            "table": 0,
+            "formula_block": 0,
+            "formula_inline": 0,
+            "other": 0
+          }
+        },
+        "fonts": [
+          "Microsoft YaHei, Arial, sans-serif"
+        ],
+        "text_elements": 12,
+        "tspan_elements": 0
+      },
+      "passed": true,
+      "source_sha256": "6bf805b6a87fcdeccafe74d9c47c83c758fa1afe92e5c15e852e917b4b4b4b1c"
+    },
+    {
+      "file": "05.svg",
+      "path": "projects\\midterm_rag_20261104\\svg_output\\05.svg",
+      "exists": true,
+      "errors": [],
+      "warnings": [],
+      "info": {
+        "viewbox": "0 0 1280 720",
+        "carrier_receipt": {
+          "text_elements": 12,
+          "images": {
+            "placements": 0,
+            "files": [],
+            "max_frame_share": 0.0
+          },
+          "icons": 0,
+          "effects": {
+            "inline_emphasis_runs": 0,
+            "gradient_uses": 0,
+            "filter_uses": 0,
+            "text_effects": 0
+          },
+          "geometry": {
+            "svg_elements": {
+              "rect": 5,
+              "circle": 0,
+              "ellipse": 0,
+              "line": 0,
+              "polyline": 0,
+              "polygon": 0,
+              "path": 0
+            },
+            "preset_shapes": 0,
+            "preset_names": {},
+            "page_frame_elements": 1,
+            "marker_uses": {
+              "start": 0,
+              "mid": 0,
+              "end": 0
+            }
+          },
+          "native_objects": {
+            "chart": 0,
+            "table": 0,
+            "formula_block": 0,
+            "formula_inline": 0,
+            "other": 0
+          }
+        },
+        "fonts": [
+          "Microsoft YaHei, Arial, sans-serif"
+        ],
+        "text_elements": 12,
+        "tspan_elements": 0,
+        "sparse_typography_sizes": {
+          "32": 2
+        }
+      },
+      "passed": true,
+      "source_sha256": "6ba3b60c61f47834e57cbe3170e92afb999e5cf9c129fa7f02a97a1507808f03"
+    },
+    {
+      "file": "06.svg",
+      "path": "projects\\midterm_rag_20261104\\svg_output\\06.svg",
+      "exists": true,
+      "errors": [],
+      "warnings": [
+        "Detected 1 paragraph-like line run(s) split across sibling <text> elements (<g id=\"content\"> x=82.0, y=291.0..337.0, 2 lines). If each run is one prose paragraph, combine it into one <text>: keep its first line as direct text and use direct <tspan> children with the parent x and positive relative dy values for later lines. An all-<tspan> form may start with dy=\"0\". Keep semantically independent text frames separate."
+      ],
+      "info": {
+        "viewbox": "0 0 1280 720",
+        "carrier_receipt": {
+          "text_elements": 14,
+          "images": {
+            "placements": 0,
+            "files": [],
+            "max_frame_share": 0.0
+          },
+          "icons": 0,
+          "effects": {
+            "inline_emphasis_runs": 0,
+            "gradient_uses": 0,
+            "filter_uses": 0,
+            "text_effects": 0
+          },
+          "geometry": {
+            "svg_elements": {
+              "rect": 5,
+              "circle": 0,
+              "ellipse": 0,
+              "line": 0,
+              "polyline": 0,
+              "polygon": 0,
+              "path": 0
+            },
+            "preset_shapes": 0,
+            "preset_names": {},
+            "page_frame_elements": 1,
+            "marker_uses": {
+              "start": 0,
+              "mid": 0,
+              "end": 0
+            }
+          },
+          "native_objects": {
+            "chart": 0,
+            "table": 0,
+            "formula_block": 0,
+            "formula_inline": 0,
+            "other": 0
+          }
+        },
+        "fonts": [
+          "Microsoft YaHei, Arial, sans-serif"
+        ],
+        "text_elements": 14,
+        "tspan_elements": 0
+      },
+      "passed": true,
+      "source_sha256": "49cb19d737bfdcbf1a89c09e9d47f7a9c16f7d1f92d495e4cb75761712033609"
+    },
+    {
+      "file": "07.svg",
+      "path": "projects\\midterm_rag_20261104\\svg_output\\07.svg",
+      "exists": true,
+      "errors": [],
+      "warnings": [
+        "Detected 1 paragraph-like line run(s) split across sibling <text> elements (<g id=\"content\"> x=903.0, y=278.0..350.0, 3 lines). If each run is one prose paragraph, combine it into one <text>: keep its first line as direct text and use direct <tspan> children with the parent x and positive relative dy values for later lines. An all-<tspan> form may start with dy=\"0\". Keep semantically independent text frames separate."
+      ],
+      "info": {
+        "viewbox": "0 0 1280 720",
+        "carrier_receipt": {
+          "text_elements": 10,
+          "images": {
+            "placements": 1,
+            "files": [
+              "image_003.png"
+            ],
+            "max_frame_share": 0.3515
+          },
+          "icons": 0,
+          "effects": {
+            "inline_emphasis_runs": 0,
+            "gradient_uses": 0,
+            "filter_uses": 0,
+            "text_effects": 0
+          },
+          "geometry": {
+            "svg_elements": {
+              "rect": 3,
+              "circle": 0,
+              "ellipse": 0,
+              "line": 0,
+              "polyline": 0,
+              "polygon": 0,
+              "path": 0
+            },
+            "preset_shapes": 0,
+            "preset_names": {},
+            "page_frame_elements": 1,
+            "marker_uses": {
+              "start": 0,
+              "mid": 0,
+              "end": 0
+            }
+          },
+          "native_objects": {
+            "chart": 0,
+            "table": 0,
+            "formula_block": 0,
+            "formula_inline": 0,
+            "other": 0
+          }
+        },
+        "fonts": [
+          "Microsoft YaHei, Arial, sans-serif"
+        ],
+        "text_elements": 10,
+        "tspan_elements": 0,
+        "sparse_typography_sizes": {
+          "34": 1
+        }
+      },
+      "passed": true,
+      "source_sha256": "84f36447e8c88a9b4376b0f4da3bb677ef025b57f07b2d4b018eddf92f294ddc"
+    },
+    {
+      "file": "08.svg",
+      "path": "projects\\midterm_rag_20261104\\svg_output\\08.svg",
+      "exists": true,
+      "errors": [],
+      "warnings": [],
+      "info": {
+        "viewbox": "0 0 1280 720",
+        "carrier_receipt": {
+          "text_elements": 10,
+          "images": {
+            "placements": 1,
+            "files": [
+              "image_006.png"
+            ],
+            "max_frame_share": 0.3759
+          },
+          "icons": 0,
+          "effects": {
+            "inline_emphasis_runs": 0,
+            "gradient_uses": 0,
+            "filter_uses": 0,
+            "text_effects": 0
+          },
+          "geometry": {
+            "svg_elements": {
+              "rect": 3,
+              "circle": 0,
+              "ellipse": 0,
+              "line": 0,
+              "polyline": 0,
+              "polygon": 0,
+              "path": 0
+            },
+            "preset_shapes": 0,
+            "preset_names": {},
+            "page_frame_elements": 1,
+            "marker_uses": {
+              "start": 0,
+              "mid": 0,
+              "end": 0
+            }
+          },
+          "native_objects": {
+            "chart": 0,
+            "table": 0,
+            "formula_block": 0,
+            "formula_inline": 0,
+            "other": 0
+          }
+        },
+        "fonts": [
+          "Microsoft YaHei, Arial, sans-serif"
+        ],
+        "text_elements": 10,
+        "tspan_elements": 0,
+        "sparse_typography_sizes": {
+          "35": 2
+        }
+      },
+      "passed": true,
+      "source_sha256": "254ed06b47f51aea3b88fd4791c222837706547d0affedec67d4da54670676e2"
+    },
+    {
+      "file": "09.svg",
+      "path": "projects\\midterm_rag_20261104\\svg_output\\09.svg",
+      "exists": true,
+      "errors": [],
+      "warnings": [],
+      "info": {
+        "viewbox": "0 0 1280 720",
+        "carrier_receipt": {
+          "text_elements": 14,
+          "images": {
+            "placements": 0,
+            "files": [],
+            "max_frame_share": 0.0
+          },
+          "icons": 0,
+          "effects": {
+            "inline_emphasis_runs": 0,
+            "gradient_uses": 0,
+            "filter_uses": 0,
+            "text_effects": 0
+          },
+          "geometry": {
+            "svg_elements": {
+              "rect": 4,
+              "circle": 0,
+              "ellipse": 0,
+              "line": 0,
+              "polyline": 0,
+              "polygon": 0,
+              "path": 0
+            },
+            "preset_shapes": 0,
+            "preset_names": {},
+            "page_frame_elements": 1,
+            "marker_uses": {
+              "start": 0,
+              "mid": 0,
+              "end": 0
+            }
+          },
+          "native_objects": {
+            "chart": 0,
+            "table": 0,
+            "formula_block": 0,
+            "formula_inline": 0,
+            "other": 0
+          }
+        },
+        "fonts": [
+          "Microsoft YaHei, Arial, sans-serif"
+        ],
+        "text_elements": 14,
+        "tspan_elements": 0,
+        "sparse_typography_sizes": {
+          "32": 2
+        }
+      },
+      "passed": true,
+      "source_sha256": "baa5bf0db4f28bbebe282dd82c6a1817e232b2496260d279bb8974a60448baef"
+    },
+    {
+      "file": "10.svg",
+      "path": "projects\\midterm_rag_20261104\\svg_output\\10.svg",
+      "exists": true,
+      "errors": [],
+      "warnings": [],
+      "info": {
+        "viewbox": "0 0 1280 720",
+        "carrier_receipt": {
+          "text_elements": 12,
+          "images": {
+            "placements": 0,
+            "files": [],
+            "max_frame_share": 0.0
+          },
+          "icons": 0,
+          "effects": {
+            "inline_emphasis_runs": 0,
+            "gradient_uses": 0,
+            "filter_uses": 0,
+            "text_effects": 0
+          },
+          "geometry": {
+            "svg_elements": {
+              "rect": 6,
+              "circle": 0,
+              "ellipse": 0,
+              "line": 0,
+              "polyline": 0,
+              "polygon": 0,
+              "path": 0
+            },
+            "preset_shapes": 0,
+            "preset_names": {},
+            "page_frame_elements": 1,
+            "marker_uses": {
+              "start": 0,
+              "mid": 0,
+              "end": 0
+            }
+          },
+          "native_objects": {
+            "chart": 0,
+            "table": 0,
+            "formula_block": 0,
+            "formula_inline": 0,
+            "other": 0
+          }
+        },
+        "fonts": [
+          "Microsoft YaHei, Arial, sans-serif"
+        ],
+        "text_elements": 12,
+        "tspan_elements": 0
+      },
+      "passed": true,
+      "source_sha256": "722e03d5047c4b727a19d52485770457ad2963f0830a1471123ccfe7a056e07e"
+    },
+    {
+      "file": "11.svg",
+      "path": "projects\\midterm_rag_20261104\\svg_output\\11.svg",
+      "exists": true,
+      "errors": [],
+      "warnings": [
+        "Detected 4 paragraph-like line run(s) split across sibling <text> elements (<g id=\"content\"> x=82.0, y=428.0..459.0, 2 lines; <g id=\"content\"> x=82.0, y=558.0..589.0, 2 lines; <g id=\"content\"> x=656.0, y=298.0..329.0, 2 lines; +1 more). If each run is one prose paragraph, combine it into one <text>: keep its first line as direct text and use direct <tspan> children with the parent x and positive relative dy values for later lines. An all-<tspan> form may start with dy=\"0\". Keep semantically independent text frames separate."
+      ],
+      "info": {
+        "viewbox": "0 0 1280 720",
+        "carrier_receipt": {
+          "text_elements": 20,
+          "images": {
+            "placements": 0,
+            "files": [],
+            "max_frame_share": 0.0
+          },
+          "icons": 0,
+          "effects": {
+            "inline_emphasis_runs": 0,
+            "gradient_uses": 0,
+            "filter_uses": 0,
+            "text_effects": 0
+          },
+          "geometry": {
+            "svg_elements": {
+              "rect": 9,
+              "circle": 0,
+              "ellipse": 0,
+              "line": 0,
+              "polyline": 0,
+              "polygon": 0,
+              "path": 0
+            },
+            "preset_shapes": 0,
+            "preset_names": {},
+            "page_frame_elements": 1,
+            "marker_uses": {
+              "start": 0,
+              "mid": 0,
+              "end": 0
+            }
+          },
+          "native_objects": {
+            "chart": 0,
+            "table": 0,
+            "formula_block": 0,
+            "formula_inline": 0,
+            "other": 0
+          }
+        },
+        "fonts": [
+          "Microsoft YaHei, Arial, sans-serif"
+        ],
+        "text_elements": 20,
+        "tspan_elements": 0
+      },
+      "passed": true,
+      "source_sha256": "7a873351c0d18297d88606f6ea94b6dab7d9157278a2c9c8ea2e91974ec28540"
+    }
+  ]
+}

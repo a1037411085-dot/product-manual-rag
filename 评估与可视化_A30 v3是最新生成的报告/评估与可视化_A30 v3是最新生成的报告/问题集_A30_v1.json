@@ -1,0 +1,715 @@
+[
+ {
+  "case_id": "M01",
+  "category": "说明书事实",
+  "product_id": "A30-01",
+  "snapshot": "doc_3eb73f985406",
+  "question": "小米智能空气净化器4的产品尺寸是多少？",
+  "expected_status": "answered",
+  "expected_keywords": [
+   "250 × 250 × 555 mm"
+  ],
+  "note": "<保修声明> 产品尺寸:250 × 250 × 555 mm",
+  "version": "来源快照:doc_3eb73f985406",
+  "expected_source": "A30-01_manual_doc_3eb73f985406_zh-CN.md"
+ },
+ {
+  "case_id": "M02",
+  "category": "说明书事实",
+  "product_id": "A30-01",
+  "snapshot": "doc_3eb73f985406",
+  "question": "小米智能空气净化器4的净重是多少？",
+  "expected_status": "answered",
+  "expected_keywords": [
+   "产品净重:约5.4kg"
+  ],
+  "note": "产品净重:约5.4kg",
+  "version": "来源快照:doc_3eb73f985406",
+  "expected_source": "A30-01_manual_doc_3eb73f985406_zh-CN.md"
+ },
+ {
+  "case_id": "M03",
+  "category": "说明书事实",
+  "product_id": "A30-02",
+  "snapshot": "doc_c58b2e453e79",
+  "question": "净化器4 Pro 适用多大面积的房间？",
+  "expected_status": "answered",
+  "expected_keywords": [
+   "35 - 60m²"
+  ],
+  "note": "适用面积:35 - 60m²",
+  "version": "来源快照:doc_c58b2e453e79",
+  "expected_source": "A30-02_manual_doc_c58b2e453e79_zh-CN.md"
+ },
+ {
+  "case_id": "M04",
+  "category": "说明书事实",
+  "product_id": "A30-03",
+  "snapshot": "doc_2e5d9e34fef4",
+  "question": "净化器4 Compact 连不上 APP 时怎么重设 Wi-Fi？",
+  "expected_status": "answered",
+  "expected_keywords": [
+   "长按灯光调节键 7 秒"
+  ],
+  "note": "首次连接或无法连接 APP 时,长按灯光调节键 7 秒…Wi-Fi 重设成功",
+  "version": "来源快照:doc_2e5d9e34fef4",
+  "expected_source": "A30-03_manual_doc_2e5d9e34fef4_zh-CN.md"
+ },
+ {
+  "case_id": "M05",
+  "category": "说明书事实",
+  "product_id": "A30-04",
+  "snapshot": "doc_bac56bc1f586",
+  "question": "净化器 Elite 的 UV 杀菌功能怎么开关？",
+  "expected_status": "answered",
+  "expected_keywords": [
+   "等离子开关键 7 秒"
+  ],
+  "note": "长按等离子开关键 7 秒,开启或关闭 UV 杀菌功能",
+  "version": "来源快照:doc_bac56bc1f586",
+  "expected_source": "A30-04_manual_doc_bac56bc1f586_zh-CN.md"
+ },
+ {
+  "case_id": "M06",
+  "category": "说明书事实",
+  "product_id": "A30-07",
+  "snapshot": "doc_089a3984bd08",
+  "question": "抽湿机倾倒过或者长途运输过，要直立放多久才能通电？",
+  "expected_status": "answered",
+  "expected_keywords": [
+   "至少直立放置12小时"
+  ],
+  "note": "须直立放置,如有倾倒或经长途运输,请把机器至少直立放置12小时后再通电开机",
+  "version": "来源快照:doc_089a3984bd08",
+  "expected_source": "A30-07_manual_doc_089a3984bd08_zh-CN.md"
+ },
+ {
+  "case_id": "M07",
+  "category": "说明书事实",
+  "product_id": "A30-10",
+  "snapshot": "doc_17e6079dc4e9",
+  "question": "扫地机器人 S20 连 Wi-Fi 支持哪个频段？",
+  "expected_status": "answered",
+  "expected_keywords": [
+   "2.4 GHz 频段"
+  ],
+  "note": "本产品仅支援连接2.4 GHz 频段的 Wi-Fi 网路",
+  "version": "来源快照:doc_17e6079dc4e9",
+  "expected_source": "A30-10_manual_doc_17e6079dc4e9_zh-CN.md"
+ },
+ {
+  "case_id": "M08",
+  "category": "说明书事实",
+  "product_id": "A30-10",
+  "snapshot": "doc_17e6079dc4e9",
+  "question": "S20 的感应器和充电极片多久清洁一次？",
+  "expected_status": "answered",
+  "expected_keywords": [
+   "每 3 个月使用柔软抹布清洁一次"
+  ],
+  "note": "清理感应器和充电极片每 3 个月使用柔软抹布清洁一次",
+  "version": "来源快照:doc_17e6079dc4e9",
+  "expected_source": "A30-10_manual_doc_17e6079dc4e9_zh-CN.md"
+ },
+ {
+  "case_id": "M09",
+  "category": "说明书事实",
+  "product_id": "A30-16",
+  "snapshot": "doc_e83ee17c7edc",
+  "question": "吸尘器 G10 Plus 的充电收纳支架，定位贴纸下沿离地面要多高？",
+  "expected_status": "answered",
+  "expected_keywords": [
+   "103 厘米"
+  ],
+  "note": "贴纸底端距离地面建议为 103 厘米以上",
+  "version": "来源快照:doc_e83ee17c7edc",
+  "expected_source": "A30-16_manual_doc_e83ee17c7edc_zh-CN.md"
+ },
+ {
+  "case_id": "M10",
+  "category": "说明书事实",
+  "product_id": "A30-17",
+  "snapshot": "doc_3c1621efce79",
+  "question": "吸尘器 G9 Plus 的收纳支架，定位贴底部离地面多高？",
+  "expected_status": "answered",
+  "expected_keywords": [
+   "107 cm"
+  ],
+  "note": "底部距离地面的高度约为 107 cm",
+  "version": "来源快照:doc_3c1621efce79",
+  "expected_source": "A30-17_manual_doc_3c1621efce79_zh-CN.md"
+ },
+ {
+  "case_id": "M11",
+  "category": "说明书事实",
+  "product_id": "A30-19",
+  "snapshot": "doc_7699bf099153",
+  "question": "台灯 1S 的使用寿命大概多久？",
+  "expected_status": "answered",
+  "expected_keywords": [
+   "25000 小时"
+  ],
+  "note": "<基本规格> 使用寿命:约 25000 小时",
+  "version": "来源快照:doc_7699bf099153",
+  "expected_source": "A30-19_manual_doc_7699bf099153_zh-CN.md"
+ },
+ {
+  "case_id": "M12",
+  "category": "说明书事实",
+  "product_id": "A30-20",
+  "snapshot": "doc_2599aa8c4bc1",
+  "question": "桌灯 Pro 的额定功率是多少？",
+  "expected_status": "answered",
+  "expected_keywords": [
+   "14 W"
+  ],
+  "note": "<规格参数> 额定功率：14 W（灯具+LED驱动器）",
+  "version": "来源快照:doc_2599aa8c4bc1",
+  "expected_source": "A30-20_manual_doc_2599aa8c4bc1_zh-CN.md"
+ },
+ {
+  "case_id": "M13",
+  "category": "说明书事实",
+  "product_id": "A30-21",
+  "snapshot": "doc_6dbbfe124e36",
+  "question": "相机 C400 支持多大的存储卡？",
+  "expected_status": "answered",
+  "expected_keywords": [
+   "256 GB"
+  ],
+  "note": "MicroSD 卡(最低支援 8 GB 及以上,最高支援 256 GB 及以下)",
+  "version": "来源快照:doc_6dbbfe124e36",
+  "expected_source": "A30-21_manual_doc_6dbbfe124e36_zh-CN.md"
+ },
+ {
+  "case_id": "M14",
+  "category": "说明书事实",
+  "product_id": "A30-22",
+  "snapshot": "doc_d071e8737efb",
+  "question": "智能家居网关2 的产品型号是什么？",
+  "expected_status": "answered",
+  "expected_keywords": [
+   "ZNDMWG04LM"
+  ],
+  "note": "<来源PDF第 20 页> 型号(型式):ZNDMWG04LM",
+  "version": "来源快照:doc_d071e8737efb",
+  "expected_source": "A30-22_manual_doc_d071e8737efb_zh-CN.md"
+ },
+ {
+  "case_id": "M15",
+  "category": "说明书事实",
+  "product_id": "A30-18",
+  "snapshot": "doc_7b223cc4ae82",
+  "question": "床头灯2 怎么恢复出厂设置？",
+  "expected_status": "answered",
+  "expected_keywords": [
+   "同时长按电源按钮和模式按钮5秒"
+  ],
+  "note": "同时长按电源按钮和模式按钮5秒，直到灯光开始按红、绿、蓝循环变化",
+  "version": "来源快照:doc_7b223cc4ae82",
+  "expected_source": "A30-18_manual_doc_7b223cc4ae82_zh-CN.md"
+ },
+ {
+  "case_id": "F01",
+  "category": "FAQ事实",
+  "product_id": "A30-05",
+  "snapshot": "faq_4a114b33b0f5",
+  "question": "小米站式风扇2 有多少个速度模式？",
+  "expected_status": "answered",
+  "expected_keywords": [
+   "100个速度模式"
+  ],
+  "note": "您可以控制高达100个速度模式",
+  "version": "来源快照:faq_4a114b33b0f5",
+  "expected_source": "A30-05_faq_faq_4a114b33b0f5_zh-CN.md"
+ },
+ {
+  "case_id": "F02",
+  "category": "FAQ事实",
+  "product_id": "A30-05",
+  "snapshot": "faq_4a114b33b0f5",
+  "question": "小米站式风扇2 保修多久？",
+  "expected_status": "answered",
+  "expected_keywords": [
+   "保修1年"
+  ],
+  "note": "Xiaomi Stand Fan 2保修1年",
+  "version": "来源快照:faq_4a114b33b0f5",
+  "expected_source": "A30-05_faq_faq_4a114b33b0f5_zh-CN.md"
+ },
+ {
+  "case_id": "F03",
+  "category": "FAQ事实",
+  "product_id": "A30-08",
+  "snapshot": "faq_0e7ed4031978",
+  "question": "扫地机器人 S10 的启动按键怎么开机关机？",
+  "expected_status": "answered",
+  "expected_keywords": [
+   "开关机：长按3秒"
+  ],
+  "note": "开关机：长按3秒；开始/暂停清扫：短按",
+  "version": "来源快照:faq_0e7ed4031978",
+  "expected_source": "A30-08_faq_faq_0e7ed4031978_zh-CN.md"
+ },
+ {
+  "case_id": "F04",
+  "category": "FAQ事实",
+  "product_id": "A30-11",
+  "snapshot": "faq_22be0bb295c0",
+  "question": "小米扫地机器人清洁仪 X10 的尺寸是多少？",
+  "expected_status": "answered",
+  "expected_keywords": [
+   "35.3 cm"
+  ],
+  "note": "尺寸为35.3 cm ×35 cm ×9.88 cm",
+  "version": "来源快照:faq_22be0bb295c0",
+  "expected_source": "A30-11_faq_faq_22be0bb295c0_zh-CN.md"
+ },
+ {
+  "case_id": "F05",
+  "category": "FAQ事实",
+  "product_id": "A30-11",
+  "snapshot": "faq_22be0bb295c0",
+  "question": "X10 完全充满电需要多久？",
+  "expected_status": "answered",
+  "expected_keywords": [
+   "大约6个小时才能充电"
+  ],
+  "note": "它需要大约6个小时才能充电",
+  "version": "来源快照:faq_22be0bb295c0",
+  "expected_source": "A30-11_faq_faq_22be0bb295c0_zh-CN.md"
+ },
+ {
+  "case_id": "F06",
+  "category": "FAQ事实",
+  "product_id": "A30-13",
+  "snapshot": "faq_6e517958f1d7",
+  "question": "扫地机器人 X20 扫拖时累计清洁多少面积会自动回洗？",
+  "expected_status": "answered",
+  "expected_keywords": [
+   "10 m²"
+  ],
+  "note": "默认累计清洁面积达到10 m²后…自动返回基地",
+  "version": "来源快照:faq_6e517958f1d7",
+  "expected_source": "A30-13_faq_faq_6e517958f1d7_zh-CN.md"
+ },
+ {
+  "case_id": "F07",
+  "category": "FAQ事实",
+  "product_id": "A30-18",
+  "snapshot": "faq_3bcc06bdb63a",
+  "question": "Mi床边灯2 能不能用移动电源供电？",
+  "expected_status": "answered",
+  "expected_keywords": [
+   "不支持移动电源"
+  ],
+  "note": "Mi床边灯2不支持移动电源,请使用标准设备的电源适配器",
+  "version": "来源快照:faq_3bcc06bdb63a",
+  "expected_source": "A30-18_faq_faq_3bcc06bdb63a_zh-CN.md"
+ },
+ {
+  "case_id": "F08",
+  "category": "FAQ事实",
+  "product_id": "A30-21",
+  "snapshot": "faq_9ba1338fc6ce",
+  "question": "小米智能相机C400 的电源线有多长？",
+  "expected_status": "answered",
+  "expected_keywords": [
+   "电源电缆长2m"
+  ],
+  "note": "小米智能相机C400电源电缆长2m",
+  "version": "来源快照:faq_9ba1338fc6ce",
+  "expected_source": "A30-21_faq_faq_9ba1338fc6ce_zh-CN.md"
+ },
+ {
+  "case_id": "P01",
+  "category": "同义改写",
+  "product_id": "A30-03",
+  "snapshot": "doc_2e5d9e34fef4",
+  "question": "家里有小孩怕乱按，怎么把面板锁上？",
+  "expected_status": "answered",
+  "expected_keywords": [
+   "长按模式切换键 7 秒",
+   "儿童锁"
+  ],
+  "note": "长按模式切换键 7 秒,开启或关闭儿童锁",
+  "version": "来源快照:doc_2e5d9e34fef4",
+  "expected_source": "A30-03_manual_doc_2e5d9e34fef4_zh-CN.md"
+ },
+ {
+  "case_id": "P02",
+  "category": "同义改写",
+  "product_id": "A30-07",
+  "snapshot": "doc_089a3984bd08",
+  "question": "除湿机可以放在洗衣房用吗？",
+  "expected_status": "answered",
+  "expected_keywords": [
+   "请勿在洗衣间使用抽湿机"
+  ],
+  "note": "<安全注意> 请勿在洗衣间使用抽湿机（原文用“抽湿机”，问句用“除湿机”）",
+  "version": "来源快照:doc_089a3984bd08",
+  "expected_source": "A30-07_manual_doc_089a3984bd08_zh-CN.md"
+ },
+ {
+  "case_id": "P03",
+  "category": "同义改写",
+  "product_id": "A30-10",
+  "snapshot": "doc_17e6079dc4e9",
+  "question": "二合一水箱能整个泡进水里刷吗？",
+  "expected_status": "answered",
+  "expected_keywords": [
+   "请勿冲淋、浸泡二合一水箱"
+  ],
+  "note": "注意: 请勿冲淋、浸泡二合一水箱",
+  "version": "来源快照:doc_17e6079dc4e9",
+  "expected_source": "A30-10_manual_doc_17e6079dc4e9_zh-CN.md"
+ },
+ {
+  "case_id": "P04",
+  "category": "同义改写",
+  "product_id": "A30-14",
+  "snapshot": "doc_688a9b5f0ecf",
+  "question": "空气炸锅摆的时候离旁边东西要空多远？",
+  "expected_status": "answered",
+  "expected_keywords": [
+   "出风口距其他装置的距离应该保持 30 cm 以上"
+  ],
+  "note": "使用中,出风口距其他装置的距离应该保持 30 cm 以上",
+  "version": "来源快照:doc_688a9b5f0ecf",
+  "expected_source": "A30-14_manual_doc_688a9b5f0ecf_zh-CN.md"
+ },
+ {
+  "case_id": "P05",
+  "category": "同义改写",
+  "product_id": "A30-16",
+  "snapshot": "doc_e83ee17c7edc",
+  "question": "吸尘器的内置滤网多久洗一次？",
+  "expected_status": "answered",
+  "expected_keywords": [
+   "4-6 个月"
+  ],
+  "note": "<清理内置滤网> 建议 4-6 个月清洗一次",
+  "version": "来源快照:doc_e83ee17c7edc",
+  "expected_source": "A30-16_manual_doc_e83ee17c7edc_zh-CN.md"
+ },
+ {
+  "case_id": "P06",
+  "category": "同义改写",
+  "product_id": "A30-23",
+  "snapshot": "doc_16d5ea716bb2",
+  "question": "耳机快没电了，临时充一会儿能撑多久？",
+  "expected_status": "answered",
+  "expected_keywords": [
+   "充电3分钟后可播放音乐约1小时"
+  ],
+  "note": "充电3分钟后可播放音乐约1小时",
+  "version": "来源快照:doc_16d5ea716bb2",
+  "expected_source": "A30-23_manual_doc_16d5ea716bb2_zh-CN.md"
+ },
+ {
+  "case_id": "P07",
+  "category": "同义改写",
+  "product_id": "A30-30",
+  "snapshot": "doc_13a04656441a",
+  "question": "音箱放着一直不用，电池要隔多久补一次电？",
+  "expected_status": "answered",
+  "expected_keywords": [
+   "每6个月为内置电池充足一次电"
+  ],
+  "note": "即使您有很长时间不会使用本扬声器,也应每6个月为内置电池充足一次电",
+  "version": "来源快照:doc_13a04656441a",
+  "expected_source": "A30-30_manual_doc_13a04656441a_zh-CN.md"
+ },
+ {
+  "case_id": "P08",
+  "category": "同义改写",
+  "product_id": "A30-28",
+  "snapshot": "doc_3aedbcaf999b",
+  "question": "耳塞脏了能不能用水冲一下？",
+  "expected_status": "answered",
+  "expected_keywords": [
+   "请勿用水清洗,而是用干布擦掉污渍"
+  ],
+  "note": "当耳塞变脏时,请勿用水清洗,而是用干布擦掉污渍",
+  "version": "来源快照:doc_3aedbcaf999b",
+  "expected_source": "A30-28_manual_doc_3aedbcaf999b_zh-CN.md"
+ },
+ {
+  "case_id": "D01",
+  "category": "型号辨析",
+  "product_id": "A30-14",
+  "snapshot": "faq_3f3458dc8f97",
+  "question": "Mi Smart Air Fryer（3.5L）的最大额定功率是多少？",
+  "expected_status": "answered",
+  "expected_keywords": [
+   "1400 W",
+   "1500 W"
+  ],
+  "note": "台湾地区销售版本为1400 W，其他地区销售版本为1500 W。同系列另有 6.5L(A30-15) 易串",
+  "version": "来源快照:faq_3f3458dc8f97",
+  "expected_source": "A30-14_faq_faq_3f3458dc8f97_zh-CN.md"
+ },
+ {
+  "case_id": "D02",
+  "category": "型号辨析",
+  "product_id": "A30-23",
+  "snapshot": "doc_16d5ea716bb2",
+  "question": "索尼 WH-1000XM5 怎么手动进入配对模式？",
+  "expected_status": "answered",
+  "expected_keywords": [
+   "约5秒钟手动进入配对模式"
+  ],
+  "note": "(电源)按钮约5秒钟手动进入配对模式；XM4 是约7秒钟",
+  "version": "来源快照:doc_16d5ea716bb2",
+  "expected_source": "A30-23_manual_doc_16d5ea716bb2_zh-CN.md"
+ },
+ {
+  "case_id": "D03",
+  "category": "型号辨析",
+  "product_id": "A30-27",
+  "snapshot": "doc_0507e6835666",
+  "question": "索尼 WH-1000XM4 怎么手动进入配对模式？",
+  "expected_status": "answered",
+  "expected_keywords": [
+   "按钮约7秒钟"
+  ],
+  "note": "(电源)按钮约7秒钟；XM5 是约5秒钟",
+  "version": "来源快照:doc_0507e6835666",
+  "expected_source": "A30-27_manual_doc_0507e6835666_zh-CN.md"
+ },
+ {
+  "case_id": "D04",
+  "category": "型号辨析",
+  "product_id": "A30-29",
+  "snapshot": "doc_dfcf51bbb0d4",
+  "question": "索尼 WH-CH520 更改语音指导语言要约多久？",
+  "expected_status": "answered",
+  "expected_keywords": [
+   "4分钟"
+  ],
+  "note": "更改语音指导语言时可能约需4分钟；CH720N=10分钟、C700N=6分钟、XM5=20分钟",
+  "version": "来源快照:doc_dfcf51bbb0d4",
+  "expected_source": "A30-29_manual_doc_dfcf51bbb0d4_zh-CN.md"
+ },
+ {
+  "case_id": "D05",
+  "category": "型号辨析",
+  "product_id": "A30-25",
+  "snapshot": "doc_7e1dc9ea4a43",
+  "question": "索尼 WH-CH720N 更改语音指导语言要约多久？",
+  "expected_status": "answered",
+  "expected_keywords": [
+   "更改语音指导语言时约需10分钟"
+  ],
+  "note": "更改语音指导语言时约需10分钟",
+  "version": "来源快照:doc_7e1dc9ea4a43",
+  "expected_source": "A30-25_manual_doc_7e1dc9ea4a43_zh-CN.md"
+ },
+ {
+  "case_id": "D06",
+  "category": "型号辨析",
+  "product_id": "A30-26",
+  "snapshot": "doc_5e6d409fb591",
+  "question": "索尼 WF-C700N 更改语音指导语言最多要约多久？",
+  "expected_status": "answered",
+  "expected_keywords": [
+   "6分钟"
+  ],
+  "note": "更改语音指导语言时可能最多约需6分钟",
+  "version": "来源快照:doc_5e6d409fb591",
+  "expected_source": "A30-26_manual_doc_5e6d409fb591_zh-CN.md"
+ },
+ {
+  "case_id": "R01",
+  "category": "中文产品名路由",
+  "product_id": null,
+  "snapshot": null,
+  "question": "小米空气净化器4 Pro 用的是什么类型的电机？",
+  "expected_status": "answered",
+  "expected_keywords": [
+   "无刷直流电机"
+  ],
+  "route_to": "A30-02",
+  "note": "期望路由到 A30-02 faq_17856504e067；产品名存的是英文，中文问法可能路由不到",
+  "version": null,
+  "expected_source": null
+ },
+ {
+  "case_id": "R02",
+  "category": "中文产品名路由",
+  "product_id": null,
+  "snapshot": null,
+  "question": "小米扫地机器人清洁仪 X10 的尺寸是多少？",
+  "expected_status": "answered",
+  "expected_keywords": [
+   "35.3 cm"
+  ],
+  "route_to": "A30-11",
+  "note": "期望路由到 A30-11 faq_22be0bb295c0；X10/X10+/S10/S20 四个型号易混",
+  "version": null,
+  "expected_source": null
+ },
+ {
+  "case_id": "R03",
+  "category": "中文产品名路由",
+  "product_id": null,
+  "snapshot": null,
+  "question": "小米智能相机C400 的电源线有多长？",
+  "expected_status": "answered",
+  "expected_keywords": [
+   "2m"
+  ],
+  "route_to": "A30-21",
+  "note": "期望路由到 A30-21 faq_9ba1338fc6ce",
+  "version": null,
+  "expected_source": null
+ },
+ {
+  "case_id": "R04",
+  "category": "中文产品名路由",
+  "product_id": null,
+  "snapshot": null,
+  "question": "Mi床边灯2 怎么恢复出厂设置？",
+  "expected_status": "answered",
+  "expected_keywords": [
+   "5秒"
+  ],
+  "route_to": "A30-18",
+  "note": "期望路由到 A30-18；恢复出厂=同时长按电源和模式键5秒",
+  "version": null,
+  "expected_source": null
+ },
+ {
+  "case_id": "R05",
+  "category": "中文产品名路由",
+  "product_id": null,
+  "snapshot": null,
+  "question": "索尼 WH-1000XM5 充满电要多久？",
+  "expected_status": "answered",
+  "expected_keywords": [
+   "3.5"
+  ],
+  "route_to": "A30-23",
+  "note": "期望路由到 A30-23；充电约需3.5小时",
+  "version": null,
+  "expected_source": null
+ },
+ {
+  "case_id": "N01",
+  "category": "知识库外拒答",
+  "product_id": "A30-01",
+  "snapshot": "doc_3eb73f985406",
+  "question": "小米智能空气净化器4 的滤芯多久需要更换一次？",
+  "expected_status": "no_answer",
+  "expected_keywords": [],
+  "absent_terms": [
+   "更换周期",
+   "多久更换"
+  ],
+  "note": "净化器4 手册只写滤芯重设与更换步骤，未给更换周期",
+  "version": "来源快照:doc_3eb73f985406",
+  "expected_source": "A30-01_manual_doc_3eb73f985406_zh-CN.md"
+ },
+ {
+  "case_id": "N02",
+  "category": "知识库外拒答",
+  "product_id": "A30-11",
+  "snapshot": "doc_756554168af1",
+  "question": "小米扫地机器人 X10 的摄像头是多少万像素？",
+  "expected_status": "no_answer",
+  "expected_keywords": [],
+  "absent_terms": [
+   "万像素",
+   "摄像头"
+  ],
+  "note": "X10 说明书未标注摄像头像素",
+  "version": "来源快照:doc_756554168af1",
+  "expected_source": "A30-11_manual_doc_756554168af1_zh-CN.md"
+ },
+ {
+  "case_id": "N03",
+  "category": "知识库外拒答",
+  "product_id": "A30-21",
+  "snapshot": "doc_6dbbfe124e36",
+  "question": "小米智能相机 C400 的镜头光圈值是多少？",
+  "expected_status": "no_answer",
+  "expected_keywords": [],
+  "absent_terms": [
+   "光圈",
+   "F1.",
+   "F2."
+  ],
+  "note": "C400 手册未标注镜头光圈值",
+  "version": "来源快照:doc_6dbbfe124e36",
+  "expected_source": "A30-21_manual_doc_6dbbfe124e36_zh-CN.md"
+ },
+ {
+  "case_id": "N04",
+  "category": "知识库外拒答",
+  "product_id": "A30-25",
+  "snapshot": "doc_7e1dc9ea4a43",
+  "question": "WH-CH720N 的耳罩可以拆下来水洗吗？",
+  "expected_status": "no_answer",
+  "expected_keywords": [],
+  "absent_terms": [
+   "耳罩"
+  ],
+  "note": "CH720N 手册未写耳罩可拆洗",
+  "version": "来源快照:doc_7e1dc9ea4a43",
+  "expected_source": "A30-25_manual_doc_7e1dc9ea4a43_zh-CN.md"
+ },
+ {
+  "case_id": "N05",
+  "category": "知识库外拒答",
+  "product_id": "A30-30",
+  "snapshot": "doc_13a04656441a",
+  "question": "SRS-XB100 音箱支持无线充电吗？",
+  "expected_status": "no_answer",
+  "expected_keywords": [],
+  "absent_terms": [
+   "无线充电"
+  ],
+  "note": "手册只提到用 USB 充电，未提及无线充电",
+  "version": "来源快照:doc_13a04656441a",
+  "expected_source": "A30-30_manual_doc_13a04656441a_zh-CN.md"
+ },
+ {
+  "case_id": "H01",
+  "category": "转人工",
+  "product_id": "A30-01",
+  "snapshot": "doc_3eb73f985406",
+  "question": "这个净化器我要退款",
+  "expected_status": "handoff",
+  "expected_keywords": [],
+  "absent_terms": [],
+  "note": "触发退款转人工",
+  "version": "来源快照:doc_3eb73f985406",
+  "expected_source": "A30-01_manual_doc_3eb73f985406_zh-CN.md"
+ },
+ {
+  "case_id": "H02",
+  "category": "转人工",
+  "product_id": "A30-05",
+  "snapshot": "doc_27e491d0e45e",
+  "question": "风扇噪音太大，我要投诉",
+  "expected_status": "handoff",
+  "expected_keywords": [],
+  "absent_terms": [],
+  "note": "触发投诉转人工",
+  "version": "来源快照:doc_27e491d0e45e",
+  "expected_source": "A30-05_manual_doc_27e491d0e45e_zh-CN.md"
+ },
+ {
+  "case_id": "H03",
+  "category": "转人工",
+  "product_id": "A30-11",
+  "snapshot": "doc_756554168af1",
+  "question": "给我转人工客服",
+  "expected_status": "handoff",
+  "expected_keywords": [],
+  "absent_terms": [],
+  "note": "显式要求人工",
+  "version": "来源快照:doc_756554168af1",
+  "expected_source": "A30-11_manual_doc_756554168af1_zh-CN.md"
+ }
+]

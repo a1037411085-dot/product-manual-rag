@@ -1,0 +1,122 @@
+[
+ {
+  "product_id": "washer_wm090mja08hk",
+  "product": "洗衣机",
+  "question": "这台洗衣机一次最多能洗多少公斤衣服？",
+  "expected_terms": [
+   "9 kg"
+  ],
+  "expected_status": "answered",
+  "version": "1.0",
+  "category": "同义改写",
+  "note": "原文用「额定洗涤容量」，问句改成口语「一次最多能洗多少公斤」"
+ },
+ {
+  "product_id": "washer_wm090mja08hk",
+  "product": "洗衣机",
+  "question": "整台机器大概有多重？",
+  "expected_terms": [
+   "55 kg"
+  ],
+  "expected_status": "answered",
+  "version": "1.0",
+  "category": "同义改写",
+  "note": "原文用「产品净重」，问句改成「大概有多重」"
+ },
+ {
+  "product_id": "washer_wm090mja08hk",
+  "product": "洗衣机",
+  "question": "放机器的地方要多大的空间？",
+  "expected_terms": [
+   "850 mm"
+  ],
+  "expected_status": "answered",
+  "version": "1.0",
+  "category": "同义改写",
+  "note": "原文用「产品尺寸」，问句改成「要多大的空间」"
+ },
+ {
+  "product_id": "washer_wm090mja08hk",
+  "product": "洗衣机",
+  "question": "家里水压太低能不能用？",
+  "expected_terms": [
+   "0.05 MPa"
+  ],
+  "expected_status": "answered",
+  "version": "1.0",
+  "category": "同义改写",
+  "note": "原文用「运作水压」，问句改成「水压太低能不能用」"
+ },
+ {
+  "product_id": "ac_kfr51lw",
+  "product": "空调",
+  "question": "这台空调能管多大面积的房间？",
+  "expected_terms": [
+   "32-48m²"
+  ],
+  "expected_status": "answered",
+  "version": "1.0",
+  "category": "同义改写",
+  "note": "原文用「建议制冷面积」，问句改成「能管多大面积」"
+ },
+ {
+  "product_id": "ac_kfr51lw",
+  "product": "空调",
+  "question": "遥控器离机器多远还能用？",
+  "expected_terms": [
+   "8 米"
+  ],
+  "expected_status": "answered",
+  "version": "1.0",
+  "category": "同义改写",
+  "note": "原文用「遥控器与空调器 8 米范围内」"
+ },
+ {
+  "product_id": "fridge_bcd600",
+  "product": "冰箱",
+  "question": "这个冰箱一共能装多少东西？",
+  "expected_terms": [
+   "600L"
+  ],
+  "expected_status": "answered",
+  "version": "1.0",
+  "category": "同义改写",
+  "note": "原文用「总容积」，问句改成「一共能装多少东西」"
+ },
+ {
+  "product_id": "robotvac_s20",
+  "product": "扫拖机器人",
+  "question": "扫地机的电池是多少毫安的？",
+  "expected_terms": [
+   "2900 mAh"
+  ],
+  "expected_status": "answered",
+  "version": "1.0",
+  "category": "同义改写",
+  "note": "原文用「电池容量」，问句改成「多少毫安」"
+ },
+ {
+  "product_id": "vacuum_g10_plus",
+  "product": "吸尘器",
+  "question": "吸尘器第一次充电要充多久？",
+  "expected_terms": [
+   "4 小时"
+  ],
+  "expected_status": "answered",
+  "version": "1.0",
+  "category": "同义改写",
+  "note": "原文用「充电时间约为 4 小时」"
+ },
+ {
+  "product_id": "fridge_bcd600",
+  "product": "冰箱",
+  "question": "冰箱放在多热的地方会出问题？",
+  "expected_terms": [
+   "43"
+  ],
+  "expected_status": "answered",
+  "version": "1.0",
+  "category": "同义改写",
+  "note": "原文写「不得安装在温度高于 43 ℃」，问句改成「多热」"
+ }
+]

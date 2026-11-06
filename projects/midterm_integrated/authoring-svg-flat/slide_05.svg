@@ -1,0 +1,91 @@
+<svg xmlns="http://www.w3.org/2000/svg" version="1.1" width="1280" height="720" viewBox="0 0 1280 720" font-family="Arial, &quot;Microsoft YaHei&quot;, sans-serif"><rect x="0" y="0" width="1280" height="720" fill="#FAFAF8" />
+<g id="shape-18" data-pptx-object="group" data-pptx-frame="80.4 48.33 1117.6 646.05" data-pptx-source-ref="slide:18">
+<g id="shape-2" data-pptx-object="shape" data-pptx-frame="80.4 48.33 257.6 61.6" data-pptx-prst="rect" data-pptx-source-ref="slide:2" data-pptx-semantic-object="shape">
+<path d="M 80.4 48.33 L 338 48.33 L 338 109.93 L 80.4 109.93 Z" fill="none" stroke="none" data-pptx-part="geometry" />
+
+
+<text x="80.4" y="87" text-anchor="start" xml:space="preserve" font-size="40" fill="#162B3B" font-weight="bold" data-pptx-text-baseline="metrics-v1">一次实际问答</text>
+</g>
+<g id="shape-3" data-pptx-object="shape" data-pptx-frame="81.04 114.33 317.38 36.96" data-pptx-prst="rect" data-pptx-source-ref="slide:3" data-pptx-semantic-object="shape">
+<path d="M 81.04 114.33 L 398.42 114.33 L 398.42 151.29 L 81.04 151.29 Z" fill="none" stroke="none" data-pptx-part="geometry" />
+
+
+<text x="81.04" y="137" text-anchor="start" xml:space="preserve" font-size="24" fill="#4B6C7A" data-pptx-text-baseline="metrics-v1">v3 报告记录的在线模式样本</text>
+</g>
+<g id="shape-4" data-pptx-object="shape" data-pptx-frame="82 162 1116 1" data-pptx-prst="rect" data-pptx-source-ref="slide:4" data-pptx-semantic-object="shape">
+<path d="M 82 162 L 1198 162 L 1198 163 L 82 163 Z" fill="#D8E0E2" stroke="none" data-pptx-part="geometry" />
+
+</g>
+<g id="shape-5" data-pptx-object="shape" data-pptx-frame="81.04 203.33 78.24 36.96" data-pptx-prst="rect" data-pptx-source-ref="slide:5" data-pptx-semantic-object="shape">
+<path d="M 81.04 203.33 L 159.28 203.33 L 159.28 240.29 L 81.04 240.29 Z" fill="none" stroke="none" data-pptx-part="geometry" />
+
+
+<text x="81.04" y="226" text-anchor="start" xml:space="preserve" font-size="24" fill="#2F6675" font-weight="bold" data-pptx-text-baseline="metrics-v1">用户问</text>
+</g>
+<g id="shape-6" data-pptx-object="shape" data-pptx-frame="248.72 195.33 443.52 49.28" data-pptx-prst="rect" data-pptx-source-ref="slide:6" data-pptx-semantic-object="shape">
+<path d="M 248.72 195.33 L 692.24 195.33 L 692.24 244.61 L 248.72 244.61 Z" fill="none" stroke="none" data-pptx-part="geometry" />
+
+
+<text x="248.72" y="226" text-anchor="start" xml:space="preserve" font-size="32" fill="#162B3B" font-weight="bold" data-pptx-text-baseline="metrics-v1">空调的建议制冷面积是多少？</text>
+</g>
+<g id="shape-7" data-pptx-object="shape" data-pptx-frame="82 266 1116 1" data-pptx-prst="rect" data-pptx-source-ref="slide:7" data-pptx-semantic-object="shape">
+<path d="M 82 266 L 1198 266 L 1198 267 L 82 267 Z" fill="#D8E0E2" stroke="none" data-pptx-part="geometry" />
+
+</g>
+<g id="shape-8" data-pptx-object="shape" data-pptx-frame="81.04 298.33 78.24 36.96" data-pptx-prst="rect" data-pptx-source-ref="slide:8" data-pptx-semantic-object="shape">
+<path d="M 81.04 298.33 L 159.28 298.33 L 159.28 335.29 L 81.04 335.29 Z" fill="none" stroke="none" data-pptx-part="geometry" />
+
+
+<text x="81.04" y="321" text-anchor="start" xml:space="preserve" font-size="24" fill="#2F6675" font-weight="bold" data-pptx-text-baseline="metrics-v1">系统答</text>
+</g>
+<g id="shape-9" data-pptx-object="shape" data-pptx-frame="248.8 291.67 393.54 46.2" data-pptx-prst="rect" data-pptx-source-ref="slide:9" data-pptx-semantic-object="shape">
+<path d="M 248.8 291.67 L 642.34 291.67 L 642.34 337.87 L 248.8 337.87 Z" fill="none" stroke="none" data-pptx-part="geometry" />
+
+
+<text x="248.8" y="321" text-anchor="start" xml:space="preserve" font-size="30" fill="#162B3B" data-pptx-text-baseline="metrics-v1">32–48 m²，来自资料 [1]。</text>
+</g>
+<g id="shape-10" data-pptx-object="shape" data-pptx-frame="248.8 343.67 667.02 46.2" data-pptx-prst="rect" data-pptx-source-ref="slide:10" data-pptx-semantic-object="shape">
+<path d="M 248.8 343.67 L 915.82 343.67 L 915.82 389.87 L 248.8 389.87 Z" fill="none" stroke="none" data-pptx-part="geometry" />
+
+
+<text x="248.8" y="373" text-anchor="start" xml:space="preserve" font-size="30" fill="#162B3B" data-pptx-text-baseline="metrics-v1">资料 [3] 给出 23–34 m²，系统提示人工确认。</text>
+</g>
+<g id="shape-11" data-pptx-object="shape" data-pptx-frame="82 438 1116 1" data-pptx-prst="rect" data-pptx-source-ref="slide:11" data-pptx-semantic-object="shape">
+<path d="M 82 438 L 1198 438 L 1198 439 L 82 439 Z" fill="#D8E0E2" stroke="none" data-pptx-part="geometry" />
+
+</g>
+<g id="shape-12" data-pptx-object="shape" data-pptx-frame="81.04 470.33 103.68 36.96" data-pptx-prst="rect" data-pptx-source-ref="slide:12" data-pptx-semantic-object="shape">
+<path d="M 81.04 470.33 L 184.72 470.33 L 184.72 507.29 L 81.04 507.29 Z" fill="none" stroke="none" data-pptx-part="geometry" />
+
+
+<text x="81.04" y="493" text-anchor="start" xml:space="preserve" font-size="24" fill="#2F6675" font-weight="bold" data-pptx-text-baseline="metrics-v1">怎么处理</text>
+</g>
+<g id="shape-13" data-pptx-object="shape" data-pptx-frame="248.96 467.67 498.16 40.04" data-pptx-prst="rect" data-pptx-source-ref="slide:13" data-pptx-semantic-object="shape">
+<path d="M 248.96 467.67 L 747.12 467.67 L 747.12 507.71 L 248.96 507.71 Z" fill="none" stroke="none" data-pptx-part="geometry" />
+
+
+<text x="248.96" y="493" text-anchor="start" xml:space="preserve" font-size="26" fill="#162B3B" data-pptx-text-baseline="metrics-v1">给出参考值，同时把来源冲突告诉用户。</text>
+</g>
+<g id="shape-14" data-pptx-object="shape" data-pptx-frame="248.96 511.67 533.21 40.04" data-pptx-prst="rect" data-pptx-source-ref="slide:14" data-pptx-semantic-object="shape">
+<path d="M 248.96 511.67 L 782.17 511.67 L 782.17 551.71 L 248.96 551.71 Z" fill="none" stroke="none" data-pptx-part="geometry" />
+
+
+<text x="248.96" y="537" text-anchor="start" xml:space="preserve" font-size="26" fill="#162B3B" data-pptx-text-baseline="metrics-v1">常规问答可走 FAQ、原文回答或模型生成。</text>
+</g>
+<g id="shape-15" data-pptx-object="shape" data-pptx-frame="81.28 604.67 362.05 27.72" data-pptx-prst="rect" data-pptx-source-ref="slide:15" data-pptx-semantic-object="shape">
+<path d="M 81.28 604.67 L 443.33 604.67 L 443.33 632.39 L 81.28 632.39 Z" fill="none" stroke="none" data-pptx-part="geometry" />
+
+
+<text x="81.28" y="622" text-anchor="start" xml:space="preserve" font-size="18" fill="#4B6C7A" data-pptx-text-baseline="metrics-v1">来源：v3 评估报告 §6.2。系统回答摘述。</text>
+</g>
+<g id="shape-16" data-pptx-object="shape" data-pptx-frame="82 652 1116 1" data-pptx-prst="rect" data-pptx-source-ref="slide:16" data-pptx-semantic-object="shape">
+<path d="M 82 652 L 1198 652 L 1198 653 L 82 653 Z" fill="#D8E0E2" stroke="none" data-pptx-part="geometry" />
+
+</g>
+<g id="shape-17" data-pptx-object="shape" data-pptx-frame="1156.28 666.67 22.43 27.72" data-pptx-prst="rect" data-pptx-source-ref="slide:17" data-pptx-semantic-object="shape">
+<path d="M 1156.28 666.67 L 1178.71 666.67 L 1178.71 694.39 L 1156.28 694.39 Z" fill="none" stroke="none" data-pptx-part="geometry" />
+
+
+<text x="1156.28" y="684" text-anchor="start" xml:space="preserve" font-size="18" fill="#4B6C7A" data-pptx-text-baseline="metrics-v1">05</text>
+</g>
+</g></svg>

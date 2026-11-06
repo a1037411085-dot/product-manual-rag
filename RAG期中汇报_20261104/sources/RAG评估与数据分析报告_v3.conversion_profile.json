@@ -1,0 +1,28 @@
+{
+  "schema": "ppt-master.source_to_md.profile.v1",
+  "converter": "doc_to_md.py",
+  "conversion_type": "docx",
+  "source": {
+    "path": "C:/Users/T9/Desktop/珠海学院人工智能/RAG/评估与可视化_A30 v3是最新生成的报告/评估与可视化_A30 v3是最新生成的报告/RAG评估与数据分析报告_v3.docx",
+    "name": "RAG评估与数据分析报告_v3.docx",
+    "suffix": ".docx",
+    "kind": "file",
+    "exists": true,
+    "size_bytes": 552298
+  },
+  "outputs": {
+    "markdown": "RAG评估与数据分析报告_v3.md",
+    "asset_dir": "RAG评估与数据分析报告_v3_files",
+    "image_manifest": "RAG评估与数据分析报告_v3_files/image_manifest.json",
+    "image_count": 10
+  },
+  "markdown": {
+    "line_count": 226,
+    "char_count": 6982,
+    "heading_count": 18,
+    "table_count": 10,
+    "image_ref_count": 10,
+    "link_count": 0
+  },
+  "warnings": []
+}

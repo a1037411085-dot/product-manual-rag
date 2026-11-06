@@ -1,0 +1,2016 @@
+[
+ {
+  "category": "型号/文本",
+  "question": "适用产品型号是什么？",
+  "expected_terms": [
+   "WM090MJA08HK"
+  ],
+  "expected_evidence": "适用产品型号： WM090MJA08HK",
+  "id": "auto_001",
+  "product_id": "washer_wm090mja08hk",
+  "expected_source": "01_洗衣机_米家WM090MJA08HK.txt",
+  "version": "1.0",
+  "expected_status": "answered"
+ },
+ {
+  "category": "型号/文本",
+  "question": "产品名称是什么？",
+  "expected_terms": [
+   "米家洗衣机"
+  ],
+  "expected_evidence": "产品名称：米家洗衣机",
+  "id": "auto_002",
+  "product_id": "washer_wm090mja08hk",
+  "expected_source": "01_洗衣机_米家WM090MJA08HK.txt",
+  "version": "1.0",
+  "expected_status": "answered"
+ },
+ {
+  "category": "型号/文本",
+  "question": "产品型号是什么？",
+  "expected_terms": [
+   "WM090MJA08HK"
+  ],
+  "expected_evidence": "产品型号：WM090MJA08HK",
+  "id": "auto_003",
+  "product_id": "washer_wm090mja08hk",
+  "expected_source": "01_洗衣机_米家WM090MJA08HK.txt",
+  "version": "1.0",
+  "expected_status": "answered"
+ },
+ {
+  "category": "参数",
+  "question": "额定洗涤容量是多少？",
+  "expected_terms": [
+   "9 kg"
+  ],
+  "expected_evidence": "额定洗涤容量：9 kg",
+  "id": "auto_004",
+  "product_id": "washer_wm090mja08hk",
+  "expected_source": "01_洗衣机_米家WM090MJA08HK.txt",
+  "version": "1.0",
+  "expected_status": "answered"
+ },
+ {
+  "category": "参数",
+  "question": "产品尺寸是多少？",
+  "expected_terms": [
+   "850 mm"
+  ],
+  "expected_evidence": "产品尺寸：598 × 535 × 850 mm",
+  "id": "auto_005",
+  "product_id": "washer_wm090mja08hk",
+  "expected_source": "01_洗衣机_米家WM090MJA08HK.txt",
+  "version": "1.0",
+  "expected_status": "answered"
+ },
+ {
+  "category": "参数",
+  "question": "产品净重是多少？",
+  "expected_terms": [
+   "55 kg"
+  ],
+  "expected_evidence": "产品净重：55 kg",
+  "id": "auto_006",
+  "product_id": "washer_wm090mja08hk",
+  "expected_source": "01_洗衣机_米家WM090MJA08HK.txt",
+  "version": "1.0",
+  "expected_status": "answered"
+ },
+ {
+  "category": "参数",
+  "question": "产品毛重是多少？",
+  "expected_terms": [
+   "59 kg"
+  ],
+  "expected_evidence": "产品毛重：59 kg",
+  "id": "auto_007",
+  "product_id": "washer_wm090mja08hk",
+  "expected_source": "01_洗衣机_米家WM090MJA08HK.txt",
+  "version": "1.0",
+  "expected_status": "answered"
+ },
+ {
+  "category": "参数",
+  "question": "额定洗涤功率输入是多少？",
+  "expected_terms": [
+   "1500-1800 W"
+  ],
+  "expected_evidence": "额定洗涤功率输入：1500-1800 W",
+  "id": "auto_008",
+  "product_id": "washer_wm090mja08hk",
+  "expected_source": "01_洗衣机_米家WM090MJA08HK.txt",
+  "version": "1.0",
+  "expected_status": "answered"
+ },
+ {
+  "category": "参数",
+  "question": "额定电压/额定频率是多少？",
+  "expected_terms": [
+   "220-240 V"
+  ],
+  "expected_evidence": "额定电压/额定频率：220-240 V~/50 Hz",
+  "id": "auto_009",
+  "product_id": "washer_wm090mja08hk",
+  "expected_source": "01_洗衣机_米家WM090MJA08HK.txt",
+  "version": "1.0",
+  "expected_status": "answered"
+ },
+ {
+  "category": "参数",
+  "question": "运作水压是多少？",
+  "expected_terms": [
+   "0.05 MPa"
+  ],
+  "expected_evidence": "运作水压：0.05 MPa - 0.8 MPa",
+  "id": "auto_010",
+  "product_id": "washer_wm090mja08hk",
+  "expected_source": "01_洗衣机_米家WM090MJA08HK.txt",
+  "version": "1.0",
+  "expected_status": "answered"
+ },
+ {
+  "category": "参数",
+  "question": "连接排水管末端至水槽落水管的分支上，确定连接点距地面的高度不超过是多少？",
+  "expected_terms": [
+   "90 厘米"
+  ],
+  "expected_evidence": "- 连接排水管末端至水槽落水管的分支上，确定连接点距地面的高度不超过 90 厘米。",
+  "id": "auto_011",
+  "product_id": "washer_wm090mja08hk",
+  "expected_source": "01_洗衣机_米家WM090MJA08HK.txt",
+  "version": "1.0",
+  "expected_status": "answered"
+ },
+ {
+  "category": "参数",
+  "question": "每次按下可增加是多少？",
+  "expected_terms": [
+   "1 小时"
+  ],
+  "expected_evidence": "：按下预约按钮，进入预约模式。重复按下，可选择预约时间。每次按下可增加 1 小时，最多 24 小时。随后按下按钮便循环显示最短预约时间、24 小时和当前剩余时间。",
+  "id": "auto_012",
+  "product_id": "washer_wm090mja08hk",
+  "expected_source": "01_洗衣机_米家WM090MJA08HK.txt",
+  "version": "1.0",
+  "expected_status": "answered"
+ },
+ {
+  "category": "参数",
+  "question": "按下温度按钮，根据洗涤物品选择合适水温：冷水是多少？",
+  "expected_terms": [
+   "30°C"
+  ],
+  "expected_evidence": "按下温度按钮，根据洗涤物品选择合适水温：冷水、30°C、40°C、",
+  "id": "auto_013",
+  "product_id": "washer_wm090mja08hk",
+  "expected_source": "01_洗衣机_米家WM090MJA08HK.txt",
+  "version": "1.0",
+  "expected_status": "answered"
+ },
+ {
+  "category": "参数",
+  "question": "重新设定无线网络：待机模式时，长按按钮是多少？",
+  "expected_terms": [
+   "7 秒"
+  ],
+  "expected_evidence": "无线网络图示快速闪烁，表示网络配置错误，需要重设。重新设定无线网络：待机模式时，长按按钮 7 秒，直至无线网络图示闪烁，即表示完成。：",
+  "id": "auto_014",
+  "product_id": "washer_wm090mja08hk",
+  "expected_source": "01_洗衣机_米家WM090MJA08HK.txt",
+  "version": "1.0",
+  "expected_status": "answered"
+ },
+ {
+  "category": "参数",
+  "question": "因此，实际洗涤时间与显示时间可能相差最多是多少？",
+  "expected_terms": [
+   "30 分钟"
+  ],
+  "expected_evidence": "- 在整个过程中，本电器会自动重新分配衣物重量，确保脱水前负载平衡。因此，实际洗涤时间与显示时间可能相差最多 30 分钟。",
+  "id": "auto_015",
+  "product_id": "washer_wm090mja08hk",
+  "expected_source": "01_洗衣机_米家WM090MJA08HK.txt",
+  "version": "1.0",
+  "expected_status": "answered"
+ },
+ {
+  "category": "参数",
+  "question": "每年清洁排水泵滤网盖最少是多少？",
+  "expected_terms": [
+   "5 至 6 次"
+  ],
+  "expected_evidence": "每年清洁排水泵滤网盖最少 5 至 6 次，最好每月一次或萤幕出现错误代码「E1」时清洁。",
+  "id": "auto_016",
+  "product_id": "washer_wm090mja08hk",
+  "expected_source": "01_洗衣机_米家WM090MJA08HK.txt",
+  "version": "1.0",
+  "expected_status": "answered"
+ },
+ {
+  "category": "参数",
+  "question": "每年至少清洁进水阀滤网是多少？",
+  "expected_terms": [
+   "5 至 6 次"
+  ],
+  "expected_evidence": "每年至少清洁进水阀滤网 5 至 6 次，或当萤幕显示错误代码「E4」时：",
+  "id": "auto_017",
+  "product_id": "washer_wm090mja08hk",
+  "expected_source": "01_洗衣机_米家WM090MJA08HK.txt",
+  "version": "1.0",
+  "expected_status": "answered"
+ },
+ {
+  "category": "参数",
+  "question": "启用远端控制后，如果是多少？",
+  "expected_terms": [
+   "10 分钟"
+  ],
+  "expected_evidence": "1. 启用远端控制后，如果 10 分钟内没有操作，洗衣机将进入节能模式。远端控制功能将保持启用状态最多 24 小时，之后会自动关闭。在此期间，按下本机任何按钮或透过 App 操作，皆会退出省电模式。",
+  "id": "auto_018",
+  "product_id": "washer_wm090mja08hk",
+  "expected_source": "01_洗衣机_米家WM090MJA08HK.txt",
+  "version": "1.0",
+  "expected_status": "answered"
+ },
+ {
+  "category": "参数",
+  "question": "仅限使用型号为 BLJ是多少？",
+  "expected_terms": [
+   "24W"
+  ],
+  "expected_evidence": "仅限使用型号为 BLJ24W308080P-B 的原装电源适配器。",
+  "id": "auto_019",
+  "product_id": "vacuum_g10_plus",
+  "expected_source": "02_手持吸尘器_Xiaomi_G10_Plus.txt",
+  "version": "1.0",
+  "expected_status": "answered"
+ },
+ {
+  "category": "参数",
+  "question": "根据定位贴纸的定位孔，使用是多少？",
+  "expected_terms": [
+   "8 厘米"
+  ],
+  "expected_evidence": "3. 根据定位贴纸的定位孔，使用 8 厘米钻嘴的电动工具钻孔，将膨胀胶塞放置在钻孔内。",
+  "id": "auto_020",
+  "product_id": "vacuum_g10_plus",
+  "expected_source": "02_手持吸尘器_Xiaomi_G10_Plus.txt",
+  "version": "1.0",
+  "expected_status": "answered"
+ },
+ {
+  "category": "参数",
+  "question": "冲洗完毕后，晾晒至少是多少？",
+  "expected_terms": [
+   "24 小时"
+  ],
+  "expected_evidence": "5. 使用清水冲洗前置过滤网、旋风系统组件及集尘桶，直至干净为止。冲洗完毕后，晾晒至少 24 小时以确保彻底干燥。",
+  "id": "auto_021",
+  "product_id": "vacuum_g10_plus",
+  "expected_source": "02_手持吸尘器_Xiaomi_G10_Plus.txt",
+  "version": "1.0",
+  "expected_status": "answered"
+ },
+ {
+  "category": "参数",
+  "question": "将内置滤网晾晒至少是多少？",
+  "expected_terms": [
+   "24 小时"
+  ],
+  "expected_evidence": "4. 将内置滤网晾晒至少 24 小时，以确保彻底干燥。",
+  "id": "auto_022",
+  "product_id": "vacuum_g10_plus",
+  "expected_source": "02_手持吸尘器_Xiaomi_G10_Plus.txt",
+  "version": "1.0",
+  "expected_status": "answered"
+ },
+ {
+  "category": "参数",
+  "question": "晾晒时将滚刷竖直摆放，放置至少是多少？",
+  "expected_terms": [
+   "24 小时"
+  ],
+  "expected_evidence": "3. 长时间使用后滚刷较脏时可水洗。晾晒时将滚刷竖直摆放，放置至少 24 小时以便彻底晾干。",
+  "id": "auto_023",
+  "product_id": "vacuum_g10_plus",
+  "expected_source": "02_手持吸尘器_Xiaomi_G10_Plus.txt",
+  "version": "1.0",
+  "expected_status": "answered"
+ },
+ {
+  "category": "参数",
+  "question": "根据各地水质和使用频率等情况，建议是多少？",
+  "expected_terms": [
+   "3-6 个月"
+  ],
+  "expected_evidence": "当水箱渗水速度过慢或堵塞时，请及时更换渗水滤芯。 根据各地水质和使用频率等情况，建议 3-6 个月更换一次滤芯组件，以确保拖地效果。",
+  "id": "auto_024",
+  "product_id": "vacuum_g10_plus",
+  "expected_source": "02_手持吸尘器_Xiaomi_G10_Plus.txt",
+  "version": "1.0",
+  "expected_status": "answered"
+ },
+ {
+  "category": "参数",
+  "question": "器：BLJ是多少？",
+  "expected_terms": [
+   "24W"
+  ],
+  "expected_evidence": "器：BLJ24W308080P-B",
+  "id": "auto_025",
+  "product_id": "vacuum_g10_plus",
+  "expected_source": "02_手持吸尘器_Xiaomi_G10_Plus.txt",
+  "version": "1.0",
+  "expected_status": "answered"
+ },
+ {
+  "category": "参数",
+  "question": "无法充电是多少？",
+  "expected_terms": [
+   "0℃"
+  ],
+  "expected_evidence": "无法充电：确保充电座周围有足够空间且充电座充电弹片没有脏污以及遮挡物环境温度过低（低于 0℃）或过高（高于 40℃）",
+  "id": "auto_026",
+  "product_id": "robotvac_s20",
+  "expected_source": "03_扫拖机器人_Xiaomi_S20.txt",
+  "version": "1.0",
+  "expected_status": "answered"
+ },
+ {
+  "category": "型号/文本",
+  "question": "行为异常是什么？",
+  "expected_terms": [
+   "关机后重新开机"
+  ],
+  "expected_evidence": "行为异常：关机后重新开机",
+  "id": "auto_027",
+  "product_id": "robotvac_s20",
+  "expected_source": "03_扫拖机器人_Xiaomi_S20.txt",
+  "version": "1.0",
+  "expected_status": "answered"
+ },
+ {
+  "category": "型号/文本",
+  "question": "故障提示是什么？",
+  "expected_terms": [
+   "可能原因及解决方法"
+  ],
+  "expected_evidence": "故障提示：可能原因及解决方法",
+  "id": "auto_028",
+  "product_id": "robotvac_s20",
+  "expected_source": "03_扫拖机器人_Xiaomi_S20.txt",
+  "version": "1.0",
+  "expected_status": "answered"
+ },
+ {
+  "category": "参数",
+  "question": "额定电压是多少？",
+  "expected_terms": [
+   "14.4 V"
+  ],
+  "expected_evidence": "额定电压：14.4 V",
+  "id": "auto_029",
+  "product_id": "robotvac_s20",
+  "expected_source": "03_扫拖机器人_Xiaomi_S20.txt",
+  "version": "1.0",
+  "expected_status": "answered"
+ },
+ {
+  "category": "参数",
+  "question": "额定功率是多少？",
+  "expected_terms": [
+   "45 W"
+  ],
+  "expected_evidence": "额定功率：45 W",
+  "id": "auto_030",
+  "product_id": "robotvac_s20",
+  "expected_source": "03_扫拖机器人_Xiaomi_S20.txt",
+  "version": "1.0",
+  "expected_status": "answered"
+ },
+ {
+  "category": "参数",
+  "question": "充电电压是多少？",
+  "expected_terms": [
+   "20 V"
+  ],
+  "expected_evidence": "充电电压：20 V",
+  "id": "auto_031",
+  "product_id": "robotvac_s20",
+  "expected_source": "03_扫拖机器人_Xiaomi_S20.txt",
+  "version": "1.0",
+  "expected_status": "answered"
+ },
+ {
+  "category": "参数",
+  "question": "主机尺寸是多少？",
+  "expected_terms": [
+   "98 mm"
+  ],
+  "expected_evidence": "主机尺寸：φ325×98 mm",
+  "id": "auto_032",
+  "product_id": "robotvac_s20",
+  "expected_source": "03_扫拖机器人_Xiaomi_S20.txt",
+  "version": "1.0",
+  "expected_status": "answered"
+ },
+ {
+  "category": "型号/文本",
+  "question": "运作频率是什么？",
+  "expected_terms": [
+   "2400-2483.5 MHz"
+  ],
+  "expected_evidence": "运作频率：2400-2483.5 MHz",
+  "id": "auto_033",
+  "product_id": "robotvac_s20",
+  "expected_source": "03_扫拖机器人_Xiaomi_S20.txt",
+  "version": "1.0",
+  "expected_status": "answered"
+ },
+ {
+  "category": "参数",
+  "question": "最大输出功率是多少？",
+  "expected_terms": [
+   "20 dB"
+  ],
+  "expected_evidence": "最大输出功率：<20 dBm",
+  "id": "auto_034",
+  "product_id": "robotvac_s20",
+  "expected_source": "03_扫拖机器人_Xiaomi_S20.txt",
+  "version": "1.0",
+  "expected_status": "answered"
+ },
+ {
+  "category": "参数",
+  "question": "充电座尺寸是多少？",
+  "expected_terms": [
+   "98 mm"
+  ],
+  "expected_evidence": "充电座尺寸：146×122×98 mm",
+  "id": "auto_035",
+  "product_id": "robotvac_s20",
+  "expected_source": "03_扫拖机器人_Xiaomi_S20.txt",
+  "version": "1.0",
+  "expected_status": "answered"
+ },
+ {
+  "category": "型号/文本",
+  "question": "制造商是什么？",
+  "expected_terms": [
+   "中山市宝利金电子有限公司"
+  ],
+  "expected_evidence": "制造商：中山市宝利金电子有限公司",
+  "id": "auto_036",
+  "product_id": "robotvac_s20",
+  "expected_source": "03_扫拖机器人_Xiaomi_S20.txt",
+  "version": "1.0",
+  "expected_status": "answered"
+ },
+ {
+  "category": "型号/文本",
+  "question": "平均运作功率是什么？",
+  "expected_terms": [
+   "82.96%"
+  ],
+  "expected_evidence": "平均运作功率：82.96%",
+  "id": "auto_037",
+  "product_id": "robotvac_s20",
+  "expected_source": "03_扫拖机器人_Xiaomi_S20.txt",
+  "version": "1.0",
+  "expected_status": "answered"
+ },
+ {
+  "category": "型号/文本",
+  "question": "低负载时的效率 (10％)是什么？",
+  "expected_terms": [
+   "60%"
+  ],
+  "expected_evidence": "低负载时的效率 (10％)：60%",
+  "id": "auto_038",
+  "product_id": "robotvac_s20",
+  "expected_source": "03_扫拖机器人_Xiaomi_S20.txt",
+  "version": "1.0",
+  "expected_status": "answered"
+ },
+ {
+  "category": "参数",
+  "question": "无负载耗电量是多少？",
+  "expected_terms": [
+   "0.10 W"
+  ],
+  "expected_evidence": "无负载耗电量：0.10 W",
+  "id": "auto_039",
+  "product_id": "robotvac_s20",
+  "expected_source": "03_扫拖机器人_Xiaomi_S20.txt",
+  "version": "1.0",
+  "expected_status": "answered"
+ },
+ {
+  "category": "参数",
+  "question": "仅可配合 <BLJ是多少？",
+  "expected_terms": [
+   "15W"
+  ],
+  "expected_evidence": "- 仅可配合 <BLJ15W200060P-BA> 或 <BLJ15WJ200060P-B> 电源供应器使用。 请勿私自拆卸、修理、改装电池或充电座。",
+  "id": "auto_040",
+  "product_id": "robotvac_s20",
+  "expected_source": "03_扫拖机器人_Xiaomi_S20.txt",
+  "version": "1.0",
+  "expected_status": "answered"
+ },
+ {
+  "category": "参数",
+  "question": "建议至少每是多少？",
+  "expected_terms": [
+   "3 个月"
+  ],
+  "expected_evidence": "- 如长时间不使用，请充满电后关闭主机，并放于阴凉干燥处。建议至少每 3 个月充电一次以避免电池出现损坏。",
+  "id": "auto_041",
+  "product_id": "robotvac_s20",
+  "expected_source": "03_扫拖机器人_Xiaomi_S20.txt",
+  "version": "1.0",
+  "expected_status": "answered"
+ },
+ {
+  "category": "参数",
+  "question": "「xiaomi-vacuum-d是多少？",
+  "expected_terms": [
+   "106g"
+  ],
+  "expected_evidence": "「xiaomi-vacuum-d106gl_mibtXXXX」",
+  "id": "auto_042",
+  "product_id": "robotvac_s20",
+  "expected_source": "03_扫拖机器人_Xiaomi_S20.txt",
+  "version": "1.0",
+  "expected_status": "answered"
+ },
+ {
+  "category": "参数",
+  "question": "主机在该模式下，不执行中断点续扫、预约清扫及主动播报语音，且充电是多少？",
+  "expected_terms": [
+   "10 秒"
+  ],
+  "expected_evidence": "主机在该模式下，不执行中断点续扫、预约清扫及主动播报语音，且充电 10 秒后主机指示灯熄灭。可在 APP 中打开或关闭该模式。 提示：如需了解更多功能，请参考 APP。各功能具体情况，均以 APP 为准。",
+  "id": "auto_043",
+  "product_id": "robotvac_s20",
+  "expected_source": "03_扫拖机器人_Xiaomi_S20.txt",
+  "version": "1.0",
+  "expected_status": "answered"
+ },
+ {
+  "category": "参数",
+  "question": "包装内的电源型号为 BLJ是多少？",
+  "expected_terms": [
+   "15W"
+  ],
+  "expected_evidence": "* 此产品与符合产品标准要求的两种电源兼容。包装内的电源型号为 BLJ15W200060P-BA 或 BLJ15WJ200060P-B 其中一款说明书版本号：V1.0",
+  "id": "auto_044",
+  "product_id": "robotvac_s20",
+  "expected_source": "03_扫拖机器人_Xiaomi_S20.txt",
+  "version": "1.0",
+  "expected_status": "answered"
+ },
+ {
+  "category": "参数",
+  "question": "自动锁定是多少？",
+  "expected_terms": [
+   "30 秒"
+  ],
+  "expected_evidence": "自动锁定： 冰箱门关闭后30 秒内无任何操作，显示板自动熄灭并锁定。 手动锁定：",
+  "id": "auto_045",
+  "product_id": "fridge_bcd600",
+  "expected_source": "04_冰箱_海尔BCD-600WGHSS17NZU1.txt",
+  "version": "1.0",
+  "expected_status": "answered"
+ },
+ {
+  "category": "型号/文本",
+  "question": "软冻（软冷冻）是什么？",
+  "expected_terms": [
+   "短期储存的肉类"
+  ],
+  "expected_evidence": "软冻（软冷冻）：短期储存的肉类",
+  "id": "auto_046",
+  "product_id": "fridge_bcd600",
+  "expected_source": "04_冰箱_海尔BCD-600WGHSS17NZU1.txt",
+  "version": "1.0",
+  "expected_status": "answered"
+ },
+ {
+  "category": "型号/文本",
+  "question": "气候类型是什么？",
+  "expected_terms": [
+   "SN.N.ST.T 型"
+  ],
+  "expected_evidence": "气候类型：SN.N.ST.T 型",
+  "id": "auto_047",
+  "product_id": "fridge_bcd600",
+  "expected_source": "04_冰箱_海尔BCD-600WGHSS17NZU1.txt",
+  "version": "1.0",
+  "expected_status": "answered"
+ },
+ {
+  "category": "型号/文本",
+  "question": "防触电保护类别是什么？",
+  "expected_terms": [
+   "I类"
+  ],
+  "expected_evidence": "防触电保护类别：I类",
+  "id": "auto_048",
+  "product_id": "fridge_bcd600",
+  "expected_source": "04_冰箱_海尔BCD-600WGHSS17NZU1.txt",
+  "version": "1.0",
+  "expected_status": "answered"
+ },
+ {
+  "category": "参数",
+  "question": "二星级部分容积是多少？",
+  "expected_terms": [
+   "26L"
+  ],
+  "expected_evidence": "二星级部分容积：26L",
+  "id": "auto_049",
+  "product_id": "fridge_bcd600",
+  "expected_source": "04_冰箱_海尔BCD-600WGHSS17NZU1.txt",
+  "version": "1.0",
+  "expected_status": "answered"
+ },
+ {
+  "category": "参数",
+  "question": "额定频率是多少？",
+  "expected_terms": [
+   "50Hz"
+  ],
+  "expected_evidence": "额定频率：50Hz",
+  "id": "auto_050",
+  "product_id": "fridge_bcd600",
+  "expected_source": "04_冰箱_海尔BCD-600WGHSS17NZU1.txt",
+  "version": "1.0",
+  "expected_status": "answered"
+ },
+ {
+  "category": "型号/文本",
+  "question": "年耗电量（kW·h/y）是什么？",
+  "expected_terms": [
+   "347"
+  ],
+  "expected_evidence": "年耗电量（kW·h/y）：347",
+  "id": "auto_051",
+  "product_id": "fridge_bcd600",
+  "expected_source": "04_冰箱_海尔BCD-600WGHSS17NZU1.txt",
+  "version": "1.0",
+  "expected_status": "answered"
+ },
+ {
+  "category": "型号/文本",
+  "question": "综合耗电量（kW·h/24h）是什么？",
+  "expected_terms": [
+   "0.95"
+  ],
+  "expected_evidence": "综合耗电量（kW·h/24h）：0.95",
+  "id": "auto_052",
+  "product_id": "fridge_bcd600",
+  "expected_source": "04_冰箱_海尔BCD-600WGHSS17NZU1.txt",
+  "version": "1.0",
+  "expected_status": "answered"
+ },
+ {
+  "category": "参数",
+  "question": "化霜输入功率是多少？",
+  "expected_terms": [
+   "185W"
+  ],
+  "expected_evidence": "化霜输入功率：185W",
+  "id": "auto_053",
+  "product_id": "fridge_bcd600",
+  "expected_source": "04_冰箱_海尔BCD-600WGHSS17NZU1.txt",
+  "version": "1.0",
+  "expected_status": "answered"
+ },
+ {
+  "category": "参数",
+  "question": "制冷剂是多少？",
+  "expected_terms": [
+   "75g"
+  ],
+  "expected_evidence": "制冷剂：R600a 75g",
+  "id": "auto_054",
+  "product_id": "fridge_bcd600",
+  "expected_source": "04_冰箱_海尔BCD-600WGHSS17NZU1.txt",
+  "version": "1.0",
+  "expected_status": "answered"
+ },
+ {
+  "category": "型号/文本",
+  "question": "冷却能力是什么？",
+  "expected_terms": [
+   "45（kg/12h）"
+  ],
+  "expected_evidence": "冷却能力：45（kg/12h）",
+  "id": "auto_055",
+  "product_id": "fridge_bcd600",
+  "expected_source": "04_冰箱_海尔BCD-600WGHSS17NZU1.txt",
+  "version": "1.0",
+  "expected_status": "answered"
+ },
+ {
+  "category": "型号/文本",
+  "question": "冷冻能力是什么？",
+  "expected_terms": [
+   "8.5（kg/12h）"
+  ],
+  "expected_evidence": "冷冻能力：8.5（kg/12h）",
+  "id": "auto_056",
+  "product_id": "fridge_bcd600",
+  "expected_source": "04_冰箱_海尔BCD-600WGHSS17NZU1.txt",
+  "version": "1.0",
+  "expected_status": "answered"
+ },
+ {
+  "category": "型号/文本",
+  "question": "外形尺寸（深×宽×高）是什么？",
+  "expected_terms": [
+   "697×908×1775（mm）"
+  ],
+  "expected_evidence": "外形尺寸（深×宽×高）：697×908×1775（mm）",
+  "id": "auto_057",
+  "product_id": "fridge_bcd600",
+  "expected_source": "04_冰箱_海尔BCD-600WGHSS17NZU1.txt",
+  "version": "1.0",
+  "expected_status": "answered"
+ },
+ {
+  "category": "参数",
+  "question": "（冰箱外观、尺寸、颜色、图案以实物为准） 此图为 BCD是多少？",
+  "expected_terms": [
+   "600W"
+  ],
+  "expected_evidence": "- （冰箱外观、尺寸、颜色、图案以实物为准） 此图为 BCD-600WGHSS17NZU1",
+  "id": "auto_058",
+  "product_id": "fridge_bcd600",
+  "expected_source": "04_冰箱_海尔BCD-600WGHSS17NZU1.txt",
+  "version": "1.0",
+  "expected_status": "answered"
+ },
+ {
+  "category": "参数",
+  "question": "本系列产品使用交流是多少？",
+  "expected_terms": [
+   "220V"
+  ],
+  "expected_evidence": "本系列产品使用交流220V/50Hz 电源，若电压波动范围较大（超出187 ～242V 的范围），会造成冰箱故障甚至损坏，此时必须加装 750W 以上的自动稳压器配合使用。",
+  "id": "auto_059",
+  "product_id": "fridge_bcd600",
+  "expected_source": "04_冰箱_海尔BCD-600WGHSS17NZU1.txt",
+  "version": "1.0",
+  "expected_status": "answered"
+ },
+ {
+  "category": "参数",
+  "question": "停电或清洁时，应拔下电源插头，至少保持间隔是多少？",
+  "expected_terms": [
+   "7 分钟"
+  ],
+  "expected_evidence": "不要用水喷淋、冲洗冰箱，水及污物应及时用软布擦干净，以防止生锈及影响电气绝缘性能。 停电或清洁时，应拔下电源插头，至少保持间隔7 分钟，才能再次接通电源，以防因连续启动而损坏压缩机。",
+  "id": "auto_060",
+  "product_id": "fridge_bcd600",
+  "expected_source": "04_冰箱_海尔BCD-600WGHSS17NZU1.txt",
+  "version": "1.0",
+  "expected_status": "answered"
+ },
+ {
+  "category": "参数",
+  "question": "让冰箱静置是多少？",
+  "expected_terms": [
+   "30 分钟"
+  ],
+  "expected_evidence": "静置 6 冰箱安放调平、清洁完成后，先不要接通电源。让冰箱静置30 分钟以上， 再接通电源，以确保冰箱正常运转。",
+  "id": "auto_061",
+  "product_id": "fridge_bcd600",
+  "expected_source": "04_冰箱_海尔BCD-600WGHSS17NZU1.txt",
+  "version": "1.0",
+  "expected_status": "answered"
+ },
+ {
+  "category": "参数",
+  "question": "图示为BCD是多少？",
+  "expected_terms": [
+   "601W"
+  ],
+  "expected_evidence": "图示为BCD-601WGHSS19B2U1",
+  "id": "auto_062",
+  "product_id": "fridge_bcd600",
+  "expected_source": "04_冰箱_海尔BCD-600WGHSS17NZU1.txt",
+  "version": "1.0",
+  "expected_status": "answered"
+ },
+ {
+  "category": "参数",
+  "question": "冰箱默认设置：冷藏是多少？",
+  "expected_terms": [
+   "5℃"
+  ],
+  "expected_evidence": "冰箱初次接通电源后，显示板点亮； 冰箱默认设置：冷藏5℃，冷冻-18℃，变温专区设定为珍品档位。",
+  "id": "auto_063",
+  "product_id": "fridge_bcd600",
+  "expected_source": "04_冰箱_海尔BCD-600WGHSS17NZU1.txt",
+  "version": "1.0",
+  "expected_status": "answered"
+ },
+ {
+  "category": "参数",
+  "question": "2 调节变温专区档位（BCD是多少？",
+  "expected_terms": [
+   "602W"
+  ],
+  "expected_evidence": "5.2 调节变温专区档位（BCD-602WGHSS10B1U1）",
+  "id": "auto_064",
+  "product_id": "fridge_bcd600",
+  "expected_source": "04_冰箱_海尔BCD-600WGHSS17NZU1.txt",
+  "version": "1.0",
+  "expected_status": "answered"
+ },
+ {
+  "category": "参数",
+  "question": "冷藏门，冷冻门关闭且是多少？",
+  "expected_terms": [
+   "30 秒"
+  ],
+  "expected_evidence": "冷藏门，冷冻门关闭且30 秒内没有按键操作时，显示屏自动熄灭并锁定。",
+  "id": "auto_065",
+  "product_id": "fridge_bcd600",
+  "expected_source": "04_冰箱_海尔BCD-600WGHSS17NZU1.txt",
+  "version": "1.0",
+  "expected_status": "answered"
+ },
+ {
+  "category": "参数",
+  "question": "显示屏解锁状态下，按下【童锁功能按键】并持续是多少？",
+  "expected_terms": [
+   "3 秒"
+  ],
+  "expected_evidence": "显示屏解锁状态下，按下【童锁功能按键】并持续3 秒钟，蜂鸣器响一声，【童锁功能指示图标】点亮，显示屏锁定。",
+  "id": "auto_066",
+  "product_id": "fridge_bcd600",
+  "expected_source": "04_冰箱_海尔BCD-600WGHSS17NZU1.txt",
+  "version": "1.0",
+  "expected_status": "answered"
+ },
+ {
+  "category": "参数",
+  "question": "温度设定好以后，若是多少？",
+  "expected_terms": [
+   "5 秒"
+  ],
+  "expected_evidence": "温度设定好以后，若5 秒内不进行按键操作，则系统将自动确定并注意保存该设定温度。",
+  "id": "auto_067",
+  "product_id": "fridge_bcd600",
+  "expected_source": "04_冰箱_海尔BCD-600WGHSS17NZU1.txt",
+  "version": "1.0",
+  "expected_status": "answered"
+ },
+ {
+  "category": "参数",
+  "question": "母婴功能 （限BCD是多少？",
+  "expected_terms": [
+   "601W"
+  ],
+  "expected_evidence": "- 母婴功能 （限BCD-601WGHSS58BYU1）",
+  "id": "auto_068",
+  "product_id": "fridge_bcd600",
+  "expected_source": "04_冰箱_海尔BCD-600WGHSS17NZU1.txt",
+  "version": "1.0",
+  "expected_status": "answered"
+ },
+ {
+  "category": "参数",
+  "question": "珍品功能（除BCD是多少？",
+  "expected_terms": [
+   "601W"
+  ],
+  "expected_evidence": "9. 珍品功能（除BCD-601WGHSS58BYU1 外） 显示屏解锁状态下，按一下【珍品功能调节按键】，蜂鸣器响一声，【珍品功能指示图标】点亮，冰箱珍品功能开启。",
+  "id": "auto_069",
+  "product_id": "fridge_bcd600",
+  "expected_source": "04_冰箱_海尔BCD-600WGHSS17NZU1.txt",
+  "version": "1.0",
+  "expected_status": "answered"
+ },
+ {
+  "category": "参数",
+  "question": "EPP 超净系统的使用（除是多少？",
+  "expected_terms": [
+   "601W"
+  ],
+  "expected_evidence": "EPP 超净系统的使用（除601WGHSS58BYU1 外）",
+  "id": "auto_070",
+  "product_id": "fridge_bcd600",
+  "expected_source": "04_冰箱_海尔BCD-600WGHSS17NZU1.txt",
+  "version": "1.0",
+  "expected_status": "answered"
+ },
+ {
+  "category": "参数",
+  "question": "密封盒的使用（限BCD是多少？",
+  "expected_terms": [
+   "600W"
+  ],
+  "expected_evidence": "密封盒的使用（限BCD-600WGHSS17NZU1）",
+  "id": "auto_071",
+  "product_id": "fridge_bcd600",
+  "expected_source": "04_冰箱_海尔BCD-600WGHSS17NZU1.txt",
+  "version": "1.0",
+  "expected_status": "answered"
+ },
+ {
+  "category": "参数",
+  "question": "母婴珍品抽屉的使用（限BCD是多少？",
+  "expected_terms": [
+   "602W"
+  ],
+  "expected_evidence": "母婴珍品抽屉的使用（限BCD-602WGHSS10B1U1/601WGHSS58BYU1）",
+  "id": "auto_072",
+  "product_id": "fridge_bcd600",
+  "expected_source": "04_冰箱_海尔BCD-600WGHSS17NZU1.txt",
+  "version": "1.0",
+  "expected_status": "answered"
+ },
+ {
+  "category": "参数",
+  "question": "冷藏室顶部照明灯参数为：DC是多少？",
+  "expected_terms": [
+   "12V"
+  ],
+  "expected_evidence": "冷藏室顶部照明灯参数为：DC12V，1. 5W 冷冻室顶部照明灯参数为：DC12V，1. 5W 照明灯 为 LED 灯，该灯能耗低，寿命长。 如出现故障， 请 勿自 行 拆卸。 请及时联系售 后人 员予以更换。",
+  "id": "auto_073",
+  "product_id": "fridge_bcd600",
+  "expected_source": "04_冰箱_海尔BCD-600WGHSS17NZU1.txt",
+  "version": "1.0",
+  "expected_status": "answered"
+ },
+ {
+  "category": "参数",
+  "question": "型号：BCD是多少？",
+  "expected_terms": [
+   "600W"
+  ],
+  "expected_evidence": "型号：BCD-600WGHSS17NZU1",
+  "id": "auto_074",
+  "product_id": "fridge_bcd600",
+  "expected_source": "04_冰箱_海尔BCD-600WGHSS17NZU1.txt",
+  "version": "1.0",
+  "expected_status": "answered"
+ },
+ {
+  "category": "参数",
+  "question": "数量：BCD是多少？",
+  "expected_terms": [
+   "600W"
+  ],
+  "expected_evidence": "数量：BCD-600WGHS",
+  "id": "auto_075",
+  "product_id": "fridge_bcd600",
+  "expected_source": "04_冰箱_海尔BCD-600WGHSS17NZU1.txt",
+  "version": "1.0",
+  "expected_status": "answered"
+ },
+ {
+  "category": "参数",
+  "question": "按“智能”按键是多少？",
+  "expected_terms": [
+   "3 秒"
+  ],
+  "expected_evidence": "按“智能”按键3 秒，或冰箱初次上电1 分钟后，Wi-Fi 图标开始快速闪烁，自动进入配置模式；如果30 分钟内配置成功，则Wi-Fi 图标常亮，否则慢闪。如需再配置，需按上述操作重新进入配置模式。",
+  "id": "auto_076",
+  "product_id": "fridge_bcd600",
+  "expected_source": "04_冰箱_海尔BCD-600WGHSS17NZU1.txt",
+  "version": "1.0",
+  "expected_status": "answered"
+ },
+ {
+  "category": "型号/文本",
+  "question": "充注量（g）是什么？",
+  "expected_terms": [
+   "最小面积（m²）"
+  ],
+  "expected_evidence": "充注量（g）：最小面积（m²）",
+  "id": "auto_077",
+  "product_id": "ac_kfr51lw",
+  "expected_source": "05_空调_美的KFR-51LW_BP3DN8Y-YA401(1).txt",
+  "version": "1.0",
+  "expected_status": "answered"
+ },
+ {
+  "category": "参数",
+  "question": "童锁键是多少？",
+  "expected_terms": [
+   "1秒"
+  ],
+  "expected_evidence": "童锁键：- 同时按“风速”“风向”键1秒，可开启/关闭童锁功能",
+  "id": "auto_078",
+  "product_id": "ac_kfr51lw",
+  "expected_source": "05_空调_美的KFR-51LW_BP3DN8Y-YA401(1).txt",
+  "version": "1.0",
+  "expected_status": "answered"
+ },
+ {
+  "category": "参数",
+  "question": "室内机型号是多少？",
+  "expected_terms": [
+   "72L"
+  ],
+  "expected_evidence": "室内机型号：KFR-72L/BP3SDN8Y-YA401(1)",
+  "id": "auto_079",
+  "product_id": "ac_kfr51lw",
+  "expected_source": "05_空调_美的KFR-51LW_BP3DN8Y-YA401(1).txt",
+  "version": "1.0",
+  "expected_status": "answered"
+ },
+ {
+  "category": "参数",
+  "question": "室外机型号是多少？",
+  "expected_terms": [
+   "72W"
+  ],
+  "expected_evidence": "室外机型号：KFR-72W/BP3SN8-D01",
+  "id": "auto_080",
+  "product_id": "ac_kfr51lw",
+  "expected_source": "05_空调_美的KFR-51LW_BP3DN8Y-YA401(1).txt",
+  "version": "1.0",
+  "expected_status": "answered"
+ },
+ {
+  "category": "型号/文本",
+  "question": "额定制冷量（W）是什么？",
+  "expected_terms": [
+   "7290(900~9150)"
+  ],
+  "expected_evidence": "额定制冷量（W）：7290(900~9150)",
+  "id": "auto_081",
+  "product_id": "ac_kfr51lw",
+  "expected_source": "05_空调_美的KFR-51LW_BP3DN8Y-YA401(1).txt",
+  "version": "1.0",
+  "expected_status": "answered"
+ },
+ {
+  "category": "型号/文本",
+  "question": "制冷功率（W）是什么？",
+  "expected_terms": [
+   "1900(300~2950)"
+  ],
+  "expected_evidence": "制冷功率（W）：1900(300~2950)",
+  "id": "auto_082",
+  "product_id": "ac_kfr51lw",
+  "expected_source": "05_空调_美的KFR-51LW_BP3DN8Y-YA401(1).txt",
+  "version": "1.0",
+  "expected_status": "answered"
+ },
+ {
+  "category": "型号/文本",
+  "question": "制热功率（W）是什么？",
+  "expected_terms": [
+   "2840(260~4040)+2300"
+  ],
+  "expected_evidence": "制热功率（W）：2840(260~4040)+2300",
+  "id": "auto_083",
+  "product_id": "ac_kfr51lw",
+  "expected_source": "05_空调_美的KFR-51LW_BP3DN8Y-YA401(1).txt",
+  "version": "1.0",
+  "expected_status": "answered"
+ },
+ {
+  "category": "型号/文本",
+  "question": "制冷电流（A）是什么？",
+  "expected_terms": [
+   "3.0(0.5~4.6)"
+  ],
+  "expected_evidence": "制冷电流（A）：3.0(0.5~4.6)",
+  "id": "auto_084",
+  "product_id": "ac_kfr51lw",
+  "expected_source": "05_空调_美的KFR-51LW_BP3DN8Y-YA401(1).txt",
+  "version": "1.0",
+  "expected_status": "answered"
+ },
+ {
+  "category": "型号/文本",
+  "question": "制热电流（A）是什么？",
+  "expected_terms": [
+   "4.4(0.4~6.3)+9.3"
+  ],
+  "expected_evidence": "制热电流（A）：4.4(0.4~6.3)+9.3",
+  "id": "auto_085",
+  "product_id": "ac_kfr51lw",
+  "expected_source": "05_空调_美的KFR-51LW_BP3DN8Y-YA401(1).txt",
+  "version": "1.0",
+  "expected_status": "answered"
+ },
+ {
+  "category": "型号/文本",
+  "question": "室内机噪音是什么？",
+  "expected_terms": [
+   "低-高-超强【dB(A)】：22-42-47"
+  ],
+  "expected_evidence": "室内机噪音：低-高-超强【dB(A)】：22-42-47",
+  "id": "auto_086",
+  "product_id": "ac_kfr51lw",
+  "expected_source": "05_空调_美的KFR-51LW_BP3DN8Y-YA401(1).txt",
+  "version": "1.0",
+  "expected_status": "answered"
+ },
+ {
+  "category": "型号/文本",
+  "question": "室外机噪音是什么？",
+  "expected_terms": [
+   "低-高【dB(A)】：48-56"
+  ],
+  "expected_evidence": "室外机噪音：低-高【dB(A)】：48-56",
+  "id": "auto_087",
+  "product_id": "ac_kfr51lw",
+  "expected_source": "05_空调_美的KFR-51LW_BP3DN8Y-YA401(1).txt",
+  "version": "1.0",
+  "expected_status": "answered"
+ },
+ {
+  "category": "型号/文本",
+  "question": "中间制冷量/中间制热量（W）是什么？",
+  "expected_terms": [
+   "3600/4850"
+  ],
+  "expected_evidence": "中间制冷量/中间制热量（W）：3600/4850",
+  "id": "auto_088",
+  "product_id": "ac_kfr51lw",
+  "expected_source": "05_空调_美的KFR-51LW_BP3DN8Y-YA401(1).txt",
+  "version": "1.0",
+  "expected_status": "answered"
+ },
+ {
+  "category": "型号/文本",
+  "question": "中间制冷功率/中间制热功率（W）是什么？",
+  "expected_terms": [
+   "670/950"
+  ],
+  "expected_evidence": "中间制冷功率/中间制热功率（W）：670/950",
+  "id": "auto_089",
+  "product_id": "ac_kfr51lw",
+  "expected_source": "05_空调_美的KFR-51LW_BP3DN8Y-YA401(1).txt",
+  "version": "1.0",
+  "expected_status": "answered"
+ },
+ {
+  "category": "型号/文本",
+  "question": "25%制冷量/25%制热量（W）是什么？",
+  "expected_terms": [
+   "1800/2400"
+  ],
+  "expected_evidence": "25%制冷量/25%制热量（W）：1800/2400",
+  "id": "auto_090",
+  "product_id": "ac_kfr51lw",
+  "expected_source": "05_空调_美的KFR-51LW_BP3DN8Y-YA401(1).txt",
+  "version": "1.0",
+  "expected_status": "answered"
+ },
+ {
+  "category": "型号/文本",
+  "question": "低温制热量（W）是什么？",
+  "expected_terms": [
+   "7970"
+  ],
+  "expected_evidence": "低温制热量（W）：7970",
+  "id": "auto_091",
+  "product_id": "ac_kfr51lw",
+  "expected_source": "05_空调_美的KFR-51LW_BP3DN8Y-YA401(1).txt",
+  "version": "1.0",
+  "expected_status": "answered"
+ },
+ {
+  "category": "型号/文本",
+  "question": "低温制热功率（W）是什么？",
+  "expected_terms": [
+   "3300"
+  ],
+  "expected_evidence": "低温制热功率（W）：3300",
+  "id": "auto_092",
+  "product_id": "ac_kfr51lw",
+  "expected_source": "05_空调_美的KFR-51LW_BP3DN8Y-YA401(1).txt",
+  "version": "1.0",
+  "expected_status": "answered"
+ },
+ {
+  "category": "型号/文本",
+  "question": "最大输入功率（W）是什么？",
+  "expected_terms": [
+   "6950"
+  ],
+  "expected_evidence": "最大输入功率（W）：6950",
+  "id": "auto_093",
+  "product_id": "ac_kfr51lw",
+  "expected_source": "05_空调_美的KFR-51LW_BP3DN8Y-YA401(1).txt",
+  "version": "1.0",
+  "expected_status": "answered"
+ },
+ {
+  "category": "型号/文本",
+  "question": "最大输入电流（A）是什么？",
+  "expected_terms": [
+   "16.6"
+  ],
+  "expected_evidence": "最大输入电流（A）：16.6",
+  "id": "auto_094",
+  "product_id": "ac_kfr51lw",
+  "expected_source": "05_空调_美的KFR-51LW_BP3DN8Y-YA401(1).txt",
+  "version": "1.0",
+  "expected_status": "answered"
+ },
+ {
+  "category": "型号/文本",
+  "question": "待机功率（W）是什么？",
+  "expected_terms": [
+   "9.3"
+  ],
+  "expected_evidence": "待机功率（W）：9.3",
+  "id": "auto_095",
+  "product_id": "ac_kfr51lw",
+  "expected_source": "05_空调_美的KFR-51LW_BP3DN8Y-YA401(1).txt",
+  "version": "1.0",
+  "expected_status": "answered"
+ },
+ {
+  "category": "型号/文本",
+  "question": "电辅热输入功率（W）是什么？",
+  "expected_terms": [
+   "2000(PTC)"
+  ],
+  "expected_evidence": "电辅热输入功率（W）：2000(PTC)",
+  "id": "auto_096",
+  "product_id": "ac_kfr51lw",
+  "expected_source": "05_空调_美的KFR-51LW_BP3DN8Y-YA401(1).txt",
+  "version": "1.0",
+  "expected_status": "answered"
+ },
+ {
+  "category": "参数",
+  "question": "电源（V~/Hz）是多少？",
+  "expected_terms": [
+   "380V"
+  ],
+  "expected_evidence": "电源（V~/Hz）：380V~ 3N /50Hz",
+  "id": "auto_097",
+  "product_id": "ac_kfr51lw",
+  "expected_source": "05_空调_美的KFR-51LW_BP3DN8Y-YA401(1).txt",
+  "version": "1.0",
+  "expected_status": "answered"
+ },
+ {
+  "category": "型号/文本",
+  "question": "循环风量（m³/h）是什么？",
+  "expected_terms": [
+   "1400"
+  ],
+  "expected_evidence": "循环风量（m³/h）：1400",
+  "id": "auto_098",
+  "product_id": "ac_kfr51lw",
+  "expected_source": "05_空调_美的KFR-51LW_BP3DN8Y-YA401(1).txt",
+  "version": "1.0",
+  "expected_status": "answered"
+ },
+ {
+  "category": "参数",
+  "question": "制冷剂种类/充注量是多少？",
+  "expected_terms": [
+   "1700g"
+  ],
+  "expected_evidence": "制冷剂种类/充注量：R32/1700g",
+  "id": "auto_099",
+  "product_id": "ac_kfr51lw",
+  "expected_source": "05_空调_美的KFR-51LW_BP3DN8Y-YA401(1).txt",
+  "version": "1.0",
+  "expected_status": "answered"
+ },
+ {
+  "category": "型号/文本",
+  "question": "使用房间最小面积（m²）是什么？",
+  "expected_terms": [
+   "26"
+  ],
+  "expected_evidence": "使用房间最小面积（m²）：26",
+  "id": "auto_100",
+  "product_id": "ac_kfr51lw",
+  "expected_source": "05_空调_美的KFR-51LW_BP3DN8Y-YA401(1).txt",
+  "version": "1.0",
+  "expected_status": "answered"
+ },
+ {
+  "category": "参数",
+  "question": "熔断丝规格是多少？",
+  "expected_terms": [
+   "250V"
+  ],
+  "expected_evidence": "熔断丝规格：T 6.3A/250VAC; T 20A/250VAC",
+  "id": "auto_101",
+  "product_id": "ac_kfr51lw",
+  "expected_source": "05_空调_美的KFR-51LW_BP3DN8Y-YA401(1).txt",
+  "version": "1.0",
+  "expected_status": "answered"
+ },
+ {
+  "category": "型号/文本",
+  "question": "运行模式是什么？",
+  "expected_terms": [
+   "保护装置可能动作的温度范围"
+  ],
+  "expected_evidence": "运行模式：保护装置可能动作的温度范围",
+  "id": "auto_102",
+  "product_id": "ac_kfr51lw",
+  "expected_source": "05_空调_美的KFR-51LW_BP3DN8Y-YA401(1).txt",
+  "version": "1.0",
+  "expected_status": "answered"
+ },
+ {
+  "category": "参数",
+  "question": "抽湿模式是多少？",
+  "expected_terms": [
+   "18℃"
+  ],
+  "expected_evidence": "抽湿模式：- 室内温度18℃以下",
+  "id": "auto_103",
+  "product_id": "ac_kfr51lw",
+  "expected_source": "05_空调_美的KFR-51LW_BP3DN8Y-YA401(1).txt",
+  "version": "1.0",
+  "expected_status": "answered"
+ },
+ {
+  "category": "型号/文本",
+  "question": "必须正确接地是什么？",
+  "expected_terms": [
+   "禁止用电源开关直接关闭空调"
+  ],
+  "expected_evidence": "必须正确接地：禁止用电源开关直接关闭空调",
+  "id": "auto_104",
+  "product_id": "ac_kfr51lw",
+  "expected_source": "05_空调_美的KFR-51LW_BP3DN8Y-YA401(1).txt",
+  "version": "1.0",
+  "expected_status": "answered"
+ },
+ {
+  "category": "型号/文本",
+  "question": "家具、贵重物品等是什么？",
+  "expected_terms": [
+   "不得让身体长时间直接接触冷风或制冷过度"
+  ],
+  "expected_evidence": "家具、贵重物品等：不得让身体长时间直接接触冷风或制冷过度",
+  "id": "auto_105",
+  "product_id": "ac_kfr51lw",
+  "expected_source": "05_空调_美的KFR-51LW_BP3DN8Y-YA401(1).txt",
+  "version": "1.0",
+  "expected_status": "answered"
+ },
+ {
+  "category": "型号/文本",
+  "question": "（如工作中的电加热器）的房间内是什么？",
+  "expected_terms": [
+   "废弃电池请置入“有害垃圾”分类桶"
+  ],
+  "expected_evidence": "（如工作中的电加热器）的房间内：废弃电池请置入“有害垃圾”分类桶",
+  "id": "auto_106",
+  "product_id": "ac_kfr51lw",
+  "expected_source": "05_空调_美的KFR-51LW_BP3DN8Y-YA401(1).txt",
+  "version": "1.0",
+  "expected_status": "answered"
+ },
+ {
+  "category": "型号/文本",
+  "question": "切勿将手伸入进风口、出风口内是什么？",
+  "expected_terms": [
+   "切勿将衣架等物品伸入或悬挂在出风口导风板上"
+  ],
+  "expected_evidence": "切勿将手伸入进风口、出风口内：切勿将衣架等物品伸入或悬挂在出风口导风板上",
+  "id": "auto_107",
+  "product_id": "ac_kfr51lw",
+  "expected_source": "05_空调_美的KFR-51LW_BP3DN8Y-YA401(1).txt",
+  "version": "1.0",
+  "expected_status": "answered"
+ },
+ {
+  "category": "型号/文本",
+  "question": "φ16是什么？",
+  "expected_terms": [
+   "65-75"
+  ],
+  "expected_evidence": "φ16：65-75",
+  "id": "auto_108",
+  "product_id": "ac_kfr51lw",
+  "expected_source": "05_空调_美的KFR-51LW_BP3DN8Y-YA401(1).txt",
+  "version": "1.0",
+  "expected_status": "answered"
+ },
+ {
+  "category": "型号/文本",
+  "question": "服务热线是什么？",
+  "expected_terms": [
+   "400-8899-315（免长途费）"
+  ],
+  "expected_evidence": "服务热线：400-8899-315（免长途费）",
+  "id": "auto_109",
+  "product_id": "ac_kfr51lw",
+  "expected_source": "05_空调_美的KFR-51LW_BP3DN8Y-YA401(1).txt",
+  "version": "1.0",
+  "expected_status": "answered"
+ },
+ {
+  "category": "参数",
+  "question": "使用时，需保持遥控器与空调器是多少？",
+  "expected_terms": [
+   "8 米"
+  ],
+  "expected_evidence": "- 使用时，需保持遥控器与空调器 8 米范围内，将遥控器对准室内机信号接收窗；",
+  "id": "auto_110",
+  "product_id": "ac_kfr51lw",
+  "expected_source": "05_空调_美的KFR-51LW_BP3DN8Y-YA401(1).txt",
+  "version": "1.0",
+  "expected_status": "answered"
+ },
+ {
+  "category": "参数",
+  "question": "同时按“模式”“上下风”键是多少？",
+  "expected_terms": [
+   "5 秒"
+  ],
+  "expected_evidence": "- 同时按“模式”“上下风”键 5 秒，开启童锁功能；再同时按“模式”“上下风”",
+  "id": "auto_111",
+  "product_id": "ac_kfr51lw",
+  "expected_source": "05_空调_美的KFR-51LW_BP3DN8Y-YA401(1).txt",
+  "version": "1.0",
+  "expected_status": "answered"
+ },
+ {
+  "category": "参数",
+  "question": "两小时后温度保持不变是多少？",
+  "expected_terms": [
+   "8小时"
+  ],
+  "expected_evidence": "两小时后温度保持不变，8小时后退出舒睡模式。",
+  "id": "auto_112",
+  "product_id": "ac_kfr51lw",
+  "expected_source": "05_空调_美的KFR-51LW_BP3DN8Y-YA401(1).txt",
+  "version": "1.0",
+  "expected_status": "answered"
+ },
+ {
+  "category": "参数",
+  "question": "电源线规格（mm²）(RVV 300/是多少？",
+  "expected_terms": [
+   "500V"
+  ],
+  "expected_evidence": "电源线规格（mm²）(RVV 300/500V)：",
+  "id": "auto_113",
+  "product_id": "ac_kfr51lw",
+  "expected_source": "05_空调_美的KFR-51LW_BP3DN8Y-YA401(1).txt",
+  "version": "1.0",
+  "expected_status": "answered"
+ },
+ {
+  "category": "参数",
+  "question": "室内外连接线规格（mm²）(YZW 300/是多少？",
+  "expected_terms": [
+   "500V"
+  ],
+  "expected_evidence": "室内外连接线规格（mm²）(YZW 300/500V)：",
+  "id": "auto_114",
+  "product_id": "ac_kfr51lw",
+  "expected_source": "05_空调_美的KFR-51LW_BP3DN8Y-YA401(1).txt",
+  "version": "1.0",
+  "expected_status": "answered"
+ },
+ {
+  "category": "参数",
+  "question": "(线长不超过是多少？",
+  "expected_terms": [
+   "5米"
+  ],
+  "expected_evidence": "(线长不超过5米)",
+  "id": "auto_115",
+  "product_id": "ac_kfr51lw",
+  "expected_source": "05_空调_美的KFR-51LW_BP3DN8Y-YA401(1).txt",
+  "version": "1.0",
+  "expected_status": "answered"
+ },
+ {
+  "category": "参数",
+  "question": "电源线规格（mm²）（RVV 300/是多少？",
+  "expected_terms": [
+   "500V"
+  ],
+  "expected_evidence": "电源线规格（mm²）（RVV 300/500V）：5×2.5",
+  "id": "auto_116",
+  "product_id": "ac_kfr51lw",
+  "expected_source": "05_空调_美的KFR-51LW_BP3DN8Y-YA401(1).txt",
+  "version": "1.0",
+  "expected_status": "answered"
+ },
+ {
+  "category": "参数",
+  "question": "室内外连接线规格（mm²）（YZW 300/是多少？",
+  "expected_terms": [
+   "500V"
+  ],
+  "expected_evidence": "室内外连接线规格（mm²）（YZW 300/500V）：6×2.5（线长不超过5米）",
+  "id": "auto_117",
+  "product_id": "ac_kfr51lw",
+  "expected_source": "05_空调_美的KFR-51LW_BP3DN8Y-YA401(1).txt",
+  "version": "1.0",
+  "expected_status": "answered"
+ },
+ {
+  "category": "参数",
+  "question": "关机并关闭电源 —是多少？",
+  "expected_terms": [
+   "10分钟"
+  ],
+  "expected_evidence": "关机并关闭电源 — 10分钟后打开电源并开机 — 仍然显示代码 — 关机并关闭电源 — 联系检修。（不再显示代码，可继续使用）",
+  "id": "auto_118",
+  "product_id": "ac_kfr51lw",
+  "expected_source": "05_空调_美的KFR-51LW_BP3DN8Y-YA401(1).txt",
+  "version": "1.0",
+  "expected_status": "answered"
+ },
+ {
+  "category": "参数",
+  "question": "制热模式下开机一段时间室内机无反应：- 防冷风功能开启，请耐心等待是多少？",
+  "expected_terms": [
+   "3-5分钟"
+  ],
+  "expected_evidence": "制热模式下开机一段时间室内机无反应：- 防冷风功能开启，请耐心等待3-5分钟",
+  "id": "auto_119",
+  "product_id": "ac_kfr51lw",
+  "expected_source": "05_空调_美的KFR-51LW_BP3DN8Y-YA401(1).txt",
+  "version": "1.0",
+  "expected_status": "answered"
+ },
+ {
+  "category": "参数",
+  "question": "关机并关闭电源是多少？",
+  "expected_terms": [
+   "10秒"
+  ],
+  "expected_evidence": "- 关机并关闭电源，10秒钟后重启，导风板将自动闭合",
+  "id": "auto_120",
+  "product_id": "ac_kfr51lw",
+  "expected_source": "05_空调_美的KFR-51LW_BP3DN8Y-YA401(1).txt",
+  "version": "1.0",
+  "expected_status": "answered"
+ },
+ {
+  "category": "参数",
+  "question": "建议每月清洁是多少？",
+  "expected_terms": [
+   "1次"
+  ],
+  "expected_evidence": "- 建议每月清洁1次滤尘网，当空调器使用环境灰尘多时，清洁次数应相应增加。",
+  "id": "auto_121",
+  "product_id": "ac_kfr51lw",
+  "expected_source": "05_空调_美的KFR-51LW_BP3DN8Y-YA401(1).txt",
+  "version": "1.0",
+  "expected_status": "answered"
+ },
+ {
+  "category": "参数",
+  "question": "最多允许加长是多少？",
+  "expected_terms": [
+   "15米"
+  ],
+  "expected_evidence": "- 若长度不够，应与用户协商加长管（明确加长收费标准），如配备不足，请及时联系当地经销商重新配备足够的电缆线，严禁因长度不足对电源线进行中间驳接。 - 最多允许加长15米连接管，同时需要增加R32制冷剂充注量，按18g/m操作。",
+  "id": "auto_122",
+  "product_id": "ac_kfr51lw",
+  "expected_source": "05_空调_美的KFR-51LW_BP3DN8Y-YA401(1).txt",
+  "version": "1.0",
+  "expected_status": "answered"
+ },
+ {
+  "category": "参数",
+  "question": "备注：确定空调器位置时，必须保证进风口离墙壁距离≥是多少？",
+  "expected_terms": [
+   "8cm"
+  ],
+  "expected_evidence": "- 备注：确定空调器位置时，必须保证进风口离墙壁距离≥8cm。 当空调器安装在窗帘旁边时，为了防止窗帘吸附到进风格栅上，请安装窗帘支架。",
+  "id": "auto_123",
+  "product_id": "ac_kfr51lw",
+  "expected_source": "05_空调_美的KFR-51LW_BP3DN8Y-YA401(1).txt",
+  "version": "1.0",
+  "expected_status": "answered"
+ },
+ {
+  "category": "参数",
+  "question": "开启真空泵进行抽真空操作，运转是多少？",
+  "expected_terms": [
+   "10 分钟"
+  ],
+  "expected_evidence": "4. 开启真空泵进行抽真空操作，运转10 分钟以上【真空压力（绝对压力）达30Pa（观察真空表达到-0.1MPa）为止】，完全关闭低压阀，使真空泵停止运转，确认低压阀不泄漏。",
+  "id": "auto_124",
+  "product_id": "ac_kfr51lw",
+  "expected_source": "05_空调_美的KFR-51LW_BP3DN8Y-YA401(1).txt",
+  "version": "1.0",
+  "expected_status": "answered"
+ },
+ {
+  "category": "参数",
+  "question": "分别关闭低压阀和高压阀是多少？",
+  "expected_terms": [
+   "1-2 分钟"
+  ],
+  "expected_evidence": "- 分别关闭低压阀和高压阀1-2 分钟后，需确认压力表指针是否返回，未出现返回则表明不会泄漏，若出现指针返回，则需要检查泄漏，修复后需再次进行抽真空。",
+  "id": "auto_125",
+  "product_id": "ac_kfr51lw",
+  "expected_source": "05_空调_美的KFR-51LW_BP3DN8Y-YA401(1).txt",
+  "version": "1.0",
+  "expected_status": "answered"
+ },
+ {
+  "category": "参数",
+  "question": "每处检漏时间需停留是多少？",
+  "expected_terms": [
+   "3分钟"
+  ],
+  "expected_evidence": "每处检漏时间需停留3分钟及以上；若检测结果显示有泄漏，需对螺母进行紧固措施，并再次检测，直至无泄漏结果；检漏完成后，用保温材料将裸露的室内机管路接口包好并用包扎带扎紧，",
+  "id": "auto_126",
+  "product_id": "ac_kfr51lw",
+  "expected_source": "05_空调_美的KFR-51LW_BP3DN8Y-YA401(1).txt",
+  "version": "1.0",
+  "expected_status": "answered"
+ },
+ {
+  "category": "参数",
+  "question": "同时按下控制面板“模式”键和“风向”键是多少？",
+  "expected_terms": [
+   "1秒"
+  ],
+  "expected_evidence": "同时按下控制面板“模式”键和“风向”键1秒钟。",
+  "id": "auto_127",
+  "product_id": "ac_kfr51lw",
+  "expected_source": "05_空调_美的KFR-51LW_BP3DN8Y-YA401(1).txt",
+  "version": "1.0",
+  "expected_status": "answered"
+ },
+ {
+  "category": "参数",
+  "question": "观察空调器试运行状态（出风温度、排水等）是多少？",
+  "expected_terms": [
+   "30分钟"
+  ],
+  "expected_evidence": "- 观察空调器试运行状态（出风温度、排水等）30分钟，",
+  "id": "auto_128",
+  "product_id": "ac_kfr51lw",
+  "expected_source": "05_空调_美的KFR-51LW_BP3DN8Y-YA401(1).txt",
+  "version": "1.0",
+  "expected_status": "answered"
+ },
+ {
+  "category": "参数",
+  "question": "同时按下“模式”和“风向”键是多少？",
+  "expected_terms": [
+   "1秒"
+  ],
+  "expected_evidence": "同时按下“模式”和“风向”键1秒钟退出试运行状态。",
+  "id": "auto_129",
+  "product_id": "ac_kfr51lw",
+  "expected_source": "05_空调_美的KFR-51LW_BP3DN8Y-YA401(1).txt",
+  "version": "1.0",
+  "expected_status": "answered"
+ },
+ {
+  "id": "auto_130",
+  "category": "拒答",
+  "question": "洗衣机卖多少钱？",
+  "product_id": "washer_wm090mja08hk",
+  "version": "1.0",
+  "expected_status": "no_answer",
+  "expected_terms": [],
+  "expected_evidence": "（价格：全语料零命中，同义词 ['价格', '售价', '多少钱', '零售价'] 均不在 洗衣机 语料中）",
+  "expected_source": "01_洗衣机_米家WM090MJA08HK.txt"
+ },
+ {
+  "id": "auto_131",
+  "category": "拒答",
+  "question": "手持吸尘器卖多少钱？",
+  "product_id": "vacuum_g10_plus",
+  "version": "1.0",
+  "expected_status": "no_answer",
+  "expected_terms": [],
+  "expected_evidence": "（价格：全语料零命中，同义词 ['价格', '售价', '多少钱', '零售价'] 均不在 手持吸尘器 语料中）",
+  "expected_source": "02_手持吸尘器_Xiaomi_G10_Plus.txt"
+ },
+ {
+  "id": "auto_132",
+  "category": "拒答",
+  "question": "扫拖机器人卖多少钱？",
+  "product_id": "robotvac_s20",
+  "version": "1.0",
+  "expected_status": "no_answer",
+  "expected_terms": [],
+  "expected_evidence": "（价格：全语料零命中，同义词 ['价格', '售价', '多少钱', '零售价'] 均不在 扫拖机器人 语料中）",
+  "expected_source": "03_扫拖机器人_Xiaomi_S20.txt"
+ },
+ {
+  "id": "auto_133",
+  "category": "拒答",
+  "question": "冰箱卖多少钱？",
+  "product_id": "fridge_bcd600",
+  "version": "1.0",
+  "expected_status": "no_answer",
+  "expected_terms": [],
+  "expected_evidence": "（价格：全语料零命中，同义词 ['价格', '售价', '多少钱', '零售价'] 均不在 冰箱 语料中）",
+  "expected_source": "04_冰箱_海尔BCD-600WGHSS17NZU1.txt"
+ },
+ {
+  "id": "auto_134",
+  "category": "拒答",
+  "question": "空调卖多少钱？",
+  "product_id": "ac_kfr51lw",
+  "version": "1.0",
+  "expected_status": "no_answer",
+  "expected_terms": [],
+  "expected_evidence": "（价格：全语料零命中，同义词 ['价格', '售价', '多少钱', '零售价'] 均不在 空调 语料中）",
+  "expected_source": "05_空调_美的KFR-51LW_BP3DN8Y-YA401(1).txt"
+ },
+ {
+  "id": "auto_135",
+  "category": "拒答",
+  "question": "洗衣机的质保期是多久？",
+  "product_id": "washer_wm090mja08hk",
+  "version": "1.0",
+  "expected_status": "no_answer",
+  "expected_terms": [],
+  "expected_evidence": "（保修期：全语料零命中，同义词 ['保修', '质保', '三包'] 均不在 洗衣机 语料中）",
+  "expected_source": "01_洗衣机_米家WM090MJA08HK.txt"
+ },
+ {
+  "id": "auto_136",
+  "category": "拒答",
+  "question": "手持吸尘器的质保期是多久？",
+  "product_id": "vacuum_g10_plus",
+  "version": "1.0",
+  "expected_status": "no_answer",
+  "expected_terms": [],
+  "expected_evidence": "（保修期：全语料零命中，同义词 ['保修', '质保', '三包'] 均不在 手持吸尘器 语料中）",
+  "expected_source": "02_手持吸尘器_Xiaomi_G10_Plus.txt"
+ },
+ {
+  "id": "auto_137",
+  "category": "拒答",
+  "question": "扫拖机器人的质保期是多久？",
+  "product_id": "robotvac_s20",
+  "version": "1.0",
+  "expected_status": "no_answer",
+  "expected_terms": [],
+  "expected_evidence": "（保修期：全语料零命中，同义词 ['保修', '质保', '三包'] 均不在 扫拖机器人 语料中）",
+  "expected_source": "03_扫拖机器人_Xiaomi_S20.txt"
+ },
+ {
+  "id": "auto_138",
+  "category": "拒答",
+  "question": "洗衣机安装需要另外收费吗？",
+  "product_id": "washer_wm090mja08hk",
+  "version": "1.0",
+  "expected_status": "no_answer",
+  "expected_terms": [],
+  "expected_evidence": "（安装费：全语料零命中，同义词 ['安装费', '安装收费', '上门费'] 均不在 洗衣机 语料中）",
+  "expected_source": "01_洗衣机_米家WM090MJA08HK.txt"
+ },
+ {
+  "id": "auto_139",
+  "category": "拒答",
+  "question": "手持吸尘器安装需要另外收费吗？",
+  "product_id": "vacuum_g10_plus",
+  "version": "1.0",
+  "expected_status": "no_answer",
+  "expected_terms": [],
+  "expected_evidence": "（安装费：全语料零命中，同义词 ['安装费', '安装收费', '上门费'] 均不在 手持吸尘器 语料中）",
+  "expected_source": "02_手持吸尘器_Xiaomi_G10_Plus.txt"
+ },
+ {
+  "id": "auto_140",
+  "category": "拒答",
+  "question": "扫拖机器人安装需要另外收费吗？",
+  "product_id": "robotvac_s20",
+  "version": "1.0",
+  "expected_status": "no_answer",
+  "expected_terms": [],
+  "expected_evidence": "（安装费：全语料零命中，同义词 ['安装费', '安装收费', '上门费'] 均不在 扫拖机器人 语料中）",
+  "expected_source": "03_扫拖机器人_Xiaomi_S20.txt"
+ },
+ {
+  "id": "auto_141",
+  "category": "拒答",
+  "question": "冰箱安装需要另外收费吗？",
+  "product_id": "fridge_bcd600",
+  "version": "1.0",
+  "expected_status": "no_answer",
+  "expected_terms": [],
+  "expected_evidence": "（安装费：全语料零命中，同义词 ['安装费', '安装收费', '上门费'] 均不在 冰箱 语料中）",
+  "expected_source": "04_冰箱_海尔BCD-600WGHSS17NZU1.txt"
+ },
+ {
+  "id": "auto_142",
+  "category": "拒答",
+  "question": "空调安装需要另外收费吗？",
+  "product_id": "ac_kfr51lw",
+  "version": "1.0",
+  "expected_status": "no_answer",
+  "expected_terms": [],
+  "expected_evidence": "（安装费：全语料零命中，同义词 ['安装费', '安装收费', '上门费'] 均不在 空调 语料中）",
+  "expected_source": "05_空调_美的KFR-51LW_BP3DN8Y-YA401(1).txt"
+ },
+ {
+  "id": "auto_143",
+  "category": "拒答",
+  "question": "买洗衣机要付运费吗？",
+  "product_id": "washer_wm090mja08hk",
+  "version": "1.0",
+  "expected_status": "no_answer",
+  "expected_terms": [],
+  "expected_evidence": "（运费：全语料零命中，同义词 ['运费', '配送费'] 均不在 洗衣机 语料中）",
+  "expected_source": "01_洗衣机_米家WM090MJA08HK.txt"
+ },
+ {
+  "id": "auto_144",
+  "category": "拒答",
+  "question": "买手持吸尘器要付运费吗？",
+  "product_id": "vacuum_g10_plus",
+  "version": "1.0",
+  "expected_status": "no_answer",
+  "expected_terms": [],
+  "expected_evidence": "（运费：全语料零命中，同义词 ['运费', '配送费'] 均不在 手持吸尘器 语料中）",
+  "expected_source": "02_手持吸尘器_Xiaomi_G10_Plus.txt"
+ },
+ {
+  "id": "auto_145",
+  "category": "跨产品辨析",
+  "question": "洗衣机的产品净重是多少？",
+  "product_id": "washer_wm090mja08hk",
+  "version": "1.0",
+  "expected_status": "answered",
+  "expected_terms": [
+   "55 kg"
+  ],
+  "expected_evidence": "产品净重：55 kg；其它产品同参数取值：扫拖机器人=3.4 kg",
+  "expected_source": "01_洗衣机_米家WM090MJA08HK.txt"
+ },
+ {
+  "id": "auto_146",
+  "category": "跨产品辨析",
+  "question": "扫拖机器人的产品净重是多少？",
+  "product_id": "robotvac_s20",
+  "version": "1.0",
+  "expected_status": "answered",
+  "expected_terms": [
+   "3.4 kg"
+  ],
+  "expected_evidence": "产品净重：3.4 kg；其它产品同参数取值：洗衣机=55 kg",
+  "expected_source": "03_扫拖机器人_Xiaomi_S20.txt"
+ },
+ {
+  "id": "auto_147",
+  "category": "跨产品辨析",
+  "question": "扫拖机器人的额定电压是多少？",
+  "product_id": "robotvac_s20",
+  "version": "1.0",
+  "expected_status": "answered",
+  "expected_terms": [
+   "14.4 V"
+  ],
+  "expected_evidence": "额定电压：14.4 V；其它产品同参数取值：冰箱=220V",
+  "expected_source": "03_扫拖机器人_Xiaomi_S20.txt"
+ },
+ {
+  "id": "auto_148",
+  "category": "跨产品辨析",
+  "question": "冰箱的额定电压是多少？",
+  "product_id": "fridge_bcd600",
+  "version": "1.0",
+  "expected_status": "answered",
+  "expected_terms": [
+   "220V"
+  ],
+  "expected_evidence": "额定电压：220V~；其它产品同参数取值：扫拖机器人=14.4 V",
+  "expected_source": "04_冰箱_海尔BCD-600WGHSS17NZU1.txt"
+ },
+ {
+  "id": "auto_149",
+  "category": "跨产品辨析",
+  "question": "扫拖机器人的额定功率是多少？",
+  "product_id": "robotvac_s20",
+  "version": "1.0",
+  "expected_status": "answered",
+  "expected_terms": [
+   "45 W"
+  ],
+  "expected_evidence": "额定功率：45 W",
+  "expected_source": "03_扫拖机器人_Xiaomi_S20.txt"
+ },
+ {
+  "id": "auto_150",
+  "category": "跨产品辨析",
+  "question": "洗衣机的产品尺寸是多少？",
+  "product_id": "washer_wm090mja08hk",
+  "version": "1.0",
+  "expected_status": "answered",
+  "expected_terms": [
+   "850 mm"
+  ],
+  "expected_evidence": "产品尺寸：598 × 535 × 850 mm",
+  "expected_source": "01_洗衣机_米家WM090MJA08HK.txt"
+ },
+ {
+  "id": "auto_151",
+  "category": "跨产品辨析",
+  "question": "洗衣机的运作水压是多少？",
+  "product_id": "washer_wm090mja08hk",
+  "version": "1.0",
+  "expected_status": "answered",
+  "expected_terms": [
+   "0.05 MPa"
+  ],
+  "expected_evidence": "运作水压：0.05 MPa - 0.8 MPa",
+  "expected_source": "01_洗衣机_米家WM090MJA08HK.txt"
+ },
+ {
+  "id": "auto_152",
+  "category": "跨产品辨析",
+  "question": "冰箱的总容积是多少？",
+  "product_id": "fridge_bcd600",
+  "version": "1.0",
+  "expected_status": "answered",
+  "expected_terms": [
+   "600L"
+  ],
+  "expected_evidence": "总容积：600L",
+  "expected_source": "04_冰箱_海尔BCD-600WGHSS17NZU1.txt"
+ },
+ {
+  "id": "auto_153",
+  "category": "跨产品辨析",
+  "question": "洗衣机的额定洗涤容量是多少？",
+  "product_id": "washer_wm090mja08hk",
+  "version": "1.0",
+  "expected_status": "answered",
+  "expected_terms": [
+   "9 kg"
+  ],
+  "expected_evidence": "额定洗涤容量：9 kg",
+  "expected_source": "01_洗衣机_米家WM090MJA08HK.txt"
+ },
+ {
+  "id": "auto_154",
+  "category": "转人工",
+  "question": "洗衣机买回来就有问题，我要退款",
+  "product_id": "washer_wm090mja08hk",
+  "version": "1.0",
+  "expected_status": "handoff",
+  "expected_terms": [],
+  "expected_evidence": "命中 HANDOFF_WORDS（退款/投诉/退货/人工）",
+  "expected_source": "01_洗衣机_米家WM090MJA08HK.txt"
+ },
+ {
+  "id": "auto_155",
+  "category": "转人工",
+  "question": "空调噪音太大，我要投诉",
+  "product_id": "ac_kfr51lw",
+  "version": "1.0",
+  "expected_status": "handoff",
+  "expected_terms": [],
+  "expected_evidence": "命中 HANDOFF_WORDS（退款/投诉/退货/人工）",
+  "expected_source": "05_空调_美的KFR-51LW_BP3DN8Y-YA401(1).txt"
+ },
+ {
+  "id": "auto_156",
+  "category": "转人工",
+  "question": "冰箱不制冷了，我要退货",
+  "product_id": "fridge_bcd600",
+  "version": "1.0",
+  "expected_status": "handoff",
+  "expected_terms": [],
+  "expected_evidence": "命中 HANDOFF_WORDS（退款/投诉/退货/人工）",
+  "expected_source": "04_冰箱_海尔BCD-600WGHSS17NZU1.txt"
+ },
+ {
+  "id": "auto_157",
+  "category": "转人工",
+  "question": "别的问题我不问了，给我转人工",
+  "product_id": "robotvac_s20",
+  "version": "1.0",
+  "expected_status": "handoff",
+  "expected_terms": [],
+  "expected_evidence": "命中 HANDOFF_WORDS（退款/投诉/退货/人工）",
+  "expected_source": "03_扫拖机器人_Xiaomi_S20.txt"
+ },
+ {
+  "id": "auto_158",
+  "category": "转人工",
+  "question": "电池坏了，帮我联系人工客服处理",
+  "product_id": "vacuum_g10_plus",
+  "version": "1.0",
+  "expected_status": "handoff",
+  "expected_terms": [],
+  "expected_evidence": "命中 HANDOFF_WORDS（退款/投诉/退货/人工）",
+  "expected_source": "02_手持吸尘器_Xiaomi_G10_Plus.txt"
+ }
+]

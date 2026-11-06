@@ -1,0 +1,29 @@
+{
+  "page": "06.svg",
+  "page_role": "content",
+  "canvas": {
+    "view_box": [
+      0,
+      0,
+      1280,
+      720
+    ],
+    "width": 1280,
+    "height": 720,
+    "png_width": 1280,
+    "png_height": 720
+  },
+  "status": "ok",
+  "iterations_run": 1,
+  "screenshot_paths": [
+    ".preview/06.png"
+  ],
+  "findings": [],
+  "untouched_concerns": [],
+  "needs_human_items": [],
+  "design_intent_check": {
+    "spec_says": "准确清晰地传达本页主题",
+    "render_delivers": true,
+    "note": "未发现裁切、溢出、交叠或对比度问题。"
+  }
+}

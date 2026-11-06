@@ -1,0 +1,5463 @@
+{
+ "summary": {
+  "配置": {
+   "retriever": "semantic",
+   "answer_mode": "llm",
+   "model": "glm-4-flash",
+   "db": "sms.sqlite3"
+  },
+  "n": 158,
+  "检索": {
+   "hit@1": 0.486,
+   "hit@3": 0.754,
+   "mrr": 0.628
+  },
+  "回答": {
+   "状态准确率": 0.842,
+   "关键词命中_严格": 0.645,
+   "关键词命中_数值等价": 0.688,
+   "拒答正确率": 0.4,
+   "误答率": 0.6,
+   "转人工正确率": 1.0
+  },
+  "忠实度": {
+   "平均支持率": 0.498,
+   "句子分布": {
+    "SUPPORTED": 76,
+    "PARTIAL": 67,
+    "NOT_SUPPORTED": 129
+   }
+  },
+  "延迟": {
+   "p50": 1738.0,
+   "p90": 3753.0,
+   "max": 9074.0
+  },
+  "生成方式分布": {
+   "llm": 153,
+   "rule": 5
+  },
+  "实际状态分布": {
+   "answered": 131,
+   "no_answer": 22,
+   "handoff": 5
+  }
+ },
+ "rows": [
+  {
+   "id": "auto_001",
+   "category": "型号/文本",
+   "product": "washer_wm090mja08hk",
+   "question": "适用产品型号是什么？",
+   "expected_status": "answered",
+   "actual_status": "answered",
+   "generation_mode": "llm",
+   "status_ok": true,
+   "expected_terms": [
+    "WM090MJA08HK"
+   ],
+   "kw_strict": true,
+   "kw_number_eq": true,
+   "rank": 2,
+   "hit@1": false,
+   "hit@3": true,
+   "rr": 0.5,
+   "faithfulness": 1.0,
+   "faith_detail": [
+    {
+     "sentence": "适用产品型号是 WM090MJA08HK [2][3]",
+     "cover": 0.67,
+     "verdict": "SUPPORTED"
+    }
+   ],
+   "confidence": 0.6156,
+   "latency_ms": 1811.0,
+   "answer": "适用产品型号是 WM090MJA08HK [2][3]。"
+  },
+  {
+   "id": "auto_002",
+   "category": "型号/文本",
+   "product": "washer_wm090mja08hk",
+   "question": "产品名称是什么？",
+   "expected_status": "answered",
+   "actual_status": "answered",
+   "generation_mode": "llm",
+   "status_ok": true,
+   "expected_terms": [
+    "米家洗衣机"
+   ],
+   "kw_strict": true,
+   "kw_number_eq": true,
+   "rank": 1,
+   "hit@1": true,
+   "hit@3": true,
+   "rr": 1.0,
+   "faithfulness": 0.5,
+   "faith_detail": [
+    {
+     "sentence": "产品名称是米家洗衣机 [1]",
+     "cover": 0.58,
+     "verdict": "PARTIAL"
+    }
+   ],
+   "confidence": 0.5787,
+   "latency_ms": 958.7,
+   "answer": "产品名称是米家洗衣机 [1]。"
+  },
+  {
+   "id": "auto_003",
+   "category": "型号/文本",
+   "product": "washer_wm090mja08hk",
+   "question": "产品型号是什么？",
+   "expected_status": "answered",
+   "actual_status": "answered",
+   "generation_mode": "llm",
+   "status_ok": true,
+   "expected_terms": [
+    "WM090MJA08HK"
+   ],
+   "kw_strict": true,
+   "kw_number_eq": true,
+   "rank": 2,
+   "hit@1": false,
+   "hit@3": true,
+   "rr": 0.5,
+   "faithfulness": 1.0,
+   "faith_detail": [
+    {
+     "sentence": "产品型号是WM090MJA08HK [3]",
+     "cover": 0.74,
+     "verdict": "SUPPORTED"
+    }
+   ],
+   "confidence": 0.577,
+   "latency_ms": 1329.0,
+   "answer": "产品型号是WM090MJA08HK [3]。"
+  },
+  {
+   "id": "auto_004",
+   "category": "参数",
+   "product": "washer_wm090mja08hk",
+   "question": "额定洗涤容量是多少？",
+   "expected_status": "answered",
+   "actual_status": "answered",
+   "generation_mode": "llm",
+   "status_ok": true,
+   "expected_terms": [
+    "9 kg"
+   ],
+   "kw_strict": true,
+   "kw_number_eq": true,
+   "rank": 2,
+   "hit@1": false,
+   "hit@3": true,
+   "rr": 0.5,
+   "faithfulness": 0.5,
+   "faith_detail": [
+    {
+     "sentence": "额定洗涤容量是9 kg [2]",
+     "cover": 0.58,
+     "verdict": "PARTIAL"
+    }
+   ],
+   "confidence": 0.8735,
+   "latency_ms": 1462.6,
+   "answer": "额定洗涤容量是9 kg [2]。"
+  },
+  {
+   "id": "auto_005",
+   "category": "参数",
+   "product": "washer_wm090mja08hk",
+   "question": "产品尺寸是多少？",
+   "expected_status": "answered",
+   "actual_status": "answered",
+   "generation_mode": "llm",
+   "status_ok": true,
+   "expected_terms": [
+    "850 mm"
+   ],
+   "kw_strict": true,
+   "kw_number_eq": true,
+   "rank": 1,
+   "hit@1": true,
+   "hit@3": true,
+   "rr": 1.0,
+   "faithfulness": 1.0,
+   "faith_detail": [
+    {
+     "sentence": "产品尺寸是598 × 535 × 850 mm [1]",
+     "cover": 0.75,
+     "verdict": "SUPPORTED"
+    }
+   ],
+   "confidence": 0.8223,
+   "latency_ms": 1660.2,
+   "answer": "产品尺寸是598 × 535 × 850 mm [1]。"
+  },
+  {
+   "id": "auto_006",
+   "category": "参数",
+   "product": "washer_wm090mja08hk",
+   "question": "产品净重是多少？",
+   "expected_status": "answered",
+   "actual_status": "answered",
+   "generation_mode": "llm",
+   "status_ok": true,
+   "expected_terms": [
+    "55 kg"
+   ],
+   "kw_strict": true,
+   "kw_number_eq": true,
+   "rank": 2,
+   "hit@1": false,
+   "hit@3": true,
+   "rr": 0.5,
+   "faithfulness": 0.5,
+   "faith_detail": [
+    {
+     "sentence": "产品净重是55 kg [2]",
+     "cover": 0.55,
+     "verdict": "PARTIAL"
+    }
+   ],
+   "confidence": 0.8276,
+   "latency_ms": 1693.1,
+   "answer": "产品净重是55 kg [2]。"
+  },
+  {
+   "id": "auto_007",
+   "category": "参数",
+   "product": "washer_wm090mja08hk",
+   "question": "产品毛重是多少？",
+   "expected_status": "answered",
+   "actual_status": "answered",
+   "generation_mode": "llm",
+   "status_ok": true,
+   "expected_terms": [
+    "59 kg"
+   ],
+   "kw_strict": true,
+   "kw_number_eq": true,
+   "rank": 1,
+   "hit@1": true,
+   "hit@3": true,
+   "rr": 1.0,
+   "faithfulness": 0.5,
+   "faith_detail": [
+    {
+     "sentence": "产品毛重是59 kg [1]",
+     "cover": 0.55,
+     "verdict": "PARTIAL"
+    }
+   ],
+   "confidence": 0.7946,
+   "latency_ms": 3026.4,
+   "answer": "产品毛重是59 kg [1]。"
+  },
+  {
+   "id": "auto_008",
+   "category": "参数",
+   "product": "washer_wm090mja08hk",
+   "question": "额定洗涤功率输入是多少？",
+   "expected_status": "answered",
+   "actual_status": "answered",
+   "generation_mode": "llm",
+   "status_ok": true,
+   "expected_terms": [
+    "1500-1800 W"
+   ],
+   "kw_strict": true,
+   "kw_number_eq": true,
+   "rank": 1,
+   "hit@1": true,
+   "hit@3": true,
+   "rr": 1.0,
+   "faithfulness": 1.0,
+   "faith_detail": [
+    {
+     "sentence": "额定洗涤功率输入是1500-1800 W [1]",
+     "cover": 0.75,
+     "verdict": "SUPPORTED"
+    }
+   ],
+   "confidence": 0.9019,
+   "latency_ms": 1051.5,
+   "answer": "额定洗涤功率输入是1500-1800 W [1]。"
+  },
+  {
+   "id": "auto_009",
+   "category": "参数",
+   "product": "washer_wm090mja08hk",
+   "question": "额定电压/额定频率是多少？",
+   "expected_status": "answered",
+   "actual_status": "answered",
+   "generation_mode": "llm",
+   "status_ok": true,
+   "expected_terms": [
+    "220-240 V"
+   ],
+   "kw_strict": true,
+   "kw_number_eq": true,
+   "rank": 1,
+   "hit@1": true,
+   "hit@3": true,
+   "rr": 1.0,
+   "faithfulness": 1.0,
+   "faith_detail": [
+    {
+     "sentence": "额定电压是220-240 V，额定频率是50 Hz [1]",
+     "cover": 0.67,
+     "verdict": "SUPPORTED"
+    }
+   ],
+   "confidence": 0.8531,
+   "latency_ms": 1310.2,
+   "answer": "额定电压是220-240 V，额定频率是50 Hz [1]。"
+  },
+  {
+   "id": "auto_010",
+   "category": "参数",
+   "product": "washer_wm090mja08hk",
+   "question": "运作水压是多少？",
+   "expected_status": "answered",
+   "actual_status": "answered",
+   "generation_mode": "llm",
+   "status_ok": true,
+   "expected_terms": [
+    "0.05 MPa"
+   ],
+   "kw_strict": true,
+   "kw_number_eq": true,
+   "rank": 2,
+   "hit@1": false,
+   "hit@3": true,
+   "rr": 0.5,
+   "faithfulness": 1.0,
+   "faith_detail": [
+    {
+     "sentence": "运作水压为0.05 MPa至0.8 MPa [2][3]",
+     "cover": 0.71,
+     "verdict": "SUPPORTED"
+    }
+   ],
+   "confidence": 0.8442,
+   "latency_ms": 1459.6,
+   "answer": "运作水压为0.05 MPa至0.8 MPa [2][3]。"
+  },
+  {
+   "id": "auto_011",
+   "category": "参数",
+   "product": "washer_wm090mja08hk",
+   "question": "连接排水管末端至水槽落水管的分支上，确定连接点距地面的高度不超过是多少？",
+   "expected_status": "answered",
+   "actual_status": "answered",
+   "generation_mode": "llm",
+   "status_ok": true,
+   "expected_terms": [
+    "90 厘米"
+   ],
+   "kw_strict": true,
+   "kw_number_eq": true,
+   "rank": 1,
+   "hit@1": true,
+   "hit@3": true,
+   "rr": 1.0,
+   "faithfulness": 1.0,
+   "faith_detail": [
+    {
+     "sentence": "连接点距地面的高度不超过 90 厘米 [1]",
+     "cover": 0.83,
+     "verdict": "SUPPORTED"
+    }
+   ],
+   "confidence": 0.9213,
+   "latency_ms": 1367.7,
+   "answer": "连接点距地面的高度不超过 90 厘米 [1]。"
+  },
+  {
+   "id": "auto_012",
+   "category": "参数",
+   "product": "washer_wm090mja08hk",
+   "question": "每次按下可增加是多少？",
+   "expected_status": "answered",
+   "actual_status": "answered",
+   "generation_mode": "llm",
+   "status_ok": true,
+   "expected_terms": [
+    "1 小时"
+   ],
+   "kw_strict": true,
+   "kw_number_eq": true,
+   "rank": 1,
+   "hit@1": true,
+   "hit@3": true,
+   "rr": 1.0,
+   "faithfulness": 1.0,
+   "faith_detail": [
+    {
+     "sentence": "每次按下预约按钮，预约时间可增加 1 小时，最多增加至 24 小时 [1]",
+     "cover": 0.61,
+     "verdict": "SUPPORTED"
+    }
+   ],
+   "confidence": 0.5403,
+   "latency_ms": 1736.9,
+   "answer": "每次按下预约按钮，预约时间可增加 1 小时，最多增加至 24 小时 [1]。"
+  },
+  {
+   "id": "auto_013",
+   "category": "参数",
+   "product": "washer_wm090mja08hk",
+   "question": "按下温度按钮，根据洗涤物品选择合适水温：冷水是多少？",
+   "expected_status": "answered",
+   "actual_status": "answered",
+   "generation_mode": "llm",
+   "status_ok": true,
+   "expected_terms": [
+    "30°C"
+   ],
+   "kw_strict": false,
+   "kw_number_eq": false,
+   "rank": 1,
+   "hit@1": true,
+   "hit@3": true,
+   "rr": 1.0,
+   "faithfulness": 0.25,
+   "faith_detail": [
+    {
+     "sentence": "按下温度按钮，根据洗涤物品选择合适水温时，冷水对应的水温是未具体说明的",
+     "cover": 0.52,
+     "verdict": "PARTIAL"
+    },
+    {
+     "sentence": "现有产品资料中暂未找到冷水具体对应的水温 [1]",
+     "cover": 0.09,
+     "verdict": "NOT_SUPPORTED"
+    }
+   ],
+   "confidence": 0.9172,
+   "latency_ms": 1937.5,
+   "answer": "按下温度按钮，根据洗涤物品选择合适水温时，冷水对应的水温是未具体说明的。现有产品资料中暂未找到冷水具体对应的水温 [1]。"
+  },
+  {
+   "id": "auto_014",
+   "category": "参数",
+   "product": "washer_wm090mja08hk",
+   "question": "重新设定无线网络：待机模式时，长按按钮是多少？",
+   "expected_status": "answered",
+   "actual_status": "answered",
+   "generation_mode": "llm",
+   "status_ok": true,
+   "expected_terms": [
+    "7 秒"
+   ],
+   "kw_strict": true,
+   "kw_number_eq": true,
+   "rank": 1,
+   "hit@1": true,
+   "hit@3": true,
+   "rr": 1.0,
+   "faithfulness": 0.5,
+   "faith_detail": [
+    {
+     "sentence": "重新设定无线网络时，待机模式下长按按钮7秒",
+     "cover": 0.75,
+     "verdict": "SUPPORTED"
+    },
+    {
+     "sentence": "资料编号[1]、[2]、[3]都提供了这一信息",
+     "cover": 0.0,
+     "verdict": "NOT_SUPPORTED"
+    }
+   ],
+   "confidence": 0.796,
+   "latency_ms": 1549.8,
+   "answer": "重新设定无线网络时，待机模式下长按按钮7秒。资料编号[1]、[2]、[3]都提供了这一信息。"
+  },
+  {
+   "id": "auto_015",
+   "category": "参数",
+   "product": "washer_wm090mja08hk",
+   "question": "因此，实际洗涤时间与显示时间可能相差最多是多少？",
+   "expected_status": "answered",
+   "actual_status": "answered",
+   "generation_mode": "llm",
+   "status_ok": true,
+   "expected_terms": [
+    "30 分钟"
+   ],
+   "kw_strict": true,
+   "kw_number_eq": true,
+   "rank": 3,
+   "hit@1": false,
+   "hit@3": true,
+   "rr": 0.3333333333333333,
+   "faithfulness": 1.0,
+   "faith_detail": [
+    {
+     "sentence": "实际洗涤时间与显示时间可能相差最多 30 分钟 [3]",
+     "cover": 0.86,
+     "verdict": "SUPPORTED"
+    }
+   ],
+   "confidence": 0.7354,
+   "latency_ms": 2248.9,
+   "answer": "实际洗涤时间与显示时间可能相差最多 30 分钟 [3]。"
+  },
+  {
+   "id": "auto_016",
+   "category": "参数",
+   "product": "washer_wm090mja08hk",
+   "question": "每年清洁排水泵滤网盖最少是多少？",
+   "expected_status": "answered",
+   "actual_status": "answered",
+   "generation_mode": "llm",
+   "status_ok": true,
+   "expected_terms": [
+    "5 至 6 次"
+   ],
+   "kw_strict": false,
+   "kw_number_eq": false,
+   "rank": 4,
+   "hit@1": false,
+   "hit@3": false,
+   "rr": 0.25,
+   "faithfulness": 0.0,
+   "faith_detail": [
+    {
+     "sentence": "现有产品资料中暂未找到关于每年清洁排水泵滤网盖最少次数的具体说明 [1][2][3]",
+     "cover": 0.18,
+     "verdict": "NOT_SUPPORTED"
+    }
+   ],
+   "confidence": 0.8247,
+   "latency_ms": 3698.3,
+   "answer": "现有产品资料中暂未找到关于每年清洁排水泵滤网盖最少次数的具体说明 [1][2][3]。"
+  },
+  {
+   "id": "auto_017",
+   "category": "参数",
+   "product": "washer_wm090mja08hk",
+   "question": "每年至少清洁进水阀滤网是多少？",
+   "expected_status": "answered",
+   "actual_status": "answered",
+   "generation_mode": "llm",
+   "status_ok": true,
+   "expected_terms": [
+    "5 至 6 次"
+   ],
+   "kw_strict": false,
+   "kw_number_eq": false,
+   "rank": 5,
+   "hit@1": false,
+   "hit@3": false,
+   "rr": 0.2,
+   "faithfulness": 0.0,
+   "faith_detail": [
+    {
+     "sentence": "现有产品资料中暂未找到关于每年至少清洁进水阀滤网的说明 [1][2][3]",
+     "cover": 0.18,
+     "verdict": "NOT_SUPPORTED"
+    }
+   ],
+   "confidence": 0.7701,
+   "latency_ms": 2163.4,
+   "answer": "现有产品资料中暂未找到关于每年至少清洁进水阀滤网的说明 [1][2][3]。"
+  },
+  {
+   "id": "auto_018",
+   "category": "参数",
+   "product": "washer_wm090mja08hk",
+   "question": "启用远端控制后，如果是多少？",
+   "expected_status": "answered",
+   "actual_status": "answered",
+   "generation_mode": "llm",
+   "status_ok": true,
+   "expected_terms": [
+    "10 分钟"
+   ],
+   "kw_strict": false,
+   "kw_number_eq": false,
+   "rank": null,
+   "hit@1": false,
+   "hit@3": false,
+   "rr": 0.0,
+   "faithfulness": 0.0,
+   "faith_detail": [
+    {
+     "sentence": "现有产品资料中暂未找到具体数值说明启用远端控制后的具体数值",
+     "cover": 0.16,
+     "verdict": "NOT_SUPPORTED"
+    },
+    {
+     "sentence": "资料中提到的是“不可超过「MAX」刻度”，但没有提供“MAX”刻度的具体数值 [1][3]",
+     "cover": 0.25,
+     "verdict": "NOT_SUPPORTED"
+    }
+   ],
+   "confidence": 0.7097,
+   "latency_ms": 2382.0,
+   "answer": "现有产品资料中暂未找到具体数值说明启用远端控制后的具体数值。资料中提到的是“不可超过「MAX」刻度”，但没有提供“MAX”刻度的具体数值 [1][3]。"
+  },
+  {
+   "id": "auto_019",
+   "category": "参数",
+   "product": "vacuum_g10_plus",
+   "question": "仅限使用型号为 BLJ是多少？",
+   "expected_status": "answered",
+   "actual_status": "answered",
+   "generation_mode": "llm",
+   "status_ok": true,
+   "expected_terms": [
+    "24W"
+   ],
+   "kw_strict": true,
+   "kw_number_eq": true,
+   "rank": 1,
+   "hit@1": true,
+   "hit@3": true,
+   "rr": 1.0,
+   "faithfulness": 1.0,
+   "faith_detail": [
+    {
+     "sentence": "仅限使用型号为 BLJ24W308080P-B 的原装电源适配器 [1][2]",
+     "cover": 0.82,
+     "verdict": "SUPPORTED"
+    }
+   ],
+   "confidence": 0.6581,
+   "latency_ms": 1538.6,
+   "answer": "仅限使用型号为 BLJ24W308080P-B 的原装电源适配器 [1][2]。"
+  },
+  {
+   "id": "auto_020",
+   "category": "参数",
+   "product": "vacuum_g10_plus",
+   "question": "根据定位贴纸的定位孔，使用是多少？",
+   "expected_status": "answered",
+   "actual_status": "answered",
+   "generation_mode": "llm",
+   "status_ok": true,
+   "expected_terms": [
+    "8 厘米"
+   ],
+   "kw_strict": true,
+   "kw_number_eq": true,
+   "rank": 2,
+   "hit@1": false,
+   "hit@3": true,
+   "rr": 0.5,
+   "faithfulness": 1.0,
+   "faith_detail": [
+    {
+     "sentence": "根据定位贴纸的定位孔，使用的是8厘米钻嘴的电动工具钻孔 [2]",
+     "cover": 0.71,
+     "verdict": "SUPPORTED"
+    }
+   ],
+   "confidence": 0.6601,
+   "latency_ms": 1513.5,
+   "answer": "根据定位贴纸的定位孔，使用的是8厘米钻嘴的电动工具钻孔 [2]。"
+  },
+  {
+   "id": "auto_021",
+   "category": "参数",
+   "product": "vacuum_g10_plus",
+   "question": "冲洗完毕后，晾晒至少是多少？",
+   "expected_status": "answered",
+   "actual_status": "answered",
+   "generation_mode": "llm",
+   "status_ok": true,
+   "expected_terms": [
+    "24 小时"
+   ],
+   "kw_strict": true,
+   "kw_number_eq": true,
+   "rank": 1,
+   "hit@1": true,
+   "hit@3": true,
+   "rr": 1.0,
+   "faithfulness": 0.75,
+   "faith_detail": [
+    {
+     "sentence": "冲洗完毕后，晾晒至少需要24小时",
+     "cover": 0.67,
+     "verdict": "SUPPORTED"
+    },
+    {
+     "sentence": "这是为了确保滚刷、前置过滤网、旋风系统组件及集尘桶等部件彻底干燥 [1][2]",
+     "cover": 0.54,
+     "verdict": "PARTIAL"
+    }
+   ],
+   "confidence": 0.7703,
+   "latency_ms": 2647.9,
+   "answer": "冲洗完毕后，晾晒至少需要24小时。这是为了确保滚刷、前置过滤网、旋风系统组件及集尘桶等部件彻底干燥 [1][2]。"
+  },
+  {
+   "id": "auto_022",
+   "category": "参数",
+   "product": "vacuum_g10_plus",
+   "question": "将内置滤网晾晒至少是多少？",
+   "expected_status": "answered",
+   "actual_status": "answered",
+   "generation_mode": "llm",
+   "status_ok": true,
+   "expected_terms": [
+    "24 小时"
+   ],
+   "kw_strict": true,
+   "kw_number_eq": true,
+   "rank": 1,
+   "hit@1": true,
+   "hit@3": true,
+   "rr": 1.0,
+   "faithfulness": 1.0,
+   "faith_detail": [
+    {
+     "sentence": "将内置滤网晾晒至少需要24小时，以确保彻底干燥 [1][3]",
+     "cover": 0.61,
+     "verdict": "SUPPORTED"
+    }
+   ],
+   "confidence": 0.7185,
+   "latency_ms": 1530.9,
+   "answer": "将内置滤网晾晒至少需要24小时，以确保彻底干燥 [1][3]。"
+  },
+  {
+   "id": "auto_023",
+   "category": "参数",
+   "product": "vacuum_g10_plus",
+   "question": "晾晒时将滚刷竖直摆放，放置至少是多少？",
+   "expected_status": "answered",
+   "actual_status": "answered",
+   "generation_mode": "llm",
+   "status_ok": true,
+   "expected_terms": [
+    "24 小时"
+   ],
+   "kw_strict": true,
+   "kw_number_eq": true,
+   "rank": 1,
+   "hit@1": true,
+   "hit@3": true,
+   "rr": 1.0,
+   "faithfulness": 1.0,
+   "faith_detail": [
+    {
+     "sentence": "晾晒时将滚刷竖直摆放，放置至少24小时以便彻底晾干 [1][2]",
+     "cover": 0.73,
+     "verdict": "SUPPORTED"
+    }
+   ],
+   "confidence": 0.7806,
+   "latency_ms": 1364.3,
+   "answer": "晾晒时将滚刷竖直摆放，放置至少24小时以便彻底晾干 [1][2]。"
+  },
+  {
+   "id": "auto_024",
+   "category": "参数",
+   "product": "vacuum_g10_plus",
+   "question": "根据各地水质和使用频率等情况，建议是多少？",
+   "expected_status": "answered",
+   "actual_status": "answered",
+   "generation_mode": "llm",
+   "status_ok": true,
+   "expected_terms": [
+    "3-6 个月"
+   ],
+   "kw_strict": true,
+   "kw_number_eq": true,
+   "rank": 1,
+   "hit@1": true,
+   "hit@3": true,
+   "rr": 1.0,
+   "faithfulness": 1.0,
+   "faith_detail": [
+    {
+     "sentence": "建议根据各地水质和使用频率等情况，每3-6个月更换一次渗水滤芯，以确保拖地效果 [1]",
+     "cover": 0.76,
+     "verdict": "SUPPORTED"
+    }
+   ],
+   "confidence": 0.5565,
+   "latency_ms": 1691.4,
+   "answer": "建议根据各地水质和使用频率等情况，每3-6个月更换一次渗水滤芯，以确保拖地效果 [1]。"
+  },
+  {
+   "id": "auto_025",
+   "category": "参数",
+   "product": "vacuum_g10_plus",
+   "question": "器：BLJ是多少？",
+   "expected_status": "answered",
+   "actual_status": "answered",
+   "generation_mode": "llm",
+   "status_ok": true,
+   "expected_terms": [
+    "24W"
+   ],
+   "kw_strict": true,
+   "kw_number_eq": true,
+   "rank": 1,
+   "hit@1": true,
+   "hit@3": true,
+   "rr": 1.0,
+   "faithfulness": 0.333,
+   "faith_detail": [
+    {
+     "sentence": "型号器：BLJ是BLJ24W308080P-B [1]",
+     "cover": 0.67,
+     "verdict": "SUPPORTED"
+    },
+    {
+     "sentence": "现有产品资料中暂未找到关于“器：BLJ”的具体数值说明",
+     "cover": 0.08,
+     "verdict": "NOT_SUPPORTED"
+    },
+    {
+     "sentence": "[2] [3]",
+     "cover": 0.0,
+     "verdict": "NOT_SUPPORTED"
+    }
+   ],
+   "confidence": 0.6097,
+   "latency_ms": 4267.5,
+   "answer": "型号器：BLJ是BLJ24W308080P-B [1]。现有产品资料中暂未找到关于“器：BLJ”的具体数值说明。 [2] [3]"
+  },
+  {
+   "id": "auto_026",
+   "category": "参数",
+   "product": "robotvac_s20",
+   "question": "无法充电是多少？",
+   "expected_status": "answered",
+   "actual_status": "answered",
+   "generation_mode": "llm",
+   "status_ok": true,
+   "expected_terms": [
+    "0℃"
+   ],
+   "kw_strict": true,
+   "kw_number_eq": true,
+   "rank": 2,
+   "hit@1": false,
+   "hit@3": true,
+   "rr": 0.5,
+   "faithfulness": 0.5,
+   "faith_detail": [
+    {
+     "sentence": "无法充电的原因可能是充电座周围空间不足、充电弹片脏污或遮挡物、环境温度过低（低于0℃）或过高（高于40℃）",
+     "cover": 0.52,
+     "verdict": "PARTIAL"
+    }
+   ],
+   "confidence": 0.6166,
+   "latency_ms": 1976.5,
+   "answer": "无法充电的原因可能是充电座周围空间不足、充电弹片脏污或遮挡物、环境温度过低（低于0℃）或过高（高于40℃）。[2]"
+  },
+  {
+   "id": "auto_027",
+   "category": "型号/文本",
+   "product": "robotvac_s20",
+   "question": "行为异常是什么？",
+   "expected_status": "answered",
+   "actual_status": "answered",
+   "generation_mode": "llm",
+   "status_ok": true,
+   "expected_terms": [
+    "关机后重新开机"
+   ],
+   "kw_strict": true,
+   "kw_number_eq": true,
+   "rank": 1,
+   "hit@1": true,
+   "hit@3": true,
+   "rr": 1.0,
+   "faithfulness": 0.167,
+   "faith_detail": [
+    {
+     "sentence": "行为异常是指设备在正常使用过程中出现的非预期行为，例如关机后重新开机",
+     "cover": 0.28,
+     "verdict": "NOT_SUPPORTED"
+    },
+    {
+     "sentence": "这是设备的一种异常表现 [1]",
+     "cover": 0.08,
+     "verdict": "NOT_SUPPORTED"
+    },
+    {
+     "sentence": "具体原因和解决方法可以在故障现象的常见问题中找到 [2][3]",
+     "cover": 0.34,
+     "verdict": "PARTIAL"
+    }
+   ],
+   "confidence": 0.6673,
+   "latency_ms": 2584.6,
+   "answer": "行为异常是指设备在正常使用过程中出现的非预期行为，例如关机后重新开机。这是设备的一种异常表现 [1]。具体原因和解决方法可以在故障现象的常见问题中找到 [2][3]。"
+  },
+  {
+   "id": "auto_028",
+   "category": "型号/文本",
+   "product": "robotvac_s20",
+   "question": "故障提示是什么？",
+   "expected_status": "answered",
+   "actual_status": "answered",
+   "generation_mode": "llm",
+   "status_ok": true,
+   "expected_terms": [
+    "可能原因及解决方法"
+   ],
+   "kw_strict": true,
+   "kw_number_eq": true,
+   "rank": 1,
+   "hit@1": true,
+   "hit@3": true,
+   "rr": 1.0,
+   "faithfulness": 0.25,
+   "faith_detail": [
+    {
+     "sentence": "故障提示通常指的是设备或系统在出现故障时，通过显示屏、指示灯或其他方式向用户显示的特定信息，用以告知用户故障的具体情况",
+     "cover": 0.06,
+     "verdict": "NOT_SUPPORTED"
+    },
+    {
+     "sentence": "根据提供的资料，故障提示可能包含故障现象、可能的原因以及相应的解决方法",
+     "cover": 0.31,
+     "verdict": "PARTIAL"
+    },
+    {
+     "sentence": "具体来说：",
+     "cover": 0.0,
+     "verdict": "NOT_SUPPORTED"
+    },
+    {
+     "sentence": "- 故障提示可能包括故障现象 [2]",
+     "cover": 0.43,
+     "verdict": "PARTIAL"
+    },
+    {
+     "sentence": "- 故障提示可能提供可能原因及解决方法 [1]",
+     "cover": 0.58,
+     "verdict": "PARTIAL"
+    },
+    {
+     "sentence": "- 故障提示也可能在常见问题中提及 [3]",
+     "cover": 0.39,
+     "verdict": "PARTIAL"
+    },
+    {
+     "sentence": "因此，故障提示是帮助用户识别和解决设备故障的信息",
+     "cover": 0.18,
+     "verdict": "NOT_SUPPORTED"
+    },
+    {
+     "sentence": "资料编号：[1][2][3]",
+     "cover": 0.0,
+     "verdict": "NOT_SUPPORTED"
+    }
+   ],
+   "confidence": 0.8205,
+   "latency_ms": 7292.2,
+   "answer": "故障提示通常指的是设备或系统在出现故障时，通过显示屏、指示灯或其他方式向用户显示的特定信息，用以告知用户故障的具体情况。根据提供的资料，故障提示可能包含故障现象、可能的原因以及相应的解决方法。具体来说：\n\n- 故障提示可能包括故障现象 [2]。\n- 故障提示可能提供可能原因及解决方法 [1]。\n- 故障提示也可能在常见"
+  },
+  {
+   "id": "auto_029",
+   "category": "参数",
+   "product": "robotvac_s20",
+   "question": "额定电压是多少？",
+   "expected_status": "answered",
+   "actual_status": "answered",
+   "generation_mode": "llm",
+   "status_ok": true,
+   "expected_terms": [
+    "14.4 V"
+   ],
+   "kw_strict": true,
+   "kw_number_eq": true,
+   "rank": 1,
+   "hit@1": true,
+   "hit@3": true,
+   "rr": 1.0,
+   "faithfulness": 0.5,
+   "faith_detail": [
+    {
+     "sentence": "额定电压是14.4 V [1]",
+     "cover": 0.58,
+     "verdict": "PARTIAL"
+    }
+   ],
+   "confidence": 0.8059,
+   "latency_ms": 904.2,
+   "answer": "额定电压是14.4 V [1]。"
+  },
+  {
+   "id": "auto_030",
+   "category": "参数",
+   "product": "robotvac_s20",
+   "question": "额定功率是多少？",
+   "expected_status": "answered",
+   "actual_status": "answered",
+   "generation_mode": "llm",
+   "status_ok": true,
+   "expected_terms": [
+    "45 W"
+   ],
+   "kw_strict": true,
+   "kw_number_eq": true,
+   "rank": 1,
+   "hit@1": true,
+   "hit@3": true,
+   "rr": 1.0,
+   "faithfulness": 0.5,
+   "faith_detail": [
+    {
+     "sentence": "额定功率是45 W [1]",
+     "cover": 0.5,
+     "verdict": "PARTIAL"
+    }
+   ],
+   "confidence": 0.7287,
+   "latency_ms": 1383.9,
+   "answer": "额定功率是45 W [1]。"
+  },
+  {
+   "id": "auto_031",
+   "category": "参数",
+   "product": "robotvac_s20",
+   "question": "充电电压是多少？",
+   "expected_status": "answered",
+   "actual_status": "answered",
+   "generation_mode": "llm",
+   "status_ok": true,
+   "expected_terms": [
+    "20 V"
+   ],
+   "kw_strict": true,
+   "kw_number_eq": true,
+   "rank": 1,
+   "hit@1": true,
+   "hit@3": true,
+   "rr": 1.0,
+   "faithfulness": 0.5,
+   "faith_detail": [
+    {
+     "sentence": "充电电压是20 V [1]",
+     "cover": 0.5,
+     "verdict": "PARTIAL"
+    }
+   ],
+   "confidence": 0.8261,
+   "latency_ms": 1566.5,
+   "answer": "充电电压是20 V [1]。"
+  },
+  {
+   "id": "auto_032",
+   "category": "参数",
+   "product": "robotvac_s20",
+   "question": "主机尺寸是多少？",
+   "expected_status": "answered",
+   "actual_status": "answered",
+   "generation_mode": "llm",
+   "status_ok": true,
+   "expected_terms": [
+    "98 mm"
+   ],
+   "kw_strict": true,
+   "kw_number_eq": true,
+   "rank": 1,
+   "hit@1": true,
+   "hit@3": true,
+   "rr": 1.0,
+   "faithfulness": 1.0,
+   "faith_detail": [
+    {
+     "sentence": "主机尺寸是φ325×98 mm [1]",
+     "cover": 0.69,
+     "verdict": "SUPPORTED"
+    }
+   ],
+   "confidence": 0.7729,
+   "latency_ms": 1008.0,
+   "answer": "主机尺寸是φ325×98 mm [1]。"
+  },
+  {
+   "id": "auto_033",
+   "category": "型号/文本",
+   "product": "robotvac_s20",
+   "question": "运作频率是什么？",
+   "expected_status": "answered",
+   "actual_status": "answered",
+   "generation_mode": "llm",
+   "status_ok": true,
+   "expected_terms": [
+    "2400-2483.5 MHz"
+   ],
+   "kw_strict": true,
+   "kw_number_eq": true,
+   "rank": 1,
+   "hit@1": true,
+   "hit@3": true,
+   "rr": 1.0,
+   "faithfulness": 0.333,
+   "faith_detail": [
+    {
+     "sentence": "运作频率是指设备或系统在正常工作状态下所使用的频率范围",
+     "cover": 0.12,
+     "verdict": "NOT_SUPPORTED"
+    },
+    {
+     "sentence": "对于您提到的产品，其运作频率为2400-2483.5 MHz [1]",
+     "cover": 0.5,
+     "verdict": "PARTIAL"
+    },
+    {
+     "sentence": "清洁频率和额定输入的信息与运作频率无关",
+     "cover": 0.47,
+     "verdict": "PARTIAL"
+    }
+   ],
+   "confidence": 0.7388,
+   "latency_ms": 3332.5,
+   "answer": "运作频率是指设备或系统在正常工作状态下所使用的频率范围。对于您提到的产品，其运作频率为2400-2483.5 MHz [1]。清洁频率和额定输入的信息与运作频率无关。"
+  },
+  {
+   "id": "auto_034",
+   "category": "参数",
+   "product": "robotvac_s20",
+   "question": "最大输出功率是多少？",
+   "expected_status": "answered",
+   "actual_status": "answered",
+   "generation_mode": "llm",
+   "status_ok": true,
+   "expected_terms": [
+    "20 dB"
+   ],
+   "kw_strict": true,
+   "kw_number_eq": true,
+   "rank": 1,
+   "hit@1": true,
+   "hit@3": true,
+   "rr": 1.0,
+   "faithfulness": 1.0,
+   "faith_detail": [
+    {
+     "sentence": "最大输出功率是20 dBm [1]",
+     "cover": 0.64,
+     "verdict": "SUPPORTED"
+    }
+   ],
+   "confidence": 0.8393,
+   "latency_ms": 1325.8,
+   "answer": "最大输出功率是20 dBm [1]。"
+  },
+  {
+   "id": "auto_035",
+   "category": "参数",
+   "product": "robotvac_s20",
+   "question": "充电座尺寸是多少？",
+   "expected_status": "answered",
+   "actual_status": "answered",
+   "generation_mode": "llm",
+   "status_ok": true,
+   "expected_terms": [
+    "98 mm"
+   ],
+   "kw_strict": true,
+   "kw_number_eq": true,
+   "rank": 1,
+   "hit@1": true,
+   "hit@3": true,
+   "rr": 1.0,
+   "faithfulness": 1.0,
+   "faith_detail": [
+    {
+     "sentence": "充电座尺寸是146×122×98 mm [1]",
+     "cover": 0.75,
+     "verdict": "SUPPORTED"
+    }
+   ],
+   "confidence": 0.8818,
+   "latency_ms": 1336.8,
+   "answer": "充电座尺寸是146×122×98 mm [1]。"
+  },
+  {
+   "id": "auto_036",
+   "category": "型号/文本",
+   "product": "robotvac_s20",
+   "question": "制造商是什么？",
+   "expected_status": "answered",
+   "actual_status": "answered",
+   "generation_mode": "llm",
+   "status_ok": true,
+   "expected_terms": [
+    "中山市宝利金电子有限公司"
+   ],
+   "kw_strict": true,
+   "kw_number_eq": true,
+   "rank": 2,
+   "hit@1": false,
+   "hit@3": true,
+   "rr": 0.5,
+   "faithfulness": 1.0,
+   "faith_detail": [
+    {
+     "sentence": "制造商是中山市宝利金电子有限公司 [2]",
+     "cover": 0.72,
+     "verdict": "SUPPORTED"
+    }
+   ],
+   "confidence": 0.5283,
+   "latency_ms": 1300.3,
+   "answer": "制造商是中山市宝利金电子有限公司 [2]。"
+  },
+  {
+   "id": "auto_037",
+   "category": "型号/文本",
+   "product": "robotvac_s20",
+   "question": "平均运作功率是什么？",
+   "expected_status": "answered",
+   "actual_status": "answered",
+   "generation_mode": "llm",
+   "status_ok": true,
+   "expected_terms": [
+    "82.96%"
+   ],
+   "kw_strict": true,
+   "kw_number_eq": true,
+   "rank": 1,
+   "hit@1": true,
+   "hit@3": true,
+   "rr": 1.0,
+   "faithfulness": 0.167,
+   "faith_detail": [
+    {
+     "sentence": "平均运作功率是指设备在正常工作过程中，平均消耗的功率",
+     "cover": 0.22,
+     "verdict": "NOT_SUPPORTED"
+    },
+    {
+     "sentence": "根据现有产品资料，该产品的平均运作功率为82.96% [1]",
+     "cover": 0.37,
+     "verdict": "PARTIAL"
+    },
+    {
+     "sentence": "这个百分比可能表示设备在运行过程中平均功率占其最大输出功率的比例",
+     "cover": 0.2,
+     "verdict": "NOT_SUPPORTED"
+    },
+    {
+     "sentence": "具体到这个产品，由于资料中未直接给出最大输出功率的具体数值，我们无法直接计算出平均运作功率的绝对值",
+     "cover": 0.2,
+     "verdict": "NOT_SUPPORTED"
+    },
+    {
+     "sentence": "最大输出功率为小于20 dBm [2]，额定功率为45 W [3]",
+     "cover": 0.5,
+     "verdict": "PARTIAL"
+    },
+    {
+     "sentence": "如果需要更详细的计算或解释，可能需要进一步的信息或人工确认",
+     "cover": 0.0,
+     "verdict": "NOT_SUPPORTED"
+    }
+   ],
+   "confidence": 0.7927,
+   "latency_ms": 6243.2,
+   "answer": "平均运作功率是指设备在正常工作过程中，平均消耗的功率。根据现有产品资料，该产品的平均运作功率为82.96% [1]。这个百分比可能表示设备在运行过程中平均功率占其最大输出功率的比例。具体到这个产品，由于资料中未直接给出最大输出功率的具体数值，我们无法直接计算出平均运作功率的绝对值。最大输出功率为小于20 dBm [2]"
+  },
+  {
+   "id": "auto_038",
+   "category": "型号/文本",
+   "product": "robotvac_s20",
+   "question": "低负载时的效率 (10％)是什么？",
+   "expected_status": "answered",
+   "actual_status": "answered",
+   "generation_mode": "llm",
+   "status_ok": true,
+   "expected_terms": [
+    "60%"
+   ],
+   "kw_strict": true,
+   "kw_number_eq": true,
+   "rank": 1,
+   "hit@1": true,
+   "hit@3": true,
+   "rr": 1.0,
+   "faithfulness": 0.5,
+   "faith_detail": [
+    {
+     "sentence": "低负载时的效率（10%）是60% [1]",
+     "cover": 0.53,
+     "verdict": "PARTIAL"
+    }
+   ],
+   "confidence": 0.9506,
+   "latency_ms": 1328.5,
+   "answer": "低负载时的效率（10%）是60% [1]。"
+  },
+  {
+   "id": "auto_039",
+   "category": "参数",
+   "product": "robotvac_s20",
+   "question": "无负载耗电量是多少？",
+   "expected_status": "answered",
+   "actual_status": "answered",
+   "generation_mode": "llm",
+   "status_ok": true,
+   "expected_terms": [
+    "0.10 W"
+   ],
+   "kw_strict": true,
+   "kw_number_eq": true,
+   "rank": 1,
+   "hit@1": true,
+   "hit@3": true,
+   "rr": 1.0,
+   "faithfulness": 1.0,
+   "faith_detail": [
+    {
+     "sentence": "无负载耗电量为0.10 W [1]",
+     "cover": 0.64,
+     "verdict": "SUPPORTED"
+    }
+   ],
+   "confidence": 0.7747,
+   "latency_ms": 1526.2,
+   "answer": "无负载耗电量为0.10 W [1]。"
+  },
+  {
+   "id": "auto_040",
+   "category": "参数",
+   "product": "robotvac_s20",
+   "question": "仅可配合 <BLJ是多少？",
+   "expected_status": "answered",
+   "actual_status": "answered",
+   "generation_mode": "llm",
+   "status_ok": true,
+   "expected_terms": [
+    "15W"
+   ],
+   "kw_strict": true,
+   "kw_number_eq": true,
+   "rank": 1,
+   "hit@1": true,
+   "hit@3": true,
+   "rr": 1.0,
+   "faithfulness": 1.0,
+   "faith_detail": [
+    {
+     "sentence": "仅可配合的电源型号是 BLJ15W200060P-BA 或 BLJ15WJ200060P-B [3]",
+     "cover": 0.71,
+     "verdict": "SUPPORTED"
+    }
+   ],
+   "confidence": 0.6079,
+   "latency_ms": 2760.4,
+   "answer": "仅可配合的电源型号是 BLJ15W200060P-BA 或 BLJ15WJ200060P-B [3]。"
+  },
+  {
+   "id": "auto_041",
+   "category": "参数",
+   "product": "robotvac_s20",
+   "question": "建议至少每是多少？",
+   "expected_status": "answered",
+   "actual_status": "answered",
+   "generation_mode": "llm",
+   "status_ok": true,
+   "expected_terms": [
+    "3 个月"
+   ],
+   "kw_strict": false,
+   "kw_number_eq": false,
+   "rank": null,
+   "hit@1": false,
+   "hit@3": false,
+   "rr": 0.0,
+   "faithfulness": 0.0,
+   "faith_detail": [
+    {
+     "sentence": "建议至少每2周清洁边刷 [1]，每周清洁主刷 [2] 和滤网 [3]",
+     "cover": 0.27,
+     "verdict": "NOT_SUPPORTED"
+    }
+   ],
+   "confidence": 0.4183,
+   "latency_ms": 1251.8,
+   "answer": "建议至少每2周清洁边刷 [1]，每周清洁主刷 [2] 和滤网 [3]。"
+  },
+  {
+   "id": "auto_042",
+   "category": "参数",
+   "product": "robotvac_s20",
+   "question": "「xiaomi-vacuum-d是多少？",
+   "expected_status": "answered",
+   "actual_status": "answered",
+   "generation_mode": "llm",
+   "status_ok": true,
+   "expected_terms": [
+    "106g"
+   ],
+   "kw_strict": true,
+   "kw_number_eq": true,
+   "rank": 1,
+   "hit@1": true,
+   "hit@3": true,
+   "rr": 1.0,
+   "faithfulness": 0.75,
+   "faith_detail": [
+    {
+     "sentence": "xiaomi-vacuum-d的型号是d106gl_mibtXXXX [1][2]",
+     "cover": 0.69,
+     "verdict": "SUPPORTED"
+    },
+    {
+     "sentence": "现有产品资料中暂未找到关于“xiaomi-vacuum-d是多少”的具体数值说明 [3]",
+     "cover": 0.33,
+     "verdict": "PARTIAL"
+    }
+   ],
+   "confidence": 0.7935,
+   "latency_ms": 2007.7,
+   "answer": "xiaomi-vacuum-d的型号是d106gl_mibtXXXX [1][2]。现有产品资料中暂未找到关于“xiaomi-vacuum-d是多少”的具体数值说明 [3]。"
+  },
+  {
+   "id": "auto_043",
+   "category": "参数",
+   "product": "robotvac_s20",
+   "question": "主机在该模式下，不执行中断点续扫、预约清扫及主动播报语音，且充电是多少？",
+   "expected_status": "answered",
+   "actual_status": "answered",
+   "generation_mode": "llm",
+   "status_ok": true,
+   "expected_terms": [
+    "10 秒"
+   ],
+   "kw_strict": true,
+   "kw_number_eq": true,
+   "rank": 1,
+   "hit@1": true,
+   "hit@3": true,
+   "rr": 1.0,
+   "faithfulness": 1.0,
+   "faith_detail": [
+    {
+     "sentence": "主机在勿扰模式下，不执行中断点续扫、预约清扫及主动播报语音，且充电10秒后主机指示灯熄灭 [1]",
+     "cover": 0.82,
+     "verdict": "SUPPORTED"
+    }
+   ],
+   "confidence": 0.6283,
+   "latency_ms": 2044.6,
+   "answer": "主机在勿扰模式下，不执行中断点续扫、预约清扫及主动播报语音，且充电10秒后主机指示灯熄灭 [1]。"
+  },
+  {
+   "id": "auto_044",
+   "category": "参数",
+   "product": "robotvac_s20",
+   "question": "包装内的电源型号为 BLJ是多少？",
+   "expected_status": "answered",
+   "actual_status": "answered",
+   "generation_mode": "llm",
+   "status_ok": true,
+   "expected_terms": [
+    "15W"
+   ],
+   "kw_strict": true,
+   "kw_number_eq": true,
+   "rank": 1,
+   "hit@1": true,
+   "hit@3": true,
+   "rr": 1.0,
+   "faithfulness": 0.667,
+   "faith_detail": [
+    {
+     "sentence": "包装内的电源型号为 BLJ15W200060P-BA 或 BLJ15WJ200060P-B 其中一款 [1]",
+     "cover": 0.91,
+     "verdict": "SUPPORTED"
+    },
+    {
+     "sentence": "具体是哪一款，需要根据说明书版本号进行确认 [1]",
+     "cover": 0.26,
+     "verdict": "NOT_SUPPORTED"
+    },
+    {
+     "sentence": "产品型号分别为 BLJ15W200060P-BA [2] 和 BLJ15WJ200060P-B [3]",
+     "cover": 0.65,
+     "verdict": "SUPPORTED"
+    }
+   ],
+   "confidence": 0.7905,
+   "latency_ms": 3479.8,
+   "answer": "包装内的电源型号为 BLJ15W200060P-BA 或 BLJ15WJ200060P-B 其中一款 [1]。具体是哪一款，需要根据说明书版本号进行确认 [1]。产品型号分别为 BLJ15W200060P-BA [2] 和 BLJ15WJ200060P-B [3]。"
+  },
+  {
+   "id": "auto_045",
+   "category": "参数",
+   "product": "fridge_bcd600",
+   "question": "自动锁定是多少？",
+   "expected_status": "answered",
+   "actual_status": "answered",
+   "generation_mode": "llm",
+   "status_ok": true,
+   "expected_terms": [
+    "30 秒"
+   ],
+   "kw_strict": true,
+   "kw_number_eq": true,
+   "rank": 1,
+   "hit@1": true,
+   "hit@3": true,
+   "rr": 1.0,
+   "faithfulness": 1.0,
+   "faith_detail": [
+    {
+     "sentence": "自动锁定是在冷藏门和冷冻门关闭且30秒内没有按键操作时，显示屏自动熄灭并锁定",
+     "cover": 0.8,
+     "verdict": "SUPPORTED"
+    }
+   ],
+   "confidence": 0.6108,
+   "latency_ms": 1411.5,
+   "answer": "自动锁定是在冷藏门和冷冻门关闭且30秒内没有按键操作时，显示屏自动熄灭并锁定。 [1]"
+  },
+  {
+   "id": "auto_046",
+   "category": "型号/文本",
+   "product": "fridge_bcd600",
+   "question": "软冻（软冷冻）是什么？",
+   "expected_status": "answered",
+   "actual_status": "answered",
+   "generation_mode": "llm",
+   "status_ok": true,
+   "expected_terms": [
+    "短期储存的肉类"
+   ],
+   "kw_strict": false,
+   "kw_number_eq": false,
+   "rank": null,
+   "hit@1": false,
+   "hit@3": false,
+   "rr": 0.0,
+   "faithfulness": 0.0,
+   "faith_detail": [
+    {
+     "sentence": "软冻（软冷冻）是指食品在较低温度下缓慢冻结的过程，使得食品在冷冻过程中形成较小的冰晶，保持食品的质地和风味",
+     "cover": 0.06,
+     "verdict": "NOT_SUPPORTED"
+    },
+    {
+     "sentence": "这种冷冻方式通常用于需要保持食品原有口感和营养的场合",
+     "cover": 0.08,
+     "verdict": "NOT_SUPPORTED"
+    },
+    {
+     "sentence": "现有产品资料中暂未找到关于软冻的具体说明 [1][2][3]",
+     "cover": 0.0,
+     "verdict": "NOT_SUPPORTED"
+    }
+   ],
+   "confidence": 0.5677,
+   "latency_ms": 4701.6,
+   "answer": "软冻（软冷冻）是指食品在较低温度下缓慢冻结的过程，使得食品在冷冻过程中形成较小的冰晶，保持食品的质地和风味。这种冷冻方式通常用于需要保持食品原有口感和营养的场合。现有产品资料中暂未找到关于软冻的具体说明 [1][2][3]。"
+  },
+  {
+   "id": "auto_047",
+   "category": "型号/文本",
+   "product": "fridge_bcd600",
+   "question": "气候类型是什么？",
+   "expected_status": "answered",
+   "actual_status": "answered",
+   "generation_mode": "llm",
+   "status_ok": true,
+   "expected_terms": [
+    "SN.N.ST.T 型"
+   ],
+   "kw_strict": true,
+   "kw_number_eq": true,
+   "rank": 1,
+   "hit@1": true,
+   "hit@3": true,
+   "rr": 1.0,
+   "faithfulness": 0.75,
+   "faith_detail": [
+    {
+     "sentence": "气候类型是SN.N.ST.T型",
+     "cover": 0.85,
+     "verdict": "SUPPORTED"
+    },
+    {
+     "sentence": "这种气候类型下，冰箱的使用环境温度范围为10 ~43℃ [1][2]",
+     "cover": 0.48,
+     "verdict": "PARTIAL"
+    }
+   ],
+   "confidence": 0.7107,
+   "latency_ms": 1594.0,
+   "answer": "气候类型是SN.N.ST.T型。这种气候类型下，冰箱的使用环境温度范围为10 ~43℃ [1][2]。"
+  },
+  {
+   "id": "auto_048",
+   "category": "型号/文本",
+   "product": "fridge_bcd600",
+   "question": "防触电保护类别是什么？",
+   "expected_status": "answered",
+   "actual_status": "answered",
+   "generation_mode": "llm",
+   "status_ok": true,
+   "expected_terms": [
+    "I类"
+   ],
+   "kw_strict": true,
+   "kw_number_eq": true,
+   "rank": 1,
+   "hit@1": true,
+   "hit@3": true,
+   "rr": 1.0,
+   "faithfulness": 0.5,
+   "faith_detail": [
+    {
+     "sentence": "防触电保护类别是I类 [1]",
+     "cover": 0.58,
+     "verdict": "PARTIAL"
+    }
+   ],
+   "confidence": 0.9415,
+   "latency_ms": 895.6,
+   "answer": "防触电保护类别是I类 [1]。"
+  },
+  {
+   "id": "auto_049",
+   "category": "参数",
+   "product": "fridge_bcd600",
+   "question": "二星级部分容积是多少？",
+   "expected_status": "answered",
+   "actual_status": "answered",
+   "generation_mode": "llm",
+   "status_ok": true,
+   "expected_terms": [
+    "26L"
+   ],
+   "kw_strict": true,
+   "kw_number_eq": true,
+   "rank": 1,
+   "hit@1": true,
+   "hit@3": true,
+   "rr": 1.0,
+   "faithfulness": 1.0,
+   "faith_detail": [
+    {
+     "sentence": "二星级部分容积是26L [1]",
+     "cover": 0.62,
+     "verdict": "SUPPORTED"
+    }
+   ],
+   "confidence": 0.7691,
+   "latency_ms": 1156.2,
+   "answer": "二星级部分容积是26L [1]。"
+  },
+  {
+   "id": "auto_050",
+   "category": "参数",
+   "product": "fridge_bcd600",
+   "question": "额定频率是多少？",
+   "expected_status": "answered",
+   "actual_status": "answered",
+   "generation_mode": "llm",
+   "status_ok": true,
+   "expected_terms": [
+    "50Hz"
+   ],
+   "kw_strict": true,
+   "kw_number_eq": true,
+   "rank": 1,
+   "hit@1": true,
+   "hit@3": true,
+   "rr": 1.0,
+   "faithfulness": 0.5,
+   "faith_detail": [
+    {
+     "sentence": "额定频率是50Hz [1]",
+     "cover": 0.55,
+     "verdict": "PARTIAL"
+    }
+   ],
+   "confidence": 0.7582,
+   "latency_ms": 911.6,
+   "answer": "额定频率是50Hz [1]。"
+  },
+  {
+   "id": "auto_051",
+   "category": "型号/文本",
+   "product": "fridge_bcd600",
+   "question": "年耗电量（kW·h/y）是什么？",
+   "expected_status": "answered",
+   "actual_status": "answered",
+   "generation_mode": "llm",
+   "status_ok": true,
+   "expected_terms": [
+    "347"
+   ],
+   "kw_strict": true,
+   "kw_number_eq": true,
+   "rank": 1,
+   "hit@1": true,
+   "hit@3": true,
+   "rr": 1.0,
+   "faithfulness": 0.625,
+   "faith_detail": [
+    {
+     "sentence": "年耗电量（kW·h/y）是指在一定时间内，设备或系统消耗的电能总量",
+     "cover": 0.34,
+     "verdict": "PARTIAL"
+    },
+    {
+     "sentence": "根据提供的资料，该产品的年耗电量为347 kW·h",
+     "cover": 0.43,
+     "verdict": "PARTIAL"
+    },
+    {
+     "sentence": "这个数值是在32℃和16℃的环境温度下，模拟用户使用情况（包括装入标准规定数量的热食品）进行测试得出的",
+     "cover": 0.62,
+     "verdict": "SUPPORTED"
+    },
+    {
+     "sentence": "在32℃的环境温度下，测试了173天，在16℃的环境温度下，测试了192天，从而计算出一年的电能消耗量 [1][3]",
+     "cover": 0.55,
+     "verdict": "PARTIAL"
+    }
+   ],
+   "confidence": 0.886,
+   "latency_ms": 4431.6,
+   "answer": "年耗电量（kW·h/y）是指在一定时间内，设备或系统消耗的电能总量。根据提供的资料，该产品的年耗电量为347 kW·h。这个数值是在32℃和16℃的环境温度下，模拟用户使用情况（包括装入标准规定数量的热食品）进行测试得出的。在32℃的环境温度下，测试了173天，在16℃的环境温度下，测试了192天，从而计算出一年的电能"
+  },
+  {
+   "id": "auto_052",
+   "category": "型号/文本",
+   "product": "fridge_bcd600",
+   "question": "综合耗电量（kW·h/24h）是什么？",
+   "expected_status": "answered",
+   "actual_status": "answered",
+   "generation_mode": "llm",
+   "status_ok": true,
+   "expected_terms": [
+    "0.95"
+   ],
+   "kw_strict": true,
+   "kw_number_eq": true,
+   "rank": 1,
+   "hit@1": true,
+   "hit@3": true,
+   "rr": 1.0,
+   "faithfulness": 0.333,
+   "faith_detail": [
+    {
+     "sentence": "综合耗电量（kW·h/24h）是指设备在24小时内消耗的电能总量",
+     "cover": 0.37,
+     "verdict": "PARTIAL"
+    },
+    {
+     "sentence": "根据资料[1]，该设备的综合耗电量为0.95 kW·h/24h",
+     "cover": 0.48,
+     "verdict": "PARTIAL"
+    },
+    {
+     "sentence": "这意味着在24小时内，该设备平均消耗0.95千瓦时的电能",
+     "cover": 0.15,
+     "verdict": "NOT_SUPPORTED"
+    }
+   ],
+   "confidence": 0.8644,
+   "latency_ms": 2982.7,
+   "answer": "综合耗电量（kW·h/24h）是指设备在24小时内消耗的电能总量。根据资料[1]，该设备的综合耗电量为0.95 kW·h/24h。这意味着在24小时内，该设备平均消耗0.95千瓦时的电能。"
+  },
+  {
+   "id": "auto_053",
+   "category": "参数",
+   "product": "fridge_bcd600",
+   "question": "化霜输入功率是多少？",
+   "expected_status": "answered",
+   "actual_status": "answered",
+   "generation_mode": "llm",
+   "status_ok": true,
+   "expected_terms": [
+    "185W"
+   ],
+   "kw_strict": true,
+   "kw_number_eq": true,
+   "rank": 1,
+   "hit@1": true,
+   "hit@3": true,
+   "rr": 1.0,
+   "faithfulness": 1.0,
+   "faith_detail": [
+    {
+     "sentence": "化霜输入功率是185W [1]",
+     "cover": 0.62,
+     "verdict": "SUPPORTED"
+    }
+   ],
+   "confidence": 0.8268,
+   "latency_ms": 1031.5,
+   "answer": "化霜输入功率是185W [1]。"
+  },
+  {
+   "id": "auto_054",
+   "category": "参数",
+   "product": "fridge_bcd600",
+   "question": "制冷剂是多少？",
+   "expected_status": "answered",
+   "actual_status": "answered",
+   "generation_mode": "llm",
+   "status_ok": true,
+   "expected_terms": [
+    "75g"
+   ],
+   "kw_strict": true,
+   "kw_number_eq": true,
+   "rank": 3,
+   "hit@1": false,
+   "hit@3": true,
+   "rr": 0.3333333333333333,
+   "faithfulness": 0.5,
+   "faith_detail": [
+    {
+     "sentence": "制冷剂是R600a，重量为75g [3]",
+     "cover": 0.44,
+     "verdict": "PARTIAL"
+    }
+   ],
+   "confidence": 0.6824,
+   "latency_ms": 867.5,
+   "answer": "制冷剂是R600a，重量为75g [3]。"
+  },
+  {
+   "id": "auto_055",
+   "category": "型号/文本",
+   "product": "fridge_bcd600",
+   "question": "冷却能力是什么？",
+   "expected_status": "answered",
+   "actual_status": "answered",
+   "generation_mode": "llm",
+   "status_ok": true,
+   "expected_terms": [
+    "45（kg/12h）"
+   ],
+   "kw_strict": false,
+   "kw_number_eq": false,
+   "rank": 4,
+   "hit@1": false,
+   "hit@3": false,
+   "rr": 0.25,
+   "faithfulness": 0.0,
+   "faith_detail": [
+    {
+     "sentence": "冷却能力是指产品在特定条件下，降低或维持温度的能力",
+     "cover": 0.04,
+     "verdict": "NOT_SUPPORTED"
+    },
+    {
+     "sentence": "在您提供的资料中，提到了调节冷藏室和冷冻室的温度，这表明该产品具备调节和维持冷藏和冷冻环境的能力，即冷却能力",
+     "cover": 0.15,
+     "verdict": "NOT_SUPPORTED"
+    },
+    {
+     "sentence": "具体来说：",
+     "cover": 0.0,
+     "verdict": "NOT_SUPPORTED"
+    },
+    {
+     "sentence": "- 调节冷藏室温度 [1]：说明产品可以调节冷藏室的温度，以保持食物的新鲜度",
+     "cover": 0.2,
+     "verdict": "NOT_SUPPORTED"
+    },
+    {
+     "sentence": "- 调节冷冻室温度 [3]：说明产品可以调节冷冻室的温度，以实现食物的冷冻保存",
+     "cover": 0.2,
+     "verdict": "NOT_SUPPORTED"
+    },
+    {
+     "sentence": "这些功能都是冷却能力的一部分，它们共同确保产品能够有效地冷却和保存食物",
+     "cover": 0.0,
+     "verdict": "NOT_SUPPORTED"
+    }
+   ],
+   "confidence": 0.8139,
+   "latency_ms": 7332.4,
+   "answer": "冷却能力是指产品在特定条件下，降低或维持温度的能力。在您提供的资料中，提到了调节冷藏室和冷冻室的温度，这表明该产品具备调节和维持冷藏和冷冻环境的能力，即冷却能力。具体来说：\n\n- 调节冷藏室温度 [1]：说明产品可以调节冷藏室的温度，以保持食物的新鲜度。\n- 调节冷冻室温度 [3]：说明产品可以调节冷冻室的温度，以实现"
+  },
+  {
+   "id": "auto_056",
+   "category": "型号/文本",
+   "product": "fridge_bcd600",
+   "question": "冷冻能力是什么？",
+   "expected_status": "answered",
+   "actual_status": "answered",
+   "generation_mode": "llm",
+   "status_ok": true,
+   "expected_terms": [
+    "8.5（kg/12h）"
+   ],
+   "kw_strict": false,
+   "kw_number_eq": false,
+   "rank": 4,
+   "hit@1": false,
+   "hit@3": false,
+   "rr": 0.25,
+   "faithfulness": 0.167,
+   "faith_detail": [
+    {
+     "sentence": "冷冻能力是指冰箱在单位时间内将食物从常温快速降至设定温度的能力",
+     "cover": 0.07,
+     "verdict": "NOT_SUPPORTED"
+    },
+    {
+     "sentence": "这通常通过速冻功能和速冷功能来实现",
+     "cover": 0.33,
+     "verdict": "PARTIAL"
+    },
+    {
+     "sentence": "速冻功能可以在短时间内将食物冻结，而速冷功能则可以快速降低冷冻室的温度，从而提高冷冻效率 [1][2][3]",
+     "cover": 0.17,
+     "verdict": "NOT_SUPPORTED"
+    }
+   ],
+   "confidence": 0.7966,
+   "latency_ms": 3060.5,
+   "answer": "冷冻能力是指冰箱在单位时间内将食物从常温快速降至设定温度的能力。这通常通过速冻功能和速冷功能来实现。速冻功能可以在短时间内将食物冻结，而速冷功能则可以快速降低冷冻室的温度，从而提高冷冻效率 [1][2][3]。"
+  },
+  {
+   "id": "auto_057",
+   "category": "型号/文本",
+   "product": "fridge_bcd600",
+   "question": "外形尺寸（深×宽×高）是什么？",
+   "expected_status": "answered",
+   "actual_status": "answered",
+   "generation_mode": "llm",
+   "status_ok": true,
+   "expected_terms": [
+    "697×908×1775（mm）"
+   ],
+   "kw_strict": false,
+   "kw_number_eq": true,
+   "rank": null,
+   "hit@1": false,
+   "hit@3": false,
+   "rr": 0.0,
+   "faithfulness": 0.75,
+   "faith_detail": [
+    {
+     "sentence": "外形尺寸（深×宽×高）为697×908×1775(mm)",
+     "cover": 0.81,
+     "verdict": "SUPPORTED"
+    },
+    {
+     "sentence": "请注意，这个尺寸是设计尺寸，由于测量方法不同可能存在差异 [1][2][3]",
+     "cover": 0.47,
+     "verdict": "PARTIAL"
+    }
+   ],
+   "confidence": 0.7451,
+   "latency_ms": 2180.7,
+   "answer": "外形尺寸（深×宽×高）为697×908×1775(mm)。请注意，这个尺寸是设计尺寸，由于测量方法不同可能存在差异 [1][2][3]。"
+  },
+  {
+   "id": "auto_058",
+   "category": "参数",
+   "product": "fridge_bcd600",
+   "question": "（冰箱外观、尺寸、颜色、图案以实物为准） 此图为 BCD是多少？",
+   "expected_status": "answered",
+   "actual_status": "no_answer",
+   "generation_mode": "llm",
+   "status_ok": false,
+   "expected_terms": [
+    "600W"
+   ],
+   "kw_strict": true,
+   "kw_number_eq": true,
+   "rank": 1,
+   "hit@1": true,
+   "hit@3": true,
+   "rr": 1.0,
+   "faithfulness": 0.5,
+   "faith_detail": [
+    {
+     "sentence": "BCD-600WGHSS17NZU1的型号对应的是海尔电冰箱",
+     "cover": 0.72,
+     "verdict": "SUPPORTED"
+    },
+    {
+     "sentence": "关于您提到的图片中的具体BCD数值，现有产品资料中暂未找到相关说明 [1]",
+     "cover": 0.09,
+     "verdict": "NOT_SUPPORTED"
+    },
+    {
+     "sentence": "如果您需要了解冰箱的尺寸、颜色或图案等详细信息，可以参考海尔电冰箱BCD-600WGHSS17NZU1的使用说明书 [3",
+     "cover": 0.53,
+     "verdict": "PARTIAL"
+    }
+   ],
+   "confidence": 0.8147,
+   "latency_ms": 3888.3,
+   "answer": "BCD-600WGHSS17NZU1的型号对应的是海尔电冰箱。关于您提到的图片中的具体BCD数值，现有产品资料中暂未找到相关说明 [1]。如果您需要了解冰箱的尺寸、颜色或图案等详细信息，可以参考海尔电冰箱BCD-600WGHSS17NZU1的使用说明书 [3]。"
+  },
+  {
+   "id": "auto_059",
+   "category": "参数",
+   "product": "fridge_bcd600",
+   "question": "本系列产品使用交流是多少？",
+   "expected_status": "answered",
+   "actual_status": "no_answer",
+   "generation_mode": "llm",
+   "status_ok": false,
+   "expected_terms": [
+    "220V"
+   ],
+   "kw_strict": false,
+   "kw_number_eq": false,
+   "rank": null,
+   "hit@1": false,
+   "hit@3": false,
+   "rr": 0.0,
+   "faithfulness": 0.0,
+   "faith_detail": [
+    {
+     "sentence": "现有产品资料中暂未找到相关说明 [1][2][3]",
+     "cover": 0.09,
+     "verdict": "NOT_SUPPORTED"
+    }
+   ],
+   "confidence": 0.774,
+   "latency_ms": 1126.5,
+   "answer": "现有产品资料中暂未找到相关说明 [1][2][3]。"
+  },
+  {
+   "id": "auto_060",
+   "category": "参数",
+   "product": "fridge_bcd600",
+   "question": "停电或清洁时，应拔下电源插头，至少保持间隔是多少？",
+   "expected_status": "answered",
+   "actual_status": "answered",
+   "generation_mode": "llm",
+   "status_ok": true,
+   "expected_terms": [
+    "7 分钟"
+   ],
+   "kw_strict": true,
+   "kw_number_eq": true,
+   "rank": 2,
+   "hit@1": false,
+   "hit@3": true,
+   "rr": 0.5,
+   "faithfulness": 1.0,
+   "faith_detail": [
+    {
+     "sentence": "停电或清洁时，应拔下电源插头，至少保持间隔7分钟，才能再次接通电源，以防因连续启动而损坏压缩机 [2]",
+     "cover": 0.77,
+     "verdict": "SUPPORTED"
+    }
+   ],
+   "confidence": 0.7735,
+   "latency_ms": 1980.5,
+   "answer": "停电或清洁时，应拔下电源插头，至少保持间隔7分钟，才能再次接通电源，以防因连续启动而损坏压缩机 [2]。"
+  },
+  {
+   "id": "auto_061",
+   "category": "参数",
+   "product": "fridge_bcd600",
+   "question": "让冰箱静置是多少？",
+   "expected_status": "answered",
+   "actual_status": "answered",
+   "generation_mode": "llm",
+   "status_ok": true,
+   "expected_terms": [
+    "30 分钟"
+   ],
+   "kw_strict": true,
+   "kw_number_eq": true,
+   "rank": 1,
+   "hit@1": true,
+   "hit@3": true,
+   "rr": 1.0,
+   "faithfulness": 0.75,
+   "faith_detail": [
+    {
+     "sentence": "让冰箱静置的时间是30分钟以上",
+     "cover": 0.64,
+     "verdict": "SUPPORTED"
+    },
+    {
+     "sentence": "这是为了确保冰箱在安放调平、清洁完成后，接通电源后能够正常运转 [1]",
+     "cover": 0.58,
+     "verdict": "PARTIAL"
+    }
+   ],
+   "confidence": 0.7917,
+   "latency_ms": 1592.6,
+   "answer": "让冰箱静置的时间是30分钟以上。这是为了确保冰箱在安放调平、清洁完成后，接通电源后能够正常运转 [1]。"
+  },
+  {
+   "id": "auto_062",
+   "category": "参数",
+   "product": "fridge_bcd600",
+   "question": "图示为BCD是多少？",
+   "expected_status": "answered",
+   "actual_status": "no_answer",
+   "generation_mode": "llm",
+   "status_ok": false,
+   "expected_terms": [
+    "601W"
+   ],
+   "kw_strict": false,
+   "kw_number_eq": false,
+   "rank": 2,
+   "hit@1": false,
+   "hit@3": true,
+   "rr": 0.5,
+   "faithfulness": 0.0,
+   "faith_detail": [
+    {
+     "sentence": "现有产品资料中暂未找到相关说明",
+     "cover": 0.0,
+     "verdict": "NOT_SUPPORTED"
+    }
+   ],
+   "confidence": 0.7502,
+   "latency_ms": 875.8,
+   "answer": "现有产品资料中暂未找到相关说明。"
+  },
+  {
+   "id": "auto_063",
+   "category": "参数",
+   "product": "fridge_bcd600",
+   "question": "冰箱默认设置：冷藏是多少？",
+   "expected_status": "answered",
+   "actual_status": "answered",
+   "generation_mode": "llm",
+   "status_ok": true,
+   "expected_terms": [
+    "5℃"
+   ],
+   "kw_strict": true,
+   "kw_number_eq": true,
+   "rank": 1,
+   "hit@1": true,
+   "hit@3": true,
+   "rr": 1.0,
+   "faithfulness": 0.5,
+   "faith_detail": [
+    {
+     "sentence": "冰箱默认设置：冷藏温度为5℃ [1]",
+     "cover": 0.44,
+     "verdict": "PARTIAL"
+    }
+   ],
+   "confidence": 0.7844,
+   "latency_ms": 1003.5,
+   "answer": "冰箱默认设置：冷藏温度为5℃ [1]。"
+  },
+  {
+   "id": "auto_064",
+   "category": "参数",
+   "product": "fridge_bcd600",
+   "question": "2 调节变温专区档位（BCD是多少？",
+   "expected_status": "answered",
+   "actual_status": "answered",
+   "generation_mode": "llm",
+   "status_ok": true,
+   "expected_terms": [
+    "602W"
+   ],
+   "kw_strict": true,
+   "kw_number_eq": true,
+   "rank": 1,
+   "hit@1": true,
+   "hit@3": true,
+   "rr": 1.0,
+   "faithfulness": 1.0,
+   "faith_detail": [
+    {
+     "sentence": "2 调节变温专区档位，BCD-602WGHSS10B1U1的变温专区可在母婴、珍品之间调节 [2]",
+     "cover": 0.88,
+     "verdict": "SUPPORTED"
+    }
+   ],
+   "confidence": 0.8031,
+   "latency_ms": 1581.8,
+   "answer": "2 调节变温专区档位，BCD-602WGHSS10B1U1的变温专区可在母婴、珍品之间调节 [2]。"
+  },
+  {
+   "id": "auto_065",
+   "category": "参数",
+   "product": "fridge_bcd600",
+   "question": "冷藏门，冷冻门关闭且是多少？",
+   "expected_status": "answered",
+   "actual_status": "no_answer",
+   "generation_mode": "llm",
+   "status_ok": false,
+   "expected_terms": [
+    "30 秒"
+   ],
+   "kw_strict": false,
+   "kw_number_eq": false,
+   "rank": null,
+   "hit@1": false,
+   "hit@3": false,
+   "rr": 0.0,
+   "faithfulness": 0.25,
+   "faith_detail": [
+    {
+     "sentence": "冷藏门和冷冻门关闭的具体时间在现有产品资料中暂未找到相关说明",
+     "cover": 0.1,
+     "verdict": "NOT_SUPPORTED"
+    },
+    {
+     "sentence": "不过，如果任一门开门超过3分钟未关闭，冰箱会发出报警声音提示用户，直到门关闭后报警才会取消 [2][3]",
+     "cover": 0.54,
+     "verdict": "PARTIAL"
+    }
+   ],
+   "confidence": 0.6428,
+   "latency_ms": 1796.2,
+   "answer": "冷藏门和冷冻门关闭的具体时间在现有产品资料中暂未找到相关说明。不过，如果任一门开门超过3分钟未关闭，冰箱会发出报警声音提示用户，直到门关闭后报警才会取消 [2][3]。"
+  },
+  {
+   "id": "auto_066",
+   "category": "参数",
+   "product": "fridge_bcd600",
+   "question": "显示屏解锁状态下，按下【童锁功能按键】并持续是多少？",
+   "expected_status": "answered",
+   "actual_status": "answered",
+   "generation_mode": "llm",
+   "status_ok": true,
+   "expected_terms": [
+    "3 秒"
+   ],
+   "kw_strict": true,
+   "kw_number_eq": true,
+   "rank": 1,
+   "hit@1": true,
+   "hit@3": true,
+   "rr": 1.0,
+   "faithfulness": 1.0,
+   "faith_detail": [
+    {
+     "sentence": "显示屏解锁状态下，按下【童锁功能按键】并持续3秒钟",
+     "cover": 0.92,
+     "verdict": "SUPPORTED"
+    }
+   ],
+   "confidence": 0.873,
+   "latency_ms": 1626.4,
+   "answer": "显示屏解锁状态下，按下【童锁功能按键】并持续3秒钟。 [1]"
+  },
+  {
+   "id": "auto_067",
+   "category": "参数",
+   "product": "fridge_bcd600",
+   "question": "温度设定好以后，若是多少？",
+   "expected_status": "answered",
+   "actual_status": "answered",
+   "generation_mode": "llm",
+   "status_ok": true,
+   "expected_terms": [
+    "5 秒"
+   ],
+   "kw_strict": false,
+   "kw_number_eq": false,
+   "rank": null,
+   "hit@1": false,
+   "hit@3": false,
+   "rr": 0.0,
+   "faithfulness": 0.5,
+   "faith_detail": [
+    {
+     "sentence": "温度设定好以后，冷藏室的设定温度为5℃，冷冻室的设定温度为-18℃",
+     "cover": 0.57,
+     "verdict": "PARTIAL"
+    }
+   ],
+   "confidence": 0.7122,
+   "latency_ms": 1610.9,
+   "answer": "温度设定好以后，冷藏室的设定温度为5℃，冷冻室的设定温度为-18℃。[1]"
+  },
+  {
+   "id": "auto_068",
+   "category": "参数",
+   "product": "fridge_bcd600",
+   "question": "母婴功能 （限BCD是多少？",
+   "expected_status": "answered",
+   "actual_status": "no_answer",
+   "generation_mode": "llm",
+   "status_ok": false,
+   "expected_terms": [
+    "601W"
+   ],
+   "kw_strict": false,
+   "kw_number_eq": false,
+   "rank": 1,
+   "hit@1": true,
+   "hit@3": true,
+   "rr": 1.0,
+   "faithfulness": 0.0,
+   "faith_detail": [
+    {
+     "sentence": "现有产品资料中暂未找到相关说明 [1][2][3]",
+     "cover": 0.0,
+     "verdict": "NOT_SUPPORTED"
+    }
+   ],
+   "confidence": 0.7411,
+   "latency_ms": 1550.7,
+   "answer": "现有产品资料中暂未找到相关说明 [1][2][3]。"
+  },
+  {
+   "id": "auto_069",
+   "category": "参数",
+   "product": "fridge_bcd600",
+   "question": "珍品功能（除BCD是多少？",
+   "expected_status": "answered",
+   "actual_status": "answered",
+   "generation_mode": "llm",
+   "status_ok": true,
+   "expected_terms": [
+    "601W"
+   ],
+   "kw_strict": true,
+   "kw_number_eq": true,
+   "rank": 2,
+   "hit@1": false,
+   "hit@3": true,
+   "rr": 0.5,
+   "faithfulness": 0.0,
+   "faith_detail": [
+    {
+     "sentence": "现有产品资料中暂未找到关于“珍品功能（除BCD）是多少”的具体说明",
+     "cover": 0.06,
+     "verdict": "NOT_SUPPORTED"
+    },
+    {
+     "sentence": "资料[1]、[2]、[3]分别提供了BCD-602WGHS、BCD-601WGHS、BCD-600WGHS的数量信息，但",
+     "cover": 0.27,
+     "verdict": "NOT_SUPPORTED"
+    }
+   ],
+   "confidence": 0.6991,
+   "latency_ms": 3262.3,
+   "answer": "现有产品资料中暂未找到关于“珍品功能（除BCD）是多少”的具体说明。资料[1]、[2]、[3]分别提供了BCD-602WGHS、BCD-601WGHS、BCD-600WGHS的数量信息，但未涉及“珍品功能”的相关内容 [1][2][3]。"
+  },
+  {
+   "id": "auto_070",
+   "category": "参数",
+   "product": "fridge_bcd600",
+   "question": "EPP 超净系统的使用（除是多少？",
+   "expected_status": "answered",
+   "actual_status": "answered",
+   "generation_mode": "llm",
+   "status_ok": true,
+   "expected_terms": [
+    "601W"
+   ],
+   "kw_strict": false,
+   "kw_number_eq": false,
+   "rank": 1,
+   "hit@1": true,
+   "hit@3": true,
+   "rr": 1.0,
+   "faithfulness": 0.8,
+   "faith_detail": [
+    {
+     "sentence": "EPP超净系统的使用除率是自动智能运行的",
+     "cover": 0.74,
+     "verdict": "SUPPORTED"
+    },
+    {
+     "sentence": "当冰箱开门时，EPP超净系统会暂停运行，关门后恢复正常",
+     "cover": 0.73,
+     "verdict": "SUPPORTED"
+    },
+    {
+     "sentence": "如果长时间开门，系统会根据开门时间自动补偿运行周期，以维持冰箱的保鲜效果 [2]",
+     "cover": 0.72,
+     "verdict": "SUPPORTED"
+    },
+    {
+     "sentence": "树叶数量代表EPP超净系统的工作周期进程，4片树叶全亮代表完成一个净化工作周期 [3]",
+     "cover": 0.86,
+     "verdict": "SUPPORTED"
+    },
+    {
+     "sentence": "现有产品资料中暂未找到具体的除率数值 [1]",
+     "cover": 0.0,
+     "verdict": "NOT_SUPPORTED"
+    }
+   ],
+   "confidence": 0.782,
+   "latency_ms": 3561.8,
+   "answer": "EPP超净系统的使用除率是自动智能运行的。当冰箱开门时，EPP超净系统会暂停运行，关门后恢复正常；如果长时间开门，系统会根据开门时间自动补偿运行周期，以维持冰箱的保鲜效果 [2]。树叶数量代表EPP超净系统的工作周期进程，4片树叶全亮代表完成一个净化工作周期 [3]。现有产品资料中暂未找到具体的除率数值 [1]。"
+  },
+  {
+   "id": "auto_071",
+   "category": "参数",
+   "product": "fridge_bcd600",
+   "question": "密封盒的使用（限BCD是多少？",
+   "expected_status": "answered",
+   "actual_status": "answered",
+   "generation_mode": "llm",
+   "status_ok": true,
+   "expected_terms": [
+    "600W"
+   ],
+   "kw_strict": false,
+   "kw_number_eq": false,
+   "rank": 1,
+   "hit@1": true,
+   "hit@3": true,
+   "rr": 1.0,
+   "faithfulness": 0.0,
+   "faith_detail": [
+    {
+     "sentence": "现有产品资料中暂未找到关于密封盒使用限BCD的具体数值说明 [1][2][3]",
+     "cover": 0.17,
+     "verdict": "NOT_SUPPORTED"
+    }
+   ],
+   "confidence": 0.6489,
+   "latency_ms": 1170.4,
+   "answer": "现有产品资料中暂未找到关于密封盒使用限BCD的具体数值说明 [1][2][3]。"
+  },
+  {
+   "id": "auto_072",
+   "category": "参数",
+   "product": "fridge_bcd600",
+   "question": "母婴珍品抽屉的使用（限BCD是多少？",
+   "expected_status": "answered",
+   "actual_status": "no_answer",
+   "generation_mode": "llm",
+   "status_ok": false,
+   "expected_terms": [
+    "602W"
+   ],
+   "kw_strict": false,
+   "kw_number_eq": false,
+   "rank": 1,
+   "hit@1": true,
+   "hit@3": true,
+   "rr": 1.0,
+   "faithfulness": 0.0,
+   "faith_detail": [
+    {
+     "sentence": "现有产品资料中暂未找到相关说明 [1][2][3]",
+     "cover": 0.0,
+     "verdict": "NOT_SUPPORTED"
+    }
+   ],
+   "confidence": 0.7933,
+   "latency_ms": 1202.8,
+   "answer": "现有产品资料中暂未找到相关说明 [1][2][3]。"
+  },
+  {
+   "id": "auto_073",
+   "category": "参数",
+   "product": "fridge_bcd600",
+   "question": "冷藏室顶部照明灯参数为：DC是多少？",
+   "expected_status": "answered",
+   "actual_status": "answered",
+   "generation_mode": "llm",
+   "status_ok": true,
+   "expected_terms": [
+    "12V"
+   ],
+   "kw_strict": true,
+   "kw_number_eq": true,
+   "rank": 1,
+   "hit@1": true,
+   "hit@3": true,
+   "rr": 1.0,
+   "faithfulness": 1.0,
+   "faith_detail": [
+    {
+     "sentence": "冷藏室顶部照明灯的参数为DC12V [1]",
+     "cover": 0.68,
+     "verdict": "SUPPORTED"
+    }
+   ],
+   "confidence": 0.769,
+   "latency_ms": 904.4,
+   "answer": "冷藏室顶部照明灯的参数为DC12V [1]。"
+  },
+  {
+   "id": "auto_074",
+   "category": "参数",
+   "product": "fridge_bcd600",
+   "question": "型号：BCD是多少？",
+   "expected_status": "answered",
+   "actual_status": "answered",
+   "generation_mode": "llm",
+   "status_ok": true,
+   "expected_terms": [
+    "600W"
+   ],
+   "kw_strict": true,
+   "kw_number_eq": true,
+   "rank": 3,
+   "hit@1": false,
+   "hit@3": true,
+   "rr": 0.3333333333333333,
+   "faithfulness": 0.5,
+   "faith_detail": [
+    {
+     "sentence": "型号：BCD-601WGHS、BCD-602WGHS、BCD-600WGHS",
+     "cover": 0.74,
+     "verdict": "SUPPORTED"
+    },
+    {
+     "sentence": "这些型号代表不同的产品，具体型号对应的产品可能有所不同 [1][2][3]",
+     "cover": 0.0,
+     "verdict": "NOT_SUPPORTED"
+    }
+   ],
+   "confidence": 0.7719,
+   "latency_ms": 1928.0,
+   "answer": "型号：BCD-601WGHS、BCD-602WGHS、BCD-600WGHS。这些型号代表不同的产品，具体型号对应的产品可能有所不同 [1][2][3]。"
+  },
+  {
+   "id": "auto_075",
+   "category": "参数",
+   "product": "fridge_bcd600",
+   "question": "数量：BCD是多少？",
+   "expected_status": "answered",
+   "actual_status": "answered",
+   "generation_mode": "llm",
+   "status_ok": true,
+   "expected_terms": [
+    "600W"
+   ],
+   "kw_strict": true,
+   "kw_number_eq": true,
+   "rank": 3,
+   "hit@1": false,
+   "hit@3": true,
+   "rr": 0.3333333333333333,
+   "faithfulness": 0.25,
+   "faith_detail": [
+    {
+     "sentence": "BCD的数量分别为：BCD-602WGHS、BCD-601WGHS和BCD-600WGHS",
+     "cover": 0.58,
+     "verdict": "PARTIAL"
+    },
+    {
+     "sentence": "具体数量未在资料中明确说明 [1][2][3]",
+     "cover": 0.05,
+     "verdict": "NOT_SUPPORTED"
+    }
+   ],
+   "confidence": 0.793,
+   "latency_ms": 1790.2,
+   "answer": "BCD的数量分别为：BCD-602WGHS、BCD-601WGHS和BCD-600WGHS。具体数量未在资料中明确说明 [1][2][3]。"
+  },
+  {
+   "id": "auto_076",
+   "category": "参数",
+   "product": "fridge_bcd600",
+   "question": "按“智能”按键是多少？",
+   "expected_status": "answered",
+   "actual_status": "answered",
+   "generation_mode": "llm",
+   "status_ok": true,
+   "expected_terms": [
+    "3 秒"
+   ],
+   "kw_strict": false,
+   "kw_number_eq": false,
+   "rank": 5,
+   "hit@1": false,
+   "hit@3": false,
+   "rr": 0.2,
+   "faithfulness": 1.0,
+   "faith_detail": [
+    {
+     "sentence": "按“智能”按键的操作是：在显示屏解锁状态下，按一下【智能功能调节按键】，蜂鸣器响一声，【智能功能指示图标】点亮，冰箱智能",
+     "cover": 0.61,
+     "verdict": "SUPPORTED"
+    }
+   ],
+   "confidence": 0.6114,
+   "latency_ms": 1614.2,
+   "answer": "按“智能”按键的操作是：在显示屏解锁状态下，按一下【智能功能调节按键】，蜂鸣器响一声，【智能功能指示图标】点亮，冰箱智能功能开启 [2]。"
+  },
+  {
+   "id": "auto_077",
+   "category": "型号/文本",
+   "product": "ac_kfr51lw",
+   "question": "充注量（g）是什么？",
+   "expected_status": "answered",
+   "actual_status": "no_answer",
+   "generation_mode": "llm",
+   "status_ok": false,
+   "expected_terms": [
+    "最小面积（m²）"
+   ],
+   "kw_strict": false,
+   "kw_number_eq": false,
+   "rank": null,
+   "hit@1": false,
+   "hit@3": false,
+   "rr": 0.0,
+   "faithfulness": 0.125,
+   "faith_detail": [
+    {
+     "sentence": "充注量（g）通常指的是某种物质或材料的重量，但在提供的资料中，并没有直接解释充注量（g）的具体含义",
+     "cover": 0.05,
+     "verdict": "NOT_SUPPORTED"
+    },
+    {
+     "sentence": "资料[1]提到了“充注量(g):最小面积(m²)”，这表明充注量可能与面积有关，但具体关系未明",
+     "cover": 0.33,
+     "verdict": "PARTIAL"
+    },
+    {
+     "sentence": "资料[2]和[3]则与拧紧力矩和数字表示无关，无法提供关于充注量的解释",
+     "cover": 0.21,
+     "verdict": "NOT_SUPPORTED"
+    },
+    {
+     "sentence": "因此，现有产品资料中暂未找到相关说明 [1]",
+     "cover": 0.05,
+     "verdict": "NOT_SUPPORTED"
+    }
+   ],
+   "confidence": 0.6509,
+   "latency_ms": 4546.9,
+   "answer": "充注量（g）通常指的是某种物质或材料的重量，但在提供的资料中，并没有直接解释充注量（g）的具体含义。资料[1]提到了“充注量(g):最小面积(m²)”，这表明充注量可能与面积有关，但具体关系未明。资料[2]和[3]则与拧紧力矩和数字表示无关，无法提供关于充注量的解释。因此，现有产品资料中暂未找到相关说明 [1]。"
+  },
+  {
+   "id": "auto_078",
+   "category": "参数",
+   "product": "ac_kfr51lw",
+   "question": "童锁键是多少？",
+   "expected_status": "answered",
+   "actual_status": "answered",
+   "generation_mode": "llm",
+   "status_ok": true,
+   "expected_terms": [
+    "1秒"
+   ],
+   "kw_strict": true,
+   "kw_number_eq": true,
+   "rank": 1,
+   "hit@1": true,
+   "hit@3": true,
+   "rr": 1.0,
+   "faithfulness": 0.5,
+   "faith_detail": [
+    {
+     "sentence": "童锁键的开启方式有两种：一种是通过同时按“风速”“风向”键1秒来开启或关闭童锁功能 [1]",
+     "cover": 0.47,
+     "verdict": "PARTIAL"
+    },
+    {
+     "sentence": "另一种是同时按“模式”“上下风”键5秒来开启童锁功能，然后再次同时按“模式”“上下风”键来关闭童锁功能 [2]",
+     "cover": 0.55,
+     "verdict": "PARTIAL"
+    },
+    {
+     "sentence": "请注意，如果遥控器开启了童锁功能，需要按照相应的步骤解除童锁 [3]",
+     "cover": 0.35,
+     "verdict": "PARTIAL"
+    }
+   ],
+   "confidence": 0.7454,
+   "latency_ms": 3734.6,
+   "answer": "童锁键的开启方式有两种：一种是通过同时按“风速”“风向”键1秒来开启或关闭童锁功能 [1]；另一种是同时按“模式”“上下风”键5秒来开启童锁功能，然后再次同时按“模式”“上下风”键来关闭童锁功能 [2]。请注意，如果遥控器开启了童锁功能，需要按照相应的步骤解除童锁 [3]。"
+  },
+  {
+   "id": "auto_079",
+   "category": "参数",
+   "product": "ac_kfr51lw",
+   "question": "室内机型号是多少？",
+   "expected_status": "answered",
+   "actual_status": "no_answer",
+   "generation_mode": "llm",
+   "status_ok": false,
+   "expected_terms": [
+    "72L"
+   ],
+   "kw_strict": false,
+   "kw_number_eq": false,
+   "rank": null,
+   "hit@1": false,
+   "hit@3": false,
+   "rr": 0.0,
+   "faithfulness": 0.25,
+   "faith_detail": [
+    {
+     "sentence": "室内机型号是51机 [3]",
+     "cover": 0.45,
+     "verdict": "PARTIAL"
+    },
+    {
+     "sentence": "关于具体型号名称，现有产品资料中暂未找到相关说明 [1][2]",
+     "cover": 0.0,
+     "verdict": "NOT_SUPPORTED"
+    }
+   ],
+   "confidence": 0.7509,
+   "latency_ms": 1588.3,
+   "answer": "室内机型号是51机 [3]。关于具体型号名称，现有产品资料中暂未找到相关说明 [1][2]。"
+  },
+  {
+   "id": "auto_080",
+   "category": "参数",
+   "product": "ac_kfr51lw",
+   "question": "室外机型号是多少？",
+   "expected_status": "answered",
+   "actual_status": "no_answer",
+   "generation_mode": "llm",
+   "status_ok": false,
+   "expected_terms": [
+    "72W"
+   ],
+   "kw_strict": false,
+   "kw_number_eq": false,
+   "rank": null,
+   "hit@1": false,
+   "hit@3": false,
+   "rr": 0.0,
+   "faithfulness": 0.0,
+   "faith_detail": [
+    {
+     "sentence": "室外机的型号在现有产品资料中暂未找到相关说明 [1][2][3]",
+     "cover": 0.07,
+     "verdict": "NOT_SUPPORTED"
+    }
+   ],
+   "confidence": 0.7096,
+   "latency_ms": 1394.2,
+   "answer": "室外机的型号在现有产品资料中暂未找到相关说明 [1][2][3]。"
+  },
+  {
+   "id": "auto_081",
+   "category": "型号/文本",
+   "product": "ac_kfr51lw",
+   "question": "额定制冷量（W）是什么？",
+   "expected_status": "answered",
+   "actual_status": "answered",
+   "generation_mode": "llm",
+   "status_ok": true,
+   "expected_terms": [
+    "7290(900~9150)"
+   ],
+   "kw_strict": false,
+   "kw_number_eq": false,
+   "rank": null,
+   "hit@1": false,
+   "hit@3": false,
+   "rr": 0.0,
+   "faithfulness": 0.0,
+   "faith_detail": [
+    {
+     "sentence": "额定制冷量（W）是指产品在标准工况下，单位时间内能够从冷却介质中吸收的热量，通常以瓦特（W）为单位表示",
+     "cover": 0.11,
+     "verdict": "NOT_SUPPORTED"
+    },
+    {
+     "sentence": "这是衡量空调、冰箱等制冷设备制冷能力的一个重要参数 [1]",
+     "cover": 0.04,
+     "verdict": "NOT_SUPPORTED"
+    }
+   ],
+   "confidence": 0.9402,
+   "latency_ms": 2660.9,
+   "answer": "额定制冷量（W）是指产品在标准工况下，单位时间内能够从冷却介质中吸收的热量，通常以瓦特（W）为单位表示。这是衡量空调、冰箱等制冷设备制冷能力的一个重要参数 [1]。"
+  },
+  {
+   "id": "auto_082",
+   "category": "型号/文本",
+   "product": "ac_kfr51lw",
+   "question": "制冷功率（W）是什么？",
+   "expected_status": "answered",
+   "actual_status": "answered",
+   "generation_mode": "llm",
+   "status_ok": true,
+   "expected_terms": [
+    "1900(300~2950)"
+   ],
+   "kw_strict": false,
+   "kw_number_eq": false,
+   "rank": 4,
+   "hit@1": false,
+   "hit@3": false,
+   "rr": 0.25,
+   "faithfulness": 0.167,
+   "faith_detail": [
+    {
+     "sentence": "制冷功率（W）是指制冷设备在单位时间内所能消耗的电能，用于产生制冷效果",
+     "cover": 0.09,
+     "verdict": "NOT_SUPPORTED"
+    },
+    {
+     "sentence": "简单来说，它表示制冷设备在制冷过程中每秒钟消耗的电能",
+     "cover": 0.04,
+     "verdict": "NOT_SUPPORTED"
+    },
+    {
+     "sentence": "资料[1]中提到的“功率(W) / 制冷”即是指制冷功率",
+     "cover": 0.35,
+     "verdict": "PARTIAL"
+    }
+   ],
+   "confidence": 0.865,
+   "latency_ms": 2379.6,
+   "answer": "制冷功率（W）是指制冷设备在单位时间内所能消耗的电能，用于产生制冷效果。简单来说，它表示制冷设备在制冷过程中每秒钟消耗的电能。资料[1]中提到的“功率(W) / 制冷”即是指制冷功率。 [1]"
+  },
+  {
+   "id": "auto_083",
+   "category": "型号/文本",
+   "product": "ac_kfr51lw",
+   "question": "制热功率（W）是什么？",
+   "expected_status": "answered",
+   "actual_status": "answered",
+   "generation_mode": "llm",
+   "status_ok": true,
+   "expected_terms": [
+    "2840(260~4040)+2300"
+   ],
+   "kw_strict": false,
+   "kw_number_eq": false,
+   "rank": null,
+   "hit@1": false,
+   "hit@3": false,
+   "rr": 0.0,
+   "faithfulness": 0.0,
+   "faith_detail": [
+    {
+     "sentence": "制热功率（W）是指设备在制热模式下每秒钟转换的电能为热能的速率，单位是瓦特（W）",
+     "cover": 0.08,
+     "verdict": "NOT_SUPPORTED"
+    },
+    {
+     "sentence": "它表示设备在制热功能上的工作效率，即单位时间内能够产生的热量",
+     "cover": 0.07,
+     "verdict": "NOT_SUPPORTED"
+    },
+    {
+     "sentence": "在提供的资料中，[1] 和 [2] 都提到了功率（W），但具体是制热功率还是电辅热输入功率没有明确说明",
+     "cover": 0.18,
+     "verdict": "NOT_SUPPORTED"
+    },
+    {
+     "sentence": "而 [3] 提到了中间制冷功率和中间制热功率，但没有具体定义这两个功率的含义",
+     "cover": 0.23,
+     "verdict": "NOT_SUPPORTED"
+    },
+    {
+     "sentence": "因此，根据现有产品资料中暂未找到关于“制热功率”的明确说明 [1][2][3]",
+     "cover": 0.08,
+     "verdict": "NOT_SUPPORTED"
+    }
+   ],
+   "confidence": 0.8652,
+   "latency_ms": 5506.2,
+   "answer": "制热功率（W）是指设备在制热模式下每秒钟转换的电能为热能的速率，单位是瓦特（W）。它表示设备在制热功能上的工作效率，即单位时间内能够产生的热量。在提供的资料中，[1] 和 [2] 都提到了功率（W），但具体是制热功率还是电辅热输入功率没有明确说明。而 [3] 提到了中间制冷功率和中间制热功率，但没有具体定义这两个功率的"
+  },
+  {
+   "id": "auto_084",
+   "category": "型号/文本",
+   "product": "ac_kfr51lw",
+   "question": "制冷电流（A）是什么？",
+   "expected_status": "answered",
+   "actual_status": "answered",
+   "generation_mode": "llm",
+   "status_ok": true,
+   "expected_terms": [
+    "3.0(0.5~4.6)"
+   ],
+   "kw_strict": false,
+   "kw_number_eq": false,
+   "rank": null,
+   "hit@1": false,
+   "hit@3": false,
+   "rr": 0.0,
+   "faithfulness": 0.0,
+   "faith_detail": [
+    {
+     "sentence": "制冷电流（A）是指制冷设备在制冷模式下工作时，通过电路的电流大小",
+     "cover": 0.07,
+     "verdict": "NOT_SUPPORTED"
+    },
+    {
+     "sentence": "它反映了制冷设备在制冷过程中消耗的电能量",
+     "cover": 0.06,
+     "verdict": "NOT_SUPPORTED"
+    },
+    {
+     "sentence": "具体数值需要根据具体的产品型号和工作条件来确定 [1]",
+     "cover": 0.0,
+     "verdict": "NOT_SUPPORTED"
+    }
+   ],
+   "confidence": 0.8593,
+   "latency_ms": 3831.8,
+   "answer": "制冷电流（A）是指制冷设备在制冷模式下工作时，通过电路的电流大小。它反映了制冷设备在制冷过程中消耗的电能量。具体数值需要根据具体的产品型号和工作条件来确定 [1]。"
+  },
+  {
+   "id": "auto_085",
+   "category": "型号/文本",
+   "product": "ac_kfr51lw",
+   "question": "制热电流（A）是什么？",
+   "expected_status": "answered",
+   "actual_status": "answered",
+   "generation_mode": "llm",
+   "status_ok": true,
+   "expected_terms": [
+    "4.4(0.4~6.3)+9.3"
+   ],
+   "kw_strict": false,
+   "kw_number_eq": false,
+   "rank": null,
+   "hit@1": false,
+   "hit@3": false,
+   "rr": 0.0,
+   "faithfulness": 0.0,
+   "faith_detail": [
+    {
+     "sentence": "制热电流（A）是指设备在制热模式下工作时，通过电辅热功能所需的电流大小",
+     "cover": 0.25,
+     "verdict": "NOT_SUPPORTED"
+    },
+    {
+     "sentence": "具体数值需要根据产品型号和规格来确定",
+     "cover": 0.0,
+     "verdict": "NOT_SUPPORTED"
+    },
+    {
+     "sentence": "在现有产品资料中，未找到具体的制热电流数值 [1][3]",
+     "cover": 0.08,
+     "verdict": "NOT_SUPPORTED"
+    }
+   ],
+   "confidence": 0.8505,
+   "latency_ms": 1844.9,
+   "answer": "制热电流（A）是指设备在制热模式下工作时，通过电辅热功能所需的电流大小。具体数值需要根据产品型号和规格来确定。在现有产品资料中，未找到具体的制热电流数值 [1][3]。"
+  },
+  {
+   "id": "auto_086",
+   "category": "型号/文本",
+   "product": "ac_kfr51lw",
+   "question": "室内机噪音是什么？",
+   "expected_status": "answered",
+   "actual_status": "answered",
+   "generation_mode": "llm",
+   "status_ok": true,
+   "expected_terms": [
+    "低-高-超强【dB(A)】：22-42-47"
+   ],
+   "kw_strict": false,
+   "kw_number_eq": true,
+   "rank": 2,
+   "hit@1": false,
+   "hit@3": true,
+   "rr": 0.5,
+   "faithfulness": 0.5,
+   "faith_detail": [
+    {
+     "sentence": "室内机的噪音范围是低-高-超强【dB(A)】: 22-42-47",
+     "cover": 0.79,
+     "verdict": "SUPPORTED"
+    },
+    {
+     "sentence": "这是室内机在不同工作状态下的噪音水平 [2]",
+     "cover": 0.15,
+     "verdict": "NOT_SUPPORTED"
+    }
+   ],
+   "confidence": 0.8979,
+   "latency_ms": 1827.2,
+   "answer": "室内机的噪音范围是低-高-超强【dB(A)】: 22-42-47。这是室内机在不同工作状态下的噪音水平 [2]。"
+  },
+  {
+   "id": "auto_087",
+   "category": "型号/文本",
+   "product": "ac_kfr51lw",
+   "question": "室外机噪音是什么？",
+   "expected_status": "answered",
+   "actual_status": "answered",
+   "generation_mode": "llm",
+   "status_ok": true,
+   "expected_terms": [
+    "低-高【dB(A)】：48-56"
+   ],
+   "kw_strict": false,
+   "kw_number_eq": true,
+   "rank": 2,
+   "hit@1": false,
+   "hit@3": true,
+   "rr": 0.5,
+   "faithfulness": 0.5,
+   "faith_detail": [
+    {
+     "sentence": "室外机的噪音范围是低-高48-56分贝【dB(A)】 [2]",
+     "cover": 0.54,
+     "verdict": "PARTIAL"
+    }
+   ],
+   "confidence": 0.8469,
+   "latency_ms": 1500.7,
+   "answer": "室外机的噪音范围是低-高48-56分贝【dB(A)】 [2]。"
+  },
+  {
+   "id": "auto_088",
+   "category": "型号/文本",
+   "product": "ac_kfr51lw",
+   "question": "中间制冷量/中间制热量（W）是什么？",
+   "expected_status": "answered",
+   "actual_status": "answered",
+   "generation_mode": "llm",
+   "status_ok": true,
+   "expected_terms": [
+    "3600/4850"
+   ],
+   "kw_strict": false,
+   "kw_number_eq": true,
+   "rank": 3,
+   "hit@1": false,
+   "hit@3": true,
+   "rr": 0.3333333333333333,
+   "faithfulness": 0.0,
+   "faith_detail": [
+    {
+     "sentence": "中间制冷量/中间制热量（W）是指空调在特定工况下，制冷或制热时的功率输出",
+     "cover": 0.29,
+     "verdict": "NOT_SUPPORTED"
+    },
+    {
+     "sentence": "具体数值取决于空调型号和设计，例如资料[3]中提到的中间制冷量为3600W，中间制热量为4850W",
+     "cover": 0.27,
+     "verdict": "NOT_SUPPORTED"
+    },
+    {
+     "sentence": "这是空调在特定工况下的性能指标 [1][3]",
+     "cover": 0.0,
+     "verdict": "NOT_SUPPORTED"
+    }
+   ],
+   "confidence": 0.9443,
+   "latency_ms": 3796.1,
+   "answer": "中间制冷量/中间制热量（W）是指空调在特定工况下，制冷或制热时的功率输出。具体数值取决于空调型号和设计，例如资料[3]中提到的中间制冷量为3600W，中间制热量为4850W。这是空调在特定工况下的性能指标 [1][3]。"
+  },
+  {
+   "id": "auto_089",
+   "category": "型号/文本",
+   "product": "ac_kfr51lw",
+   "question": "中间制冷功率/中间制热功率（W）是什么？",
+   "expected_status": "answered",
+   "actual_status": "answered",
+   "generation_mode": "llm",
+   "status_ok": true,
+   "expected_terms": [
+    "670/950"
+   ],
+   "kw_strict": false,
+   "kw_number_eq": false,
+   "rank": 4,
+   "hit@1": false,
+   "hit@3": false,
+   "rr": 0.25,
+   "faithfulness": 0.0,
+   "faith_detail": [
+    {
+     "sentence": "中间制冷功率/中间制热功率（W）是指产品在特定工况下，制冷或制热时的平均功率输出",
+     "cover": 0.27,
+     "verdict": "NOT_SUPPORTED"
+    },
+    {
+     "sentence": "这个参数通常用于描述产品在非极端工作条件下的能耗情况，可以帮助用户了解产品在常规使用时的能耗水平 [1]",
+     "cover": 0.0,
+     "verdict": "NOT_SUPPORTED"
+    }
+   ],
+   "confidence": 0.9438,
+   "latency_ms": 2222.6,
+   "answer": "中间制冷功率/中间制热功率（W）是指产品在特定工况下，制冷或制热时的平均功率输出。这个参数通常用于描述产品在非极端工作条件下的能耗情况，可以帮助用户了解产品在常规使用时的能耗水平 [1]。"
+  },
+  {
+   "id": "auto_090",
+   "category": "型号/文本",
+   "product": "ac_kfr51lw",
+   "question": "25%制冷量/25%制热量（W）是什么？",
+   "expected_status": "answered",
+   "actual_status": "answered",
+   "generation_mode": "llm",
+   "status_ok": true,
+   "expected_terms": [
+    "1800/2400"
+   ],
+   "kw_strict": true,
+   "kw_number_eq": true,
+   "rank": 3,
+   "hit@1": false,
+   "hit@3": true,
+   "rr": 0.3333333333333333,
+   "faithfulness": 0.25,
+   "faith_detail": [
+    {
+     "sentence": "25%制冷量/25%制热量(W)指的是在特定条件下，空调或热泵设备在制冷和制热模式下，输出功率的25%对应的制冷量和制热",
+     "cover": 0.28,
+     "verdict": "NOT_SUPPORTED"
+    },
+    {
+     "sentence": "具体数值为1800/2400W，即制冷模式下输出功率的25%为1800W，制热模式下输出功率的25%为2400W [3]",
+     "cover": 0.33,
+     "verdict": "PARTIAL"
+    }
+   ],
+   "confidence": 0.9535,
+   "latency_ms": 3018.8,
+   "answer": "25%制冷量/25%制热量(W)指的是在特定条件下，空调或热泵设备在制冷和制热模式下，输出功率的25%对应的制冷量和制热量。具体数值为1800/2400W，即制冷模式下输出功率的25%为1800W，制热模式下输出功率的25%为2400W [3]。"
+  },
+  {
+   "id": "auto_091",
+   "category": "型号/文本",
+   "product": "ac_kfr51lw",
+   "question": "低温制热量（W）是什么？",
+   "expected_status": "answered",
+   "actual_status": "answered",
+   "generation_mode": "llm",
+   "status_ok": true,
+   "expected_terms": [
+    "7970"
+   ],
+   "kw_strict": true,
+   "kw_number_eq": true,
+   "rank": 3,
+   "hit@1": false,
+   "hit@3": true,
+   "rr": 0.3333333333333333,
+   "faithfulness": 0.0,
+   "faith_detail": [
+    {
+     "sentence": "低温制热量（W）是指产品在低温环境下能够产生的制热功率，单位是瓦特（W）",
+     "cover": 0.19,
+     "verdict": "NOT_SUPPORTED"
+    },
+    {
+     "sentence": "这个指标通常用于衡量空调、取暖器等电热产品的制热能力",
+     "cover": 0.04,
+     "verdict": "NOT_SUPPORTED"
+    },
+    {
+     "sentence": "例如，资料[3]中提到的低温制热量为7970W，意味着该产品在低温环境下能够产生7970瓦特的制热功率 [1][3]",
+     "cover": 0.18,
+     "verdict": "NOT_SUPPORTED"
+    }
+   ],
+   "confidence": 0.9279,
+   "latency_ms": 3056.2,
+   "answer": "低温制热量（W）是指产品在低温环境下能够产生的制热功率，单位是瓦特（W）。这个指标通常用于衡量空调、取暖器等电热产品的制热能力。例如，资料[3]中提到的低温制热量为7970W，意味着该产品在低温环境下能够产生7970瓦特的制热功率 [1][3]。"
+  },
+  {
+   "id": "auto_092",
+   "category": "型号/文本",
+   "product": "ac_kfr51lw",
+   "question": "低温制热功率（W）是什么？",
+   "expected_status": "answered",
+   "actual_status": "answered",
+   "generation_mode": "llm",
+   "status_ok": true,
+   "expected_terms": [
+    "3300"
+   ],
+   "kw_strict": true,
+   "kw_number_eq": true,
+   "rank": 3,
+   "hit@1": false,
+   "hit@3": true,
+   "rr": 0.3333333333333333,
+   "faithfulness": 0.0,
+   "faith_detail": [
+    {
+     "sentence": "低温制热功率（W）是指产品在低温环境下进行制热工作时所消耗的功率",
+     "cover": 0.18,
+     "verdict": "NOT_SUPPORTED"
+    },
+    {
+     "sentence": "具体数值取决于产品的型号和设计，例如资料[3]中提到的低温制热功率为3300W",
+     "cover": 0.21,
+     "verdict": "NOT_SUPPORTED"
+    },
+    {
+     "sentence": "这是产品在特定低温条件下制热时所需的能量消耗量 [1][3]",
+     "cover": 0.07,
+     "verdict": "NOT_SUPPORTED"
+    }
+   ],
+   "confidence": 0.9334,
+   "latency_ms": 3453.6,
+   "answer": "低温制热功率（W）是指产品在低温环境下进行制热工作时所消耗的功率。具体数值取决于产品的型号和设计，例如资料[3]中提到的低温制热功率为3300W。这是产品在特定低温条件下制热时所需的能量消耗量 [1][3]。"
+  },
+  {
+   "id": "auto_093",
+   "category": "型号/文本",
+   "product": "ac_kfr51lw",
+   "question": "最大输入功率（W）是什么？",
+   "expected_status": "answered",
+   "actual_status": "answered",
+   "generation_mode": "llm",
+   "status_ok": true,
+   "expected_terms": [
+    "6950"
+   ],
+   "kw_strict": true,
+   "kw_number_eq": true,
+   "rank": 2,
+   "hit@1": false,
+   "hit@3": true,
+   "rr": 0.5,
+   "faithfulness": 0.0,
+   "faith_detail": [
+    {
+     "sentence": "最大输入功率（W）是指设备在正常工作条件下所能承受的最大电能输入值",
+     "cover": 0.17,
+     "verdict": "NOT_SUPPORTED"
+    },
+    {
+     "sentence": "根据现有产品资料，最大输入功率的具体数值为6950W [2]",
+     "cover": 0.29,
+     "verdict": "NOT_SUPPORTED"
+    }
+   ],
+   "confidence": 0.9737,
+   "latency_ms": 1746.6,
+   "answer": "最大输入功率（W）是指设备在正常工作条件下所能承受的最大电能输入值。根据现有产品资料，最大输入功率的具体数值为6950W [2]。"
+  },
+  {
+   "id": "auto_094",
+   "category": "型号/文本",
+   "product": "ac_kfr51lw",
+   "question": "最大输入电流（A）是什么？",
+   "expected_status": "answered",
+   "actual_status": "answered",
+   "generation_mode": "llm",
+   "status_ok": true,
+   "expected_terms": [
+    "16.6"
+   ],
+   "kw_strict": true,
+   "kw_number_eq": true,
+   "rank": 2,
+   "hit@1": false,
+   "hit@3": true,
+   "rr": 0.5,
+   "faithfulness": 0.25,
+   "faith_detail": [
+    {
+     "sentence": "最大输入电流是16.6A [2]",
+     "cover": 0.57,
+     "verdict": "PARTIAL"
+    },
+    {
+     "sentence": "如果需要了解线路最大电流的范围，它是1.5到3A [3]",
+     "cover": 0.27,
+     "verdict": "NOT_SUPPORTED"
+    }
+   ],
+   "confidence": 0.9733,
+   "latency_ms": 1945.5,
+   "answer": "最大输入电流是16.6A [2]。如果需要了解线路最大电流的范围，它是1.5到3A [3]。"
+  },
+  {
+   "id": "auto_095",
+   "category": "型号/文本",
+   "product": "ac_kfr51lw",
+   "question": "待机功率（W）是什么？",
+   "expected_status": "answered",
+   "actual_status": "answered",
+   "generation_mode": "llm",
+   "status_ok": true,
+   "expected_terms": [
+    "9.3"
+   ],
+   "kw_strict": false,
+   "kw_number_eq": false,
+   "rank": 4,
+   "hit@1": false,
+   "hit@3": false,
+   "rr": 0.25,
+   "faithfulness": 0.0,
+   "faith_detail": [
+    {
+     "sentence": "待机功率是指设备在待机状态下的功率消耗，单位是瓦特（W）",
+     "cover": 0.12,
+     "verdict": "NOT_SUPPORTED"
+    },
+    {
+     "sentence": "在待机状态下，设备虽然不进行主要功能操作，但仍然会有一定的电力消耗",
+     "cover": 0.03,
+     "verdict": "NOT_SUPPORTED"
+    },
+    {
+     "sentence": "资料中没有提供具体的待机功率数值，只有功率的制热和制冷信息 [1][2][3]",
+     "cover": 0.14,
+     "verdict": "NOT_SUPPORTED"
+    }
+   ],
+   "confidence": 0.8874,
+   "latency_ms": 3088.8,
+   "answer": "待机功率是指设备在待机状态下的功率消耗，单位是瓦特（W）。在待机状态下，设备虽然不进行主要功能操作，但仍然会有一定的电力消耗。资料中没有提供具体的待机功率数值，只有功率的制热和制冷信息 [1][2][3]。"
+  },
+  {
+   "id": "auto_096",
+   "category": "型号/文本",
+   "product": "ac_kfr51lw",
+   "question": "电辅热输入功率（W）是什么？",
+   "expected_status": "answered",
+   "actual_status": "answered",
+   "generation_mode": "llm",
+   "status_ok": true,
+   "expected_terms": [
+    "2000(PTC)"
+   ],
+   "kw_strict": false,
+   "kw_number_eq": true,
+   "rank": 3,
+   "hit@1": false,
+   "hit@3": true,
+   "rr": 0.3333333333333333,
+   "faithfulness": 0.0,
+   "faith_detail": [
+    {
+     "sentence": "电辅热输入功率（W）是指电辅热系统在正常工作状态下所消耗的电功率，单位是瓦特（W）",
+     "cover": 0.17,
+     "verdict": "NOT_SUPPORTED"
+    },
+    {
+     "sentence": "这个参数可以用来衡量电辅热系统的能耗情况",
+     "cover": 0.11,
+     "verdict": "NOT_SUPPORTED"
+    },
+    {
+     "sentence": "例如，根据资料[3]，某产品的电辅热输入功率为2000W（PTC），这意味着该产品在电辅热模式下工作时，每秒钟消耗的电能",
+     "cover": 0.17,
+     "verdict": "NOT_SUPPORTED"
+    }
+   ],
+   "confidence": 0.9637,
+   "latency_ms": 3406.5,
+   "answer": "电辅热输入功率（W）是指电辅热系统在正常工作状态下所消耗的电功率，单位是瓦特（W）。这个参数可以用来衡量电辅热系统的能耗情况。例如，根据资料[3]，某产品的电辅热输入功率为2000W（PTC），这意味着该产品在电辅热模式下工作时，每秒钟消耗的电能为2000瓦特 [3]。"
+  },
+  {
+   "id": "auto_097",
+   "category": "参数",
+   "product": "ac_kfr51lw",
+   "question": "电源（V~/Hz）是多少？",
+   "expected_status": "answered",
+   "actual_status": "answered",
+   "generation_mode": "llm",
+   "status_ok": true,
+   "expected_terms": [
+    "380V"
+   ],
+   "kw_strict": true,
+   "kw_number_eq": true,
+   "rank": 2,
+   "hit@1": false,
+   "hit@3": true,
+   "rr": 0.5,
+   "faithfulness": 1.0,
+   "faith_detail": [
+    {
+     "sentence": "电源（V~/Hz）是380V~ 3N /50Hz [2]",
+     "cover": 0.64,
+     "verdict": "SUPPORTED"
+    }
+   ],
+   "confidence": 0.9013,
+   "latency_ms": 1070.1,
+   "answer": "电源（V~/Hz）是380V~ 3N /50Hz [2]。"
+  },
+  {
+   "id": "auto_098",
+   "category": "型号/文本",
+   "product": "ac_kfr51lw",
+   "question": "循环风量（m³/h）是什么？",
+   "expected_status": "answered",
+   "actual_status": "answered",
+   "generation_mode": "llm",
+   "status_ok": true,
+   "expected_terms": [
+    "1400"
+   ],
+   "kw_strict": true,
+   "kw_number_eq": true,
+   "rank": 2,
+   "hit@1": false,
+   "hit@3": true,
+   "rr": 0.5,
+   "faithfulness": 0.0,
+   "faith_detail": [
+    {
+     "sentence": "循环风量（m³/h）是指单位时间内循环空气的体积，通常用于描述通风设备或空调系统的工作能力",
+     "cover": 0.14,
+     "verdict": "NOT_SUPPORTED"
+    },
+    {
+     "sentence": "具体数值如1400 m³/h表示该设备每小时可以循环1400立方米的空气 [1][2]",
+     "cover": 0.19,
+     "verdict": "NOT_SUPPORTED"
+    },
+    {
+     "sentence": "资料中没有提供关于电源的信息与循环风量的定义直接相关，所以这里不涉及电源的说明 [3]",
+     "cover": 0.1,
+     "verdict": "NOT_SUPPORTED"
+    }
+   ],
+   "confidence": 0.9207,
+   "latency_ms": 3753.4,
+   "answer": "循环风量（m³/h）是指单位时间内循环空气的体积，通常用于描述通风设备或空调系统的工作能力。具体数值如1400 m³/h表示该设备每小时可以循环1400立方米的空气 [1][2]。资料中没有提供关于电源的信息与循环风量的定义直接相关，所以这里不涉及电源的说明 [3]。"
+  },
+  {
+   "id": "auto_099",
+   "category": "参数",
+   "product": "ac_kfr51lw",
+   "question": "制冷剂种类/充注量是多少？",
+   "expected_status": "answered",
+   "actual_status": "no_answer",
+   "generation_mode": "llm",
+   "status_ok": false,
+   "expected_terms": [
+    "1700g"
+   ],
+   "kw_strict": false,
+   "kw_number_eq": false,
+   "rank": 4,
+   "hit@1": false,
+   "hit@3": false,
+   "rr": 0.25,
+   "faithfulness": 0.0,
+   "faith_detail": [
+    {
+     "sentence": "现有产品资料中暂未找到相关说明",
+     "cover": 0.0,
+     "verdict": "NOT_SUPPORTED"
+    }
+   ],
+   "confidence": 0.8824,
+   "latency_ms": 1271.7,
+   "answer": "现有产品资料中暂未找到相关说明。 [1]"
+  },
+  {
+   "id": "auto_100",
+   "category": "型号/文本",
+   "product": "ac_kfr51lw",
+   "question": "使用房间最小面积（m²）是什么？",
+   "expected_status": "answered",
+   "actual_status": "answered",
+   "generation_mode": "llm",
+   "status_ok": true,
+   "expected_terms": [
+    "26"
+   ],
+   "kw_strict": true,
+   "kw_number_eq": true,
+   "rank": 2,
+   "hit@1": false,
+   "hit@3": true,
+   "rr": 0.5,
+   "faithfulness": 0.25,
+   "faith_detail": [
+    {
+     "sentence": "使用房间最小面积为26平方米 [2]",
+     "cover": 0.5,
+     "verdict": "PARTIAL"
+    },
+    {
+     "sentence": "这是空调器安装所需的最小房间面积，以确保空调器能够正常工作 [3]",
+     "cover": 0.24,
+     "verdict": "NOT_SUPPORTED"
+    }
+   ],
+   "confidence": 0.9642,
+   "latency_ms": 2442.4,
+   "answer": "使用房间最小面积为26平方米 [2]。这是空调器安装所需的最小房间面积，以确保空调器能够正常工作 [3]。"
+  },
+  {
+   "id": "auto_101",
+   "category": "参数",
+   "product": "ac_kfr51lw",
+   "question": "熔断丝规格是多少？",
+   "expected_status": "answered",
+   "actual_status": "answered",
+   "generation_mode": "llm",
+   "status_ok": true,
+   "expected_terms": [
+    "250V"
+   ],
+   "kw_strict": true,
+   "kw_number_eq": true,
+   "rank": 2,
+   "hit@1": false,
+   "hit@3": true,
+   "rr": 0.5,
+   "faithfulness": 1.0,
+   "faith_detail": [
+    {
+     "sentence": "熔断丝规格为T 6.3A/250VAC和T 20A/250VAC [2]",
+     "cover": 0.72,
+     "verdict": "SUPPORTED"
+    }
+   ],
+   "confidence": 0.7952,
+   "latency_ms": 1551.5,
+   "answer": "熔断丝规格为T 6.3A/250VAC和T 20A/250VAC [2]。"
+  },
+  {
+   "id": "auto_102",
+   "category": "型号/文本",
+   "product": "ac_kfr51lw",
+   "question": "运行模式是什么？",
+   "expected_status": "answered",
+   "actual_status": "answered",
+   "generation_mode": "llm",
+   "status_ok": true,
+   "expected_terms": [
+    "保护装置可能动作的温度范围"
+   ],
+   "kw_strict": false,
+   "kw_number_eq": false,
+   "rank": null,
+   "hit@1": false,
+   "hit@3": false,
+   "rr": 0.0,
+   "faithfulness": 0.0,
+   "faith_detail": [
+    {
+     "sentence": "现有产品资料中暂未找到关于“运行模式”的具体说明",
+     "cover": 0.0,
+     "verdict": "NOT_SUPPORTED"
+    },
+    {
+     "sentence": "如果您能提供更多关于运行模式的相关信息或上下文，我可以进一步帮助您查找相关资料 [1]",
+     "cover": 0.0,
+     "verdict": "NOT_SUPPORTED"
+    }
+   ],
+   "confidence": 0.5625,
+   "latency_ms": 1839.9,
+   "answer": "现有产品资料中暂未找到关于“运行模式”的具体说明。如果您能提供更多关于运行模式的相关信息或上下文，我可以进一步帮助您查找相关资料 [1]。"
+  },
+  {
+   "id": "auto_103",
+   "category": "参数",
+   "product": "ac_kfr51lw",
+   "question": "抽湿模式是多少？",
+   "expected_status": "answered",
+   "actual_status": "answered",
+   "generation_mode": "llm",
+   "status_ok": true,
+   "expected_terms": [
+    "18℃"
+   ],
+   "kw_strict": true,
+   "kw_number_eq": true,
+   "rank": 2,
+   "hit@1": false,
+   "hit@3": true,
+   "rr": 0.5,
+   "faithfulness": 1.0,
+   "faith_detail": [
+    {
+     "sentence": "抽湿模式适用于室内温度18℃以下的环境",
+     "cover": 0.67,
+     "verdict": "SUPPORTED"
+    }
+   ],
+   "confidence": 0.7047,
+   "latency_ms": 1245.3,
+   "answer": "抽湿模式适用于室内温度18℃以下的环境。 [2]"
+  },
+  {
+   "id": "auto_104",
+   "category": "型号/文本",
+   "product": "ac_kfr51lw",
+   "question": "必须正确接地是什么？",
+   "expected_status": "answered",
+   "actual_status": "answered",
+   "generation_mode": "llm",
+   "status_ok": true,
+   "expected_terms": [
+    "禁止用电源开关直接关闭空调"
+   ],
+   "kw_strict": false,
+   "kw_number_eq": false,
+   "rank": null,
+   "hit@1": false,
+   "hit@3": false,
+   "rr": 0.0,
+   "faithfulness": 0.0,
+   "faith_detail": [
+    {
+     "sentence": "必须正确接地是为了确保设备或系统在运行过程中能够安全地释放可能积累的静电或电流，防止触电事故和设备损坏",
+     "cover": 0.08,
+     "verdict": "NOT_SUPPORTED"
+    },
+    {
+     "sentence": "这是为了保障使用者的安全以及设备的正常运行",
+     "cover": 0.05,
+     "verdict": "NOT_SUPPORTED"
+    },
+    {
+     "sentence": "具体操作和注意事项请参考使用说明中的相关内容 [1][3]",
+     "cover": 0.19,
+     "verdict": "NOT_SUPPORTED"
+    }
+   ],
+   "confidence": 0.7649,
+   "latency_ms": 1913.0,
+   "answer": "必须正确接地是为了确保设备或系统在运行过程中能够安全地释放可能积累的静电或电流，防止触电事故和设备损坏。这是为了保障使用者的安全以及设备的正常运行。具体操作和注意事项请参考使用说明中的相关内容 [1][3]。"
+  },
+  {
+   "id": "auto_105",
+   "category": "型号/文本",
+   "product": "ac_kfr51lw",
+   "question": "家具、贵重物品等是什么？",
+   "expected_status": "answered",
+   "actual_status": "answered",
+   "generation_mode": "llm",
+   "status_ok": true,
+   "expected_terms": [
+    "不得让身体长时间直接接触冷风或制冷过度"
+   ],
+   "kw_strict": false,
+   "kw_number_eq": false,
+   "rank": 1,
+   "hit@1": true,
+   "hit@3": true,
+   "rr": 1.0,
+   "faithfulness": 0.167,
+   "faith_detail": [
+    {
+     "sentence": "家具是指用于居住、工作、休息等用途的器具，如床、桌、椅等",
+     "cover": 0.04,
+     "verdict": "NOT_SUPPORTED"
+    },
+    {
+     "sentence": "贵重物品通常指价值较高、不易损坏或具有收藏价值的物品，如珠宝、艺术品等",
+     "cover": 0.12,
+     "verdict": "NOT_SUPPORTED"
+    },
+    {
+     "sentence": "这些物品在存放或使用时需要注意避免长时间直接接触冷风或制冷过度，以免造成损害 [1]",
+     "cover": 0.35,
+     "verdict": "PARTIAL"
+    }
+   ],
+   "confidence": 0.6748,
+   "latency_ms": 2561.8,
+   "answer": "家具是指用于居住、工作、休息等用途的器具，如床、桌、椅等。贵重物品通常指价值较高、不易损坏或具有收藏价值的物品，如珠宝、艺术品等。这些物品在存放或使用时需要注意避免长时间直接接触冷风或制冷过度，以免造成损害 [1]。"
+  },
+  {
+   "id": "auto_106",
+   "category": "型号/文本",
+   "product": "ac_kfr51lw",
+   "question": "（如工作中的电加热器）的房间内是什么？",
+   "expected_status": "answered",
+   "actual_status": "answered",
+   "generation_mode": "llm",
+   "status_ok": true,
+   "expected_terms": [
+    "废弃电池请置入“有害垃圾”分类桶"
+   ],
+   "kw_strict": false,
+   "kw_number_eq": false,
+   "rank": 2,
+   "hit@1": false,
+   "hit@3": true,
+   "rr": 0.5,
+   "faithfulness": 0.25,
+   "faith_detail": [
+    {
+     "sentence": "电加热器工作时的房间内应避免放置废弃电池，并确保房间内没有持续火源，如明火、点燃的煤气器具或打开的电加热器",
+     "cover": 0.53,
+     "verdict": "PARTIAL"
+    },
+    {
+     "sentence": "资料编号：[2][3]",
+     "cover": 0.0,
+     "verdict": "NOT_SUPPORTED"
+    }
+   ],
+   "confidence": 0.7322,
+   "latency_ms": 2133.5,
+   "answer": "电加热器工作时的房间内应避免放置废弃电池，并确保房间内没有持续火源，如明火、点燃的煤气器具或打开的电加热器。资料编号：[2][3]。"
+  },
+  {
+   "id": "auto_107",
+   "category": "型号/文本",
+   "product": "ac_kfr51lw",
+   "question": "切勿将手伸入进风口、出风口内是什么？",
+   "expected_status": "answered",
+   "actual_status": "answered",
+   "generation_mode": "llm",
+   "status_ok": true,
+   "expected_terms": [
+    "切勿将衣架等物品伸入或悬挂在出风口导风板上"
+   ],
+   "kw_strict": false,
+   "kw_number_eq": false,
+   "rank": 1,
+   "hit@1": true,
+   "hit@3": true,
+   "rr": 1.0,
+   "faithfulness": 0.75,
+   "faith_detail": [
+    {
+     "sentence": "切勿将手伸入进风口、出风口内是为了防止将衣架等物品伸入或悬挂在出风口导风板上，避免造成安全隐患 [1]",
+     "cover": 0.6,
+     "verdict": "SUPPORTED"
+    },
+    {
+     "sentence": "同时，如果感觉不舒适，应退出“强劲”功能，并请重新关严面板，或清除进风口的障碍 [1][3]",
+     "cover": 0.57,
+     "verdict": "PARTIAL"
+    }
+   ],
+   "confidence": 0.771,
+   "latency_ms": 2300.6,
+   "answer": "切勿将手伸入进风口、出风口内是为了防止将衣架等物品伸入或悬挂在出风口导风板上，避免造成安全隐患 [1]。同时，如果感觉不舒适，应退出“强劲”功能，并请重新关严面板，或清除进风口的障碍 [1][3]。"
+  },
+  {
+   "id": "auto_108",
+   "category": "型号/文本",
+   "product": "ac_kfr51lw",
+   "question": "φ16是什么？",
+   "expected_status": "answered",
+   "actual_status": "answered",
+   "generation_mode": "llm",
+   "status_ok": true,
+   "expected_terms": [
+    "65-75"
+   ],
+   "kw_strict": false,
+   "kw_number_eq": false,
+   "rank": 4,
+   "hit@1": false,
+   "hit@3": false,
+   "rr": 0.25,
+   "faithfulness": 0.0,
+   "faith_detail": [
+    {
+     "sentence": "φ16是一个直径为16毫米的尺寸表示",
+     "cover": 0.06,
+     "verdict": "NOT_SUPPORTED"
+    },
+    {
+     "sentence": "这个表示通常用于描述管材、线材或其他圆形物体的直径",
+     "cover": 0.0,
+     "verdict": "NOT_SUPPORTED"
+    },
+    {
+     "sentence": "在提供的资料中，φ16并未直接出现，但根据常见的尺寸表示方法，可以推断出φ16代表直径为16毫米的尺寸 [3]",
+     "cover": 0.02,
+     "verdict": "NOT_SUPPORTED"
+    }
+   ],
+   "confidence": 0.7237,
+   "latency_ms": 3365.2,
+   "answer": "φ16是一个直径为16毫米的尺寸表示。这个表示通常用于描述管材、线材或其他圆形物体的直径。在提供的资料中，φ16并未直接出现，但根据常见的尺寸表示方法，可以推断出φ16代表直径为16毫米的尺寸 [3]。"
+  },
+  {
+   "id": "auto_109",
+   "category": "型号/文本",
+   "product": "ac_kfr51lw",
+   "question": "服务热线是什么？",
+   "expected_status": "answered",
+   "actual_status": "answered",
+   "generation_mode": "llm",
+   "status_ok": true,
+   "expected_terms": [
+    "400-8899-315（免长途费）"
+   ],
+   "kw_strict": false,
+   "kw_number_eq": true,
+   "rank": 1,
+   "hit@1": true,
+   "hit@3": true,
+   "rr": 1.0,
+   "faithfulness": 0.25,
+   "faith_detail": [
+    {
+     "sentence": "服务热线是400-8899-315，这是一个免长途费的电话号码 [1]",
+     "cover": 0.52,
+     "verdict": "PARTIAL"
+    },
+    {
+     "sentence": "其他资料中未提及服务热线的信息",
+     "cover": 0.21,
+     "verdict": "NOT_SUPPORTED"
+    }
+   ],
+   "confidence": 0.7422,
+   "latency_ms": 1485.2,
+   "answer": "服务热线是400-8899-315，这是一个免长途费的电话号码 [1]。其他资料中未提及服务热线的信息。"
+  },
+  {
+   "id": "auto_110",
+   "category": "参数",
+   "product": "ac_kfr51lw",
+   "question": "使用时，需保持遥控器与空调器是多少？",
+   "expected_status": "answered",
+   "actual_status": "answered",
+   "generation_mode": "llm",
+   "status_ok": true,
+   "expected_terms": [
+    "8 米"
+   ],
+   "kw_strict": true,
+   "kw_number_eq": true,
+   "rank": 1,
+   "hit@1": true,
+   "hit@3": true,
+   "rr": 1.0,
+   "faithfulness": 1.0,
+   "faith_detail": [
+    {
+     "sentence": "使用时，需保持遥控器与空调器在8米范围内",
+     "cover": 0.79,
+     "verdict": "SUPPORTED"
+    },
+    {
+     "sentence": "将遥控器对准室内机信号接收窗 [1]",
+     "cover": 0.81,
+     "verdict": "SUPPORTED"
+    }
+   ],
+   "confidence": 0.7941,
+   "latency_ms": 2155.2,
+   "answer": "使用时，需保持遥控器与空调器在8米范围内。将遥控器对准室内机信号接收窗 [1]。"
+  },
+  {
+   "id": "auto_111",
+   "category": "参数",
+   "product": "ac_kfr51lw",
+   "question": "同时按“模式”“上下风”键是多少？",
+   "expected_status": "answered",
+   "actual_status": "answered",
+   "generation_mode": "llm",
+   "status_ok": true,
+   "expected_terms": [
+    "5 秒"
+   ],
+   "kw_strict": true,
+   "kw_number_eq": true,
+   "rank": 2,
+   "hit@1": false,
+   "hit@3": true,
+   "rr": 0.5,
+   "faithfulness": 0.5,
+   "faith_detail": [
+    {
+     "sentence": "同时按“模式”键和“上下风”键1秒钟 [1]",
+     "cover": 0.84,
+     "verdict": "SUPPORTED"
+    },
+    {
+     "sentence": "如果是为了开启童锁功能，则需要同时按“模式”“上下风”键5秒 [2]",
+     "cover": 0.59,
+     "verdict": "PARTIAL"
+    },
+    {
+     "sentence": "资料编号[3]中提到的操作与您的问题不完全匹配",
+     "cover": 0.0,
+     "verdict": "NOT_SUPPORTED"
+    }
+   ],
+   "confidence": 0.7463,
+   "latency_ms": 2572.8,
+   "answer": "同时按“模式”键和“上下风”键1秒钟 [1]。如果是为了开启童锁功能，则需要同时按“模式”“上下风”键5秒 [2]。资料编号[3]中提到的操作与您的问题不完全匹配。"
+  },
+  {
+   "id": "auto_112",
+   "category": "参数",
+   "product": "ac_kfr51lw",
+   "question": "两小时后温度保持不变是多少？",
+   "expected_status": "answered",
+   "actual_status": "answered",
+   "generation_mode": "llm",
+   "status_ok": true,
+   "expected_terms": [
+    "8小时"
+   ],
+   "kw_strict": false,
+   "kw_number_eq": false,
+   "rank": 1,
+   "hit@1": true,
+   "hit@3": true,
+   "rr": 1.0,
+   "faithfulness": 0.5,
+   "faith_detail": [
+    {
+     "sentence": "两小时后温度保持不变，意味着房间温度可能已经达到了设定温度 [2]",
+     "cover": 0.62,
+     "verdict": "SUPPORTED"
+    },
+    {
+     "sentence": "具体温度值需要根据实际设定来确定",
+     "cover": 0.13,
+     "verdict": "NOT_SUPPORTED"
+    },
+    {
+     "sentence": "调整温度可以通过长按“调整”键，温度以1℃递增/减 [3]",
+     "cover": 0.6,
+     "verdict": "SUPPORTED"
+    },
+    {
+     "sentence": "现有产品资料中暂未找到关于两小时后具体温度值的相关说明 [1]",
+     "cover": 0.14,
+     "verdict": "NOT_SUPPORTED"
+    }
+   ],
+   "confidence": 0.7252,
+   "latency_ms": 3303.8,
+   "answer": "两小时后温度保持不变，意味着房间温度可能已经达到了设定温度 [2]。具体温度值需要根据实际设定来确定。调整温度可以通过长按“调整”键，温度以1℃递增/减 [3]。现有产品资料中暂未找到关于两小时后具体温度值的相关说明 [1]。"
+  },
+  {
+   "id": "auto_113",
+   "category": "参数",
+   "product": "ac_kfr51lw",
+   "question": "电源线规格（mm²）(RVV 300/是多少？",
+   "expected_status": "answered",
+   "actual_status": "answered",
+   "generation_mode": "llm",
+   "status_ok": true,
+   "expected_terms": [
+    "500V"
+   ],
+   "kw_strict": true,
+   "kw_number_eq": true,
+   "rank": 1,
+   "hit@1": true,
+   "hit@3": true,
+   "rr": 1.0,
+   "faithfulness": 1.0,
+   "faith_detail": [
+    {
+     "sentence": "电源线规格（mm²）(RVV 300/500V)为5×2.5 [1][2]",
+     "cover": 0.64,
+     "verdict": "SUPPORTED"
+    }
+   ],
+   "confidence": 0.9335,
+   "latency_ms": 1435.2,
+   "answer": "电源线规格（mm²）(RVV 300/500V)为5×2.5 [1][2]。"
+  },
+  {
+   "id": "auto_114",
+   "category": "参数",
+   "product": "ac_kfr51lw",
+   "question": "室内外连接线规格（mm²）(YZW 300/是多少？",
+   "expected_status": "answered",
+   "actual_status": "answered",
+   "generation_mode": "llm",
+   "status_ok": true,
+   "expected_terms": [
+    "500V"
+   ],
+   "kw_strict": true,
+   "kw_number_eq": true,
+   "rank": 1,
+   "hit@1": true,
+   "hit@3": true,
+   "rr": 1.0,
+   "faithfulness": 1.0,
+   "faith_detail": [
+    {
+     "sentence": "室内外连接线规格（mm²）(YZW 300/500V)为6×2.5，线长不超过5米 [2]",
+     "cover": 0.73,
+     "verdict": "SUPPORTED"
+    }
+   ],
+   "confidence": 0.93,
+   "latency_ms": 3601.2,
+   "answer": "室内外连接线规格（mm²）(YZW 300/500V)为6×2.5，线长不超过5米 [2]。"
+  },
+  {
+   "id": "auto_115",
+   "category": "参数",
+   "product": "ac_kfr51lw",
+   "question": "(线长不超过是多少？",
+   "expected_status": "answered",
+   "actual_status": "answered",
+   "generation_mode": "llm",
+   "status_ok": true,
+   "expected_terms": [
+    "5米"
+   ],
+   "kw_strict": true,
+   "kw_number_eq": true,
+   "rank": 1,
+   "hit@1": true,
+   "hit@3": true,
+   "rr": 1.0,
+   "faithfulness": 1.0,
+   "faith_detail": [
+    {
+     "sentence": "线长不超过5米 [1]",
+     "cover": 0.67,
+     "verdict": "SUPPORTED"
+    }
+   ],
+   "confidence": 0.6889,
+   "latency_ms": 857.9,
+   "answer": "线长不超过5米 [1]。"
+  },
+  {
+   "id": "auto_116",
+   "category": "参数",
+   "product": "ac_kfr51lw",
+   "question": "电源线规格（mm²）（RVV 300/是多少？",
+   "expected_status": "answered",
+   "actual_status": "answered",
+   "generation_mode": "llm",
+   "status_ok": true,
+   "expected_terms": [
+    "500V"
+   ],
+   "kw_strict": true,
+   "kw_number_eq": true,
+   "rank": 1,
+   "hit@1": true,
+   "hit@3": true,
+   "rr": 1.0,
+   "faithfulness": 0.5,
+   "faith_detail": [
+    {
+     "sentence": "电源线规格（mm²）（RVV 300/500V）为5×2.5 [1][2]",
+     "cover": 0.58,
+     "verdict": "PARTIAL"
+    }
+   ],
+   "confidence": 0.9335,
+   "latency_ms": 1394.4,
+   "answer": "电源线规格（mm²）（RVV 300/500V）为5×2.5 [1][2]。"
+  },
+  {
+   "id": "auto_117",
+   "category": "参数",
+   "product": "ac_kfr51lw",
+   "question": "室内外连接线规格（mm²）（YZW 300/是多少？",
+   "expected_status": "answered",
+   "actual_status": "answered",
+   "generation_mode": "llm",
+   "status_ok": true,
+   "expected_terms": [
+    "500V"
+   ],
+   "kw_strict": true,
+   "kw_number_eq": true,
+   "rank": 1,
+   "hit@1": true,
+   "hit@3": true,
+   "rr": 1.0,
+   "faithfulness": 1.0,
+   "faith_detail": [
+    {
+     "sentence": "室内外连接线规格（mm²）YZW 300/500V为6×2.5，线长不超过5米 [2]",
+     "cover": 0.72,
+     "verdict": "SUPPORTED"
+    }
+   ],
+   "confidence": 0.93,
+   "latency_ms": 2204.7,
+   "answer": "室内外连接线规格（mm²）YZW 300/500V为6×2.5，线长不超过5米 [2]。"
+  },
+  {
+   "id": "auto_118",
+   "category": "参数",
+   "product": "ac_kfr51lw",
+   "question": "关机并关闭电源 —是多少？",
+   "expected_status": "answered",
+   "actual_status": "answered",
+   "generation_mode": "llm",
+   "status_ok": true,
+   "expected_terms": [
+    "10分钟"
+   ],
+   "kw_strict": false,
+   "kw_number_eq": false,
+   "rank": 4,
+   "hit@1": false,
+   "hit@3": false,
+   "rr": 0.25,
+   "faithfulness": 0.667,
+   "faith_detail": [
+    {
+     "sentence": "关机并关闭电源是指断开电源开关 [1]",
+     "cover": 0.62,
+     "verdict": "SUPPORTED"
+    },
+    {
+     "sentence": "在进行清洁或长时间不用时，需要停止运行并关闭电源开关 [2]",
+     "cover": 0.46,
+     "verdict": "PARTIAL"
+    },
+    {
+     "sentence": "如果遇到问题，可以尝试关机并关闭电源，10秒钟后重启，导风板将自动闭合 [3]",
+     "cover": 0.51,
+     "verdict": "PARTIAL"
+    }
+   ],
+   "confidence": 0.7843,
+   "latency_ms": 2220.4,
+   "answer": "关机并关闭电源是指断开电源开关 [1]。在进行清洁或长时间不用时，需要停止运行并关闭电源开关 [2]。如果遇到问题，可以尝试关机并关闭电源，10秒钟后重启，导风板将自动闭合 [3]。"
+  },
+  {
+   "id": "auto_119",
+   "category": "参数",
+   "product": "ac_kfr51lw",
+   "question": "制热模式下开机一段时间室内机无反应：- 防冷风功能开启，请耐心等待是多少？",
+   "expected_status": "answered",
+   "actual_status": "answered",
+   "generation_mode": "llm",
+   "status_ok": true,
+   "expected_terms": [
+    "3-5分钟"
+   ],
+   "kw_strict": true,
+   "kw_number_eq": true,
+   "rank": 1,
+   "hit@1": true,
+   "hit@3": true,
+   "rr": 1.0,
+   "faithfulness": 0.667,
+   "faith_detail": [
+    {
+     "sentence": "制热模式下开机一段时间室内机无反应时，如果防冷风功能开启，请耐心等待3-5分钟 [1]",
+     "cover": 0.76,
+     "verdict": "SUPPORTED"
+    },
+    {
+     "sentence": "同时，也需要观察空调器试运行状态（如出风温度、排水等）30分钟 [2]",
+     "cover": 0.58,
+     "verdict": "PARTIAL"
+    },
+    {
+     "sentence": "确保运行前截止阀（高低压阀）阀芯完全打开，且不要将空气等混入制冷系统中 [3]",
+     "cover": 0.59,
+     "verdict": "PARTIAL"
+    }
+   ],
+   "confidence": 0.9504,
+   "latency_ms": 4221.9,
+   "answer": "制热模式下开机一段时间室内机无反应时，如果防冷风功能开启，请耐心等待3-5分钟 [1]。同时，也需要观察空调器试运行状态（如出风温度、排水等）30分钟 [2]。确保运行前截止阀（高低压阀）阀芯完全打开，且不要将空气等混入制冷系统中 [3]。"
+  },
+  {
+   "id": "auto_120",
+   "category": "参数",
+   "product": "ac_kfr51lw",
+   "question": "关机并关闭电源是多少？",
+   "expected_status": "answered",
+   "actual_status": "answered",
+   "generation_mode": "llm",
+   "status_ok": true,
+   "expected_terms": [
+    "10秒"
+   ],
+   "kw_strict": true,
+   "kw_number_eq": true,
+   "rank": 3,
+   "hit@1": false,
+   "hit@3": true,
+   "rr": 0.3333333333333333,
+   "faithfulness": 0.278,
+   "faith_detail": [
+    {
+     "sentence": "关机并关闭电源的操作通常指的是完全断开设备的电源供应",
+     "cover": 0.29,
+     "verdict": "NOT_SUPPORTED"
+    },
+    {
+     "sentence": "根据提供的资料，以下是对这一操作的说明：",
+     "cover": 0.0,
+     "verdict": "NOT_SUPPORTED"
+    },
+    {
+     "sentence": "1. 断开电源：这通常意味着将设备从电源插座上拔掉，或者关闭电源开关，确保设备没有接入任何形式的电源 [1]",
+     "cover": 0.13,
+     "verdict": "NOT_SUPPORTED"
+    },
+    {
+     "sentence": "2. 关机并关闭电源 — 10分钟后打开电源并开机 — 仍然显示代码 — 关机并关闭电源 — 联系检修：这个步骤通常用于",
+     "cover": 0.61,
+     "verdict": "SUPPORTED"
+    },
+    {
+     "sentence": "首先，需要关闭设备并断开电源，等待10分钟后再次打开电源并开机",
+     "cover": 0.43,
+     "verdict": "PARTIAL"
+    },
+    {
+     "sentence": "如果问题仍然存在，需要再次关闭并断开电源，然后联系检修人员 [2]",
+     "cover": 0.26,
+     "verdict": "NOT_SUPPORTED"
+    },
+    {
+     "sentence": "3. 解决办法: - 关机并关闭电源,10秒钟后重启,导风板将自动闭合：这个步骤可能用于某些特定情况，比如导风板需要自动",
+     "cover": 0.55,
+     "verdict": "PARTIAL"
+    },
+    {
+     "sentence": "需要关闭设备并断开电源，等待10秒钟后重新启动设备，导风板将自动闭合 [3]",
+     "cover": 0.46,
+     "verdict": "PARTIAL"
+    },
+    {
+     "sentence": "总结来说，关机并关闭电源的操作通常涉及断开设备的电源供应，具体步骤可能根据设备的不同而有所差异",
+     "cover": 0.16,
+     "verdict": "NOT_SUPPORTED"
+    }
+   ],
+   "confidence": 0.7465,
+   "latency_ms": 9074.0,
+   "answer": "关机并关闭电源的操作通常指的是完全断开设备的电源供应。根据提供的资料，以下是对这一操作的说明：\n\n1. 断开电源：这通常意味着将设备从电源插座上拔掉，或者关闭电源开关，确保设备没有接入任何形式的电源 [1]。\n\n2. 关机并关闭电源 — 10分钟后打开电源并开机 — 仍然显示代码 — 关机并关闭电源 — 联系检修：这个"
+  },
+  {
+   "id": "auto_121",
+   "category": "参数",
+   "product": "ac_kfr51lw",
+   "question": "建议每月清洁是多少？",
+   "expected_status": "answered",
+   "actual_status": "answered",
+   "generation_mode": "llm",
+   "status_ok": true,
+   "expected_terms": [
+    "1次"
+   ],
+   "kw_strict": true,
+   "kw_number_eq": true,
+   "rank": 1,
+   "hit@1": true,
+   "hit@3": true,
+   "rr": 1.0,
+   "faithfulness": 0.833,
+   "faith_detail": [
+    {
+     "sentence": "建议每月清洁1次滤尘网，当空调器使用环境灰尘多时，清洁次数应相应增加 [1]",
+     "cover": 0.8,
+     "verdict": "SUPPORTED"
+    },
+    {
+     "sentence": "同时，建议您自行定期清洁保养空调，确保产品正常运行 [2]",
+     "cover": 0.63,
+     "verdict": "SUPPORTED"
+    },
+    {
+     "sentence": "具体操作是将机身及滤尘网清洁干净 [3]",
+     "cover": 0.56,
+     "verdict": "PARTIAL"
+    }
+   ],
+   "confidence": 0.6678,
+   "latency_ms": 2816.5,
+   "answer": "建议每月清洁1次滤尘网，当空调器使用环境灰尘多时，清洁次数应相应增加 [1]。同时，建议您自行定期清洁保养空调，确保产品正常运行 [2]。具体操作是将机身及滤尘网清洁干净 [3]。"
+  },
+  {
+   "id": "auto_122",
+   "category": "参数",
+   "product": "ac_kfr51lw",
+   "question": "最多允许加长是多少？",
+   "expected_status": "answered",
+   "actual_status": "answered",
+   "generation_mode": "llm",
+   "status_ok": true,
+   "expected_terms": [
+    "15米"
+   ],
+   "kw_strict": true,
+   "kw_number_eq": true,
+   "rank": 2,
+   "hit@1": false,
+   "hit@3": true,
+   "rr": 0.5,
+   "faithfulness": 1.0,
+   "faith_detail": [
+    {
+     "sentence": "最多允许加长15米连接管 [2]",
+     "cover": 0.79,
+     "verdict": "SUPPORTED"
+    }
+   ],
+   "confidence": 0.5634,
+   "latency_ms": 1703.9,
+   "answer": "最多允许加长15米连接管 [2]。"
+  },
+  {
+   "id": "auto_123",
+   "category": "参数",
+   "product": "ac_kfr51lw",
+   "question": "备注：确定空调器位置时，必须保证进风口离墙壁距离≥是多少？",
+   "expected_status": "answered",
+   "actual_status": "answered",
+   "generation_mode": "llm",
+   "status_ok": true,
+   "expected_terms": [
+    "8cm"
+   ],
+   "kw_strict": true,
+   "kw_number_eq": true,
+   "rank": 1,
+   "hit@1": true,
+   "hit@3": true,
+   "rr": 1.0,
+   "faithfulness": 1.0,
+   "faith_detail": [
+    {
+     "sentence": "确定空调器位置时，必须保证进风口离墙壁距离≥8cm [1]",
+     "cover": 0.81,
+     "verdict": "SUPPORTED"
+    }
+   ],
+   "confidence": 0.8684,
+   "latency_ms": 2634.3,
+   "answer": "确定空调器位置时，必须保证进风口离墙壁距离≥8cm [1]。"
+  },
+  {
+   "id": "auto_124",
+   "category": "参数",
+   "product": "ac_kfr51lw",
+   "question": "开启真空泵进行抽真空操作，运转是多少？",
+   "expected_status": "answered",
+   "actual_status": "answered",
+   "generation_mode": "llm",
+   "status_ok": true,
+   "expected_terms": [
+    "10 分钟"
+   ],
+   "kw_strict": true,
+   "kw_number_eq": true,
+   "rank": 2,
+   "hit@1": false,
+   "hit@3": true,
+   "rr": 0.5,
+   "faithfulness": 1.0,
+   "faith_detail": [
+    {
+     "sentence": "开启真空泵进行抽真空操作，需要运转10分钟以上，直到真空压力（绝对压力）达到30Pa（观察真空表达到-0.1MPa）为止",
+     "cover": 0.68,
+     "verdict": "SUPPORTED"
+    },
+    {
+     "sentence": "然后完全关闭低压阀，使真空泵停止运转，并确认低压阀不泄漏 [2]",
+     "cover": 0.64,
+     "verdict": "SUPPORTED"
+    },
+    {
+     "sentence": "不同型号的真空泵可能存在操作方法差异，请按实际使用的真空泵说明书进行操作 [3]",
+     "cover": 0.85,
+     "verdict": "SUPPORTED"
+    }
+   ],
+   "confidence": 0.9004,
+   "latency_ms": 2866.7,
+   "answer": "开启真空泵进行抽真空操作，需要运转10分钟以上，直到真空压力（绝对压力）达到30Pa（观察真空表达到-0.1MPa）为止。然后完全关闭低压阀，使真空泵停止运转，并确认低压阀不泄漏 [2]。不同型号的真空泵可能存在操作方法差异，请按实际使用的真空泵说明书进行操作 [3]。"
+  },
+  {
+   "id": "auto_125",
+   "category": "参数",
+   "product": "ac_kfr51lw",
+   "question": "分别关闭低压阀和高压阀是多少？",
+   "expected_status": "answered",
+   "actual_status": "no_answer",
+   "generation_mode": "llm",
+   "status_ok": false,
+   "expected_terms": [
+    "1-2 分钟"
+   ],
+   "kw_strict": true,
+   "kw_number_eq": true,
+   "rank": 2,
+   "hit@1": false,
+   "hit@3": true,
+   "rr": 0.5,
+   "faithfulness": 0.25,
+   "faith_detail": [
+    {
+     "sentence": "关闭低压阀和高压阀的时间没有具体说明",
+     "cover": 0.44,
+     "verdict": "PARTIAL"
+    },
+    {
+     "sentence": "资料[2]中提到关闭低压阀和高压阀1-2分钟后需要确认压力表指针是否返回，但并未明确指出关闭阀门的持续时间",
+     "cover": 0.5,
+     "verdict": "PARTIAL"
+    },
+    {
+     "sentence": "资料[3]中描述了如何操作低压阀和高压阀，但没有提及关闭时间",
+     "cover": 0.21,
+     "verdict": "NOT_SUPPORTED"
+    },
+    {
+     "sentence": "因此，现有产品资料中暂未找到相关说明 [1][2][3]",
+     "cover": 0.0,
+     "verdict": "NOT_SUPPORTED"
+    }
+   ],
+   "confidence": 0.7314,
+   "latency_ms": 4805.1,
+   "answer": "关闭低压阀和高压阀的时间没有具体说明。资料[2]中提到关闭低压阀和高压阀1-2分钟后需要确认压力表指针是否返回，但并未明确指出关闭阀门的持续时间。资料[3]中描述了如何操作低压阀和高压阀，但没有提及关闭时间。因此，现有产品资料中暂未找到相关说明 [1][2][3]。"
+  },
+  {
+   "id": "auto_126",
+   "category": "参数",
+   "product": "ac_kfr51lw",
+   "question": "每处检漏时间需停留是多少？",
+   "expected_status": "answered",
+   "actual_status": "answered",
+   "generation_mode": "llm",
+   "status_ok": true,
+   "expected_terms": [
+    "3分钟"
+   ],
+   "kw_strict": true,
+   "kw_number_eq": true,
+   "rank": 1,
+   "hit@1": true,
+   "hit@3": true,
+   "rr": 1.0,
+   "faithfulness": 1.0,
+   "faith_detail": [
+    {
+     "sentence": "每处检漏时间需停留3分钟及以上 [1]",
+     "cover": 0.82,
+     "verdict": "SUPPORTED"
+    }
+   ],
+   "confidence": 0.6855,
+   "latency_ms": 1021.1,
+   "answer": "每处检漏时间需停留3分钟及以上 [1]。"
+  },
+  {
+   "id": "auto_127",
+   "category": "参数",
+   "product": "ac_kfr51lw",
+   "question": "同时按下控制面板“模式”键和“风向”键是多少？",
+   "expected_status": "answered",
+   "actual_status": "answered",
+   "generation_mode": "llm",
+   "status_ok": true,
+   "expected_terms": [
+    "1秒"
+   ],
+   "kw_strict": true,
+   "kw_number_eq": true,
+   "rank": 1,
+   "hit@1": true,
+   "hit@3": true,
+   "rr": 1.0,
+   "faithfulness": 0.75,
+   "faith_detail": [
+    {
+     "sentence": "同时按下控制面板“模式”键和“风向”键需要按下1秒钟 [1]",
+     "cover": 0.73,
+     "verdict": "SUPPORTED"
+    },
+    {
+     "sentence": "风向键用于开启/关闭左右风向导风板的自动摇摆模式 [2]",
+     "cover": 0.76,
+     "verdict": "SUPPORTED"
+    },
+    {
+     "sentence": "左右风键也用于开启/关闭左右风向导风板的自动摇摆模式 [3]",
+     "cover": 0.73,
+     "verdict": "SUPPORTED"
+    },
+    {
+     "sentence": "资料[2]和[3]中提到的“风向键”和“左右风键”可能是同一键的不同称呼",
+     "cover": 0.21,
+     "verdict": "NOT_SUPPORTED"
+    }
+   ],
+   "confidence": 0.8745,
+   "latency_ms": 4937.8,
+   "answer": "同时按下控制面板“模式”键和“风向”键需要按下1秒钟 [1]。风向键用于开启/关闭左右风向导风板的自动摇摆模式 [2]。左右风键也用于开启/关闭左右风向导风板的自动摇摆模式 [3]。资料[2]和[3]中提到的“风向键”和“左右风键”可能是同一键的不同称呼。"
+  },
+  {
+   "id": "auto_128",
+   "category": "参数",
+   "product": "ac_kfr51lw",
+   "question": "观察空调器试运行状态（出风温度、排水等）是多少？",
+   "expected_status": "answered",
+   "actual_status": "no_answer",
+   "generation_mode": "llm",
+   "status_ok": false,
+   "expected_terms": [
+    "30分钟"
+   ],
+   "kw_strict": true,
+   "kw_number_eq": true,
+   "rank": 1,
+   "hit@1": true,
+   "hit@3": true,
+   "rr": 1.0,
+   "faithfulness": 0.667,
+   "faith_detail": [
+    {
+     "sentence": "观察空调器试运行状态（出风温度、排水等）需要30分钟 [1]",
+     "cover": 0.68,
+     "verdict": "SUPPORTED"
+    },
+    {
+     "sentence": "关于出风温度和排水量的具体数值，现有产品资料中暂未找到相关说明 [2]",
+     "cover": 0.12,
+     "verdict": "NOT_SUPPORTED"
+    },
+    {
+     "sentence": "空调器在试验处的外部静压为0Pa [3]",
+     "cover": 0.83,
+     "verdict": "SUPPORTED"
+    }
+   ],
+   "confidence": 0.889,
+   "latency_ms": 2296.0,
+   "answer": "观察空调器试运行状态（出风温度、排水等）需要30分钟 [1]。关于出风温度和排水量的具体数值，现有产品资料中暂未找到相关说明 [2]。空调器在试验处的外部静压为0Pa [3]。"
+  },
+  {
+   "id": "auto_129",
+   "category": "参数",
+   "product": "ac_kfr51lw",
+   "question": "同时按下“模式”和“风向”键是多少？",
+   "expected_status": "answered",
+   "actual_status": "answered",
+   "generation_mode": "llm",
+   "status_ok": true,
+   "expected_terms": [
+    "1秒"
+   ],
+   "kw_strict": true,
+   "kw_number_eq": true,
+   "rank": 2,
+   "hit@1": false,
+   "hit@3": true,
+   "rr": 0.5,
+   "faithfulness": 0.333,
+   "faith_detail": [
+    {
+     "sentence": "同时按下“模式”和“风向”键的操作是：同时按下控制面板的“模式”键和“风向”键1秒钟 [2]",
+     "cover": 0.59,
+     "verdict": "PARTIAL"
+    },
+    {
+     "sentence": "关于调整风速的操作，资料[1]和资料[3]提供了不同的说明，资料[1]提到按“模式”键再按“ ”键可调整风速，而资料[3",
+     "cover": 0.32,
+     "verdict": "PARTIAL"
+    },
+    {
+     "sentence": "这两者存在冲突，建议人工确认正确的操作方式 [1][3]",
+     "cover": 0.0,
+     "verdict": "NOT_SUPPORTED"
+    }
+   ],
+   "confidence": 0.7799,
+   "latency_ms": 8558.3,
+   "answer": "同时按下“模式”和“风向”键的操作是：同时按下控制面板的“模式”键和“风向”键1秒钟 [2]。关于调整风速的操作，资料[1]和资料[3]提供了不同的说明，资料[1]提到按“模式”键再按“ ”键可调整风速，而资料[3]提到按“模式”键再按“调整”键可调整风速。这两者存在冲突，建议人工确认正确的操作方式 [1][3]。"
+  },
+  {
+   "id": "auto_130",
+   "category": "拒答",
+   "product": "washer_wm090mja08hk",
+   "question": "洗衣机卖多少钱？",
+   "expected_status": "no_answer",
+   "actual_status": "answered",
+   "generation_mode": "llm",
+   "status_ok": false,
+   "expected_terms": [],
+   "kw_strict": null,
+   "kw_number_eq": null,
+   "rank": null,
+   "hit@1": false,
+   "hit@3": false,
+   "rr": 0.0,
+   "faithfulness": 0.0,
+   "faith_detail": [
+    {
+     "sentence": "现有产品资料中暂未找到关于洗衣机售价的信息 [1][2]",
+     "cover": 0.12,
+     "verdict": "NOT_SUPPORTED"
+    }
+   ],
+   "confidence": 0.7211,
+   "latency_ms": 948.6,
+   "answer": "现有产品资料中暂未找到关于洗衣机售价的信息 [1][2]。"
+  },
+  {
+   "id": "auto_131",
+   "category": "拒答",
+   "product": "vacuum_g10_plus",
+   "question": "手持吸尘器卖多少钱？",
+   "expected_status": "no_answer",
+   "actual_status": "no_answer",
+   "generation_mode": "llm",
+   "status_ok": true,
+   "expected_terms": [],
+   "kw_strict": null,
+   "kw_number_eq": null,
+   "rank": null,
+   "hit@1": false,
+   "hit@3": false,
+   "rr": 0.0,
+   "faithfulness": 0.0,
+   "faith_detail": [
+    {
+     "sentence": "现有产品资料中暂未找到相关说明",
+     "cover": 0.07,
+     "verdict": "NOT_SUPPORTED"
+    }
+   ],
+   "confidence": 0.4913,
+   "latency_ms": 938.3,
+   "answer": "现有产品资料中暂未找到相关说明。"
+  },
+  {
+   "id": "auto_132",
+   "category": "拒答",
+   "product": "robotvac_s20",
+   "question": "扫拖机器人卖多少钱？",
+   "expected_status": "no_answer",
+   "actual_status": "no_answer",
+   "generation_mode": "llm",
+   "status_ok": true,
+   "expected_terms": [],
+   "kw_strict": null,
+   "kw_number_eq": null,
+   "rank": null,
+   "hit@1": false,
+   "hit@3": false,
+   "rr": 0.0,
+   "faithfulness": 0.0,
+   "faith_detail": [
+    {
+     "sentence": "现有产品资料中暂未找到相关说明",
+     "cover": 0.07,
+     "verdict": "NOT_SUPPORTED"
+    }
+   ],
+   "confidence": 0.5923,
+   "latency_ms": 1477.0,
+   "answer": "现有产品资料中暂未找到相关说明。"
+  },
+  {
+   "id": "auto_133",
+   "category": "拒答",
+   "product": "fridge_bcd600",
+   "question": "冰箱卖多少钱？",
+   "expected_status": "no_answer",
+   "actual_status": "no_answer",
+   "generation_mode": "llm",
+   "status_ok": true,
+   "expected_terms": [],
+   "kw_strict": null,
+   "kw_number_eq": null,
+   "rank": null,
+   "hit@1": false,
+   "hit@3": false,
+   "rr": 0.0,
+   "faithfulness": 0.0,
+   "faith_detail": [
+    {
+     "sentence": "现有产品资料中暂未找到相关说明",
+     "cover": 0.0,
+     "verdict": "NOT_SUPPORTED"
+    }
+   ],
+   "confidence": 0.7052,
+   "latency_ms": 888.2,
+   "answer": "现有产品资料中暂未找到相关说明。"
+  },
+  {
+   "id": "auto_134",
+   "category": "拒答",
+   "product": "ac_kfr51lw",
+   "question": "空调卖多少钱？",
+   "expected_status": "no_answer",
+   "actual_status": "answered",
+   "generation_mode": "llm",
+   "status_ok": false,
+   "expected_terms": [],
+   "kw_strict": null,
+   "kw_number_eq": null,
+   "rank": null,
+   "hit@1": false,
+   "hit@3": false,
+   "rr": 0.0,
+   "faithfulness": 0.0,
+   "faith_detail": [
+    {
+     "sentence": "现有产品资料中暂未找到空调的具体售价信息",
+     "cover": 0.05,
+     "verdict": "NOT_SUPPORTED"
+    },
+    {
+     "sentence": "资料[1]和[2]提到了空调器的专用配件和电流范围，但并未涉及价格 [1][2]",
+     "cover": 0.15,
+     "verdict": "NOT_SUPPORTED"
+    }
+   ],
+   "confidence": 0.6391,
+   "latency_ms": 2833.0,
+   "answer": "现有产品资料中暂未找到空调的具体售价信息。资料[1]和[2]提到了空调器的专用配件和电流范围，但并未涉及价格 [1][2]。"
+  },
+  {
+   "id": "auto_135",
+   "category": "拒答",
+   "product": "washer_wm090mja08hk",
+   "question": "洗衣机的质保期是多久？",
+   "expected_status": "no_answer",
+   "actual_status": "no_answer",
+   "generation_mode": "llm",
+   "status_ok": true,
+   "expected_terms": [],
+   "kw_strict": null,
+   "kw_number_eq": null,
+   "rank": null,
+   "hit@1": false,
+   "hit@3": false,
+   "rr": 0.0,
+   "faithfulness": 0.0,
+   "faith_detail": [
+    {
+     "sentence": "现有产品资料中暂未找到相关说明",
+     "cover": 0.0,
+     "verdict": "NOT_SUPPORTED"
+    }
+   ],
+   "confidence": 0.7331,
+   "latency_ms": 1222.0,
+   "answer": "现有产品资料中暂未找到相关说明。"
+  },
+  {
+   "id": "auto_136",
+   "category": "拒答",
+   "product": "vacuum_g10_plus",
+   "question": "手持吸尘器的质保期是多久？",
+   "expected_status": "no_answer",
+   "actual_status": "answered",
+   "generation_mode": "llm",
+   "status_ok": false,
+   "expected_terms": [],
+   "kw_strict": null,
+   "kw_number_eq": null,
+   "rank": null,
+   "hit@1": false,
+   "hit@3": false,
+   "rr": 0.0,
+   "faithfulness": 0.0,
+   "faith_detail": [
+    {
+     "sentence": "现有产品资料中暂未找到关于手持吸尘器质保期的说明 [1][2][3]",
+     "cover": 0.0,
+     "verdict": "NOT_SUPPORTED"
+    }
+   ],
+   "confidence": 0.7452,
+   "latency_ms": 1324.6,
+   "answer": "现有产品资料中暂未找到关于手持吸尘器质保期的说明 [1][2][3]。"
+  },
+  {
+   "id": "auto_137",
+   "category": "拒答",
+   "product": "robotvac_s20",
+   "question": "扫拖机器人的质保期是多久？",
+   "expected_status": "no_answer",
+   "actual_status": "no_answer",
+   "generation_mode": "llm",
+   "status_ok": true,
+   "expected_terms": [],
+   "kw_strict": null,
+   "kw_number_eq": null,
+   "rank": null,
+   "hit@1": false,
+   "hit@3": false,
+   "rr": 0.0,
+   "faithfulness": 0.0,
+   "faith_detail": [
+    {
+     "sentence": "现有产品资料中暂未找到相关说明",
+     "cover": 0.0,
+     "verdict": "NOT_SUPPORTED"
+    }
+   ],
+   "confidence": 0.7202,
+   "latency_ms": 1167.5,
+   "answer": "现有产品资料中暂未找到相关说明。"
+  },
+  {
+   "id": "auto_138",
+   "category": "拒答",
+   "product": "washer_wm090mja08hk",
+   "question": "洗衣机安装需要另外收费吗？",
+   "expected_status": "no_answer",
+   "actual_status": "answered",
+   "generation_mode": "llm",
+   "status_ok": false,
+   "expected_terms": [],
+   "kw_strict": null,
+   "kw_number_eq": null,
+   "rank": null,
+   "hit@1": false,
+   "hit@3": false,
+   "rr": 0.0,
+   "faithfulness": 0.0,
+   "faith_detail": [
+    {
+     "sentence": "现有产品资料中暂未找到关于洗衣机安装是否需要另外收费的说明",
+     "cover": 0.07,
+     "verdict": "NOT_SUPPORTED"
+    },
+    {
+     "sentence": "建议您联系洗衣机销售或安装服务提供商获取相关信息",
+     "cover": 0.09,
+     "verdict": "NOT_SUPPORTED"
+    }
+   ],
+   "confidence": 0.678,
+   "latency_ms": 1625.2,
+   "answer": "现有产品资料中暂未找到关于洗衣机安装是否需要另外收费的说明。建议您联系洗衣机销售或安装服务提供商获取相关信息。 [1]"
+  },
+  {
+   "id": "auto_139",
+   "category": "拒答",
+   "product": "vacuum_g10_plus",
+   "question": "手持吸尘器安装需要另外收费吗？",
+   "expected_status": "no_answer",
+   "actual_status": "answered",
+   "generation_mode": "llm",
+   "status_ok": false,
+   "expected_terms": [],
+   "kw_strict": null,
+   "kw_number_eq": null,
+   "rank": null,
+   "hit@1": false,
+   "hit@3": false,
+   "rr": 0.0,
+   "faithfulness": 0.0,
+   "faith_detail": [
+    {
+     "sentence": "现有产品资料中暂未找到关于手持吸尘器安装是否需要另外收费的说明",
+     "cover": 0.1,
+     "verdict": "NOT_SUPPORTED"
+    },
+    {
+     "sentence": "建议您查阅产品说明书或联系客服获取更准确的信息",
+     "cover": 0.0,
+     "verdict": "NOT_SUPPORTED"
+    }
+   ],
+   "confidence": 0.5891,
+   "latency_ms": 1540.3,
+   "answer": "现有产品资料中暂未找到关于手持吸尘器安装是否需要另外收费的说明。建议您查阅产品说明书或联系客服获取更准确的信息。 [3]"
+  },
+  {
+   "id": "auto_140",
+   "category": "拒答",
+   "product": "robotvac_s20",
+   "question": "扫拖机器人安装需要另外收费吗？",
+   "expected_status": "no_answer",
+   "actual_status": "answered",
+   "generation_mode": "llm",
+   "status_ok": false,
+   "expected_terms": [],
+   "kw_strict": null,
+   "kw_number_eq": null,
+   "rank": null,
+   "hit@1": false,
+   "hit@3": false,
+   "rr": 0.0,
+   "faithfulness": 0.0,
+   "faith_detail": [
+    {
+     "sentence": "现有产品资料中暂未找到关于扫拖机器人安装是否需要另外收费的说明",
+     "cover": 0.17,
+     "verdict": "NOT_SUPPORTED"
+    },
+    {
+     "sentence": "请参考产品说明书或联系客服获取更详细的信息",
+     "cover": 0.05,
+     "verdict": "NOT_SUPPORTED"
+    }
+   ],
+   "confidence": 0.7028,
+   "latency_ms": 1816.5,
+   "answer": "现有产品资料中暂未找到关于扫拖机器人安装是否需要另外收费的说明。请参考产品说明书或联系客服获取更详细的信息。 [1]"
+  },
+  {
+   "id": "auto_141",
+   "category": "拒答",
+   "product": "fridge_bcd600",
+   "question": "冰箱安装需要另外收费吗？",
+   "expected_status": "no_answer",
+   "actual_status": "answered",
+   "generation_mode": "llm",
+   "status_ok": false,
+   "expected_terms": [],
+   "kw_strict": null,
+   "kw_number_eq": null,
+   "rank": null,
+   "hit@1": false,
+   "hit@3": false,
+   "rr": 0.0,
+   "faithfulness": 0.0,
+   "faith_detail": [
+    {
+     "sentence": "现有产品资料中暂未找到关于冰箱安装是否需要另外收费的说明",
+     "cover": 0.15,
+     "verdict": "NOT_SUPPORTED"
+    },
+    {
+     "sentence": "建议您联系海尔客服或查阅购买时的相关合同以获取准确信息",
+     "cover": 0.04,
+     "verdict": "NOT_SUPPORTED"
+    },
+    {
+     "sentence": "[1][2][3]",
+     "cover": 0.0,
+     "verdict": "NOT_SUPPORTED"
+    }
+   ],
+   "confidence": 0.6432,
+   "latency_ms": 2160.4,
+   "answer": "现有产品资料中暂未找到关于冰箱安装是否需要另外收费的说明。建议您联系海尔客服或查阅购买时的相关合同以获取准确信息。 [1][2][3]"
+  },
+  {
+   "id": "auto_142",
+   "category": "拒答",
+   "product": "ac_kfr51lw",
+   "question": "空调安装需要另外收费吗？",
+   "expected_status": "no_answer",
+   "actual_status": "no_answer",
+   "generation_mode": "llm",
+   "status_ok": true,
+   "expected_terms": [],
+   "kw_strict": null,
+   "kw_number_eq": null,
+   "rank": null,
+   "hit@1": false,
+   "hit@3": false,
+   "rr": 0.0,
+   "faithfulness": 0.0,
+   "faith_detail": [
+    {
+     "sentence": "空调安装是否需要另外收费，现有产品资料中暂未找到相关说明 [1][2][3]",
+     "cover": 0.03,
+     "verdict": "NOT_SUPPORTED"
+    },
+    {
+     "sentence": "建议您联系空调销售或安装服务提供商获取具体信息",
+     "cover": 0.09,
+     "verdict": "NOT_SUPPORTED"
+    }
+   ],
+   "confidence": 0.676,
+   "latency_ms": 1891.2,
+   "answer": "空调安装是否需要另外收费，现有产品资料中暂未找到相关说明 [1][2][3]。建议您联系空调销售或安装服务提供商获取具体信息。"
+  },
+  {
+   "id": "auto_143",
+   "category": "拒答",
+   "product": "washer_wm090mja08hk",
+   "question": "买洗衣机要付运费吗？",
+   "expected_status": "no_answer",
+   "actual_status": "answered",
+   "generation_mode": "llm",
+   "status_ok": false,
+   "expected_terms": [],
+   "kw_strict": null,
+   "kw_number_eq": null,
+   "rank": null,
+   "hit@1": false,
+   "hit@3": false,
+   "rr": 0.0,
+   "faithfulness": 0.0,
+   "faith_detail": [
+    {
+     "sentence": "现有产品资料中暂未找到关于购买洗衣机是否需要支付运费的说明",
+     "cover": 0.07,
+     "verdict": "NOT_SUPPORTED"
+    },
+    {
+     "sentence": "建议您联系卖家或查看购买页面以获取相关信息",
+     "cover": 0.0,
+     "verdict": "NOT_SUPPORTED"
+    },
+    {
+     "sentence": "[1][2][3]",
+     "cover": 0.0,
+     "verdict": "NOT_SUPPORTED"
+    }
+   ],
+   "confidence": 0.7236,
+   "latency_ms": 1929.4,
+   "answer": "现有产品资料中暂未找到关于购买洗衣机是否需要支付运费的说明。建议您联系卖家或查看购买页面以获取相关信息。 [1][2][3]"
+  },
+  {
+   "id": "auto_144",
+   "category": "拒答",
+   "product": "vacuum_g10_plus",
+   "question": "买手持吸尘器要付运费吗？",
+   "expected_status": "no_answer",
+   "actual_status": "answered",
+   "generation_mode": "llm",
+   "status_ok": false,
+   "expected_terms": [],
+   "kw_strict": null,
+   "kw_number_eq": null,
+   "rank": null,
+   "hit@1": false,
+   "hit@3": false,
+   "rr": 0.0,
+   "faithfulness": 0.0,
+   "faith_detail": [
+    {
+     "sentence": "现有产品资料中暂未找到关于购买手持吸尘器是否需要付运费的相关说明 [1][2][3]",
+     "cover": 0.05,
+     "verdict": "NOT_SUPPORTED"
+    }
+   ],
+   "confidence": 0.5864,
+   "latency_ms": 1505.4,
+   "answer": "现有产品资料中暂未找到关于购买手持吸尘器是否需要付运费的相关说明 [1][2][3]。"
+  },
+  {
+   "id": "auto_145",
+   "category": "跨产品辨析",
+   "product": "washer_wm090mja08hk",
+   "question": "洗衣机的产品净重是多少？",
+   "expected_status": "answered",
+   "actual_status": "no_answer",
+   "generation_mode": "llm",
+   "status_ok": false,
+   "expected_terms": [
+    "55 kg"
+   ],
+   "kw_strict": false,
+   "kw_number_eq": false,
+   "rank": null,
+   "hit@1": false,
+   "hit@3": false,
+   "rr": 0.0,
+   "faithfulness": 0.0,
+   "faith_detail": [
+    {
+     "sentence": "米家9kg洗衣机的净重在现有产品资料中暂未找到相关说明 [1][3]",
+     "cover": 0.28,
+     "verdict": "NOT_SUPPORTED"
+    }
+   ],
+   "confidence": 0.7616,
+   "latency_ms": 1136.0,
+   "answer": "米家9kg洗衣机的净重在现有产品资料中暂未找到相关说明 [1][3]。"
+  },
+  {
+   "id": "auto_146",
+   "category": "跨产品辨析",
+   "product": "robotvac_s20",
+   "question": "扫拖机器人的产品净重是多少？",
+   "expected_status": "answered",
+   "actual_status": "no_answer",
+   "generation_mode": "llm",
+   "status_ok": false,
+   "expected_terms": [
+    "3.4 kg"
+   ],
+   "kw_strict": false,
+   "kw_number_eq": false,
+   "rank": 5,
+   "hit@1": false,
+   "hit@3": false,
+   "rr": 0.2,
+   "faithfulness": 0.0,
+   "faith_detail": [
+    {
+     "sentence": "现有产品资料中暂未找到相关说明",
+     "cover": 0.07,
+     "verdict": "NOT_SUPPORTED"
+    }
+   ],
+   "confidence": 0.6533,
+   "latency_ms": 823.7,
+   "answer": "现有产品资料中暂未找到相关说明。"
+  },
+  {
+   "id": "auto_147",
+   "category": "跨产品辨析",
+   "product": "robotvac_s20",
+   "question": "扫拖机器人的额定电压是多少？",
+   "expected_status": "answered",
+   "actual_status": "answered",
+   "generation_mode": "llm",
+   "status_ok": true,
+   "expected_terms": [
+    "14.4 V"
+   ],
+   "kw_strict": false,
+   "kw_number_eq": false,
+   "rank": null,
+   "hit@1": false,
+   "hit@3": false,
+   "rr": 0.0,
+   "faithfulness": 0.0,
+   "faith_detail": [
+    {
+     "sentence": "现有产品资料中暂未找到关于扫拖机器人额定电压的说明 [1][2][3]",
+     "cover": 0.16,
+     "verdict": "NOT_SUPPORTED"
+    }
+   ],
+   "confidence": 0.7792,
+   "latency_ms": 1200.0,
+   "answer": "现有产品资料中暂未找到关于扫拖机器人额定电压的说明 [1][2][3]。"
+  },
+  {
+   "id": "auto_148",
+   "category": "跨产品辨析",
+   "product": "fridge_bcd600",
+   "question": "冰箱的额定电压是多少？",
+   "expected_status": "answered",
+   "actual_status": "no_answer",
+   "generation_mode": "llm",
+   "status_ok": false,
+   "expected_terms": [
+    "220V"
+   ],
+   "kw_strict": false,
+   "kw_number_eq": false,
+   "rank": null,
+   "hit@1": false,
+   "hit@3": false,
+   "rr": 0.0,
+   "faithfulness": 0.0,
+   "faith_detail": [
+    {
+     "sentence": "现有产品资料中暂未找到相关说明 [1][2][3]",
+     "cover": 0.05,
+     "verdict": "NOT_SUPPORTED"
+    }
+   ],
+   "confidence": 0.7295,
+   "latency_ms": 1454.8,
+   "answer": "现有产品资料中暂未找到相关说明 [1][2][3]。"
+  },
+  {
+   "id": "auto_149",
+   "category": "跨产品辨析",
+   "product": "robotvac_s20",
+   "question": "扫拖机器人的额定功率是多少？",
+   "expected_status": "answered",
+   "actual_status": "answered",
+   "generation_mode": "llm",
+   "status_ok": true,
+   "expected_terms": [
+    "45 W"
+   ],
+   "kw_strict": false,
+   "kw_number_eq": false,
+   "rank": null,
+   "hit@1": false,
+   "hit@3": false,
+   "rr": 0.0,
+   "faithfulness": 0.0,
+   "faith_detail": [
+    {
+     "sentence": "现有产品资料中暂未找到关于扫拖机器人额定功率的说明",
+     "cover": 0.21,
+     "verdict": "NOT_SUPPORTED"
+    }
+   ],
+   "confidence": 0.7518,
+   "latency_ms": 1683.8,
+   "answer": "现有产品资料中暂未找到关于扫拖机器人额定功率的说明。 [1]"
+  },
+  {
+   "id": "auto_150",
+   "category": "跨产品辨析",
+   "product": "washer_wm090mja08hk",
+   "question": "洗衣机的产品尺寸是多少？",
+   "expected_status": "answered",
+   "actual_status": "no_answer",
+   "generation_mode": "llm",
+   "status_ok": false,
+   "expected_terms": [
+    "850 mm"
+   ],
+   "kw_strict": false,
+   "kw_number_eq": false,
+   "rank": null,
+   "hit@1": false,
+   "hit@3": false,
+   "rr": 0.0,
+   "faithfulness": 0.0,
+   "faith_detail": [
+    {
+     "sentence": "现有产品资料中暂未找到相关说明 [1][2][3]",
+     "cover": 0.09,
+     "verdict": "NOT_SUPPORTED"
+    }
+   ],
+   "confidence": 0.7666,
+   "latency_ms": 1228.2,
+   "answer": "现有产品资料中暂未找到相关说明 [1][2][3]。"
+  },
+  {
+   "id": "auto_151",
+   "category": "跨产品辨析",
+   "product": "washer_wm090mja08hk",
+   "question": "洗衣机的运作水压是多少？",
+   "expected_status": "answered",
+   "actual_status": "answered",
+   "generation_mode": "llm",
+   "status_ok": true,
+   "expected_terms": [
+    "0.05 MPa"
+   ],
+   "kw_strict": true,
+   "kw_number_eq": true,
+   "rank": 1,
+   "hit@1": true,
+   "hit@3": true,
+   "rr": 1.0,
+   "faithfulness": 0.5,
+   "faith_detail": [
+    {
+     "sentence": "洗衣机的运作水压为0.05 MPa至0.8 MPa",
+     "cover": 1.0,
+     "verdict": "SUPPORTED"
+    },
+    {
+     "sentence": "[1][2]",
+     "cover": 0.0,
+     "verdict": "NOT_SUPPORTED"
+    }
+   ],
+   "confidence": 0.8536,
+   "latency_ms": 1739.3,
+   "answer": "洗衣机的运作水压为0.05 MPa至0.8 MPa。 [1][2]"
+  },
+  {
+   "id": "auto_152",
+   "category": "跨产品辨析",
+   "product": "fridge_bcd600",
+   "question": "冰箱的总容积是多少？",
+   "expected_status": "answered",
+   "actual_status": "answered",
+   "generation_mode": "llm",
+   "status_ok": true,
+   "expected_terms": [
+    "600L"
+   ],
+   "kw_strict": false,
+   "kw_number_eq": false,
+   "rank": null,
+   "hit@1": false,
+   "hit@3": false,
+   "rr": 0.0,
+   "faithfulness": 0.0,
+   "faith_detail": [
+    {
+     "sentence": "现有产品资料中暂未找到冰箱的总容积说明",
+     "cover": 0.11,
+     "verdict": "NOT_SUPPORTED"
+    },
+    {
+     "sentence": "通常，冰箱的总容积是冷冻室容积和冷藏室容积的总和，但具体数值需要查阅产品说明书或直接测量",
+     "cover": 0.15,
+     "verdict": "NOT_SUPPORTED"
+    },
+    {
+     "sentence": "[1][2][3]",
+     "cover": 0.0,
+     "verdict": "NOT_SUPPORTED"
+    }
+   ],
+   "confidence": 0.8795,
+   "latency_ms": 2264.4,
+   "answer": "现有产品资料中暂未找到冰箱的总容积说明。通常，冰箱的总容积是冷冻室容积和冷藏室容积的总和，但具体数值需要查阅产品说明书或直接测量。 [1][2][3]"
+  },
+  {
+   "id": "auto_153",
+   "category": "跨产品辨析",
+   "product": "washer_wm090mja08hk",
+   "question": "洗衣机的额定洗涤容量是多少？",
+   "expected_status": "answered",
+   "actual_status": "answered",
+   "generation_mode": "llm",
+   "status_ok": true,
+   "expected_terms": [
+    "9 kg"
+   ],
+   "kw_strict": true,
+   "kw_number_eq": true,
+   "rank": 2,
+   "hit@1": false,
+   "hit@3": true,
+   "rr": 0.5,
+   "faithfulness": 0.167,
+   "faith_detail": [
+    {
+     "sentence": "洗衣机的额定洗涤容量是9 kg [2]",
+     "cover": 0.5,
+     "verdict": "PARTIAL"
+    },
+    {
+     "sentence": "请注意，这是洗衣机可以安全且高效洗涤的最大推荐重量",
+     "cover": 0.12,
+     "verdict": "NOT_SUPPORTED"
+    },
+    {
+     "sentence": "最大洗涤容量为6 kg [3]，意味着虽然洗衣机的设计允许处理更重的衣物，但为了保护机器和确保洗涤效果，建议不要超过这个",
+     "cover": 0.14,
+     "verdict": "NOT_SUPPORTED"
+    }
+   ],
+   "confidence": 0.7819,
+   "latency_ms": 3455.3,
+   "answer": "洗衣机的额定洗涤容量是9 kg [2]。请注意，这是洗衣机可以安全且高效洗涤的最大推荐重量。最大洗涤容量为6 kg [3]，意味着虽然洗衣机的设计允许处理更重的衣物，但为了保护机器和确保洗涤效果，建议不要超过这个重量。"
+  },
+  {
+   "id": "auto_154",
+   "category": "转人工",
+   "product": "washer_wm090mja08hk",
+   "question": "洗衣机买回来就有问题，我要退款",
+   "expected_status": "handoff",
+   "actual_status": "handoff",
+   "generation_mode": "rule",
+   "status_ok": true,
+   "expected_terms": [],
+   "kw_strict": null,
+   "kw_number_eq": null,
+   "rank": null,
+   "hit@1": false,
+   "hit@3": false,
+   "rr": 0.0,
+   "faithfulness": 0.0,
+   "faith_detail": [
+    {
+     "sentence": "此问题需要人工客服处理，已为你生成转人工记录",
+     "cover": 0.0,
+     "verdict": "NOT_SUPPORTED"
+    }
+   ],
+   "confidence": 0.6471,
+   "latency_ms": 94.6,
+   "answer": "此问题需要人工客服处理，已为你生成转人工记录。"
+  },
+  {
+   "id": "auto_155",
+   "category": "转人工",
+   "product": "ac_kfr51lw",
+   "question": "空调噪音太大，我要投诉",
+   "expected_status": "handoff",
+   "actual_status": "handoff",
+   "generation_mode": "rule",
+   "status_ok": true,
+   "expected_terms": [],
+   "kw_strict": null,
+   "kw_number_eq": null,
+   "rank": null,
+   "hit@1": false,
+   "hit@3": false,
+   "rr": 0.0,
+   "faithfulness": 0.0,
+   "faith_detail": [
+    {
+     "sentence": "此问题需要人工客服处理，已为你生成转人工记录",
+     "cover": 0.0,
+     "verdict": "NOT_SUPPORTED"
+    }
+   ],
+   "confidence": 0.6606,
+   "latency_ms": 120.2,
+   "answer": "此问题需要人工客服处理，已为你生成转人工记录。"
+  },
+  {
+   "id": "auto_156",
+   "category": "转人工",
+   "product": "fridge_bcd600",
+   "question": "冰箱不制冷了，我要退货",
+   "expected_status": "handoff",
+   "actual_status": "handoff",
+   "generation_mode": "rule",
+   "status_ok": true,
+   "expected_terms": [],
+   "kw_strict": null,
+   "kw_number_eq": null,
+   "rank": null,
+   "hit@1": false,
+   "hit@3": false,
+   "rr": 0.0,
+   "faithfulness": 0.0,
+   "faith_detail": [
+    {
+     "sentence": "此问题需要人工客服处理，已为你生成转人工记录",
+     "cover": 0.05,
+     "verdict": "NOT_SUPPORTED"
+    }
+   ],
+   "confidence": 0.7653,
+   "latency_ms": 105.2,
+   "answer": "此问题需要人工客服处理，已为你生成转人工记录。"
+  },
+  {
+   "id": "auto_157",
+   "category": "转人工",
+   "product": "robotvac_s20",
+   "question": "别的问题我不问了，给我转人工",
+   "expected_status": "handoff",
+   "actual_status": "handoff",
+   "generation_mode": "rule",
+   "status_ok": true,
+   "expected_terms": [],
+   "kw_strict": null,
+   "kw_number_eq": null,
+   "rank": null,
+   "hit@1": false,
+   "hit@3": false,
+   "rr": 0.0,
+   "faithfulness": 0.0,
+   "faith_detail": [
+    {
+     "sentence": "此问题需要人工客服处理，已为你生成转人工记录",
+     "cover": 0.0,
+     "verdict": "NOT_SUPPORTED"
+    }
+   ],
+   "confidence": 0.449,
+   "latency_ms": 84.3,
+   "answer": "此问题需要人工客服处理，已为你生成转人工记录。"
+  },
+  {
+   "id": "auto_158",
+   "category": "转人工",
+   "product": "vacuum_g10_plus",
+   "question": "电池坏了，帮我联系人工客服处理",
+   "expected_status": "handoff",
+   "actual_status": "handoff",
+   "generation_mode": "rule",
+   "status_ok": true,
+   "expected_terms": [],
+   "kw_strict": null,
+   "kw_number_eq": null,
+   "rank": null,
+   "hit@1": false,
+   "hit@3": false,
+   "rr": 0.0,
+   "faithfulness": 0.0,
+   "faith_detail": [
+    {
+     "sentence": "此问题需要人工客服处理，已为你生成转人工记录",
+     "cover": 0.0,
+     "verdict": "NOT_SUPPORTED"
+    }
+   ],
+   "confidence": 0.7227,
+   "latency_ms": 84.7,
+   "answer": "此问题需要人工客服处理，已为你生成转人工记录。"
+  }
+ ]
+}

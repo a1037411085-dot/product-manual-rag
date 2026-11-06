@@ -1,0 +1,464 @@
+{
+  "schema": "ppt-master.svg-quality-report.v1",
+  "stage": "final",
+  "target": "C:\\Users\\T9\\Desktop\\珠海学院人工智能\\RAG\\projects\\midterm_integrated",
+  "source_fingerprint": {
+    "algorithm": "sha256",
+    "digest": "848fd6d711d5bdccf33b8df9e3f681c5813093a9f2588072b09da98aed2baf4b",
+    "file_count": 16,
+    "files": [
+      {
+        "file": "authoring-svg-flat/demo_overview.svg",
+        "sha256": "ad1dce9b59b2444234be927da7ce0d5bc49d98d798eca9cf608ea5c67b49dd3d"
+      },
+      {
+        "file": "authoring-svg-flat/demo_test.svg",
+        "sha256": "a008a59c5a345279e8b172fba5b353d0a3f533562d6d74cc8d990cc1bd4df473"
+      },
+      {
+        "file": "authoring-svg-flat/plan_actions.svg",
+        "sha256": "a93d16faad414038ca4cb89d061c8785d69e1f3b34a6503c367d74b66d2301be"
+      },
+      {
+        "file": "authoring-svg-flat/plan_schedule.svg",
+        "sha256": "d01187ea45c5ebcbf668426604f413d9861f3c1ba152d81a9e2338ac402bb90b"
+      },
+      {
+        "file": "authoring-svg-flat/slide_01.svg",
+        "sha256": "8f8611748b3735e1044b7cd7f10a0b67ffaf39363ed9aa020df08b42e5c77fa9"
+      },
+      {
+        "file": "authoring-svg-flat/slide_02.svg",
+        "sha256": "eadc51e95ccc8eccc52bd934eb9f77fd33f621e284e2217cca0dae22da46f7bb"
+      },
+      {
+        "file": "authoring-svg-flat/slide_03.svg",
+        "sha256": "bab84fb6176951506e6d921d1943bd1101c4a7dd7a256cda81b7844161e22135"
+      },
+      {
+        "file": "authoring-svg-flat/slide_04.svg",
+        "sha256": "a339debd1c797ea48786e6096a76af2ba53d6d379a9bdf12244119171a14a1cd"
+      },
+      {
+        "file": "authoring-svg-flat/slide_05.svg",
+        "sha256": "186698eb20922b7d07a30a39446a5bebc8f5f3e9d7974b15507d90cee2699027"
+      },
+      {
+        "file": "authoring-svg-flat/slide_06.svg",
+        "sha256": "1eacf0a682052db637943c4f319837d12bd210389446a239b0bf21236e2c3718"
+      },
+      {
+        "file": "authoring-svg-flat/slide_07.svg",
+        "sha256": "e4c5541926e7092ba8312a39cab1cfe6cecc164d3a5fc2e30407a28986d4d74c"
+      },
+      {
+        "file": "authoring-svg-flat/slide_08.svg",
+        "sha256": "9ec99cbe01ba2900d51af8f0aa53e3481a2091b3d0a27f969e53dbc87329d9e9"
+      },
+      {
+        "file": "authoring-svg-flat/slide_09.svg",
+        "sha256": "fd12d1c4c1ea747c46343fe1b32c133715f70f0eb49abda4db67933b58c093ce"
+      },
+      {
+        "file": "authoring-svg-flat/slide_10.svg",
+        "sha256": "306d698518994d2f65e6d902f1f137b32ffe4027d1c74e3e4491e100a37ae3b1"
+      },
+      {
+        "file": "authoring-svg-flat/slide_11.svg",
+        "sha256": "d39b53e94ecfbec6741d448179a848855f749d5794e769b47e220a1506de6881"
+      },
+      {
+        "file": "page_plan.json",
+        "sha256": "17fb06b4972f8929310de1c8257a9b5be030a1b29669d913e40fa0b064fc89f5"
+      }
+    ]
+  },
+  "summary": {
+    "total": 15,
+    "passed": 15,
+    "warnings": 0,
+    "errors": 0
+  },
+  "issue_types": {},
+  "categories": {
+    "blocking": {
+      "count": 0,
+      "issues": []
+    },
+    "introduced": {
+      "count": 0,
+      "issues": []
+    },
+    "inherited": {
+      "count": 0,
+      "issues": []
+    },
+    "source-import": {
+      "count": 0,
+      "summary": {
+        "warning_count": 0,
+        "by_code": {}
+      }
+    }
+  },
+  "drift": {
+    "colors": {},
+    "fonts": {},
+    "sizes": {}
+  },
+  "carrier_receipt": {
+    "scope": "informational-not-a-quota",
+    "pages": 0,
+    "totals": {
+      "text_elements": 0,
+      "image_placements": 0,
+      "icons": 0,
+      "svg_geometry_elements": 0,
+      "preset_shapes": 0,
+      "page_frame_elements": 0,
+      "marker_uses": 0,
+      "inline_emphasis_runs": 0,
+      "gradient_uses": 0,
+      "filter_uses": 0,
+      "text_effects": 0
+    },
+    "pages_with": {
+      "images": 0,
+      "icons": 0,
+      "presets": 0,
+      "charts": 0,
+      "tables": 0,
+      "formulas": 0,
+      "inline_emphasis_runs": 0,
+      "gradient_uses": 0,
+      "filter_uses": 0,
+      "text_effects": 0
+    },
+    "relationship_pages": null,
+    "geometry_elements": {},
+    "preset_names": {},
+    "native_objects": {},
+    "image_page_max_frame_share_range": []
+  },
+  "project_issues": {
+    "template": [],
+    "animation": [],
+    "illustration": [],
+    "communication_trace": [],
+    "pptx_structure": []
+  },
+  "files": [
+    {
+      "file": "slide_01.svg",
+      "path": "C:\\Users\\T9\\Desktop\\珠海学院人工智能\\RAG\\projects\\midterm_integrated\\authoring-svg-flat\\slide_01.svg",
+      "exists": true,
+      "errors": [],
+      "warnings": [],
+      "info": {
+        "output_page": 1,
+        "source_slide": 1,
+        "viewbox": "0 0 1280 720",
+        "edited_text_elements": 0,
+        "roundtrip_text_calibration": {
+          "factor": 0.029328459530026246,
+          "measured_unchanged": 5,
+          "positive_unchanged": 1
+        }
+      },
+      "passed": true,
+      "source_sha256": "8f8611748b3735e1044b7cd7f10a0b67ffaf39363ed9aa020df08b42e5c77fa9"
+    },
+    {
+      "file": "slide_02.svg",
+      "path": "C:\\Users\\T9\\Desktop\\珠海学院人工智能\\RAG\\projects\\midterm_integrated\\authoring-svg-flat\\slide_02.svg",
+      "exists": true,
+      "errors": [],
+      "warnings": [],
+      "info": {
+        "output_page": 2,
+        "source_slide": 2,
+        "viewbox": "0 0 1280 720",
+        "edited_text_elements": 0,
+        "roundtrip_text_calibration": {
+          "factor": 0.0,
+          "measured_unchanged": 13,
+          "positive_unchanged": 0
+        }
+      },
+      "passed": true,
+      "source_sha256": "eadc51e95ccc8eccc52bd934eb9f77fd33f621e284e2217cca0dae22da46f7bb"
+    },
+    {
+      "file": "slide_03.svg",
+      "path": "C:\\Users\\T9\\Desktop\\珠海学院人工智能\\RAG\\projects\\midterm_integrated\\authoring-svg-flat\\slide_03.svg",
+      "exists": true,
+      "errors": [],
+      "warnings": [],
+      "info": {
+        "output_page": 3,
+        "source_slide": 3,
+        "viewbox": "0 0 1280 720",
+        "edited_text_elements": 0,
+        "roundtrip_text_calibration": {
+          "factor": 0.1,
+          "measured_unchanged": 20,
+          "positive_unchanged": 6
+        }
+      },
+      "passed": true,
+      "source_sha256": "bab84fb6176951506e6d921d1943bd1101c4a7dd7a256cda81b7844161e22135"
+    },
+    {
+      "file": "slide_04.svg",
+      "path": "C:\\Users\\T9\\Desktop\\珠海学院人工智能\\RAG\\projects\\midterm_integrated\\authoring-svg-flat\\slide_04.svg",
+      "exists": true,
+      "errors": [],
+      "warnings": [],
+      "info": {
+        "output_page": 4,
+        "source_slide": 4,
+        "viewbox": "0 0 1280 720",
+        "edited_text_elements": 0,
+        "roundtrip_text_calibration": {
+          "factor": 0.023082501376010683,
+          "measured_unchanged": 12,
+          "positive_unchanged": 1
+        }
+      },
+      "passed": true,
+      "source_sha256": "a339debd1c797ea48786e6096a76af2ba53d6d379a9bdf12244119171a14a1cd"
+    },
+    {
+      "file": "demo_overview.svg",
+      "path": "C:\\Users\\T9\\Desktop\\珠海学院人工智能\\RAG\\projects\\midterm_integrated\\authoring-svg-flat\\demo_overview.svg",
+      "exists": true,
+      "errors": [],
+      "warnings": [],
+      "info": {
+        "output_page": 5,
+        "source_slide": 4,
+        "viewbox": "0 0 1280 720",
+        "edited_text_elements": 9,
+        "fonts": [
+          "微软雅黑"
+        ],
+        "roundtrip_text_calibration": {
+          "factor": 0.0,
+          "measured_unchanged": 0,
+          "positive_unchanged": 0
+        }
+      },
+      "passed": true,
+      "source_sha256": "ad1dce9b59b2444234be927da7ce0d5bc49d98d798eca9cf608ea5c67b49dd3d"
+    },
+    {
+      "file": "demo_test.svg",
+      "path": "C:\\Users\\T9\\Desktop\\珠海学院人工智能\\RAG\\projects\\midterm_integrated\\authoring-svg-flat\\demo_test.svg",
+      "exists": true,
+      "errors": [],
+      "warnings": [],
+      "info": {
+        "output_page": 6,
+        "source_slide": 4,
+        "viewbox": "0 0 1280 720",
+        "edited_text_elements": 11,
+        "fonts": [
+          "微软雅黑"
+        ],
+        "roundtrip_text_calibration": {
+          "factor": 0.0,
+          "measured_unchanged": 0,
+          "positive_unchanged": 0
+        }
+      },
+      "passed": true,
+      "source_sha256": "a008a59c5a345279e8b172fba5b353d0a3f533562d6d74cc8d990cc1bd4df473"
+    },
+    {
+      "file": "slide_05.svg",
+      "path": "C:\\Users\\T9\\Desktop\\珠海学院人工智能\\RAG\\projects\\midterm_integrated\\authoring-svg-flat\\slide_05.svg",
+      "exists": true,
+      "errors": [],
+      "warnings": [],
+      "info": {
+        "output_page": 7,
+        "source_slide": 5,
+        "viewbox": "0 0 1280 720",
+        "edited_text_elements": 0,
+        "roundtrip_text_calibration": {
+          "factor": 0.006111303238873954,
+          "measured_unchanged": 12,
+          "positive_unchanged": 1
+        }
+      },
+      "passed": true,
+      "source_sha256": "186698eb20922b7d07a30a39446a5bebc8f5f3e9d7974b15507d90cee2699027"
+    },
+    {
+      "file": "slide_06.svg",
+      "path": "C:\\Users\\T9\\Desktop\\珠海学院人工智能\\RAG\\projects\\midterm_integrated\\authoring-svg-flat\\slide_06.svg",
+      "exists": true,
+      "errors": [],
+      "warnings": [],
+      "info": {
+        "output_page": 8,
+        "source_slide": 6,
+        "viewbox": "0 0 1280 720",
+        "edited_text_elements": 0,
+        "roundtrip_text_calibration": {
+          "factor": 0.0,
+          "measured_unchanged": 14,
+          "positive_unchanged": 0
+        }
+      },
+      "passed": true,
+      "source_sha256": "1eacf0a682052db637943c4f319837d12bd210389446a239b0bf21236e2c3718"
+    },
+    {
+      "file": "slide_07.svg",
+      "path": "C:\\Users\\T9\\Desktop\\珠海学院人工智能\\RAG\\projects\\midterm_integrated\\authoring-svg-flat\\slide_07.svg",
+      "exists": true,
+      "errors": [],
+      "warnings": [],
+      "info": {
+        "output_page": 9,
+        "source_slide": 7,
+        "viewbox": "0 0 1280 720",
+        "edited_text_elements": 0,
+        "roundtrip_text_calibration": {
+          "factor": 0.1,
+          "measured_unchanged": 10,
+          "positive_unchanged": 1
+        }
+      },
+      "passed": true,
+      "source_sha256": "e4c5541926e7092ba8312a39cab1cfe6cecc164d3a5fc2e30407a28986d4d74c"
+    },
+    {
+      "file": "slide_08.svg",
+      "path": "C:\\Users\\T9\\Desktop\\珠海学院人工智能\\RAG\\projects\\midterm_integrated\\authoring-svg-flat\\slide_08.svg",
+      "exists": true,
+      "errors": [],
+      "warnings": [],
+      "info": {
+        "output_page": 10,
+        "source_slide": 8,
+        "viewbox": "0 0 1280 720",
+        "edited_text_elements": 0,
+        "roundtrip_text_calibration": {
+          "factor": 0.0,
+          "measured_unchanged": 10,
+          "positive_unchanged": 0
+        }
+      },
+      "passed": true,
+      "source_sha256": "9ec99cbe01ba2900d51af8f0aa53e3481a2091b3d0a27f969e53dbc87329d9e9"
+    },
+    {
+      "file": "slide_09.svg",
+      "path": "C:\\Users\\T9\\Desktop\\珠海学院人工智能\\RAG\\projects\\midterm_integrated\\authoring-svg-flat\\slide_09.svg",
+      "exists": true,
+      "errors": [],
+      "warnings": [],
+      "info": {
+        "output_page": 11,
+        "source_slide": 9,
+        "viewbox": "0 0 1280 720",
+        "edited_text_elements": 0,
+        "roundtrip_text_calibration": {
+          "factor": 0.0,
+          "measured_unchanged": 14,
+          "positive_unchanged": 0
+        }
+      },
+      "passed": true,
+      "source_sha256": "fd12d1c4c1ea747c46343fe1b32c133715f70f0eb49abda4db67933b58c093ce"
+    },
+    {
+      "file": "slide_10.svg",
+      "path": "C:\\Users\\T9\\Desktop\\珠海学院人工智能\\RAG\\projects\\midterm_integrated\\authoring-svg-flat\\slide_10.svg",
+      "exists": true,
+      "errors": [],
+      "warnings": [],
+      "info": {
+        "output_page": 12,
+        "source_slide": 10,
+        "viewbox": "0 0 1280 720",
+        "edited_text_elements": 0,
+        "roundtrip_text_calibration": {
+          "factor": 0.0,
+          "measured_unchanged": 12,
+          "positive_unchanged": 0
+        }
+      },
+      "passed": true,
+      "source_sha256": "306d698518994d2f65e6d902f1f137b32ffe4027d1c74e3e4491e100a37ae3b1"
+    },
+    {
+      "file": "plan_actions.svg",
+      "path": "C:\\Users\\T9\\Desktop\\珠海学院人工智能\\RAG\\projects\\midterm_integrated\\authoring-svg-flat\\plan_actions.svg",
+      "exists": true,
+      "errors": [],
+      "warnings": [],
+      "info": {
+        "output_page": 13,
+        "source_slide": 10,
+        "viewbox": "0 0 1280 720",
+        "edited_text_elements": 12,
+        "fonts": [
+          "Microsoft YaHei"
+        ],
+        "roundtrip_text_calibration": {
+          "factor": 0.0,
+          "measured_unchanged": 0,
+          "positive_unchanged": 0
+        }
+      },
+      "passed": true,
+      "source_sha256": "a93d16faad414038ca4cb89d061c8785d69e1f3b34a6503c367d74b66d2301be"
+    },
+    {
+      "file": "plan_schedule.svg",
+      "path": "C:\\Users\\T9\\Desktop\\珠海学院人工智能\\RAG\\projects\\midterm_integrated\\authoring-svg-flat\\plan_schedule.svg",
+      "exists": true,
+      "errors": [],
+      "warnings": [],
+      "info": {
+        "output_page": 14,
+        "source_slide": 10,
+        "viewbox": "0 0 1280 720",
+        "edited_text_elements": 12,
+        "fonts": [
+          "Microsoft YaHei"
+        ],
+        "roundtrip_text_calibration": {
+          "factor": 0.0,
+          "measured_unchanged": 0,
+          "positive_unchanged": 0
+        }
+      },
+      "passed": true,
+      "source_sha256": "d01187ea45c5ebcbf668426604f413d9861f3c1ba152d81a9e2338ac402bb90b"
+    },
+    {
+      "file": "slide_11.svg",
+      "path": "C:\\Users\\T9\\Desktop\\珠海学院人工智能\\RAG\\projects\\midterm_integrated\\authoring-svg-flat\\slide_11.svg",
+      "exists": true,
+      "errors": [],
+      "warnings": [],
+      "info": {
+        "output_page": 15,
+        "source_slide": 11,
+        "viewbox": "0 0 1280 720",
+        "edited_text_elements": 0,
+        "roundtrip_text_calibration": {
+          "factor": 0.0,
+          "measured_unchanged": 19,
+          "positive_unchanged": 0
+        }
+      },
+      "passed": true,
+      "source_sha256": "d39b53e94ecfbec6741d448179a848855f749d5794e769b47e220a1506de6881"
+    }
+  ]
+}

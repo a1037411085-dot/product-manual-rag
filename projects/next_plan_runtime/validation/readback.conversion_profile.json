@@ -1,0 +1,28 @@
+{
+  "schema": "ppt-master.source_to_md.profile.v1",
+  "converter": "ppt_to_md.py",
+  "conversion_type": "pptx",
+  "source": {
+    "path": "C:/Users/T9/Desktop/珠海学院人工智能/RAG/projects/next_plan_runtime/exports/next_plan_runtime_20261105_211455.pptx",
+    "name": "next_plan_runtime_20261105_211455.pptx",
+    "suffix": ".pptx",
+    "kind": "file",
+    "exists": true,
+    "size_bytes": 241408
+  },
+  "outputs": {
+    "markdown": "readback.md",
+    "asset_dir": "readback_files",
+    "image_manifest": "readback_files/image_manifest.json",
+    "image_count": 2
+  },
+  "markdown": {
+    "line_count": 260,
+    "char_count": 2106,
+    "heading_count": 6,
+    "table_count": 0,
+    "image_ref_count": 2,
+    "link_count": 0
+  },
+  "warnings": []
+}

@@ -1,0 +1,113 @@
+<svg xmlns="http://www.w3.org/2000/svg" version="1.1" width="1280.12598" height="720" viewBox="0 0 1280.12598 720" font-family="&quot;微软雅黑&quot;, sans-serif"><rect x="0" y="0" width="1280.13" height="720" fill="#FFFFFF" />
+<g id="shape-2" data-pptx-object="shape" data-pptx-frame="0 0 1280.13 20.79" data-pptx-prst="rect" data-pptx-source-ref="slide:2" data-pptx-semantic-object="shape">
+<path d="M 0 0 L 1280.13 0 L 1280.13 20.79 L 0 20.79 Z" fill="#255C91" stroke="none" stroke-width="1" data-pptx-part="geometry" />
+
+
+</g>
+<g id="shape-3" data-pptx-object="shape" data-pptx-frame="56.69 43.46 1133.86 30.24" data-pptx-prst="rect" data-pptx-source-ref="slide:3" data-pptx-semantic-object="shape">
+<path d="M 56.69 43.46 L 1190.55 43.46 L 1190.55 73.7 L 56.69 73.7 Z" fill="none" data-pptx-part="geometry" />
+
+
+<text x="60.47" y="60.79779528" text-anchor="start" xml:space="preserve" font-size="16.67" fill="#D67A3D" font-weight="bold" data-pptx-text-baseline="metrics-v1">现状诊断 · 2026.11</text>
+</g>
+<g id="shape-4" data-pptx-object="shape" data-pptx-frame="56.69 75.59 1171.65 56.69" data-pptx-prst="rect" data-pptx-source-ref="slide:4" data-pptx-semantic-object="shape">
+<path d="M 56.69 75.59 L 1228.35 75.59 L 1228.35 132.28 L 56.69 132.28 Z" fill="none" data-pptx-part="geometry" />
+
+
+<text x="60.47" y="112.92388451" text-anchor="start" xml:space="preserve" font-size="36" fill="#255C91" font-weight="bold" data-pptx-text-baseline="metrics-v1">三个瓶颈，决定了下一步做什么</text>
+</g>
+<g id="shape-5" data-pptx-object="shape" data-pptx-frame="56.69 151.18 374.17 393.07" data-pptx-prst="roundRect" data-pptx-av-adj="val 8000" data-pptx-source-ref="slide:5" data-pptx-semantic-object="shape">
+<path d="M 56.69 181.11 A 29.93 29.93 0 0 1 86.63 151.18 L 400.93 151.18 A 29.93 29.93 0 0 1 430.87 181.11 L 430.87 514.32 A 29.93 29.93 0 0 1 400.93 544.25 L 86.63 544.25 A 29.93 29.93 0 0 1 56.69 514.32 Z" fill="#F2F5F9" stroke="none" stroke-width="1" data-pptx-part="geometry" />
+
+
+</g>
+<g id="shape-6" data-pptx-object="shape" data-pptx-frame="56.69 151.18 374.17 6.8" data-pptx-prst="rect" data-pptx-source-ref="slide:6" data-pptx-semantic-object="shape">
+<path d="M 56.69 151.18 L 430.87 151.18 L 430.87 157.98 L 56.69 157.98 Z" fill="#B03A3A" stroke="none" stroke-width="1" data-pptx-part="geometry" />
+
+
+</g>
+<g id="shape-7" data-pptx-object="shape" data-pptx-frame="79.37 170.08 332.6 34.02" data-pptx-prst="rect" data-pptx-source-ref="slide:7" data-pptx-semantic-object="shape">
+<path d="M 79.37 170.08 L 411.97 170.08 L 411.97 204.09 L 79.37 204.09 Z" fill="none" data-pptx-part="geometry" />
+
+
+<text x="83.15" y="196.74540682" text-anchor="start" xml:space="preserve" font-size="25.33" fill="#B03A3A" font-weight="bold" data-pptx-text-baseline="metrics-v1">语料库</text>
+</g>
+<g id="shape-8" data-pptx-object="shape" data-pptx-frame="79.37 211.65 332.6 26.46" data-pptx-prst="rect" data-pptx-source-ref="slide:8" data-pptx-semantic-object="shape">
+<path d="M 79.37 211.65 L 411.97 211.65 L 411.97 238.11 L 79.37 238.11 Z" fill="none" data-pptx-part="geometry" />
+
+
+<text x="83.15" y="227.65343832" text-anchor="start" xml:space="preserve" font-size="15.33" fill="#6E7C8A" data-pptx-text-baseline="metrics-v1">5 份说明书 · 7.1 万字</text>
+</g>
+<g id="shape-9" data-pptx-object="shape" data-pptx-frame="79.37 249.45 336.38 279.69" data-pptx-prst="rect" data-pptx-source-ref="slide:9" data-pptx-semantic-object="shape">
+<path d="M 79.37 249.45 L 415.75 249.45 L 415.75 529.13 L 79.37 529.13 Z" fill="none" data-pptx-part="geometry" />
+
+
+<text x="83.15" y="273.4488189" text-anchor="start" xml:space="preserve" font-size="17.33" fill="#202C3A" data-pptx-text-baseline="metrics-v1" data-pptx-text-model="paragraphs" data-paragraph-line-height="25.995"><tspan><tspan>• 平均 34 字/片段，语义模型缺上下文</tspan></tspan><tspan data-paragraph-space-before="5.205"><tspan>• 表格拍平丢失行主语：4 条记录都叫</tspan></tspan><tspan data-paragraph-space-before="5.205"><tspan>  「最大洗涤容量」</tspan></tspan><tspan data-paragraph-space-before="5.205"><tspan>• 多型号并排：总容积 600/601/602 三个值</tspan></tspan><tspan data-paragraph-space-before="5.205"><tspan>• 空调 Hit@1 仅 56.6%（其余 88~100%）</tspan></tspan></text>
+</g>
+<g id="shape-10" data-pptx-object="shape" data-pptx-frame="449.76 151.18 374.17 393.07" data-pptx-prst="roundRect" data-pptx-av-adj="val 8000" data-pptx-source-ref="slide:10" data-pptx-semantic-object="shape">
+<path d="M 449.76 181.11 A 29.93 29.93 0 0 1 479.7 151.18 L 794 151.18 A 29.93 29.93 0 0 1 823.94 181.11 L 823.94 514.32 A 29.93 29.93 0 0 1 794 544.25 L 479.7 544.25 A 29.93 29.93 0 0 1 449.76 514.32 Z" fill="#F2F5F9" stroke="none" stroke-width="1" data-pptx-part="geometry" />
+
+
+</g>
+<g id="shape-11" data-pptx-object="shape" data-pptx-frame="449.76 151.18 374.17 6.8" data-pptx-prst="rect" data-pptx-source-ref="slide:11" data-pptx-semantic-object="shape">
+<path d="M 449.76 151.18 L 823.94 151.18 L 823.94 157.98 L 449.76 157.98 Z" fill="#D67A3D" stroke="none" stroke-width="1" data-pptx-part="geometry" />
+
+
+</g>
+<g id="shape-12" data-pptx-object="shape" data-pptx-frame="472.44 170.08 332.6 34.02" data-pptx-prst="rect" data-pptx-source-ref="slide:12" data-pptx-semantic-object="shape">
+<path d="M 472.44 170.08 L 805.04 170.08 L 805.04 204.09 L 472.44 204.09 Z" fill="none" data-pptx-part="geometry" />
+
+
+<text x="476.22" y="196.74540682" text-anchor="start" xml:space="preserve" font-size="25.33" fill="#D67A3D" font-weight="bold" data-pptx-text-baseline="metrics-v1">测评集</text>
+</g>
+<g id="shape-13" data-pptx-object="shape" data-pptx-frame="472.44 211.65 332.6 26.46" data-pptx-prst="rect" data-pptx-source-ref="slide:13" data-pptx-semantic-object="shape">
+<path d="M 472.44 211.65 L 805.04 211.65 L 805.04 238.11 L 472.44 238.11 Z" fill="none" data-pptx-part="geometry" />
+
+
+<text x="476.22" y="227.65343832" text-anchor="start" xml:space="preserve" font-size="15.33" fill="#6E7C8A" data-pptx-text-baseline="metrics-v1">158 题 · 95% CI ±6.4pp</text>
+</g>
+<g id="shape-14" data-pptx-object="shape" data-pptx-frame="472.44 249.45 336.38 279.69" data-pptx-prst="rect" data-pptx-source-ref="slide:14" data-pptx-semantic-object="shape">
+<path d="M 472.44 249.45 L 808.82 249.45 L 808.82 529.13 L 472.44 529.13 Z" fill="none" data-pptx-part="geometry" />
+
+
+<text x="476.22" y="273.4488189" text-anchor="start" xml:space="preserve" font-size="17.33" fill="#202C3A" data-pptx-text-baseline="metrics-v1" data-pptx-text-model="paragraphs" data-paragraph-line-height="25.995"><tspan><tspan>• 每产品题量不均：7 ~ 56 题</tspan></tspan><tspan data-paragraph-space-before="5.205"><tspan>• 缺同义改写题，鲁棒性未覆盖</tspan></tspan><tspan data-paragraph-space-before="5.205"><tspan>• 3 条畸形问句（如「器：BLJ是多少」）</tspan></tspan><tspan data-paragraph-space-before="5.205"><tspan>• 单模型，无法区分检索问题与模型能力</tspan></tspan><tspan data-paragraph-space-before="5.205"><tspan>• 只有点估计，无显著性检验</tspan></tspan></text>
+</g>
+<g id="shape-15" data-pptx-object="shape" data-pptx-frame="842.83 151.18 374.17 393.07" data-pptx-prst="roundRect" data-pptx-av-adj="val 8000" data-pptx-source-ref="slide:15" data-pptx-semantic-object="shape">
+<path d="M 842.83 181.11 A 29.93 29.93 0 0 1 872.77 151.18 L 1187.07 151.18 A 29.93 29.93 0 0 1 1217.01 181.11 L 1217.01 514.32 A 29.93 29.93 0 0 1 1187.07 544.25 L 872.77 544.25 A 29.93 29.93 0 0 1 842.83 514.32 Z" fill="#F2F5F9" stroke="none" stroke-width="1" data-pptx-part="geometry" />
+
+
+</g>
+<g id="shape-16" data-pptx-object="shape" data-pptx-frame="842.83 151.18 374.17 6.8" data-pptx-prst="rect" data-pptx-source-ref="slide:16" data-pptx-semantic-object="shape">
+<path d="M 842.83 151.18 L 1217.01 151.18 L 1217.01 157.98 L 842.83 157.98 Z" fill="#255C91" stroke="none" stroke-width="1" data-pptx-part="geometry" />
+
+
+</g>
+<g id="shape-17" data-pptx-object="shape" data-pptx-frame="865.51 170.08 332.6 34.02" data-pptx-prst="rect" data-pptx-source-ref="slide:17" data-pptx-semantic-object="shape">
+<path d="M 865.51 170.08 L 1198.11 170.08 L 1198.11 204.09 L 865.51 204.09 Z" fill="none" data-pptx-part="geometry" />
+
+
+<text x="869.29" y="196.74540682" text-anchor="start" xml:space="preserve" font-size="25.33" fill="#255C91" font-weight="bold" data-pptx-text-baseline="metrics-v1">失败分析</text>
+</g>
+<g id="shape-18" data-pptx-object="shape" data-pptx-frame="865.51 211.65 332.6 26.46" data-pptx-prst="rect" data-pptx-source-ref="slide:18" data-pptx-semantic-object="shape">
+<path d="M 865.51 211.65 L 1198.11 211.65 L 1198.11 238.11 L 865.51 238.11 Z" fill="none" data-pptx-part="geometry" />
+
+
+<text x="869.29" y="227.65343832" text-anchor="start" xml:space="preserve" font-size="15.33" fill="#6E7C8A" data-pptx-text-baseline="metrics-v1">12 条案例 · 已修 4 条</text>
+</g>
+<g id="shape-19" data-pptx-object="shape" data-pptx-frame="865.51 249.45 336.38 279.69" data-pptx-prst="rect" data-pptx-source-ref="slide:19" data-pptx-semantic-object="shape">
+<path d="M 865.51 249.45 L 1201.89 249.45 L 1201.89 529.13 L 865.51 529.13 Z" fill="none" data-pptx-part="geometry" />
+
+
+<text x="869.29" y="273.4488189" text-anchor="start" xml:space="preserve" font-size="17.33" fill="#202C3A" data-pptx-text-baseline="metrics-v1" data-pptx-text-model="paragraphs" data-paragraph-line-height="25.995"><tspan><tspan>• 根因高度收敛：5 条来自表格拍平</tspan></tspan><tspan data-paragraph-space-before="5.205"><tspan>• 拒答漏判已修：40% → 100%</tspan></tspan><tspan data-paragraph-space-before="5.205"><tspan>• 知识库污染 1 条（编造 FAQ）</tspan></tspan><tspan data-paragraph-space-before="5.205"><tspan>• 8 条待修，缺统一记录模板</tspan></tspan><tspan data-paragraph-space-before="5.205"><tspan>• 样本量小，未覆盖多轮场景</tspan></tspan></text>
+</g>
+<g id="shape-20" data-pptx-object="shape" data-pptx-frame="56.69 570.71 1167.87 83.15" data-pptx-prst="roundRect" data-pptx-av-adj="val 8000" data-pptx-source-ref="slide:20" data-pptx-semantic-object="shape">
+<path d="M 56.69 577.36 A 6.65 6.65 0 0 1 63.34 570.71 L 1217.91 570.71 A 6.65 6.65 0 0 1 1224.57 577.36 L 1224.57 647.21 A 6.65 6.65 0 0 1 1217.91 653.86 L 63.34 653.86 A 6.65 6.65 0 0 1 56.69 647.21 Z" fill="#255C91" stroke="none" stroke-width="1" data-pptx-part="geometry" />
+
+
+</g>
+<g id="shape-21" data-pptx-object="shape" data-pptx-frame="83.15 587.72 1114.96 49.13" data-pptx-prst="rect" data-pptx-source-ref="slide:21" data-pptx-semantic-object="shape">
+<path d="M 83.15 587.72 L 1198.11 587.72 L 1198.11 636.85 L 83.15 636.85 Z" fill="none" data-pptx-part="geometry" />
+
+
+<text x="86.93" y="606.3832021" text-anchor="start" xml:space="preserve" font-size="18" fill="#FFFFFF" font-weight="bold" data-pptx-text-baseline="metrics-v1">三者的关系：语料决定上限，测评集决定能否看出问题，失败分析决定改得对不对 —— 顺序不能颠倒。</text>
+</g></svg>

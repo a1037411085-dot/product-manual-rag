@@ -1,0 +1,103 @@
+<svg xmlns="http://www.w3.org/2000/svg" version="1.1" width="1280" height="720" viewBox="0 0 1280 720" font-family="Arial, &quot;Microsoft YaHei&quot;, sans-serif"><rect x="0" y="0" width="1280" height="720" fill="#FAFAF8" />
+<g id="shape-20" data-pptx-object="group" data-pptx-frame="80.32 48.33 1117.68 646.05" data-pptx-source-ref="slide:20">
+<g id="shape-2" data-pptx-object="shape" data-pptx-frame="80.4 48.33 342.4 61.6" data-pptx-prst="rect" data-pptx-source-ref="slide:2" data-pptx-semantic-object="shape">
+<path d="M 80.4 48.33 L 422.8 48.33 L 422.8 109.93 L 80.4 109.93 Z" fill="none" stroke="none" data-pptx-part="geometry" />
+
+
+<text x="80.4" y="87" text-anchor="start" xml:space="preserve" font-size="40" fill="#162B3B" font-weight="bold" data-pptx-text-baseline="metrics-v1">我们怎样测试系统</text>
+</g>
+<g id="shape-3" data-pptx-object="shape" data-pptx-frame="81.04 114.33 256.32 36.96" data-pptx-prst="rect" data-pptx-source-ref="slide:3" data-pptx-semantic-object="shape">
+<path d="M 81.04 114.33 L 337.36 114.33 L 337.36 151.29 L 81.04 151.29 Z" fill="none" stroke="none" data-pptx-part="geometry" />
+
+
+<text x="81.04" y="137" text-anchor="start" xml:space="preserve" font-size="24" fill="#4B6C7A" data-pptx-text-baseline="metrics-v1">同一批问题，两套配置</text>
+</g>
+<g id="shape-4" data-pptx-object="shape" data-pptx-frame="82 162 1116 1" data-pptx-prst="rect" data-pptx-source-ref="slide:4" data-pptx-semantic-object="shape">
+<path d="M 82 162 L 1198 162 L 1198 163 L 82 163 Z" fill="#D8E0E2" stroke="none" data-pptx-part="geometry" />
+
+</g>
+<g id="shape-5" data-pptx-object="shape" data-pptx-frame="80.32 205 221.17 64.68" data-pptx-prst="rect" data-pptx-source-ref="slide:5" data-pptx-semantic-object="shape">
+<path d="M 80.32 205 L 301.49 205 L 301.49 269.68 L 80.32 269.68 Z" fill="none" stroke="none" data-pptx-part="geometry" />
+
+
+<text x="80.32" y="245" text-anchor="start" xml:space="preserve" font-size="42" fill="#162B3B" font-weight="bold" data-pptx-text-baseline="metrics-v1">5 份说明书</text>
+</g>
+<g id="shape-6" data-pptx-object="shape" data-pptx-frame="465.32 205 279.5 64.68" data-pptx-prst="rect" data-pptx-source-ref="slide:6" data-pptx-semantic-object="shape">
+<path d="M 465.32 205 L 744.82 205 L 744.82 269.68 L 465.32 269.68 Z" fill="none" stroke="none" data-pptx-part="geometry" />
+
+
+<text x="465.32" y="245" text-anchor="start" xml:space="preserve" font-size="42" fill="#162B3B" font-weight="bold" data-pptx-text-baseline="metrics-v1">1,940 个片段</text>
+</g>
+<g id="shape-7" data-pptx-object="shape" data-pptx-frame="902.32 205 183.55 64.68" data-pptx-prst="rect" data-pptx-source-ref="slide:7" data-pptx-semantic-object="shape">
+<path d="M 902.32 205 L 1085.87 205 L 1085.87 269.68 L 902.32 269.68 Z" fill="none" stroke="none" data-pptx-part="geometry" />
+
+
+<text x="902.32" y="245" text-anchor="start" xml:space="preserve" font-size="42" fill="#162B3B" font-weight="bold" data-pptx-text-baseline="metrics-v1">158 道题</text>
+</g>
+<g id="shape-8" data-pptx-object="shape" data-pptx-frame="81.04 268.33 485.28 36.96" data-pptx-prst="rect" data-pptx-source-ref="slide:8" data-pptx-semantic-object="shape">
+<path d="M 81.04 268.33 L 566.32 268.33 L 566.32 305.29 L 81.04 305.29 Z" fill="none" stroke="none" data-pptx-part="geometry" />
+
+
+<text x="81.04" y="291" text-anchor="start" xml:space="preserve" font-size="24" fill="#4B6C7A" data-pptx-text-baseline="metrics-v1">洗衣机、吸尘器、扫拖机器人、冰箱、空调</text>
+</g>
+<g id="shape-9" data-pptx-object="shape" data-pptx-frame="81.04 314.33 498 36.96" data-pptx-prst="rect" data-pptx-source-ref="slide:9" data-pptx-semantic-object="shape">
+<path d="M 81.04 314.33 L 579.04 314.33 L 579.04 351.29 L 81.04 351.29 Z" fill="none" stroke="none" data-pptx-part="geometry" />
+
+
+<text x="81.04" y="337" text-anchor="start" xml:space="preserve" font-size="24" fill="#4B6C7A" data-pptx-text-baseline="metrics-v1">138 道应答题 · 15 道拒答题 · 5 道转人工题</text>
+</g>
+<g id="shape-10" data-pptx-object="shape" data-pptx-frame="82 380 1116 1" data-pptx-prst="rect" data-pptx-source-ref="slide:10" data-pptx-semantic-object="shape">
+<path d="M 82 380 L 1198 380 L 1198 381 L 82 381 Z" fill="#D8E0E2" stroke="none" data-pptx-part="geometry" />
+
+</g>
+<g id="shape-11" data-pptx-object="shape" data-pptx-frame="80.88 395.33 120.96 43.12" data-pptx-prst="rect" data-pptx-source-ref="slide:11" data-pptx-semantic-object="shape">
+<path d="M 80.88 395.33 L 201.84 395.33 L 201.84 438.45 L 80.88 438.45 Z" fill="none" stroke="none" data-pptx-part="geometry" />
+
+
+<text x="80.88" y="422" text-anchor="start" xml:space="preserve" font-size="28" fill="#2F6675" font-weight="bold" data-pptx-text-baseline="metrics-v1">离线配置</text>
+</g>
+<g id="shape-12" data-pptx-object="shape" data-pptx-frame="278.88 395.33 273.81 43.12" data-pptx-prst="rect" data-pptx-source-ref="slide:12" data-pptx-semantic-object="shape">
+<path d="M 278.88 395.33 L 552.69 395.33 L 552.69 438.45 L 278.88 438.45 Z" fill="none" stroke="none" data-pptx-part="geometry" />
+
+
+<text x="278.88" y="422" text-anchor="start" xml:space="preserve" font-size="28" fill="#162B3B" data-pptx-text-baseline="metrics-v1">字符检索 + 原文回退</text>
+</g>
+<g id="shape-13" data-pptx-object="shape" data-pptx-frame="279.04 437.33 167.28 36.96" data-pptx-prst="rect" data-pptx-source-ref="slide:13" data-pptx-semantic-object="shape">
+<path d="M 279.04 437.33 L 446.32 437.33 L 446.32 474.29 L 279.04 474.29 Z" fill="none" stroke="none" data-pptx-part="geometry" />
+
+
+<text x="279.04" y="460" text-anchor="start" xml:space="preserve" font-size="24" fill="#4B6C7A" data-pptx-text-baseline="metrics-v1">检索阈值 0.16</text>
+</g>
+<g id="shape-14" data-pptx-object="shape" data-pptx-frame="82 506 1116 1" data-pptx-prst="rect" data-pptx-source-ref="slide:14" data-pptx-semantic-object="shape">
+<path d="M 82 506 L 1198 506 L 1198 507 L 82 507 Z" fill="#D8E0E2" stroke="none" data-pptx-part="geometry" />
+
+</g>
+<g id="shape-15" data-pptx-object="shape" data-pptx-frame="80.88 521.33 120.96 43.12" data-pptx-prst="rect" data-pptx-source-ref="slide:15" data-pptx-semantic-object="shape">
+<path d="M 80.88 521.33 L 201.84 521.33 L 201.84 564.45 L 80.88 564.45 Z" fill="none" stroke="none" data-pptx-part="geometry" />
+
+
+<text x="80.88" y="548" text-anchor="start" xml:space="preserve" font-size="28" fill="#2F6675" font-weight="bold" data-pptx-text-baseline="metrics-v1">在线配置</text>
+</g>
+<g id="shape-16" data-pptx-object="shape" data-pptx-frame="278.88 521.33 440.9 43.12" data-pptx-prst="rect" data-pptx-source-ref="slide:16" data-pptx-semantic-object="shape">
+<path d="M 278.88 521.33 L 719.78 521.33 L 719.78 564.45 L 278.88 564.45 Z" fill="none" stroke="none" data-pptx-part="geometry" />
+
+
+<text x="278.88" y="548" text-anchor="start" xml:space="preserve" font-size="28" fill="#162B3B" data-pptx-text-baseline="metrics-v1">语义检索 + FAISS + glm-4-flash</text>
+</g>
+<g id="shape-17" data-pptx-object="shape" data-pptx-frame="279.04 563.33 167.28 36.96" data-pptx-prst="rect" data-pptx-source-ref="slide:17" data-pptx-semantic-object="shape">
+<path d="M 279.04 563.33 L 446.32 563.33 L 446.32 600.29 L 279.04 600.29 Z" fill="none" stroke="none" data-pptx-part="geometry" />
+
+
+<text x="279.04" y="586" text-anchor="start" xml:space="preserve" font-size="24" fill="#4B6C7A" data-pptx-text-baseline="metrics-v1">检索阈值 0.35</text>
+</g>
+<g id="shape-18" data-pptx-object="shape" data-pptx-frame="82 652 1116 1" data-pptx-prst="rect" data-pptx-source-ref="slide:18" data-pptx-semantic-object="shape">
+<path d="M 82 652 L 1198 652 L 1198 653 L 82 653 Z" fill="#D8E0E2" stroke="none" data-pptx-part="geometry" />
+
+</g>
+<g id="shape-19" data-pptx-object="shape" data-pptx-frame="1156.28 666.67 22.43 27.72" data-pptx-prst="rect" data-pptx-source-ref="slide:19" data-pptx-semantic-object="shape">
+<path d="M 1156.28 666.67 L 1178.71 666.67 L 1178.71 694.39 L 1156.28 694.39 Z" fill="none" stroke="none" data-pptx-part="geometry" />
+
+
+<text x="1156.28" y="684" text-anchor="start" xml:space="preserve" font-size="18" fill="#4B6C7A" data-pptx-text-baseline="metrics-v1">06</text>
+</g>
+</g></svg>

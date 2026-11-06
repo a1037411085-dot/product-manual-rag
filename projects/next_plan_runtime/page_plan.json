@@ -1,0 +1,22 @@
+{
+  "schema": "ppt-master.roundtrip-page-plan.v1",
+  "pages": [
+    {
+      "source_slide": 1,
+      "svg": "demo_overview.svg"
+    },
+    {
+      "source_slide": 1,
+      "svg": "demo_test.svg"
+    },
+    {
+      "source_slide": 1
+    },
+    {
+      "source_slide": 2
+    },
+    {
+      "source_slide": 3
+    }
+  ]
+}

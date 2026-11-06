@@ -1,0 +1,163 @@
+<svg xmlns="http://www.w3.org/2000/svg" version="1.1" width="1280" height="720" viewBox="0 0 1280 720" font-family="Arial, &quot;Microsoft YaHei&quot;, sans-serif"><rect x="0" y="0" width="1280" height="720" fill="#FAFAF8" />
+<g id="shape-32" data-pptx-object="group" data-pptx-frame="80.4 48.33 1117.6 646.05" data-pptx-source-ref="slide:32">
+<g id="shape-2" data-pptx-object="shape" data-pptx-frame="80.4 48.33 469.6 61.6" data-pptx-prst="rect" data-pptx-source-ref="slide:2" data-pptx-semantic-object="shape">
+<path d="M 80.4 48.33 L 550 48.33 L 550 109.93 L 80.4 109.93 Z" fill="none" stroke="none" data-pptx-part="geometry" />
+
+
+<text x="80.4" y="87" text-anchor="start" xml:space="preserve" font-size="40" fill="#162B3B" font-weight="bold" data-pptx-text-baseline="metrics-v1">从导入说明书到查到答案</text>
+</g>
+<g id="shape-3" data-pptx-object="shape" data-pptx-frame="81.04 114.33 612.48 36.96" data-pptx-prst="rect" data-pptx-source-ref="slide:3" data-pptx-semantic-object="shape">
+<path d="M 81.04 114.33 L 693.52 114.33 L 693.52 151.29 L 81.04 151.29 Z" fill="none" stroke="none" data-pptx-part="geometry" />
+
+
+<text x="81.04" y="137" text-anchor="start" xml:space="preserve" font-size="24" fill="#4B6C7A" data-pptx-text-baseline="metrics-v1">已实现说明书入库、按产品和版本问答，以及来源展示</text>
+</g>
+<g id="shape-4" data-pptx-object="shape" data-pptx-frame="82 162 1116 1" data-pptx-prst="rect" data-pptx-source-ref="slide:4" data-pptx-semantic-object="shape">
+<path d="M 82 162 L 1198 162 L 1198 163 L 82 163 Z" fill="#D8E0E2" stroke="none" data-pptx-part="geometry" />
+
+</g>
+<g id="shape-5" data-pptx-object="shape" data-pptx-frame="81.04 241.33 103.68 36.96" data-pptx-prst="rect" data-pptx-source-ref="slide:5" data-pptx-semantic-object="shape">
+<path d="M 81.04 241.33 L 184.72 241.33 L 184.72 278.29 L 81.04 278.29 Z" fill="none" stroke="none" data-pptx-part="geometry" />
+
+
+<text x="81.04" y="264" text-anchor="start" xml:space="preserve" font-size="24" fill="#2F6675" font-weight="bold" data-pptx-text-baseline="metrics-v1">知识入库</text>
+</g>
+<g id="shape-6" data-pptx-object="shape" data-pptx-frame="236 218 194 72" data-pptx-prst="rect" data-pptx-source-ref="slide:6" data-pptx-semantic-object="shape">
+<path d="M 236 218 L 430 218 L 430 290 L 236 290 Z" fill="#EEF2F4" stroke="none" data-pptx-part="geometry" />
+
+</g>
+<g id="shape-7" data-pptx-object="shape" data-pptx-frame="253 240 134.85 38.6" data-pptx-prst="rect" data-pptx-source-ref="slide:7" data-pptx-semantic-object="shape">
+<path d="M 253 240 L 387.85 240 L 387.85 278.6 L 253 278.6 Z" fill="none" stroke="none" data-pptx-part="geometry" />
+
+
+<text x="253" y="264" text-anchor="start" xml:space="preserve" font-size="25.07" fill="#162B3B" data-pptx-text-baseline="metrics-v1">导入说明书</text>
+</g>
+<g id="shape-8" data-pptx-object="shape" data-pptx-frame="436.04 240 15.91 36.96" data-pptx-prst="rect" data-pptx-source-ref="slide:8" data-pptx-semantic-object="shape">
+<path d="M 436.04 240 L 451.95 240 L 451.95 276.96 L 436.04 276.96 Z" fill="none" stroke="none" data-pptx-part="geometry" />
+
+
+<text x="436.04" y="264" text-anchor="start" xml:space="preserve" font-size="24" fill="#2F6675" data-pptx-text-baseline="metrics-v1">→</text>
+</g>
+<g id="shape-9" data-pptx-object="shape" data-pptx-frame="474 218 194 72" data-pptx-prst="rect" data-pptx-source-ref="slide:9" data-pptx-semantic-object="shape">
+<path d="M 474 218 L 668 218 L 668 290 L 474 290 Z" fill="#EEF2F4" stroke="none" data-pptx-part="geometry" />
+
+</g>
+<g id="shape-10" data-pptx-object="shape" data-pptx-frame="491 240 134.85 38.6" data-pptx-prst="rect" data-pptx-source-ref="slide:10" data-pptx-semantic-object="shape">
+<path d="M 491 240 L 625.85 240 L 625.85 278.6 L 491 278.6 Z" fill="none" stroke="none" data-pptx-part="geometry" />
+
+
+<text x="491" y="264" text-anchor="start" xml:space="preserve" font-size="25.07" fill="#162B3B" data-pptx-text-baseline="metrics-v1">清洗和切片</text>
+</g>
+<g id="shape-11" data-pptx-object="shape" data-pptx-frame="674.04 240 15.91 36.96" data-pptx-prst="rect" data-pptx-source-ref="slide:11" data-pptx-semantic-object="shape">
+<path d="M 674.04 240 L 689.95 240 L 689.95 276.96 L 674.04 276.96 Z" fill="none" stroke="none" data-pptx-part="geometry" />
+
+
+<text x="674.04" y="264" text-anchor="start" xml:space="preserve" font-size="24" fill="#2F6675" data-pptx-text-baseline="metrics-v1">→</text>
+</g>
+<g id="shape-12" data-pptx-object="shape" data-pptx-frame="712 218 194 72" data-pptx-prst="rect" data-pptx-source-ref="slide:12" data-pptx-semantic-object="shape">
+<path d="M 712 218 L 906 218 L 906 290 L 712 290 Z" fill="#EEF2F4" stroke="none" data-pptx-part="geometry" />
+
+</g>
+<g id="shape-13" data-pptx-object="shape" data-pptx-frame="729 240 81.71 38.6" data-pptx-prst="rect" data-pptx-source-ref="slide:13" data-pptx-semantic-object="shape">
+<path d="M 729 240 L 810.71 240 L 810.71 278.6 L 729 278.6 Z" fill="none" stroke="none" data-pptx-part="geometry" />
+
+
+<text x="729" y="264" text-anchor="start" xml:space="preserve" font-size="25.07" fill="#162B3B" data-pptx-text-baseline="metrics-v1">向量化</text>
+</g>
+<g id="shape-14" data-pptx-object="shape" data-pptx-frame="912.04 240 15.91 36.96" data-pptx-prst="rect" data-pptx-source-ref="slide:14" data-pptx-semantic-object="shape">
+<path d="M 912.04 240 L 927.95 240 L 927.95 276.96 L 912.04 276.96 Z" fill="none" stroke="none" data-pptx-part="geometry" />
+
+
+<text x="912.04" y="264" text-anchor="start" xml:space="preserve" font-size="24" fill="#2F6675" data-pptx-text-baseline="metrics-v1">→</text>
+</g>
+<g id="shape-15" data-pptx-object="shape" data-pptx-frame="950 218 194 72" data-pptx-prst="rect" data-pptx-source-ref="slide:15" data-pptx-semantic-object="shape">
+<path d="M 950 218 L 1144 218 L 1144 290 L 950 290 Z" fill="#EEF2F4" stroke="none" data-pptx-part="geometry" />
+
+</g>
+<g id="shape-16" data-pptx-object="shape" data-pptx-frame="967 240 108.28 38.6" data-pptx-prst="rect" data-pptx-source-ref="slide:16" data-pptx-semantic-object="shape">
+<path d="M 967 240 L 1075.28 240 L 1075.28 278.6 L 967 278.6 Z" fill="none" stroke="none" data-pptx-part="geometry" />
+
+
+<text x="967" y="264" text-anchor="start" xml:space="preserve" font-size="25.07" fill="#162B3B" data-pptx-text-baseline="metrics-v1">建立索引</text>
+</g>
+<g id="shape-17" data-pptx-object="shape" data-pptx-frame="81.04 393.33 103.68 36.96" data-pptx-prst="rect" data-pptx-source-ref="slide:17" data-pptx-semantic-object="shape">
+<path d="M 81.04 393.33 L 184.72 393.33 L 184.72 430.29 L 81.04 430.29 Z" fill="none" stroke="none" data-pptx-part="geometry" />
+
+
+<text x="81.04" y="416" text-anchor="start" xml:space="preserve" font-size="24" fill="#2F6675" font-weight="bold" data-pptx-text-baseline="metrics-v1">用户问答</text>
+</g>
+<g id="shape-18" data-pptx-object="shape" data-pptx-frame="236 370 194 72" data-pptx-prst="rect" data-pptx-source-ref="slide:18" data-pptx-semantic-object="shape">
+<path d="M 236 370 L 430 370 L 430 442 L 236 442 Z" fill="#EEF2F4" stroke="none" data-pptx-part="geometry" />
+
+</g>
+<g id="shape-19" data-pptx-object="shape" data-pptx-frame="253 392 161.42 38.6" data-pptx-prst="rect" data-pptx-source-ref="slide:19" data-pptx-semantic-object="shape">
+<path d="M 253 392 L 414.42 392 L 414.42 430.6 L 253 430.6 Z" fill="none" stroke="none" data-pptx-part="geometry" />
+
+
+<text x="253" y="416" text-anchor="start" xml:space="preserve" font-size="25.07" fill="#162B3B" data-pptx-text-baseline="metrics-v1">选产品与版本</text>
+</g>
+<g id="shape-20" data-pptx-object="shape" data-pptx-frame="436.04 392 15.91 36.96" data-pptx-prst="rect" data-pptx-source-ref="slide:20" data-pptx-semantic-object="shape">
+<path d="M 436.04 392 L 451.95 392 L 451.95 428.96 L 436.04 428.96 Z" fill="none" stroke="none" data-pptx-part="geometry" />
+
+
+<text x="436.04" y="416" text-anchor="start" xml:space="preserve" font-size="24" fill="#2F6675" data-pptx-text-baseline="metrics-v1">→</text>
+</g>
+<g id="shape-21" data-pptx-object="shape" data-pptx-frame="474 370 194 72" data-pptx-prst="rect" data-pptx-source-ref="slide:21" data-pptx-semantic-object="shape">
+<path d="M 474 370 L 668 370 L 668 442 L 474 442 Z" fill="#EEF2F4" stroke="none" data-pptx-part="geometry" />
+
+</g>
+<g id="shape-22" data-pptx-object="shape" data-pptx-frame="491 392 161.42 38.6" data-pptx-prst="rect" data-pptx-source-ref="slide:22" data-pptx-semantic-object="shape">
+<path d="M 491 392 L 652.42 392 L 652.42 430.6 L 491 430.6 Z" fill="none" stroke="none" data-pptx-part="geometry" />
+
+
+<text x="491" y="416" text-anchor="start" xml:space="preserve" font-size="25.07" fill="#162B3B" data-pptx-text-baseline="metrics-v1">检索相关片段</text>
+</g>
+<g id="shape-23" data-pptx-object="shape" data-pptx-frame="674.04 392 15.91 36.96" data-pptx-prst="rect" data-pptx-source-ref="slide:23" data-pptx-semantic-object="shape">
+<path d="M 674.04 392 L 689.95 392 L 689.95 428.96 L 674.04 428.96 Z" fill="none" stroke="none" data-pptx-part="geometry" />
+
+
+<text x="674.04" y="416" text-anchor="start" xml:space="preserve" font-size="24" fill="#2F6675" data-pptx-text-baseline="metrics-v1">→</text>
+</g>
+<g id="shape-24" data-pptx-object="shape" data-pptx-frame="712 370 194 72" data-pptx-prst="rect" data-pptx-source-ref="slide:24" data-pptx-semantic-object="shape">
+<path d="M 712 370 L 906 370 L 906 442 L 712 442 Z" fill="#EEF2F4" stroke="none" data-pptx-part="geometry" />
+
+</g>
+<g id="shape-25" data-pptx-object="shape" data-pptx-frame="729 392 108.28 38.6" data-pptx-prst="rect" data-pptx-source-ref="slide:25" data-pptx-semantic-object="shape">
+<path d="M 729 392 L 837.28 392 L 837.28 430.6 L 729 430.6 Z" fill="none" stroke="none" data-pptx-part="geometry" />
+
+
+<text x="729" y="416" text-anchor="start" xml:space="preserve" font-size="25.07" fill="#162B3B" data-pptx-text-baseline="metrics-v1">组织答案</text>
+</g>
+<g id="shape-26" data-pptx-object="shape" data-pptx-frame="912.04 392 15.91 36.96" data-pptx-prst="rect" data-pptx-source-ref="slide:26" data-pptx-semantic-object="shape">
+<path d="M 912.04 392 L 927.95 392 L 927.95 428.96 L 912.04 428.96 Z" fill="none" stroke="none" data-pptx-part="geometry" />
+
+
+<text x="912.04" y="416" text-anchor="start" xml:space="preserve" font-size="24" fill="#2F6675" data-pptx-text-baseline="metrics-v1">→</text>
+</g>
+<g id="shape-27" data-pptx-object="shape" data-pptx-frame="950 370 194 72" data-pptx-prst="rect" data-pptx-source-ref="slide:27" data-pptx-semantic-object="shape">
+<path d="M 950 370 L 1144 370 L 1144 442 L 950 442 Z" fill="#EEF2F4" stroke="none" data-pptx-part="geometry" />
+
+</g>
+<g id="shape-28" data-pptx-object="shape" data-pptx-frame="967 392 187.99 38.6" data-pptx-prst="rect" data-pptx-source-ref="slide:28" data-pptx-semantic-object="shape">
+<path d="M 967 392 L 1154.99 392 L 1154.99 430.6 L 967 430.6 Z" fill="none" stroke="none" data-pptx-part="geometry" />
+
+
+<text x="967" y="416" text-anchor="start" xml:space="preserve" font-size="25.07" fill="#162B3B" data-pptx-text-baseline="metrics-v1">返回答案与来源</text>
+</g>
+<g id="shape-29" data-pptx-object="shape" data-pptx-frame="81.04 545.33 635.11 36.96" data-pptx-prst="rect" data-pptx-source-ref="slide:29" data-pptx-semantic-object="shape">
+<path d="M 81.04 545.33 L 716.15 545.33 L 716.15 582.29 L 81.04 582.29 Z" fill="none" stroke="none" data-pptx-part="geometry" />
+
+
+<text x="81.04" y="568" text-anchor="start" xml:space="preserve" font-size="24" fill="#4B6C7A" data-pptx-text-baseline="metrics-v1">网页界面 · FastAPI · SQLite · 可选 FAISS 与模型服务</text>
+</g>
+<g id="shape-30" data-pptx-object="shape" data-pptx-frame="82 652 1116 1" data-pptx-prst="rect" data-pptx-source-ref="slide:30" data-pptx-semantic-object="shape">
+<path d="M 82 652 L 1198 652 L 1198 653 L 82 653 Z" fill="#D8E0E2" stroke="none" data-pptx-part="geometry" />
+
+</g>
+<g id="shape-31" data-pptx-object="shape" data-pptx-frame="1156.28 666.67 22.43 27.72" data-pptx-prst="rect" data-pptx-source-ref="slide:31" data-pptx-semantic-object="shape">
+<path d="M 1156.28 666.67 L 1178.71 666.67 L 1178.71 694.39 L 1156.28 694.39 Z" fill="none" stroke="none" data-pptx-part="geometry" />
+
+
+<text x="1156.28" y="684" text-anchor="start" xml:space="preserve" font-size="18" fill="#4B6C7A" data-pptx-text-baseline="metrics-v1">03</text>
+</g>
+</g></svg>

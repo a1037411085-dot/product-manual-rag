@@ -1,0 +1,153 @@
+<svg xmlns="http://www.w3.org/2000/svg" version="1.1" width="1280.12598" height="720" viewBox="0 0 1280.12598 720" font-family="&quot;微软雅黑&quot;, sans-serif"><rect x="0" y="0" width="1280.13" height="720" fill="#FFFFFF" />
+<g id="shape-2" data-pptx-object="shape" data-pptx-frame="0 0 1280.13 20.79" data-pptx-prst="rect" data-pptx-source-ref="slide:2" data-pptx-semantic-object="shape">
+<path d="M 0 0 L 1280.13 0 L 1280.13 20.79 L 0 20.79 Z" fill="#255C91" stroke="none" stroke-width="1" data-pptx-part="geometry" />
+
+
+</g>
+<g id="shape-3" data-pptx-object="shape" data-pptx-frame="56.69 43.46 1133.86 30.24" data-pptx-prst="rect" data-pptx-source-ref="slide:3" data-pptx-semantic-object="shape">
+<path d="M 56.69 43.46 L 1190.55 43.46 L 1190.55 73.7 L 56.69 73.7 Z" fill="none" data-pptx-part="geometry" />
+
+
+<text x="60.47" y="60.79779528" text-anchor="start" xml:space="preserve" font-size="16.67" fill="#D67A3D" font-weight="bold" data-pptx-text-baseline="metrics-v1">行动计划</text>
+</g>
+<g id="shape-4" data-pptx-object="shape" data-pptx-frame="56.69 75.59 1171.65 56.69" data-pptx-prst="rect" data-pptx-source-ref="slide:4" data-pptx-semantic-object="shape">
+<path d="M 56.69 75.59 L 1228.35 75.59 L 1228.35 132.28 L 56.69 132.28 Z" fill="none" data-pptx-part="geometry" />
+
+
+<text x="60.47" y="112.92388451" text-anchor="start" xml:space="preserve" font-size="36" fill="#255C91" font-weight="bold" data-pptx-text-baseline="metrics-v1">三件事，逐条对应上面的瓶颈</text>
+</g>
+<g id="shape-5" data-pptx-object="shape" data-pptx-frame="56.69 139.84 374.17 540.47" data-pptx-prst="roundRect" data-pptx-av-adj="val 8000" data-pptx-source-ref="slide:5" data-pptx-semantic-object="shape">
+<path d="M 56.69 169.78 A 29.93 29.93 0 0 1 86.63 139.84 L 400.93 139.84 A 29.93 29.93 0 0 1 430.87 169.78 L 430.87 650.38 A 29.93 29.93 0 0 1 400.93 680.31 L 86.63 680.31 A 29.93 29.93 0 0 1 56.69 650.38 Z" fill="#FFFFFF" stroke-width="1.6" stroke="#255C91" data-pptx-part="geometry" />
+
+
+</g>
+<g id="shape-6" data-pptx-object="shape" data-pptx-frame="56.69 139.84 56.69 56.69" data-pptx-prst="rect" data-pptx-source-ref="slide:6" data-pptx-semantic-object="shape">
+<path d="M 56.69 139.84 L 113.39 139.84 L 113.39 196.54 L 56.69 196.54 Z" fill="#255C91" stroke="none" stroke-width="1" data-pptx-part="geometry" />
+
+
+</g>
+<g id="shape-7" data-pptx-object="shape" data-pptx-frame="56.69 151.18 56.69 45.35" data-pptx-prst="rect" data-pptx-source-ref="slide:7" data-pptx-semantic-object="shape">
+<path d="M 56.69 151.18 L 113.39 151.18 L 113.39 196.54 L 56.69 196.54 Z" fill="none" data-pptx-part="geometry" />
+
+
+<text x="85.04" y="172.5144357" text-anchor="middle" xml:space="preserve" font-size="20" fill="#FFFFFF" font-weight="bold" data-pptx-text-baseline="metrics-v1">01</text>
+</g>
+<g id="shape-8" data-pptx-object="shape" data-pptx-frame="124.72 149.29 287.24 37.8" data-pptx-prst="rect" data-pptx-source-ref="slide:8" data-pptx-semantic-object="shape">
+<path d="M 124.72 149.29 L 411.97 149.29 L 411.97 187.09 L 124.72 187.09 Z" fill="none" data-pptx-part="geometry" />
+
+
+<text x="128.5" y="174.62467192" text-anchor="start" xml:space="preserve" font-size="24" fill="#255C91" font-weight="bold" data-pptx-text-baseline="metrics-v1">改善语料库</text>
+</g>
+<g id="shape-9" data-pptx-object="shape" data-pptx-frame="77.48 207.87 336.38 287.24" data-pptx-prst="rect" data-pptx-source-ref="slide:9" data-pptx-semantic-object="shape">
+<path d="M 77.48 207.87 L 413.86 207.87 L 413.86 495.12 L 77.48 495.12 Z" fill="none" data-pptx-part="geometry" />
+
+
+<text x="81.26" y="225.20734908" text-anchor="start" xml:space="preserve" font-size="15.33" fill="#202C3A" data-pptx-text-baseline="metrics-v1" data-pptx-text-model="paragraphs" data-paragraph-line-height="22.995"><tspan><tspan>① 表格拍平时并入行主语与型号</tspan></tspan><tspan data-paragraph-space-before="0.925"><tspan>    最大洗涤容量:6 kg</tspan></tspan><tspan data-paragraph-space-before="0.925"><tspan>    → 智能清洗程序的最大洗涤容量为 6 kg</tspan></tspan><tspan data-paragraph-space-before="0.925"><tspan>② 切片从「一行一条」改为段落级 200~300 字</tspan></tspan><tspan data-paragraph-space-before="0.925"><tspan>③ 扩到 10 份说明书，多型号按 version 拆分</tspan></tspan><tspan data-paragraph-space-before="0.925"><tspan>④ 入库前统一简繁，保留 `#` 标题层级</tspan></tspan></text>
+</g>
+<g id="shape-10" data-pptx-object="shape" data-pptx-frame="73.7 514.02 340.16 1.89" data-pptx-prst="rect" data-pptx-source-ref="slide:10" data-pptx-semantic-object="shape">
+<path d="M 73.7 514.02 L 413.86 514.02 L 413.86 515.91 L 73.7 515.91 Z" fill="#255C91" stroke="none" stroke-width="1" data-pptx-part="geometry" />
+
+
+</g>
+<g id="shape-11" data-pptx-object="shape" data-pptx-frame="77.48 525.35 336.38 22.68" data-pptx-prst="rect" data-pptx-source-ref="slide:11" data-pptx-semantic-object="shape">
+<path d="M 77.48 525.35 L 413.86 525.35 L 413.86 548.03 L 77.48 548.03 Z" fill="none" data-pptx-part="geometry" />
+
+
+<text x="81.26" y="540.02099738" text-anchor="start" xml:space="preserve" font-size="14.67" fill="#255C91" font-weight="bold" data-pptx-text-baseline="metrics-v1">预期收益</text>
+</g>
+<g id="shape-12" data-pptx-object="shape" data-pptx-frame="77.48 551.81 336.38 113.39" data-pptx-prst="rect" data-pptx-source-ref="slide:12" data-pptx-semantic-object="shape">
+<path d="M 77.48 551.81 L 413.86 551.81 L 413.86 665.2 L 77.48 665.2 Z" fill="none" data-pptx-part="geometry" />
+
+
+<text x="81.26" y="569.14435696" text-anchor="start" xml:space="preserve" font-size="15.33" fill="#202C3A" data-pptx-text-baseline="metrics-v1" data-pptx-text-model="paragraphs" data-paragraph-line-height="22.995"><tspan><tspan>消除 5 条失败案例</tspan></tspan><tspan data-paragraph-space-before="0.925"><tspan>空调 Hit@1 56.6% → 80%+</tspan></tspan><tspan data-paragraph-space-before="0.925"><tspan>语义检索才具备可用性</tspan></tspan></text>
+</g>
+<g id="shape-13" data-pptx-object="shape" data-pptx-frame="449.76 139.84 374.17 540.47" data-pptx-prst="roundRect" data-pptx-av-adj="val 8000" data-pptx-source-ref="slide:13" data-pptx-semantic-object="shape">
+<path d="M 449.76 169.78 A 29.93 29.93 0 0 1 479.7 139.84 L 794 139.84 A 29.93 29.93 0 0 1 823.94 169.78 L 823.94 650.38 A 29.93 29.93 0 0 1 794 680.31 L 479.7 680.31 A 29.93 29.93 0 0 1 449.76 650.38 Z" fill="#FFFFFF" stroke-width="1.6" stroke="#D67A3D" data-pptx-part="geometry" />
+
+
+</g>
+<g id="shape-14" data-pptx-object="shape" data-pptx-frame="449.76 139.84 56.69 56.69" data-pptx-prst="rect" data-pptx-source-ref="slide:14" data-pptx-semantic-object="shape">
+<path d="M 449.76 139.84 L 506.46 139.84 L 506.46 196.54 L 449.76 196.54 Z" fill="#D67A3D" stroke="none" stroke-width="1" data-pptx-part="geometry" />
+
+
+</g>
+<g id="shape-15" data-pptx-object="shape" data-pptx-frame="449.76 151.18 56.69 45.35" data-pptx-prst="rect" data-pptx-source-ref="slide:15" data-pptx-semantic-object="shape">
+<path d="M 449.76 151.18 L 506.46 151.18 L 506.46 196.54 L 449.76 196.54 Z" fill="none" data-pptx-part="geometry" />
+
+
+<text x="478.11" y="172.5144357" text-anchor="middle" xml:space="preserve" font-size="20" fill="#FFFFFF" font-weight="bold" data-pptx-text-baseline="metrics-v1">02</text>
+</g>
+<g id="shape-16" data-pptx-object="shape" data-pptx-frame="517.8 149.29 287.24 37.8" data-pptx-prst="rect" data-pptx-source-ref="slide:16" data-pptx-semantic-object="shape">
+<path d="M 517.8 149.29 L 805.04 149.29 L 805.04 187.09 L 517.8 187.09 Z" fill="none" data-pptx-part="geometry" />
+
+
+<text x="521.57" y="174.62467192" text-anchor="start" xml:space="preserve" font-size="24" fill="#D67A3D" font-weight="bold" data-pptx-text-baseline="metrics-v1">扩充测评集</text>
+</g>
+<g id="shape-17" data-pptx-object="shape" data-pptx-frame="470.55 207.87 336.38 287.24" data-pptx-prst="rect" data-pptx-source-ref="slide:17" data-pptx-semantic-object="shape">
+<path d="M 470.55 207.87 L 806.93 207.87 L 806.93 495.12 L 470.55 495.12 Z" fill="none" data-pptx-part="geometry" />
+
+
+<text x="474.33" y="225.20734908" text-anchor="start" xml:space="preserve" font-size="15.33" fill="#202C3A" data-pptx-text-baseline="metrics-v1" data-pptx-text-model="paragraphs" data-paragraph-line-height="22.995"><tspan><tspan>① 158 → 300 题（CI 从 ±6.4pp 收窄到 ±4.5pp）</tspan></tspan><tspan data-paragraph-space-before="0.925"><tspan>② 合并 10 条同义改写题（草稿已出并校验）</tspan></tspan><tspan data-paragraph-space-before="0.925"><tspan>③ 每产品题量均衡到 50±5 题</tspan></tspan><tspan data-paragraph-space-before="0.925"><tspan>④ 新增 20 条多轮追问与 10 条跨型号辨析</tspan></tspan><tspan data-paragraph-space-before="0.925"><tspan>⑤ 生成后加通顺性过滤，剔除畸形问句</tspan></tspan><tspan data-paragraph-space-before="0.925"><tspan>⑥ A/B 对照补配对检验（McNemar），报 p 值</tspan></tspan></text>
+</g>
+<g id="shape-18" data-pptx-object="shape" data-pptx-frame="466.77 514.02 340.16 1.89" data-pptx-prst="rect" data-pptx-source-ref="slide:18" data-pptx-semantic-object="shape">
+<path d="M 466.77 514.02 L 806.93 514.02 L 806.93 515.91 L 466.77 515.91 Z" fill="#D67A3D" stroke="none" stroke-width="1" data-pptx-part="geometry" />
+
+
+</g>
+<g id="shape-19" data-pptx-object="shape" data-pptx-frame="470.55 525.35 336.38 22.68" data-pptx-prst="rect" data-pptx-source-ref="slide:19" data-pptx-semantic-object="shape">
+<path d="M 470.55 525.35 L 806.93 525.35 L 806.93 548.03 L 470.55 548.03 Z" fill="none" data-pptx-part="geometry" />
+
+
+<text x="474.33" y="540.02099738" text-anchor="start" xml:space="preserve" font-size="14.67" fill="#D67A3D" font-weight="bold" data-pptx-text-baseline="metrics-v1">预期收益</text>
+</g>
+<g id="shape-20" data-pptx-object="shape" data-pptx-frame="470.55 551.81 336.38 113.39" data-pptx-prst="rect" data-pptx-source-ref="slide:20" data-pptx-semantic-object="shape">
+<path d="M 470.55 551.81 L 806.93 551.81 L 806.93 665.2 L 470.55 665.2 Z" fill="none" data-pptx-part="geometry" />
+
+
+<text x="474.33" y="569.14435696" text-anchor="start" xml:space="preserve" font-size="15.33" fill="#202C3A" data-pptx-text-baseline="metrics-v1" data-pptx-text-model="paragraphs" data-paragraph-line-height="22.995"><tspan><tspan>结论从「方向」变「可判定」</tspan></tspan><tspan data-paragraph-space-before="0.925"><tspan>补齐鲁棒性一格</tspan></tspan><tspan data-paragraph-space-before="0.925"><tspan>多轮与辨析场景可测</tspan></tspan></text>
+</g>
+<g id="shape-21" data-pptx-object="shape" data-pptx-frame="842.83 139.84 374.17 540.47" data-pptx-prst="roundRect" data-pptx-av-adj="val 8000" data-pptx-source-ref="slide:21" data-pptx-semantic-object="shape">
+<path d="M 842.83 169.78 A 29.93 29.93 0 0 1 872.77 139.84 L 1187.07 139.84 A 29.93 29.93 0 0 1 1217.01 169.78 L 1217.01 650.38 A 29.93 29.93 0 0 1 1187.07 680.31 L 872.77 680.31 A 29.93 29.93 0 0 1 842.83 650.38 Z" fill="#FFFFFF" stroke-width="1.6" stroke="#3A8A60" data-pptx-part="geometry" />
+
+
+</g>
+<g id="shape-22" data-pptx-object="shape" data-pptx-frame="842.83 139.84 56.69 56.69" data-pptx-prst="rect" data-pptx-source-ref="slide:22" data-pptx-semantic-object="shape">
+<path d="M 842.83 139.84 L 899.53 139.84 L 899.53 196.54 L 842.83 196.54 Z" fill="#3A8A60" stroke="none" stroke-width="1" data-pptx-part="geometry" />
+
+
+</g>
+<g id="shape-23" data-pptx-object="shape" data-pptx-frame="842.83 151.18 56.69 45.35" data-pptx-prst="rect" data-pptx-source-ref="slide:23" data-pptx-semantic-object="shape">
+<path d="M 842.83 151.18 L 899.53 151.18 L 899.53 196.54 L 842.83 196.54 Z" fill="none" data-pptx-part="geometry" />
+
+
+<text x="871.18" y="172.5144357" text-anchor="middle" xml:space="preserve" font-size="20" fill="#FFFFFF" font-weight="bold" data-pptx-text-baseline="metrics-v1">03</text>
+</g>
+<g id="shape-24" data-pptx-object="shape" data-pptx-frame="910.87 149.29 287.24 37.8" data-pptx-prst="rect" data-pptx-source-ref="slide:24" data-pptx-semantic-object="shape">
+<path d="M 910.87 149.29 L 1198.11 149.29 L 1198.11 187.09 L 910.87 187.09 Z" fill="none" data-pptx-part="geometry" />
+
+
+<text x="914.65" y="174.62467192" text-anchor="start" xml:space="preserve" font-size="24" fill="#3A8A60" font-weight="bold" data-pptx-text-baseline="metrics-v1">失败案例分析</text>
+</g>
+<g id="shape-25" data-pptx-object="shape" data-pptx-frame="863.62 207.87 336.38 287.24" data-pptx-prst="rect" data-pptx-source-ref="slide:25" data-pptx-semantic-object="shape">
+<path d="M 863.62 207.87 L 1200 207.87 L 1200 495.12 L 863.62 495.12 Z" fill="none" data-pptx-part="geometry" />
+
+
+<text x="867.4" y="225.20734908" text-anchor="start" xml:space="preserve" font-size="15.33" fill="#202C3A" data-pptx-text-baseline="metrics-v1" data-pptx-text-model="paragraphs" data-paragraph-line-height="22.995"><tspan><tspan>① 建立统一模板：现象 / 证据 / 根因定位 /</tspan></tspan><tspan data-paragraph-space-before="0.925"><tspan>    影响 / 修复 / 复测结果</tspan></tspan><tspan data-paragraph-space-before="0.925"><tspan>② 样本从 12 条扩到 30 条，覆盖多轮与拒答</tspan></tspan><tspan data-paragraph-space-before="0.925"><tspan>③ 按「改哪里」分类，不做「错在哪」分类</tspan></tspan><tspan data-paragraph-space-before="0.925"><tspan>④ 每条必须定位到代码行号 / 语料片段 /</tspan></tspan><tspan data-paragraph-space-before="0.925"><tspan>    知识库记录，禁止停在「模型能力不足」</tspan></tspan><tspan data-paragraph-space-before="0.925"><tspan>⑤ 已修项必须用同一批样本复跑验证</tspan></tspan></text>
+</g>
+<g id="shape-26" data-pptx-object="shape" data-pptx-frame="859.84 514.02 340.16 1.89" data-pptx-prst="rect" data-pptx-source-ref="slide:26" data-pptx-semantic-object="shape">
+<path d="M 859.84 514.02 L 1200 514.02 L 1200 515.91 L 859.84 515.91 Z" fill="#3A8A60" stroke="none" stroke-width="1" data-pptx-part="geometry" />
+
+
+</g>
+<g id="shape-27" data-pptx-object="shape" data-pptx-frame="863.62 525.35 336.38 22.68" data-pptx-prst="rect" data-pptx-source-ref="slide:27" data-pptx-semantic-object="shape">
+<path d="M 863.62 525.35 L 1200 525.35 L 1200 548.03 L 863.62 548.03 Z" fill="none" data-pptx-part="geometry" />
+
+
+<text x="867.4" y="540.02099738" text-anchor="start" xml:space="preserve" font-size="14.67" fill="#3A8A60" font-weight="bold" data-pptx-text-baseline="metrics-v1">预期收益</text>
+</g>
+<g id="shape-28" data-pptx-object="shape" data-pptx-frame="863.62 551.81 336.38 113.39" data-pptx-prst="rect" data-pptx-source-ref="slide:28" data-pptx-semantic-object="shape">
+<path d="M 863.62 551.81 L 1200 551.81 L 1200 665.2 L 863.62 665.2 Z" fill="none" data-pptx-part="geometry" />
+
+
+<text x="867.4" y="569.14435696" text-anchor="start" xml:space="preserve" font-size="15.33" fill="#202C3A" data-pptx-text-baseline="metrics-v1" data-pptx-text-model="paragraphs" data-paragraph-line-height="22.995"><tspan><tspan>形成可复用的失败模式清单</tspan></tspan><tspan data-paragraph-space-before="0.925"><tspan>支撑「为什么不用语义检索」</tspan></tspan><tspan data-paragraph-space-before="0.925"><tspan>答辩时可直接举证据</tspan></tspan></text>
+</g></svg>

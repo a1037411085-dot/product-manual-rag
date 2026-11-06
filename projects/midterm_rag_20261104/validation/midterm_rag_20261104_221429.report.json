@@ -1,0 +1,222 @@
+{
+  "schema": "ppt-master.pptx-postflight-report.v1",
+  "status": "passed",
+  "output": {
+    "path": "C:\\Users\\T9\\Desktop\\珠海学院人工智能\\RAG\\projects\\midterm_rag_20261104\\exports\\midterm_rag_20261104_221429.pptx",
+    "bytes": 54373
+  },
+  "source": {
+    "svg_slide_count": 11,
+    "layout_definition_count": 0,
+    "fingerprint": {
+      "algorithm": "sha256",
+      "digest": "867a10393bb68c4f18cf8acde958f714a3a0d90f69aa3f6765610c95b26897ae",
+      "file_count": 11,
+      "files": [
+        {
+          "file": "01.svg",
+          "sha256": "c2c5dd0aaf27167269d58f292901036a4c6e82e13abcc0e2d28180d5d1959d6e"
+        },
+        {
+          "file": "02.svg",
+          "sha256": "e4e082d443c2bf259601d17b182af2fe6ed0b38611aa30303862a64742bae966"
+        },
+        {
+          "file": "03.svg",
+          "sha256": "40ce61e053b51d1f406e48fcb5de52284bd9ffb16469f657a8c42caf19d8a1b9"
+        },
+        {
+          "file": "04.svg",
+          "sha256": "cb3a3c586c502d866f1a04ced729c007d958af5ddf1e21e016288568ad0ac87f"
+        },
+        {
+          "file": "05.svg",
+          "sha256": "8369518c8337fed3c0ee898b28b1b1e96512d840008003996b8b31cf9b111823"
+        },
+        {
+          "file": "06.svg",
+          "sha256": "417035b7dd0f8b45e3193928b981957e65ed162c7edb32ee3e0214575bb985b4"
+        },
+        {
+          "file": "07.svg",
+          "sha256": "f078da4cdc93fe5995d8e187ae1449251e8513d55ad012c93dd658d186353444"
+        },
+        {
+          "file": "08.svg",
+          "sha256": "3baa09d85701541c9b62dd1c0464d0d9f3e9da0cf7586ceecd53d52f2ca7d544"
+        },
+        {
+          "file": "09.svg",
+          "sha256": "27486ff45b3237fb9e6ca8fa088b0c243f4292bd1d2c66e5fb03375765cdd102"
+        },
+        {
+          "file": "10.svg",
+          "sha256": "a52dd051c8ba6f7ee29efa587e52bf4568c1e7b14855020139e715aaec534bce"
+        },
+        {
+          "file": "11.svg",
+          "sha256": "cd81aa4c8fd02cc15ee491816243cc86ffef444a8202a54c50d8b6b895f443fb"
+        }
+      ]
+    },
+    "authoring_roundtrip": null
+  },
+  "package": {
+    "zip_integrity": "passed",
+    "corrupt_member": null,
+    "slides": 11,
+    "notes": 11,
+    "masters": 1,
+    "layouts": 1
+  },
+  "checks": {
+    "zip_integrity": "passed",
+    "slide_count": "passed",
+    "internal_relationships": "enforced-at-build",
+    "structured_package": "not-applicable",
+    "transitions": "enforced-at-build",
+    "animations": "enforced-at-build",
+    "project_svg_contract": "enforced-at-build",
+    "compatibility_normalization": "not-applicable",
+    "authoring_roundtrip": "not-applicable",
+    "quality_gate": "passed",
+    "quality_warnings": "passed",
+    "template_tokens": "passed",
+    "external_images": "passed",
+    "font_portability": "passed"
+  },
+  "quality": {
+    "status": "loaded",
+    "path": "projects\\midterm_rag_20261104\\validation\\svg_quality_report.json",
+    "schema": "ppt-master.svg-quality-report.v1",
+    "stage": "final",
+    "source_match": "passed",
+    "source_fingerprint": {
+      "algorithm": "sha256",
+      "digest": "867a10393bb68c4f18cf8acde958f714a3a0d90f69aa3f6765610c95b26897ae",
+      "file_count": 11,
+      "files": [
+        {
+          "file": "01.svg",
+          "sha256": "c2c5dd0aaf27167269d58f292901036a4c6e82e13abcc0e2d28180d5d1959d6e"
+        },
+        {
+          "file": "02.svg",
+          "sha256": "e4e082d443c2bf259601d17b182af2fe6ed0b38611aa30303862a64742bae966"
+        },
+        {
+          "file": "03.svg",
+          "sha256": "40ce61e053b51d1f406e48fcb5de52284bd9ffb16469f657a8c42caf19d8a1b9"
+        },
+        {
+          "file": "04.svg",
+          "sha256": "cb3a3c586c502d866f1a04ced729c007d958af5ddf1e21e016288568ad0ac87f"
+        },
+        {
+          "file": "05.svg",
+          "sha256": "8369518c8337fed3c0ee898b28b1b1e96512d840008003996b8b31cf9b111823"
+        },
+        {
+          "file": "06.svg",
+          "sha256": "417035b7dd0f8b45e3193928b981957e65ed162c7edb32ee3e0214575bb985b4"
+        },
+        {
+          "file": "07.svg",
+          "sha256": "f078da4cdc93fe5995d8e187ae1449251e8513d55ad012c93dd658d186353444"
+        },
+        {
+          "file": "08.svg",
+          "sha256": "3baa09d85701541c9b62dd1c0464d0d9f3e9da0cf7586ceecd53d52f2ca7d544"
+        },
+        {
+          "file": "09.svg",
+          "sha256": "27486ff45b3237fb9e6ca8fa088b0c243f4292bd1d2c66e5fb03375765cdd102"
+        },
+        {
+          "file": "10.svg",
+          "sha256": "a52dd051c8ba6f7ee29efa587e52bf4568c1e7b14855020139e715aaec534bce"
+        },
+        {
+          "file": "11.svg",
+          "sha256": "cd81aa4c8fd02cc15ee491816243cc86ffef444a8202a54c50d8b6b895f443fb"
+        }
+      ]
+    },
+    "summary": {
+      "total": 11,
+      "passed": 11,
+      "warnings": 0,
+      "errors": 0
+    },
+    "categories": {
+      "blocking": {
+        "count": 0,
+        "issues": []
+      },
+      "introduced": {
+        "count": 0,
+        "issues": []
+      },
+      "inherited": {
+        "count": 0,
+        "issues": []
+      },
+      "source-import": {
+        "count": 0,
+        "summary": {
+          "warning_count": 0,
+          "by_code": {}
+        }
+      }
+    }
+  },
+  "resources": {
+    "unresolved_template_tokens": [],
+    "fonts": {
+      "stacks": [
+        "Microsoft YaHei, Arial, sans-serif"
+      ],
+      "generic_only_stacks": [],
+      "unsafe_exported_faces": []
+    },
+    "images": {
+      "data_uri": 0,
+      "local": 0,
+      "external": 0,
+      "external_references": []
+    }
+  },
+  "export_policy": {
+    "project_svg_contract": "strict",
+    "dangerous_normalization_count": 0
+  },
+  "deck_motion": {
+    "transition": {
+      "effect": "fade",
+      "effect_options": {},
+      "duration": 0.4,
+      "auto_advance": null,
+      "sound": null
+    },
+    "animation": {
+      "effect": "none",
+      "effect_request": null,
+      "duration": 0.4,
+      "stagger": 0.5,
+      "trigger": "after-previous"
+    },
+    "cli_overrides": {
+      "transition": false,
+      "transition_duration": false,
+      "auto_advance": false,
+      "transition_sound": false,
+      "animation": false,
+      "animation_duration": false,
+      "animation_stagger": false,
+      "animation_trigger": false
+    },
+    "narration_timings": false
+  },
+  "backup_path": "C:\\Users\\T9\\Desktop\\珠海学院人工智能\\RAG\\projects\\midterm_rag_20261104\\backup\\20261104_221429\\svg_output",
+  "conversion_trace_path": null
+}

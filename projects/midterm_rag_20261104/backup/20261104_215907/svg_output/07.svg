@@ -1,0 +1,20 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1280" height="720" viewBox="0 0 1280 720" font-family="Microsoft YaHei, Arial, sans-serif" data-pptx-page-role="content">
+<rect x="0" y="0" width="1280" height="720" rx="0" fill="#08172B" data-pptx-role="background" id="background" />
+<g id="content" data-pptx-bounds="0 0 1280 720"><rect x="64" y="52" width="8" height="47" rx="0" fill="#21C9C3" />
+<text x="90" y="91" font-size="40" fill="#F3F8FF" font-weight="bold">离线结果：检索命中与回答正确需要分开看</text>
+<text x="92" y="139" font-size="24" fill="#75A9FF" font-weight="normal">158 题实验｜字符检索 + 原文回退</text>
+<rect x="92" y="187" width="1096" height="80" rx="12" fill="#122D47" />
+<rect x="92" y="187" width="6" height="80" rx="0" fill="#21C9C3" />
+<text x="120" y="237" font-size="27" fill="#F3F8FF" font-weight="normal">Hit@1  79.0%  /  Hit@3  92.8%</text>
+<rect x="92" y="289" width="1096" height="80" rx="12" fill="#122D47" />
+<rect x="92" y="289" width="6" height="80" rx="0" fill="#21C9C3" />
+<text x="120" y="339" font-size="27" fill="#F3F8FF" font-weight="normal">状态准确率  97.5%  /  答案关键词命中率  79.0%</text>
+<rect x="92" y="391" width="1096" height="80" rx="12" fill="#122D47" />
+<rect x="92" y="391" width="6" height="80" rx="0" fill="#21C9C3" />
+<text x="120" y="441" font-size="27" fill="#F3F8FF" font-weight="normal">拒答正确  12 / 15  /  转人工正确  5 / 5</text>
+<rect x="92" y="493" width="1096" height="80" rx="12" fill="#122D47" />
+<rect x="92" y="493" width="6" height="80" rx="0" fill="#21C9C3" />
+<text x="120" y="543" font-size="23" fill="#F3F8FF" font-weight="normal">关键词命中是自动近似指标，不等同于完整答案质量</text>
+<text x="92" y="679" font-size="18" fill="#A9C0CF" font-weight="normal">产品说明书智能问答系统  |  期中汇报</text>
+<text x="1150" y="679" font-size="18" fill="#A9C0CF" font-weight="normal">07</text>
+</g></svg>

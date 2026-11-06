@@ -1,0 +1,45 @@
+<svg xmlns="http://www.w3.org/2000/svg" version="1.1" width="1280" height="720" viewBox="0 0 1280 720" font-family="Arial, &quot;Microsoft YaHei&quot;, sans-serif"><rect x="0" y="0" width="1280" height="720" fill="#FAFAF8" />
+<g id="shape-12" data-pptx-object="group" data-pptx-frame="80.32 48.33 1117.68 646.05" data-pptx-source-ref="slide:12">
+<g id="shape-2" data-pptx-object="shape" data-pptx-frame="80.4 48.33 469.6 61.6" data-pptx-prst="rect" data-pptx-source-ref="slide:2" data-pptx-semantic-object="shape">
+<path d="M 80.4 48.33 L 550 48.33 L 550 109.93 L 80.4 109.93 Z" fill="none" stroke="none" data-pptx-part="geometry" />
+
+
+<text x="80.4" y="87" text-anchor="start" xml:space="preserve" font-size="40" fill="#162B3B" font-weight="bold" data-pptx-text-baseline="metrics-v1">产品说明书智能问答系统</text>
+</g>
+<g id="shape-3" data-pptx-object="shape" data-pptx-frame="81.04 114.33 234.7 36.96" data-pptx-prst="rect" data-pptx-source-ref="slide:3" data-pptx-semantic-object="shape">
+<path d="M 81.04 114.33 L 315.74 114.33 L 315.74 151.29 L 81.04 151.29 Z" fill="none" stroke="none" data-pptx-part="geometry" />
+
+
+<text x="81.04" y="137" text-anchor="start" xml:space="preserve" font-size="24" fill="#4B6C7A" data-pptx-text-baseline="metrics-v1">小组项目 · 期中汇报</text>
+</g>
+<g id="shape-4" data-pptx-object="shape" data-pptx-frame="82 162 1116 1" data-pptx-prst="rect" data-pptx-source-ref="slide:4" data-pptx-semantic-object="shape">
+<path d="M 82 162 L 1198 162 L 1198 163 L 82 163 Z" fill="#D8E0E2" stroke="none" data-pptx-part="geometry" />
+
+</g>
+<g id="shape-5" data-pptx-object="shape" data-pptx-frame="82 228 80 4" data-pptx-prst="rect" data-pptx-source-ref="slide:5" data-pptx-semantic-object="shape">
+<path d="M 82 228 L 162 228 L 162 232 L 82 232 Z" fill="#2F6675" stroke="none" data-pptx-part="geometry" />
+
+</g>
+<g id="shape-6" data-pptx-object="shape" data-pptx-frame="80.32 283 626.64 64.68" data-pptx-prst="rect" data-pptx-source-ref="slide:6" data-pptx-semantic-object="shape">
+<path d="M 80.32 283 L 706.96 283 L 706.96 347.68 L 80.32 347.68 Z" fill="none" stroke="none" data-pptx-part="geometry" />
+
+
+<text x="80.32" y="323" text-anchor="start" xml:space="preserve" font-size="42" fill="#162B3B" font-weight="bold" data-pptx-text-baseline="metrics-v1">问一句话，找到说明书里的依据</text>
+</g>
+<g id="shape-7" data-pptx-object="shape" data-pptx-frame="80.88 383.33 428.96 43.12" data-pptx-prst="rect" data-pptx-source-ref="slide:7" data-pptx-semantic-object="shape">
+<path d="M 80.88 383.33 L 509.84 383.33 L 509.84 426.45 L 80.88 426.45 Z" fill="none" stroke="none" data-pptx-part="geometry" />
+
+
+<text x="80.88" y="410" text-anchor="start" xml:space="preserve" font-size="28" fill="#4B6C7A" data-pptx-text-baseline="metrics-v1">基于 RAG 的产品资料检索与问答</text>
+</g>
+<g id="shape-10" data-pptx-object="shape" data-pptx-frame="82 652 1116 1" data-pptx-prst="rect" data-pptx-source-ref="slide:10" data-pptx-semantic-object="shape">
+<path d="M 82 652 L 1198 652 L 1198 653 L 82 653 Z" fill="#D8E0E2" stroke="none" data-pptx-part="geometry" />
+
+</g>
+<g id="shape-11" data-pptx-object="shape" data-pptx-frame="1156.28 666.67 22.43 27.72" data-pptx-prst="rect" data-pptx-source-ref="slide:11" data-pptx-semantic-object="shape">
+<path d="M 1156.28 666.67 L 1178.71 666.67 L 1178.71 694.39 L 1156.28 694.39 Z" fill="none" stroke="none" data-pptx-part="geometry" />
+
+
+<text x="1156.28" y="684" text-anchor="start" xml:space="preserve" font-size="18" fill="#4B6C7A" data-pptx-text-baseline="metrics-v1">01</text>
+</g>
+</g></svg>

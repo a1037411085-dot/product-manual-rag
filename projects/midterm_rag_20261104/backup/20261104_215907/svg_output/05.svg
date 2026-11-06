@@ -1,0 +1,20 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1280" height="720" viewBox="0 0 1280 720" font-family="Microsoft YaHei, Arial, sans-serif" data-pptx-page-role="content">
+<rect x="0" y="0" width="1280" height="720" rx="0" fill="#08172B" data-pptx-role="background" id="background" />
+<g id="content" data-pptx-bounds="0 0 1280 720"><rect x="64" y="52" width="8" height="47" rx="0" fill="#21C9C3" />
+<text x="90" y="91" font-size="40" fill="#F3F8FF" font-weight="bold">回答流程：证据、来源与兜底</text>
+<text x="92" y="139" font-size="24" fill="#75A9FF" font-weight="normal">多种回答路径服务不同场景</text>
+<rect x="92" y="190" width="1096" height="82" rx="12" fill="#122D47" />
+<text x="116" y="242" font-size="24" fill="#21C9C3" font-weight="bold">01</text>
+<text x="170" y="242" font-size="26" fill="#F3F8FF" font-weight="normal">FAQ 匹配充分时直接返回已保存答案与来源</text>
+<rect x="92" y="295" width="1096" height="82" rx="12" fill="#122D47" />
+<text x="116" y="347" font-size="24" fill="#21C9C3" font-weight="bold">02</text>
+<text x="170" y="347" font-size="26" fill="#F3F8FF" font-weight="normal">检索后可返回原文，或将证据组装进 Prompt 调用模型</text>
+<rect x="92" y="400" width="1096" height="82" rx="12" fill="#122D47" />
+<text x="116" y="452" font-size="24" fill="#21C9C3" font-weight="bold">03</text>
+<text x="170" y="452" font-size="26" fill="#F3F8FF" font-weight="normal">缺少依据时拒答；退款、投诉等敏感问题转人工</text>
+<rect x="92" y="505" width="1096" height="82" rx="12" fill="#122D47" />
+<text x="116" y="557" font-size="24" fill="#21C9C3" font-weight="bold">04</text>
+<text x="170" y="557" font-size="26" fill="#F3F8FF" font-weight="normal">知识缺口与用户反馈用于后续补充</text>
+<text x="92" y="679" font-size="18" fill="#A9C0CF" font-weight="normal">产品说明书智能问答系统  |  期中汇报</text>
+<text x="1150" y="679" font-size="18" fill="#A9C0CF" font-weight="normal">05</text>
+</g></svg>

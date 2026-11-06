@@ -1,0 +1,11 @@
+.venv/
+.cache/
+__pycache__/
+*.pyc
+.env
+.env.*
+!.env.example
+*.llm.json
+*.log
+*.sqlite3-wal
+*.sqlite3-shm

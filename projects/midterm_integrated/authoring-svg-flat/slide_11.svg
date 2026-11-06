@@ -1,0 +1,149 @@
+<svg xmlns="http://www.w3.org/2000/svg" version="1.1" width="1280" height="720" viewBox="0 0 1280 720" font-family="Arial, &quot;Microsoft YaHei&quot;, sans-serif"><rect x="0" y="0" width="1280" height="720" fill="#FAFAF8" />
+<g id="shape-30" data-pptx-object="group" data-pptx-frame="80.4 48.33 1117.6 646.05" data-pptx-source-ref="slide:30">
+<g id="shape-2" data-pptx-object="shape" data-pptx-frame="80.4 48.33 172.8 61.6" data-pptx-prst="rect" data-pptx-source-ref="slide:2" data-pptx-semantic-object="shape">
+<path d="M 80.4 48.33 L 253.2 48.33 L 253.2 109.93 L 80.4 109.93 Z" fill="none" stroke="none" data-pptx-part="geometry" />
+
+
+<text x="80.4" y="87" text-anchor="start" xml:space="preserve" font-size="40" fill="#162B3B" font-weight="bold" data-pptx-text-baseline="metrics-v1">小组分工</text>
+</g>
+<g id="shape-3" data-pptx-object="shape" data-pptx-frame="81.04 114.33 230.88 36.96" data-pptx-prst="rect" data-pptx-source-ref="slide:3" data-pptx-semantic-object="shape">
+<path d="M 81.04 114.33 L 311.92 114.33 L 311.92 151.29 L 81.04 151.29 Z" fill="none" stroke="none" data-pptx-part="geometry" />
+
+
+<text x="81.04" y="137" text-anchor="start" xml:space="preserve" font-size="24" fill="#4B6C7A" data-pptx-text-baseline="metrics-v1">六位成员的实际贡献</text>
+</g>
+<g id="shape-4" data-pptx-object="shape" data-pptx-frame="82 162 1116 1" data-pptx-prst="rect" data-pptx-source-ref="slide:4" data-pptx-semantic-object="shape">
+<path d="M 82 162 L 1198 162 L 1198 163 L 82 163 Z" fill="#D8E0E2" stroke="none" data-pptx-part="geometry" />
+
+</g>
+<g id="shape-5" data-pptx-object="shape" data-pptx-frame="82 218 518 1" data-pptx-prst="rect" data-pptx-source-ref="slide:5" data-pptx-semantic-object="shape">
+<path d="M 82 218 L 600 218 L 600 219 L 82 219 Z" fill="#D8E0E2" stroke="none" data-pptx-part="geometry" />
+
+</g>
+<g id="shape-6" data-pptx-object="shape" data-pptx-frame="80.84 228 63.94 44.76" data-pptx-prst="rect" data-pptx-source-ref="slide:6" data-pptx-semantic-object="shape">
+<path d="M 80.84 228 L 144.78 228 L 144.78 272.76 L 80.84 272.76 Z" fill="none" stroke="none" data-pptx-part="geometry" />
+
+
+<text x="80.84" y="256" text-anchor="start" xml:space="preserve" font-size="29.07" fill="#2F6675" font-weight="bold" data-pptx-text-baseline="metrics-v1">黄健</text>
+</g>
+<g id="shape-7" data-pptx-object="shape" data-pptx-frame="81.12 276.67 351.56 33.88" data-pptx-prst="rect" data-pptx-source-ref="slide:7" data-pptx-semantic-object="shape">
+<path d="M 81.12 276.67 L 432.68 276.67 L 432.68 310.55 L 81.12 310.55 Z" fill="none" stroke="none" data-pptx-part="geometry" />
+
+
+<text x="81.12" y="298" text-anchor="start" xml:space="preserve" font-size="22" fill="#162B3B" data-pptx-text-baseline="metrics-v1">收集和清洗原始语料，编写测试集</text>
+</g>
+<g id="shape-8" data-pptx-object="shape" data-pptx-frame="82 348 518 1" data-pptx-prst="rect" data-pptx-source-ref="slide:8" data-pptx-semantic-object="shape">
+<path d="M 82 348 L 600 348 L 600 349 L 82 349 Z" fill="#D8E0E2" stroke="none" data-pptx-part="geometry" />
+
+</g>
+<g id="shape-9" data-pptx-object="shape" data-pptx-frame="80.84 358 94.75 44.76" data-pptx-prst="rect" data-pptx-source-ref="slide:9" data-pptx-semantic-object="shape">
+<path d="M 80.84 358 L 175.59 358 L 175.59 402.76 L 80.84 402.76 Z" fill="none" stroke="none" data-pptx-part="geometry" />
+
+
+<text x="80.84" y="386" text-anchor="start" xml:space="preserve" font-size="29.07" fill="#2F6675" font-weight="bold" data-pptx-text-baseline="metrics-v1">周欣宇</text>
+</g>
+<g id="shape-10" data-pptx-object="shape" data-pptx-frame="81.12 406.67 304.92 33.88" data-pptx-prst="rect" data-pptx-source-ref="slide:10" data-pptx-semantic-object="shape">
+<path d="M 81.12 406.67 L 386.04 406.67 L 386.04 440.55 L 81.12 440.55 Z" fill="none" stroke="none" data-pptx-part="geometry" />
+
+
+<text x="81.12" y="428" text-anchor="start" xml:space="preserve" font-size="22" fill="#162B3B" data-pptx-text-baseline="metrics-v1">切片、向量化、混合检索评分</text>
+</g>
+<g id="shape-11" data-pptx-object="shape" data-pptx-frame="81.12 437.67 214.87 33.88" data-pptx-prst="rect" data-pptx-source-ref="slide:11" data-pptx-semantic-object="shape">
+<path d="M 81.12 437.67 L 295.99 437.67 L 295.99 471.55 L 81.12 471.55 Z" fill="none" stroke="none" data-pptx-part="geometry" />
+
+
+<text x="81.12" y="459" text-anchor="start" xml:space="preserve" font-size="22" fill="#162B3B" data-pptx-text-baseline="metrics-v1">组装 Prompt 上下文</text>
+</g>
+<g id="shape-12" data-pptx-object="shape" data-pptx-frame="82 478 518 1" data-pptx-prst="rect" data-pptx-source-ref="slide:12" data-pptx-semantic-object="shape">
+<path d="M 82 478 L 600 478 L 600 479 L 82 479 Z" fill="#D8E0E2" stroke="none" data-pptx-part="geometry" />
+
+</g>
+<g id="shape-13" data-pptx-object="shape" data-pptx-frame="80.84 488 94.75 44.76" data-pptx-prst="rect" data-pptx-source-ref="slide:13" data-pptx-semantic-object="shape">
+<path d="M 80.84 488 L 175.59 488 L 175.59 532.76 L 80.84 532.76 Z" fill="none" stroke="none" data-pptx-part="geometry" />
+
+
+<text x="80.84" y="516" text-anchor="start" xml:space="preserve" font-size="29.07" fill="#2F6675" font-weight="bold" data-pptx-text-baseline="metrics-v1">郑岳展</text>
+</g>
+<g id="shape-14" data-pptx-object="shape" data-pptx-frame="81.12 536.67 281.6 33.88" data-pptx-prst="rect" data-pptx-source-ref="slide:14" data-pptx-semantic-object="shape">
+<path d="M 81.12 536.67 L 362.72 536.67 L 362.72 570.55 L 81.12 570.55 Z" fill="none" stroke="none" data-pptx-part="geometry" />
+
+
+<text x="81.12" y="558" text-anchor="start" xml:space="preserve" font-size="22" fill="#162B3B" data-pptx-text-baseline="metrics-v1">模型与系统构建、架构设计</text>
+</g>
+<g id="shape-15" data-pptx-object="shape" data-pptx-frame="81.12 567.67 258.28 33.88" data-pptx-prst="rect" data-pptx-source-ref="slide:15" data-pptx-semantic-object="shape">
+<path d="M 81.12 567.67 L 339.4 567.67 L 339.4 601.55 L 81.12 601.55 Z" fill="none" stroke="none" data-pptx-part="geometry" />
+
+
+<text x="81.12" y="589" text-anchor="start" xml:space="preserve" font-size="22" fill="#162B3B" data-pptx-text-baseline="metrics-v1">训练相关工作、代码实现</text>
+</g>
+<g id="shape-16" data-pptx-object="shape" data-pptx-frame="656 218 518 1" data-pptx-prst="rect" data-pptx-source-ref="slide:16" data-pptx-semantic-object="shape">
+<path d="M 656 218 L 1174 218 L 1174 219 L 656 219 Z" fill="#D8E0E2" stroke="none" data-pptx-part="geometry" />
+
+</g>
+<g id="shape-17" data-pptx-object="shape" data-pptx-frame="654.84 228 94.75 44.76" data-pptx-prst="rect" data-pptx-source-ref="slide:17" data-pptx-semantic-object="shape">
+<path d="M 654.84 228 L 749.59 228 L 749.59 272.76 L 654.84 272.76 Z" fill="none" stroke="none" data-pptx-part="geometry" />
+
+
+<text x="654.84" y="256" text-anchor="start" xml:space="preserve" font-size="29.07" fill="#2F6675" font-weight="bold" data-pptx-text-baseline="metrics-v1">徐明宇</text>
+</g>
+<g id="shape-18" data-pptx-object="shape" data-pptx-frame="655.12 276.67 351.56 33.88" data-pptx-prst="rect" data-pptx-source-ref="slide:18" data-pptx-semantic-object="shape">
+<path d="M 655.12 276.67 L 1006.68 276.67 L 1006.68 310.55 L 655.12 310.55 Z" fill="none" stroke="none" data-pptx-part="geometry" />
+
+
+<text x="655.12" y="298" text-anchor="start" xml:space="preserve" font-size="22" fill="#162B3B" data-pptx-text-baseline="metrics-v1">评估、基线对比、消融和误差分析</text>
+</g>
+<g id="shape-19" data-pptx-object="shape" data-pptx-frame="655.12 307.67 141.68 33.88" data-pptx-prst="rect" data-pptx-source-ref="slide:19" data-pptx-semantic-object="shape">
+<path d="M 655.12 307.67 L 796.8 307.67 L 796.8 341.55 L 655.12 341.55 Z" fill="none" stroke="none" data-pptx-part="geometry" />
+
+
+<text x="655.12" y="329" text-anchor="start" xml:space="preserve" font-size="22" fill="#162B3B" data-pptx-text-baseline="metrics-v1">制作实验图表</text>
+</g>
+<g id="shape-20" data-pptx-object="shape" data-pptx-frame="656 348 518 1" data-pptx-prst="rect" data-pptx-source-ref="slide:20" data-pptx-semantic-object="shape">
+<path d="M 656 348 L 1174 348 L 1174 349 L 656 349 Z" fill="#D8E0E2" stroke="none" data-pptx-part="geometry" />
+
+</g>
+<g id="shape-21" data-pptx-object="shape" data-pptx-frame="654.84 358 63.94 44.76" data-pptx-prst="rect" data-pptx-source-ref="slide:21" data-pptx-semantic-object="shape">
+<path d="M 654.84 358 L 718.78 358 L 718.78 402.76 L 654.84 402.76 Z" fill="none" stroke="none" data-pptx-part="geometry" />
+
+
+<text x="654.84" y="386" text-anchor="start" xml:space="preserve" font-size="29.07" fill="#2F6675" font-weight="bold" data-pptx-text-baseline="metrics-v1">王军</text>
+</g>
+<g id="shape-22" data-pptx-object="shape" data-pptx-frame="655.12 406.67 95.04 33.88" data-pptx-prst="rect" data-pptx-source-ref="slide:22" data-pptx-semantic-object="shape">
+<path d="M 655.12 406.67 L 750.16 406.67 L 750.16 440.55 L 655.12 440.55 Z" fill="none" stroke="none" data-pptx-part="geometry" />
+
+
+<text x="655.12" y="428" text-anchor="start" xml:space="preserve" font-size="22" fill="#162B3B" data-pptx-text-baseline="metrics-v1">测试整合</text>
+</g>
+<g id="shape-23" data-pptx-object="shape" data-pptx-frame="656 478 518 1" data-pptx-prst="rect" data-pptx-source-ref="slide:23" data-pptx-semantic-object="shape">
+<path d="M 656 478 L 1174 478 L 1174 479 L 656 479 Z" fill="#D8E0E2" stroke="none" data-pptx-part="geometry" />
+
+</g>
+<g id="shape-24" data-pptx-object="shape" data-pptx-frame="654.84 488 94.75 44.76" data-pptx-prst="rect" data-pptx-source-ref="slide:24" data-pptx-semantic-object="shape">
+<path d="M 654.84 488 L 749.59 488 L 749.59 532.76 L 654.84 532.76 Z" fill="none" stroke="none" data-pptx-part="geometry" />
+
+
+<text x="654.84" y="516" text-anchor="start" xml:space="preserve" font-size="29.07" fill="#2F6675" font-weight="bold" data-pptx-text-baseline="metrics-v1">廖松涛</text>
+</g>
+<g id="shape-25" data-pptx-object="shape" data-pptx-frame="655.12 536.67 398.2 33.88" data-pptx-prst="rect" data-pptx-source-ref="slide:25" data-pptx-semantic-object="shape">
+<path d="M 655.12 536.67 L 1053.32 536.67 L 1053.32 570.55 L 655.12 570.55 Z" fill="none" stroke="none" data-pptx-part="geometry" />
+
+
+<text x="655.12" y="558" text-anchor="start" xml:space="preserve" font-size="22" fill="#162B3B" data-pptx-text-baseline="metrics-v1">汇总报告、案例与图表，梳理技术流程</text>
+</g>
+<g id="shape-26" data-pptx-object="shape" data-pptx-frame="655.12 567.67 211.64 33.88" data-pptx-prst="rect" data-pptx-source-ref="slide:26" data-pptx-semantic-object="shape">
+<path d="M 655.12 567.67 L 866.76 567.67 L 866.76 601.55 L 655.12 601.55 Z" fill="none" stroke="none" data-pptx-part="geometry" />
+
+
+<text x="655.12" y="589" text-anchor="start" xml:space="preserve" font-size="22" fill="#162B3B" data-pptx-text-baseline="metrics-v1">负责最终演示与汇报</text>
+</g>
+<g id="shape-28" data-pptx-object="shape" data-pptx-frame="82 652 1116 1" data-pptx-prst="rect" data-pptx-source-ref="slide:28" data-pptx-semantic-object="shape">
+<path d="M 82 652 L 1198 652 L 1198 653 L 82 653 Z" fill="#D8E0E2" stroke="none" data-pptx-part="geometry" />
+
+</g>
+<g id="shape-29" data-pptx-object="shape" data-pptx-frame="1156.28 666.67 22.43 27.72" data-pptx-prst="rect" data-pptx-source-ref="slide:29" data-pptx-semantic-object="shape">
+<path d="M 1156.28 666.67 L 1178.71 666.67 L 1178.71 694.39 L 1156.28 694.39 Z" fill="none" stroke="none" data-pptx-part="geometry" />
+
+
+<text x="1156.28" y="684" text-anchor="start" xml:space="preserve" font-size="18" fill="#4B6C7A" data-pptx-text-baseline="metrics-v1">11</text>
+</g>
+</g></svg>

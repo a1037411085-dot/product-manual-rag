@@ -1,0 +1,74 @@
+<svg xmlns="http://www.w3.org/2000/svg" version="1.1" width="1280" height="720" viewBox="0 0 1280 720" font-family="Arial, &quot;Microsoft YaHei&quot;, sans-serif"><rect x="0" y="0" width="1280" height="720" fill="#FAFAF8" />
+<g id="shape-15" data-pptx-object="group" data-pptx-frame="76 48.33 1122 646.05" data-pptx-source-ref="slide:15">
+<g id="shape-2" data-pptx-object="shape" data-pptx-frame="80.4 48.33 554.4 61.6" data-pptx-prst="rect" data-pptx-source-ref="slide:2" data-pptx-semantic-object="shape">
+<path d="M 80.4 48.33 L 634.8 48.33 L 634.8 109.93 L 80.4 109.93 Z" fill="none" stroke="none" data-pptx-part="geometry" />
+
+
+<text x="80.4" y="87" text-anchor="start" xml:space="preserve" font-size="40" fill="#162B3B" font-weight="bold" data-pptx-text-baseline="metrics-v1">判为已回答，内容也答对了吗</text>
+</g>
+<g id="shape-3" data-pptx-object="shape" data-pptx-frame="81.04 114.33 327.55 36.96" data-pptx-prst="rect" data-pptx-source-ref="slide:3" data-pptx-semantic-object="shape">
+<path d="M 81.04 114.33 L 408.59 114.33 L 408.59 151.29 L 81.04 151.29 Z" fill="none" stroke="none" data-pptx-part="geometry" />
+
+
+<text x="81.04" y="137" text-anchor="start" xml:space="preserve" font-size="24" fill="#4B6C7A" data-pptx-text-baseline="metrics-v1">离线配置 · v3 的 158 题实验</text>
+</g>
+<g id="shape-4" data-pptx-object="shape" data-pptx-frame="82 162 1116 1" data-pptx-prst="rect" data-pptx-source-ref="slide:4" data-pptx-semantic-object="shape">
+<path d="M 82 162 L 1198 162 L 1198 163 L 82 163 Z" fill="#D8E0E2" stroke="none" data-pptx-part="geometry" />
+
+</g>
+<g id="shape-5" data-pptx-object="picture" data-pptx-frame="76 178 798 406" data-pptx-source-ref="slide:5">
+<image data-pptx-object="picture" data-pptx-frame="76 178 798 406" href="../images/image1.png" x="76" y="178" width="798" height="406" preserveAspectRatio="none" />
+</g>
+<g id="shape-6" data-pptx-object="shape" data-pptx-frame="901.8 204.67 237.8 46.2" data-pptx-prst="rect" data-pptx-source-ref="slide:6" data-pptx-semantic-object="shape">
+<path d="M 901.8 204.67 L 1139.6 204.67 L 1139.6 250.87 L 901.8 250.87 Z" fill="none" stroke="none" data-pptx-part="geometry" />
+
+
+<text x="901.8" y="234" text-anchor="start" xml:space="preserve" font-size="30" fill="#2F6675" font-weight="bold" data-pptx-text-baseline="metrics-v1">79.0% → 92.8%</text>
+</g>
+<g id="shape-7" data-pptx-object="shape" data-pptx-frame="902.12 256.67 201.65 33.88" data-pptx-prst="rect" data-pptx-source-ref="slide:7" data-pptx-semantic-object="shape">
+<path d="M 902.12 256.67 L 1103.77 256.67 L 1103.77 290.55 L 902.12 290.55 Z" fill="none" stroke="none" data-pptx-part="geometry" />
+
+
+<text x="902.12" y="278" text-anchor="start" xml:space="preserve" font-size="22" fill="#4B6C7A" data-pptx-text-baseline="metrics-v1">证据 Hit@1 → Hit@3</text>
+</g>
+<g id="shape-8" data-pptx-object="shape" data-pptx-frame="902.12 292.67 191.82 33.88" data-pptx-prst="rect" data-pptx-source-ref="slide:8" data-pptx-semantic-object="shape">
+<path d="M 902.12 292.67 L 1093.94 292.67 L 1093.94 326.55 L 902.12 326.55 Z" fill="none" stroke="none" data-pptx-part="geometry" />
+
+
+<text x="902.12" y="314" text-anchor="start" xml:space="preserve" font-size="22" fill="#4B6C7A" data-pptx-text-baseline="metrics-v1">前 3 条比首条更常</text>
+</g>
+<g id="shape-9" data-pptx-object="shape" data-pptx-frame="902.12 328.67 141.68 33.88" data-pptx-prst="rect" data-pptx-source-ref="slide:9" data-pptx-semantic-object="shape">
+<path d="M 902.12 328.67 L 1043.8 328.67 L 1043.8 362.55 L 902.12 362.55 Z" fill="none" stroke="none" data-pptx-part="geometry" />
+
+
+<text x="902.12" y="350" text-anchor="start" xml:space="preserve" font-size="22" fill="#4B6C7A" data-pptx-text-baseline="metrics-v1">包含期望证据</text>
+</g>
+<g id="shape-10" data-pptx-object="shape" data-pptx-frame="901.64 401.67 129.49 52.36" data-pptx-prst="rect" data-pptx-source-ref="slide:10" data-pptx-semantic-object="shape">
+<path d="M 901.64 401.67 L 1031.13 401.67 L 1031.13 454.03 L 901.64 454.03 Z" fill="none" stroke="none" data-pptx-part="geometry" />
+
+
+<text x="901.64" y="435" text-anchor="start" xml:space="preserve" font-size="34" fill="#162B3B" font-weight="bold" data-pptx-text-baseline="metrics-v1">12 / 15</text>
+</g>
+<g id="shape-11" data-pptx-object="shape" data-pptx-frame="902.12 456.67 188.32 33.88" data-pptx-prst="rect" data-pptx-source-ref="slide:11" data-pptx-semantic-object="shape">
+<path d="M 902.12 456.67 L 1090.44 456.67 L 1090.44 490.55 L 902.12 490.55 Z" fill="none" stroke="none" data-pptx-part="geometry" />
+
+
+<text x="902.12" y="478" text-anchor="start" xml:space="preserve" font-size="22" fill="#4B6C7A" data-pptx-text-baseline="metrics-v1">无答案题正确拒答</text>
+</g>
+<g id="shape-12" data-pptx-object="shape" data-pptx-frame="81.28 604.67 521.37 27.72" data-pptx-prst="rect" data-pptx-source-ref="slide:12" data-pptx-semantic-object="shape">
+<path d="M 81.28 604.67 L 602.65 604.67 L 602.65 632.39 L 81.28 632.39 Z" fill="none" stroke="none" data-pptx-part="geometry" />
+
+
+<text x="81.28" y="622" text-anchor="start" xml:space="preserve" font-size="18" fill="#4B6C7A" data-pptx-text-baseline="metrics-v1">来源：v3 评估报告图 3。关键词命中是内容核查的近似指标。</text>
+</g>
+<g id="shape-13" data-pptx-object="shape" data-pptx-frame="82 652 1116 1" data-pptx-prst="rect" data-pptx-source-ref="slide:13" data-pptx-semantic-object="shape">
+<path d="M 82 652 L 1198 652 L 1198 653 L 82 653 Z" fill="#D8E0E2" stroke="none" data-pptx-part="geometry" />
+
+</g>
+<g id="shape-14" data-pptx-object="shape" data-pptx-frame="1156.28 666.67 22.43 27.72" data-pptx-prst="rect" data-pptx-source-ref="slide:14" data-pptx-semantic-object="shape">
+<path d="M 1156.28 666.67 L 1178.71 666.67 L 1178.71 694.39 L 1156.28 694.39 Z" fill="none" stroke="none" data-pptx-part="geometry" />
+
+
+<text x="1156.28" y="684" text-anchor="start" xml:space="preserve" font-size="18" fill="#4B6C7A" data-pptx-text-baseline="metrics-v1">07</text>
+</g>
+</g></svg>

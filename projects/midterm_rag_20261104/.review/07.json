@@ -1,0 +1,35 @@
+{
+  "page": "07.svg",
+  "page_role": "content",
+  "canvas": {
+    "view_box": [
+      0,
+      0,
+      1280,
+      720
+    ],
+    "width": 1280,
+    "height": 720,
+    "png_width": 1280,
+    "png_height": 720
+  },
+  "status": "ok",
+  "iterations_run": 1,
+  "screenshot_paths": [
+    ".preview/07.png"
+  ],
+  "findings": [],
+  "untouched_concerns": [
+    {
+      "rule": "S8",
+      "evidence": "相邻两个指标在同一文本行中因 SVG 折叠连续空格而紧贴；数据仍可读，但层次较弱。",
+      "reason": "deck_wide"
+    }
+  ],
+  "needs_human_items": [],
+  "design_intent_check": {
+    "spec_says": "准确清晰地传达本页主题",
+    "render_delivers": true,
+    "note": "未发现裁切、溢出、交叠或对比度问题。"
+  }
+}

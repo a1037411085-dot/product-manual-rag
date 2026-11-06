@@ -1,0 +1,70 @@
+{
+  "roles": {
+    "body": {
+      "family": "Microsoft YaHei, Arial, sans-serif",
+      "size": 28.0,
+      "weight": "normal",
+      "cjk_chars_per_100px": 3.4,
+      "latin_chars_per_100px": 6.9,
+      "caps_chars_per_100px": 6.4,
+      "digits_chars_per_100px": 6.1,
+      "citation_chars_per_100px": 6.4,
+      "script_clusters_per_100px": {},
+      "longest_planned_line": {
+        "px": 787.5,
+        "slide": "P11",
+        "text": "周欣宇｜特征与上下文：切片、向量化、混合评分、Prompt"
+      }
+    },
+    "title": {
+      "family": "Microsoft YaHei, Arial, sans-serif",
+      "size": 40.0,
+      "weight": "normal",
+      "cjk_chars_per_100px": 2.4,
+      "latin_chars_per_100px": 4.9,
+      "caps_chars_per_100px": 4.5,
+      "digits_chars_per_100px": 4.3,
+      "citation_chars_per_100px": 4.5,
+      "script_clusters_per_100px": {},
+      "longest_planned_line": {
+        "px": 805.6,
+        "slide": "P07",
+        "text": "离线结果：检索命中与回答正确需要分开看"
+      }
+    },
+    "subtitle": {
+      "family": "Microsoft YaHei, Arial, sans-serif",
+      "size": 24.0,
+      "weight": "normal",
+      "cjk_chars_per_100px": 3.9,
+      "latin_chars_per_100px": 8.1,
+      "caps_chars_per_100px": 7.5,
+      "digits_chars_per_100px": 7.1,
+      "citation_chars_per_100px": 7.5,
+      "script_clusters_per_100px": {},
+      "longest_planned_line": {
+        "px": 442.1,
+        "slide": "P01",
+        "text": "期中汇报｜基于 RAG 的知识检索与问答"
+      }
+    },
+    "annotation": {
+      "family": "Microsoft YaHei, Arial, sans-serif",
+      "size": 18.0,
+      "weight": "normal",
+      "cjk_chars_per_100px": 5.2,
+      "latin_chars_per_100px": 10.8,
+      "caps_chars_per_100px": 10.0,
+      "digits_chars_per_100px": 9.5,
+      "citation_chars_per_100px": 10.0,
+      "script_clusters_per_100px": {},
+      "longest_planned_line": null
+    }
+  },
+  "script_samples": {},
+  "source": "spec_lock.md",
+  "generated_at": "2026-11-04T13:22:25Z",
+  "notes": [
+    "every role is measured at normal weight; recalibrate a role realized as bold deck-wide with --role NAME:FAMILY:SIZE:bold: bold widens Latin and digits about 7%, while the bundled advance table gives CJK one width for both weights"
+  ]
+}

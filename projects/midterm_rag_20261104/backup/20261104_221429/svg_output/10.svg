@@ -1,0 +1,20 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1280" height="720" viewBox="0 0 1280 720" font-family="Microsoft YaHei, Arial, sans-serif" data-pptx-page-role="content">
+<rect x="0" y="0" width="1280" height="720" rx="0" fill="#FAFAF8" data-pptx-role="background" id="background" />
+<g id="content" data-pptx-bounds="0 0 1280 720"><rect x="64" y="52" width="8" height="47" rx="0" fill="#2F6675" />
+<text x="90" y="91" font-size="40" fill="#162B3B" font-weight="bold">下一步准备怎么做</text>
+<text x="92" y="139" font-size="24" fill="#4B6C7A" font-weight="normal">围绕本次测试暴露的问题改进</text>
+<rect x="92" y="190" width="1096" height="82" rx="12" fill="#FAFAF8" />
+<text x="116" y="242" font-size="24" fill="#2F6675" font-weight="bold">01</text>
+<text x="170" y="242" font-size="26" fill="#162B3B" font-weight="normal">数据：保留表格行列与型号关系，优化分块和繁简规范化</text>
+<rect x="92" y="295" width="1096" height="82" rx="12" fill="#FAFAF8" />
+<text x="116" y="347" font-size="24" fill="#2F6675" font-weight="bold">02</text>
+<text x="170" y="347" font-size="26" fill="#162B3B" font-weight="normal">检索：比较段落粒度、重排和证据充分性判断</text>
+<rect x="92" y="400" width="1096" height="82" rx="12" fill="#FAFAF8" />
+<text x="116" y="452" font-size="24" fill="#2F6675" font-weight="bold">03</text>
+<text x="170" y="452" font-size="26" fill="#162B3B" font-weight="normal">评估：扩充真实问法与无答案题，在独立开发集校准阈值</text>
+<rect x="92" y="505" width="1096" height="82" rx="12" fill="#FAFAF8" />
+<text x="116" y="557" font-size="24" fill="#2F6675" font-weight="bold">04</text>
+<text x="170" y="557" font-size="26" fill="#162B3B" font-weight="normal">演示：固定环境、准备示例及异常情况下的备用方案</text>
+<text x="92" y="679" font-size="18" fill="#607884" font-weight="normal">产品说明书智能问答系统  |  期中汇报</text>
+<text x="1150" y="679" font-size="18" fill="#607884" font-weight="normal">10</text>
+</g></svg>
