@@ -17,7 +17,7 @@ from xml.etree import ElementTree as ET
 import numpy as np
 from sklearn.feature_extraction.text import HashingVectorizer
 from .cleaning import clean_document
-from .faq import ANSWER, QUESTION, extract_faqs, extract_training_faqs
+from .faq import ANSWER, QUESTION, extract_faqs, extract_import_faqs, extract_training_faqs
 from .html_extract import extract_html_text
 from . import semantic
 from . import llm_config
@@ -57,6 +57,8 @@ def init_db():
             version TEXT NOT NULL, category TEXT NOT NULL, source TEXT NOT NULL, question TEXT NOT NULL,
             answer TEXT NOT NULL, kind TEXT NOT NULL, vector BLOB NOT NULL,
             FOREIGN KEY(document_id) REFERENCES documents(id) ON DELETE CASCADE);
+        CREATE TABLE IF NOT EXISTS faq_origins(faq_id TEXT PRIMARY KEY, source_line INTEGER NOT NULL,
+            source_end_line INTEGER NOT NULL, FOREIGN KEY(faq_id) REFERENCES faqs(id) ON DELETE CASCADE);
         CREATE TABLE IF NOT EXISTS sessions(id TEXT PRIMARY KEY, product_id TEXT, version TEXT, created_at TEXT NOT NULL);
         CREATE TABLE IF NOT EXISTS messages(id INTEGER PRIMARY KEY AUTOINCREMENT, session_id TEXT NOT NULL,
             role TEXT NOT NULL, text TEXT NOT NULL, status TEXT, created_at TEXT NOT NULL, product_id TEXT);
@@ -72,8 +74,22 @@ def init_db():
             created_at TEXT NOT NULL, product_id TEXT, version TEXT,
             documents_scanned INTEGER NOT NULL, faqs_added INTEGER NOT NULL,
             total_faqs INTEGER NOT NULL);
+        CREATE TABLE IF NOT EXISTS test_sets(id TEXT PRIMARY KEY, name TEXT NOT NULL, description TEXT NOT NULL,
+            created_at TEXT NOT NULL, updated_at TEXT NOT NULL);
+        CREATE TABLE IF NOT EXISTS test_cases(id TEXT PRIMARY KEY, set_id TEXT NOT NULL, spec TEXT NOT NULL,
+            FOREIGN KEY(set_id) REFERENCES test_sets(id) ON DELETE CASCADE);
+        CREATE INDEX IF NOT EXISTS idx_test_cases_set ON test_cases(set_id);
+        CREATE TABLE IF NOT EXISTS test_runs(id TEXT PRIMARY KEY, set_id TEXT NOT NULL, set_name TEXT NOT NULL,
+            status TEXT NOT NULL, created_at TEXT NOT NULL, updated_at TEXT NOT NULL, owner_pid INTEGER NOT NULL,
+            dataset_digest TEXT NOT NULL, corpus_digest TEXT, config TEXT NOT NULL, report TEXT, error TEXT);
+        CREATE INDEX IF NOT EXISTS idx_test_runs_set ON test_runs(set_id, created_at);
+        CREATE UNIQUE INDEX IF NOT EXISTS idx_test_run_active ON test_runs((1)) WHERE status IN ('queued','running');
+        CREATE TABLE IF NOT EXISTS test_reviews(run_id TEXT NOT NULL, variant TEXT NOT NULL, case_id TEXT NOT NULL,
+            score INTEGER NOT NULL, note TEXT NOT NULL, updated_at TEXT NOT NULL,
+            PRIMARY KEY(run_id,variant,case_id), FOREIGN KEY(run_id) REFERENCES test_runs(id) ON DELETE CASCADE);
         CREATE INDEX IF NOT EXISTS idx_chunks_scope ON chunks(product_id, version);
         CREATE INDEX IF NOT EXISTS idx_faqs_scope ON faqs(product_id, version);
+        CREATE INDEX IF NOT EXISTS idx_faqs_document ON faqs(document_id);
         ''')
         columns = {row['name'] for row in db.execute('PRAGMA table_info(documents)')}
         if 'cleaning_report' not in columns:
@@ -219,19 +235,17 @@ def prepare_document(product_id, version, filename, content, *, remove_page_mark
     raw_text = parse_document(filename, content)
     text, cleaning_report = clean_document(raw_text, remove_page_markers=remove_page_markers,
                                           remove_duplicates=remove_duplicates)
-    candidates = extract_faqs(text, product['name'])
-    if include_training:
-        candidates += extract_training_faqs(text, product['name'])
-    faqs, seen = [], set()
-    for faq in candidates:
-        key = (faq['question'], faq['answer'])
-        if key not in seen:
-            seen.add(key)
-            faqs.append(faq)
+    extractor = extract_import_faqs if include_training else extract_faqs
+    faqs = extractor(text, product['name'])
     chunks = split_text(text, max_chars, overlap)
+    chunk_bodies = {chunk.split('\n', 1)[-1] for chunk in chunks}
     for faq in faqs:
-        if not any(faq['answer'] in chunk for chunk in chunks):
-            chunks.extend(split_text(faq['answer'], max_chars, overlap))
+        answer = faq['answer']
+        if answer not in chunk_bodies and not any(answer in chunk for chunk in chunks):
+            if include_training and '\n' in answer and len(answer) + len(faq['category']) < max_chars:
+                chunks.append(f"{faq['category']}\n{answer}")
+            else:
+                chunks.extend(split_text(answer, max_chars, overlap))
     chunks = list(dict.fromkeys(chunks))
     if not chunks:
         raise ValueError('文档中没有可索引的文字')
@@ -265,24 +279,31 @@ def add_document(product_id, version, category, title, filename, content, *,
             seen.add(index)
             selected.append({**faqs[index], 'question': question.strip()})
         faqs = selected
-    # Index the factual body; keep the heading in stored text for the answer.
-    vectors = VECTORIZER.transform([c.split('\n', 1)[-1] for c in chunks]).astype(np.float32).toarray()
     doc_id = uuid.uuid4().hex
     with connect() as db:
         db.execute('INSERT INTO documents VALUES(?,?,?,?,?,?,?,?)',
                    (doc_id, product_id, version, category, title, filename, now(),
                     json.dumps(cleaning_report, ensure_ascii=False)))
         db.execute('INSERT INTO document_texts(document_id,text) VALUES(?,?)', (doc_id, text))
-        db.executemany('INSERT INTO chunks VALUES(?,?,?,?,?,?,?,?)',
-                       [(uuid.uuid4().hex, doc_id, product_id, version, category, filename,
-                         c, v.tobytes()) for c, v in zip(chunks, vectors)])
-        if faqs:
+        for start in range(0, len(chunks), 128):
+            batch = chunks[start:start + 128]
+            # Index the factual body and keep the heading in stored evidence.
+            vectors = VECTORIZER.transform([c.split('\n', 1)[-1] for c in batch]).astype(np.float32).toarray()
+            db.executemany('INSERT INTO chunks VALUES(?,?,?,?,?,?,?,?)',
+                           [(uuid.uuid4().hex, doc_id, product_id, version, category, filename,
+                             c, vector.tobytes()) for c, vector in zip(batch, vectors)])
+        for start in range(0, len(faqs), 128):
+            batch = faqs[start:start + 128]
             faq_vectors = VECTORIZER.transform(
-                [faq_terms(f['question'], product['name']) for f in faqs]).astype(np.float32).toarray()
+                [faq_terms(f['question'], product['name']) for f in batch]).astype(np.float32).toarray()
+            faq_ids = [uuid.uuid4().hex for _ in batch]
             db.executemany('INSERT INTO faqs VALUES(?,?,?,?,?,?,?,?,?,?)',
-                           [(uuid.uuid4().hex, doc_id, product_id, version, f['category'], filename,
+                           [(faq_id, doc_id, product_id, version, f['category'], filename,
                              f['question'], f['answer'], f['kind'], vector.tobytes())
-                            for f, vector in zip(faqs, faq_vectors)])
+                            for faq_id, f, vector in zip(faq_ids, batch, faq_vectors)])
+            db.executemany('INSERT INTO faq_origins VALUES(?,?,?)',
+                           [(faq_id, f['source_line'], f['source_end_line'])
+                            for faq_id, f in zip(faq_ids, batch) if 'source_line' in f])
     return {'document_id': doc_id, 'chunks': len(chunks), 'characters': len(text),
             'faqs': len(faqs), 'faq_preview': [f['question'] for f in faqs[:6]],
             'cleaning': cleaning_report}
@@ -529,7 +550,7 @@ def faq_intent(question):
         return '适用场景'
     if any(term in question for term in ('最多', '多少', '上限', '限制', '容量', '大小')):
         return '参数限制'
-    if any(term in question for term in ('忘记密码', '报错', '故障', '无法登录')):
+    if any(term in question for term in ('忘记密码', '报错', '故障', '无法', '失败')):
         return '故障处理'
     if any(term in question for term in ('怎么', '如何', '步骤', '怎样')):
         return '操作步骤'
@@ -543,7 +564,9 @@ def list_faqs(product_id, version, limit=12):
     with connect() as db:
         rows = db.execute('''SELECT question, answer, category, source, kind FROM faqs
                              WHERE product_id=? AND version=?
-                             ORDER BY CASE kind WHEN 'manual' THEN 0 WHEN 'explicit' THEN 1 WHEN 'trained' THEN 2 WHEN 'auto' THEN 3 ELSE 4 END, rowid
+                             ORDER BY CASE WHEN kind='manual' THEN 0 WHEN kind='explicit' THEN 1
+                                  WHEN kind IN ('parameter','procedure','troubleshooting','trained') THEN 2
+                                  WHEN kind='auto' THEN 3 ELSE 4 END, rowid
                              LIMIT ?''', (product_id, version, limit)).fetchall()
     return [dict(row) for row in rows]
 
@@ -643,7 +666,7 @@ def match_faq(question, product_id, version):
                        'text': row['answer'], 'score': round(score, 4)}}
 
 
-def llm_answer(question, sources):
+def llm_answer(question, sources, *, model_details=None):
     config = llm_config.effective(DB_PATH)
     endpoint, key, model = config['base_url'], config['api_key'], config['model']
     if not llm_config.enabled(DB_PATH):
@@ -657,7 +680,10 @@ def llm_answer(question, sources):
     request = urllib.request.Request(endpoint + '/chat/completions', data=payload,
                                      headers={'Authorization': 'Bearer ' + key, 'Content-Type': 'application/json'})
     with urllib.request.urlopen(request, timeout=45) as response:
-        answer = json.load(response)['choices'][0]['message']['content'].strip()
+        result = json.load(response)
+        answer = result['choices'][0]['message']['content'].strip()
+    if model_details is not None and isinstance(result.get('model'), str):
+        model_details['model_used'] = result['model'][:200]
     return answer
 
 
@@ -693,7 +719,7 @@ def conversational_answer(question, answer, status, product_name=None, version=N
     return answer
 
 
-def ask(question, session_id=None, product_id=None, version=None):
+def ask(question, session_id=None, product_id=None, version=None, *, include_retrieved=False):
     start = time.monotonic()
     question = question.strip()
     if not question or len(question) > 1000:
@@ -709,6 +735,7 @@ def ask(question, session_id=None, product_id=None, version=None):
         # Model calls and index writes must finish before the conversation write lock.
         semantic.index_chunks(connect)
     generation_mode, generation_error = 'rule', None
+    model_details = {}
     session_id = session_id or uuid.uuid4().hex
     discovery = is_discovery_question(question)
     matched_products = search_products(question) if discovery else []
@@ -738,7 +765,8 @@ def ask(question, session_id=None, product_id=None, version=None):
         rewritten = question
         if prev and any(word in question for word in FOLLOWUP_WORDS):
             rewritten = prev['text'] + '；追问：' + question
-        sources = retrieve(rewritten, product_id, version) if product_id and version and not discovery else []
+        sources = retrieve(rewritten, product_id, version, top_k=5 if include_retrieved else 4) if product_id and version and not discovery else []
+        retrieved = sources
         faq = match_faq(rewritten, product_id, version) if product_id and version and not discovery else None
         top = sources[0]['score'] if sources else 0
         ticket_id = None
@@ -780,7 +808,12 @@ def ask(question, session_id=None, product_id=None, version=None):
         else:
             status = 'answered'
             try:
-                generated = llm_answer(rewritten, sources[:3]) if answer_mode != 'extractive' else None
+                if answer_mode == 'extractive':
+                    generated = None
+                elif include_retrieved:
+                    generated = llm_answer(rewritten, sources[:3], model_details=model_details)
+                else:
+                    generated = llm_answer(rewritten, sources[:3])
             except Exception as error:
                 generated = None
                 generation_error = ('HTTP' + str(error.code) if isinstance(error, urllib.error.HTTPError)
@@ -829,4 +862,5 @@ def ask(question, session_id=None, product_id=None, version=None):
             'matched_products': matched_products, 'handoff_id': ticket_id,
             'retriever': retriever, 'generation_mode': generation_mode,
             'generation_error': generation_error,
-            'latency_ms': round((time.monotonic()-start)*1000)}
+            'latency_ms': round((time.monotonic()-start)*1000),
+            **({'retrieved': retrieved, **model_details} if include_retrieved else {})}

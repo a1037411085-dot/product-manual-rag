@@ -1,0 +1,81 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>测试集与评测 · 产品知识问答</title>
+<link rel="stylesheet" href="/static/testsets.css">
+<script src="/static/testsets.js" defer></script>
+</head>
+<body>
+<header><div><a href="/" class="brand">产品知识问答</a><nav aria-label="主导航"><a href="/">产品问答</a><a href="/#configuration">知识配置</a><a href="/test-sets" aria-current="page">测试集与评测</a></nav></div></header>
+<main>
+<div class="heading"><h1>测试集与评测</h1><button id="newSet" type="button">新建测试集</button></div>
+<p id="notice" class="notice" role="status" hidden></p>
+<div class="workspace">
+<aside class="card sets">
+<h2>测试集</h2><div id="setList"></div>
+</aside>
+<div class="content">
+<section class="card" id="setPanel" hidden aria-labelledby="setName">
+<div class="heading"><div><h2 id="setName"></h2><p id="setDescription" class="muted"></p></div><div class="actions"><button id="editSet" class="secondary" type="button">编辑</button><button id="deleteSet" class="secondary danger" type="button">删除</button></div></div>
+<div class="actions"><button id="newCase" type="button">添加用例</button><button id="openImport" class="secondary" type="button">导入 Excel / CSV</button><a class="link" href="/api/test-set-template.csv">下载导入模板</a></div>
+<div class="table-scroll"><table><thead><tr><th>问题</th><th>产品 / 版本</th><th>预期状态</th><th>标注</th><th>操作</th></tr></thead><tbody id="caseRows"></tbody></table></div>
+<p id="caseEmpty" class="muted">添加用例或导入表格后即可批量运行。</p>
+</section>
+<section class="card" id="runPanel" hidden>
+<div class="heading"><h2>批量评测</h2><button id="addVariant" class="secondary" type="button">添加方案</button></div>
+<form id="runForm">
+<div id="variants"></div>
+<label for="baseline">历史回归基线</label><select id="baseline"><option value="">不选择历史基线</option></select>
+<p class="muted">多个方案使用同一份知识库快照，首个方案为本次对比基线。历史基线会按用例 ID 与标注内容对齐。</p>
+<label class="inline-check"><input id="remoteConsent" type="checkbox">允许所选的外部模型服务处理评测问题或资料片段</label>
+<button id="runButton" type="submit">批量执行</button>
+</form>
+</section>
+<section class="card">
+<div class="heading"><h2>评测记录</h2><div class="actions"><label class="inline-check"><input id="allRuns" type="checkbox">全部测试集</label><button id="refreshRuns" class="secondary" type="button">刷新</button></div></div>
+<div id="runList"></div>
+</section>
+<section class="card" id="resultPanel" hidden>
+<div class="heading"><div><h2 id="resultTitle">评测结果</h2><p id="runStatus" class="muted" role="status"></p></div><div id="reportLinks" class="actions" hidden><a id="markdownReport" class="link">下载报告</a><a id="jsonReport" class="link">下载 JSON</a></div></div>
+<div id="metrics"></div>
+<div id="comparisons"></div>
+<div id="resultTools" class="actions" hidden><label for="resultVariant">方案</label><select id="resultVariant"></select><label for="resultFilter">结果</label><select id="resultFilter"><option value="all">全部用例</option><option value="failed">未通过</option><option value="diagnostic">含诊断</option><option value="passed">已通过</option></select><span id="resultCount" class="muted"></span></div>
+<div id="results"></div>
+<div class="actions pagination" id="resultPages" hidden><button id="previousResults" type="button" class="secondary">上一页</button><button id="nextResults" type="button" class="secondary">下一页</button></div>
+</section>
+</div>
+</div>
+</main>
+<dialog id="setDialog" aria-labelledby="setDialogTitle">
+<form id="setForm">
+<div class="heading"><h2 id="setDialogTitle">测试集</h2><button type="button" class="secondary" data-close="setDialog">关闭</button></div>
+<label for="groupName">名称</label><input id="groupName" required maxlength="120">
+<label for="groupDescription">说明</label><textarea id="groupDescription" maxlength="2000"></textarea>
+<p class="form-error" role="alert"></p><button type="submit">保存测试集</button>
+</form>
+</dialog>
+<dialog id="caseDialog" aria-labelledby="caseDialogTitle">
+<form id="caseForm">
+<div class="heading"><h2 id="caseDialogTitle">测试用例</h2><button type="button" class="secondary" data-close="caseDialog">关闭</button></div>
+<label for="caseQuestion">问题</label><textarea id="caseQuestion" required maxlength="1000"></textarea>
+<div class="fields"><div><label for="caseProduct">产品</label><select id="caseProduct"></select></div><div><label for="caseVersion">版本</label><select id="caseVersion"></select></div><div><label for="caseStatus">预期状态</label><select id="caseStatus"></select></div></div>
+<label for="caseAnswer">参考答案</label><textarea id="caseAnswer" maxlength="3000"></textarea>
+<label for="caseTerms">关键词（每行一项）</label><textarea id="caseTerms" placeholder="有答案时，填写参考答案或关键词"></textarea>
+<label for="caseSource">期望来源（文件名）</label><input id="caseSource" maxlength="500">
+<label for="caseEvidence">期望证据（原文片段）</label><textarea id="caseEvidence" maxlength="2000"></textarea>
+<label for="caseHistory">前置问句（每行一问，最多 5 条）</label><textarea id="caseHistory"></textarea>
+<p class="form-error" role="alert"></p><button type="submit">保存用例</button>
+</form>
+</dialog>
+<dialog id="importDialog" aria-labelledby="importDialogTitle">
+<form id="importForm">
+<div class="heading"><h2 id="importDialogTitle">导入测试用例</h2><button type="button" class="secondary" data-close="importDialog">关闭</button></div>
+<label for="importFile">Excel (.xlsx) 或 CSV (.csv)，最大 2 MB</label><input id="importFile" type="file" accept=".xlsx,.csv" required>
+<p class="muted">第一行填写模板列名，Excel 读取第一张工作表。多项关键词和前置问句可用换行或竖线分隔。导入会追加到当前测试集。</p>
+<p class="form-error" role="alert"></p><button type="submit">导入</button>
+</form>
+</dialog>
+</body>
+</html>

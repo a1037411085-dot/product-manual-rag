@@ -1,0 +1,70 @@
+:root{font-family:system-ui,-apple-system,"PingFang SC","Microsoft YaHei",sans-serif;color:#16253a;background:#f2f5f9;font-synthesis:none}
+*{box-sizing:border-box}
+[hidden]{display:none!important}
+body{margin:0}
+header{background:#12335a;color:#fff}
+header>div{max-width:1200px;margin:auto;padding:16px 20px;display:flex;justify-content:space-between;align-items:center;gap:14px;flex-wrap:wrap}
+header a{color:#e0edf8;text-decoration:none}
+.brand{font-weight:750;font-size:20px;color:#fff}
+nav{display:flex;gap:14px;flex-wrap:wrap;font-size:14px}
+nav a[aria-current]{color:#fff;border-bottom:2px solid #93c9ed}
+main{max-width:1200px;margin:auto;padding:22px 20px 48px}
+h1,h2,h3,p{margin:0}
+h1{font-size:26px}
+h2{font-size:17px;overflow-wrap:anywhere}
+h3{font-size:15px}
+p{line-height:1.55}
+a.link{color:#185989;white-space:nowrap}
+.heading,.actions{display:flex;align-items:center;gap:10px;flex-wrap:wrap}
+.heading{justify-content:space-between;margin-bottom:14px}
+.workspace{display:grid;grid-template-columns:minmax(175px,238px) minmax(0,1fr);gap:16px;align-items:start}
+.content,.set-list{display:grid;gap:14px}
+.card{background:white;border:1px solid #dce4ef;border-radius:12px;padding:16px;min-width:0;box-shadow:0 2px 8px #142a400c}
+.sets h2{margin-bottom:12px}
+.set-entry{display:block;width:100%;text-align:left;margin:5px 0;overflow-wrap:anywhere}
+.set-entry small{display:block;opacity:.8;margin-top:3px}
+button,input,select,textarea{font:inherit}
+button{border:0;border-radius:8px;padding:8px 12px;background:#1263a6;color:white;cursor:pointer}
+button:hover{background:#0e4c80}
+button.secondary{background:#e8f1f8;color:#13436a}
+button.secondary:hover{background:#dcecf8}
+button.danger,.error,.form-error{color:#a12b2b}
+button:disabled{opacity:.6;cursor:default}
+input,select,textarea{width:100%;border:1px solid #cbd7e4;border-radius:7px;padding:8px;background:#fff;color:#16253a}
+textarea{min-height:62px;resize:vertical}
+label{display:block;margin:9px 0 5px;font-size:13px;color:#465d75}
+.inline-check{display:flex;align-items:center;gap:5px;margin:10px 0}
+.inline-check input{width:auto;margin:0}
+.muted,.form-error{font-size:13px;margin:6px 0}
+.muted{color:#586d83}
+.notice{margin:0 0 12px;padding:8px 10px;border-radius:8px;background:#e5f0f8}
+.fields{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:10px}
+.variant{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:10px;border:1px solid #dce4ef;border-radius:9px;padding:8px 10px 11px;margin:8px 0}
+.variant legend{font-size:13px;color:#395872;padding:0 5px}
+.variant label{margin-top:3px}
+.variant .remove-variant{justify-self:start;align-self:end}
+.table-scroll{overflow:auto;margin:12px 0 6px}
+table{border-collapse:collapse;width:100%;font-size:13px}
+th,td{text-align:left;vertical-align:top;padding:8px;border-bottom:1px solid #e2ebf2;overflow-wrap:anywhere}
+th{background:#f3f7fb;white-space:nowrap}
+td .actions{gap:5px;flex-wrap:nowrap}
+td button{padding:4px 7px;white-space:nowrap;font-size:12px}
+.result-item,details.comparison{border-top:1px solid #e2ebf2;padding:10px 0;margin:0}
+summary{cursor:pointer;font-weight:600;overflow-wrap:anywhere}
+.result-item pre,.evidence-text{white-space:pre-wrap;overflow-wrap:anywhere;font:inherit;margin:5px 0;line-height:1.5}
+.result-item pre{background:#f3f7fb;padding:9px;border-radius:6px}
+.result-item h3{margin-top:12px}
+.badge{font-size:12px;font-weight:650;margin-right:8px}
+.pass{color:#226943}
+.fail{color:#a12b2b}
+.review-form{display:grid;grid-template-columns:100px minmax(0,1fr) auto;align-items:end;gap:8px;margin-top:10px}
+.review-form label{margin:0;min-width:0}
+.review-form input{display:block;margin-top:4px}
+#resultTools{margin:10px 0}
+#resultTools select{width:auto;max-width:45%}
+#resultTools label{margin:0}
+.pagination{margin:10px 0 0}
+dialog{width:min(640px,calc(100vw - 24px));max-height:calc(100dvh - 24px);border:1px solid #cbd7e4;border-radius:12px;padding:18px;color:inherit}
+dialog::backdrop{background:#10263d99}
+@media(max-width:760px){.workspace{grid-template-columns:1fr}.variant{grid-template-columns:repeat(2,minmax(0,1fr))}}
+@media(max-width:450px){main{padding:16px 10px 36px}.fields,.review-form{grid-template-columns:1fr}.card{padding:12px}}

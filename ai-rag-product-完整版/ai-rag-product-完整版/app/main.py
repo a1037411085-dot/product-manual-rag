@@ -9,16 +9,21 @@ import tempfile
 import zipfile
 from pathlib import Path
 from typing import Optional
-from fastapi import FastAPI, File, Form, HTTPException, UploadFile
+from fastapi import FastAPI, File, Form, HTTPException, Query, UploadFile
 from fastapi.responses import FileResponse
+from fastapi.staticfiles import StaticFiles
+from starlette.concurrency import run_in_threadpool
 from pydantic import BaseModel, Field
 from . import core
 from . import semantic
 from . import llm_config
+from .testsets import router as testset_router
 
 app = FastAPI(title='产品知识库问答演示', version='1.0')
 core.init_db()
 STATIC = Path(__file__).parent / 'static'
+app.mount('/static', StaticFiles(directory=STATIC), name='static')
+app.include_router(testset_router)
 
 class ProductInput(BaseModel):
     id: str
@@ -96,6 +101,11 @@ def test_llm_config():
 def home():
     return FileResponse(STATIC / 'index.html', headers={'Cache-Control': 'no-store'})
 
+
+@app.get('/test-sets', include_in_schema=False)
+def testset_page():
+    return FileResponse(STATIC / 'testsets.html', headers={'Cache-Control': 'no-store'})
+
 @app.get('/api/rag/status')
 def rag_status():
     import importlib.util
@@ -154,20 +164,20 @@ def create_product(data: ProductInput):
 
 async def document_request(product_id, version, category, title, file,
                            remove_page_markers, remove_duplicates, max_chars, overlap,
-                           selected_faqs=None, preview=False, review=False):
+                           selected_faqs=None, preview=False):
     try:
         content = await file.read(5 * 1024 * 1024 + 1)
         settings = dict(remove_page_markers=remove_page_markers,
                         remove_duplicates=remove_duplicates, max_chars=max_chars,
-                        overlap=overlap, include_training=review or preview)
+                        overlap=overlap, include_training=True)
         if preview:
-            result = core.prepare_document(product_id, version, file.filename, content, **settings)
+            result = await run_in_threadpool(core.prepare_document, product_id, version, file.filename, content, **settings)
             result.pop('product_name')
             return result
         selection = json.loads(selected_faqs) if selected_faqs is not None else None
-        return core.add_document(product_id, version.strip(), category.strip(),
-                                 title.strip() or file.filename, file.filename, content,
-                                 selected_faqs=selection, **settings)
+        return await run_in_threadpool(core.add_document, product_id, version.strip(), category.strip(),
+                                       title.strip() or file.filename, file.filename, content,
+                                       selected_faqs=selection, **settings)
     except (ValueError, UnicodeError, zipfile.BadZipFile, ImportError, KeyError) as e:
         raise HTTPException(400, str(e))
 
@@ -190,10 +200,10 @@ async def upload_document(product_id: str = Form(...), version: str = Form(...),
                           remove_page_markers: bool = Form(True),
                           remove_duplicates: bool = Form(True),
                           max_chars: int = Form(360), overlap: int = Form(50),
-                          selected_faqs: Optional[str] = Form(None), review: bool = Form(False)):
+                          selected_faqs: Optional[str] = Form(None)):
     return await document_request(product_id, version, category, title, file,
                                   remove_page_markers, remove_duplicates, max_chars, overlap,
-                                  selected_faqs, review=review)
+                                  selected_faqs)
 
 @app.get('/api/documents')
 def documents(product_id: Optional[str] = None):
@@ -207,6 +217,23 @@ def documents(product_id: Optional[str] = None):
 @app.get('/api/faqs')
 def faqs(product_id: str, version: str, limit: int = 12):
     return core.list_faqs(product_id, version, limit)
+
+
+@app.get('/api/documents/{document_id}/faqs')
+def document_faqs(document_id: str, q: str = Query('', max_length=500),
+                  offset: int = Query(0, ge=0), limit: int = Query(30, ge=1, le=100)):
+    with core.connect() as db:
+        document = db.execute('SELECT id,product_id,version,title,source FROM documents WHERE id=?',
+                              (document_id,)).fetchone()
+        if document is None:
+            raise HTTPException(404, '文档不存在')
+        where = '''FROM faqs f LEFT JOIN faq_origins o ON o.faq_id=f.id WHERE f.document_id=?
+                   AND (?='' OR instr(lower(f.question || ' ' || f.answer), lower(?))>0)'''
+        parameters = (document_id, q.strip(), q.strip())
+        count = db.execute('SELECT count(*) ' + where, parameters).fetchone()[0]
+        rows = db.execute('''SELECT f.id,f.question,f.answer,f.category,f.kind,o.source_line,o.source_end_line ''' +
+                          where + ' ORDER BY f.rowid LIMIT ? OFFSET ?', (*parameters, limit, offset))
+        return {'document': dict(document), 'total': count, 'items': [dict(row) for row in rows]}
 
 @app.post('/api/faqs/train')
 def train_faqs(product_id: Optional[str] = None, version: Optional[str] = None):
@@ -285,7 +312,7 @@ def stats():
         return {'questions': total, 'answered': counts.get('answered', 0),
                 'handoffs': counts.get('handoff', 0),
                 'unanswered': counts.get('no_answer', 0) + counts.get('no_product', 0),
-                'auto_faqs': db.execute("SELECT count(*) FROM faqs WHERE kind IN ('auto','rule','trained')").fetchone()[0],
+                'auto_faqs': db.execute("SELECT count(*) FROM faqs WHERE kind IN ('auto','rule','trained','parameter','procedure','troubleshooting')").fetchone()[0],
                 'open_gap_count': db.execute('SELECT count(*) FROM unanswered WHERE resolved_at IS NULL').fetchone()[0],
                 'resolution_rate': round(counts.get('answered', 0) / total, 3) if total else 0,
                 'feedback_positive': db.execute('SELECT count(*) FROM feedback WHERE rating=1').fetchone()[0],
