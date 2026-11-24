@@ -50,7 +50,7 @@ def write_report(report, output):
 
 def main():
     parser = argparse.ArgumentParser(description=__doc__)
-    parser.add_argument('--retrievers', nargs='+', choices=['hash', 'semantic'], default=['hash', 'semantic'])
+    parser.add_argument('--retrievers', nargs='+', choices=['hash', 'bm25', 'semantic'], default=['hash', 'semantic'])
     parser.add_argument('--with-llm', action='store_true', help='Include strict LLM runs; never silently fall back')
     parser.add_argument('--output', type=Path, default=Path('reports/latest'))
     args = parser.parse_args()
@@ -75,6 +75,12 @@ def main():
                 report['faqs'] = db.execute('SELECT count(*) FROM faqs').fetchone()[0]
                 report['cleaning_reports'] = [json.loads(r[0]) for r in db.execute('SELECT cleaning_report FROM documents')]
             for retriever in args.retrievers:
+                if retriever == 'bm25':
+                    with core.connect() as db:
+                        if not core.bm25.available(db):
+                            report['skipped']['bm25'] = '当前 SQLite 未启用 FTS5'
+                            continue
+                        core.bm25.refresh(db)
                 if retriever == 'semantic':
                     try:
                         import faiss

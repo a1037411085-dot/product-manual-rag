@@ -52,7 +52,7 @@ class CaseInput(BaseModel):
 
 class Variant(BaseModel):
     name: str = Field(min_length=1, max_length=80)
-    retriever: Literal['hash', 'semantic'] = 'hash'
+    retriever: Literal['hash', 'bm25', 'semantic'] = 'hash'
     answer_mode: Literal['auto', 'extractive', 'llm'] = 'extractive'
     model: str = Field('', max_length=200)
     threshold: Optional[float] = Field(None, ge=0, le=1)

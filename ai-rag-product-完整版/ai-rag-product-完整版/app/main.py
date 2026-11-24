@@ -15,6 +15,7 @@ from fastapi.staticfiles import StaticFiles
 from starlette.concurrency import run_in_threadpool
 from pydantic import BaseModel, Field
 from . import core
+from . import bm25
 from . import semantic
 from . import llm_config
 from .testsets import router as testset_router
@@ -113,12 +114,13 @@ def rag_status():
         chunks = db.execute('SELECT count(*) FROM chunks').fetchone()[0]
         indexed = db.execute('''SELECT count(*) FROM semantic_vectors s JOIN chunks c ON c.id=s.chunk_id
                               WHERE identity=?''', (semantic.config()[3],)).fetchone()[0]
+        bm25_status = bm25.status(db)
     return {'retriever': os.getenv('RAG_RETRIEVER', 'hash'),
             'answer_mode': llm_config.effective(core.DB_PATH)['answer_mode'],
             'embedding_provider': semantic.config()[0], 'embedding_model': semantic.config()[1],
             'faiss_available': importlib.util.find_spec('faiss') is not None,
             'local_embedding_available': importlib.util.find_spec('sentence_transformers') is not None,
-            'chunks': chunks, 'indexed_chunks': indexed,
+            'chunks': chunks, 'indexed_chunks': indexed, 'bm25': bm25_status,
             'llm_configured': core.answer_prompt_config()['model_enabled']}
 
 @app.post('/api/rag/reindex')
@@ -127,6 +129,15 @@ def reindex():
         return semantic.index_chunks(core.connect)
     except Exception as error:
         raise HTTPException(503, '语义索引构建失败（' + type(error).__name__ + '），请检查依赖、模型和网络配置')
+
+
+@app.post('/api/rag/reindex/bm25')
+def reindex_bm25():
+    with core.connect() as db:
+        if not bm25.available(db):
+            raise HTTPException(503, '当前 SQLite 未启用 FTS5，BM25 查询会使用字符检索')
+        bm25.refresh(db)
+        return {**bm25.status(db), 'chunks': db.execute('SELECT count(*) FROM rag_bm25').fetchone()[0]}
 
 @app.get('/api/products')
 def products():

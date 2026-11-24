@@ -3,7 +3,7 @@
 const $ = id => document.getElementById(id);
 const statusLabels = {answered: '有答案', no_answer: '拒答', handoff: '转人工', no_product: '未找到产品', product_found: '找到产品', error: '执行失败'};
 const runLabels = {queued: '排队中', running: '运行中', completed: '已完成', failed: '失败'};
-const retrieverLabels = {hash: '字符检索', semantic: '语义检索'};
+const retrieverLabels = {hash: '字符检索', bm25: 'BM25 + 字符重排', semantic: '语义检索'};
 const answerLabels = {extractive: '原文回答', auto: 'FAQ 优先 / 原文', llm: 'LLM 生成'};
 const pageSize = 20;
 let group, products = [], runs = [], activeRun, editingCase, editingSet, resultPage = 0, pollTimer, viewRequest = 0, variantCounter = 0;
@@ -417,6 +417,7 @@ function resultDetail(run, item, row) {
       (row.actual_product_id ? productName(row.actual_product_id) + ' / ' + (row.actual_version || '—') : '—'), 'muted'));
     if (row.reasons.length) detail.append(element('p', row.reasons.map(reason => run.failure_labels[reason]).join('；'), 'error'));
     if (row.strict_score != null) detail.append(element('p', '等价口径 ' + row.score + ' 分 · 严格口径 ' + row.strict_score + ' 分', 'muted'));
+    if (row.retrieval_candidates != null) detail.append(element('p', '重排候选 ' + row.retrieval_candidates + ' 条' + (row.retrieval_fallback ? ' · 已回退字符检索' : ''), 'muted'));
     detail.append(element('h3', '实际回答'), element('pre', row.actual_answer || '无'));
     if (test.expected_answer) detail.append(element('h3', '参考答案'), element('pre', test.expected_answer));
     if (test.history.length) detail.append(element('p', '前置问句：' + test.history.join(' → '), 'muted'));

@@ -1,0 +1,82 @@
+{
+  "sqlite": "3.51.0",
+  "snapshot_sha256": "28125642debd5e73c61183d9d395747d4d647fb3ad88e436483ba3ed28ab9b2b",
+  "cases_sha256": "2f1eac0a34fe7b397d84640edd6af9e5f51cc24a07669c915d7e8e8620dc1e39",
+  "settings": {
+    "answer_mode": "extractive",
+    "threshold": 0.16,
+    "bm25_candidates": 30
+  },
+  "quality": {
+    "hash": {
+      "total": 158,
+      "passed": 113,
+      "strict_passed": 125,
+      "scoring_version": "literal-and-units-v1",
+      "status_accuracy": 0.9937,
+      "average_score": 74.0506,
+      "mean_latency_ms": 6.0468,
+      "refusal_accuracy": 1,
+      "evidence_cases": 138,
+      "hit_at_k": {
+        "1": 0.7754,
+        "3": 0.942,
+        "5": 0.9493
+      },
+      "mrr_at_5": 0.8589,
+      "citation_accuracy": 0.9489,
+      "reason_counts": {
+        "retrieval_ranking": 24,
+        "answer_mismatch": 40,
+        "retrieval_miss": 7,
+        "citation_mismatch": 7,
+        "false_refusal": 1
+      },
+      "observed_models": {}
+    },
+    "bm25": {
+      "total": 158,
+      "passed": 113,
+      "strict_passed": 125,
+      "scoring_version": "literal-and-units-v1",
+      "status_accuracy": 0.9937,
+      "average_score": 74.0506,
+      "mean_latency_ms": 2.0892,
+      "refusal_accuracy": 1,
+      "evidence_cases": 138,
+      "hit_at_k": {
+        "1": 0.7754,
+        "3": 0.942,
+        "5": 0.9493
+      },
+      "mrr_at_5": 0.8589,
+      "citation_accuracy": 0.9489,
+      "reason_counts": {
+        "retrieval_ranking": 24,
+        "answer_mismatch": 40,
+        "retrieval_miss": 7,
+        "citation_mismatch": 7,
+        "false_refusal": 1
+      },
+      "observed_models": {}
+    }
+  },
+  "index_build_ms": 20.674,
+  "indexed_chunks": 1940,
+  "warm_retrieval": {
+    "hash": {
+      "queries": 918,
+      "p50_ms": 4.892,
+      "p95_ms": 7.445,
+      "median_rerank_candidates": 468.0,
+      "fallback_queries": 0
+    },
+    "bm25": {
+      "queries": 918,
+      "p50_ms": 0.942,
+      "p95_ms": 1.899,
+      "median_rerank_candidates": 30.0,
+      "fallback_queries": 54
+    }
+  }
+}

@@ -99,6 +99,7 @@ dialog.evaluation{width:min(1100px,calc(100vw - 32px));max-width:none;max-height
 </section><section class="card prompt-card"><details open><summary>检索与生成状态</summary>
 <p id="ragStatus" class="hint">正在读取配置…</p>
 <button id="reindexSemantic" class="secondary" type="button">补建语义向量索引</button>
+<button id="reindexBm25" class="secondary" type="button">构建 BM25 索引</button>
 <p id="ragIndexResult" class="hint" aria-live="polite">本地模型首次运行需要下载；已建索引可复用。</p>
 </details></section><section class="card prompt-card"><details open><summary>免费 API 与模型选择</summary>
 <label for="llmProvider">服务商</label><select id="llmProvider"><option>正在加载…</option></select>
@@ -558,7 +559,7 @@ $('commitImport').onclick=async()=>{
 };
 $('nextImport').onclick=()=>{completedImport=null;$('file').value='';setStep(1);flowMessage('选择下一份资料生成预览。')};
 $('testImported').onclick=()=>{if(!completedImport)return;selectProduct(completedImport.product_id);$('version').value=completedImport.version;sessionId=null;$('currentScope').textContent=scopeLabel();loadFaqSuggestions();location.hash='chat'};
-async function loadRagStatus(){try{const r=await api('/api/rag/status');$('ragStatus').textContent=`检索：${r.retriever==='semantic'?'语义向量 + FAISS':'字符检索基线'}；回答模式：${r.answer_mode}；模型服务：${r.llm_configured?'已配置（需实际调用验证）':'未配置'}。当前模型已索引 ${r.indexed_chunks}/${r.chunks} 个片段。`;}catch(e){$('ragStatus').textContent='状态读取失败：'+e.message}}
+async function loadRagStatus(){try{const r=await api('/api/rag/status');const names={hash:'字符检索基线',bm25:'BM25 + 字符重排',semantic:'语义向量 + FAISS'};const index=r.bm25;const bm25Status=!index.available?'当前 SQLite 缺少 FTS5':!index.built?'待构建':index.pending_scopes?`${index.pending_scopes} 个范围待更新`:'已就绪';$('ragStatus').textContent=`检索：${names[r.retriever]||r.retriever}；回答模式：${r.answer_mode}；模型服务：${r.llm_configured?'已配置（需实际调用验证）':'未配置'}。语义向量 ${r.indexed_chunks}/${r.chunks}。BM25 索引：${bm25Status}。`;$('reindexBm25').disabled=!index.available;}catch(e){$('ragStatus').textContent='状态读取失败：'+e.message}}
 let llmProviders=[],savedLLMConfig=null;
 function renderLLMProvider(providerId,modelId=''){
   const provider=llmProviders.find(p=>p.id===providerId);if(!provider)return;
@@ -593,6 +594,7 @@ async function saveLLM(test=false){
 $('saveLLM').onclick=()=>saveLLM(false);$('testLLM').onclick=()=>saveLLM(true);
 $('resetLLM').onclick=async()=>{setLLMBusy(true);try{await api('/api/llm/config',{method:'DELETE'});await loadLLMConfig();await loadRagStatus();await loadPrompt();$('llmConfigStatus').textContent='本机保存的服务配置和密钥已清除；如启动环境中有模型配置，则恢复使用环境变量。';}catch(e){$('llmConfigStatus').textContent='清除失败：'+e.message}finally{setLLMBusy(false)}};
 $('reindexSemantic').onclick=async()=>{const b=$('reindexSemantic');b.disabled=true;$('ragIndexResult').textContent='正在构建索引，首次下载可能需要几分钟…';try{const r=await api('/api/rag/reindex',{method:'POST'});$('ragIndexResult').textContent=`共 ${r.chunks} 个片段，本次新增向量 ${r.embedded} 个。`;await loadRagStatus()}catch(e){$('ragIndexResult').textContent=e.message}finally{b.disabled=false}};
+$('reindexBm25').onclick=async()=>{const b=$('reindexBm25');b.disabled=true;$('ragIndexResult').textContent='正在构建本地 BM25 索引…';try{const r=await api('/api/rag/reindex/bm25',{method:'POST'});$('ragIndexResult').textContent=`BM25 索引已覆盖 ${r.chunks} 个片段。`;await loadRagStatus()}catch(e){$('ragIndexResult').textContent=e.message;b.disabled=false}};
 loadRagStatus();
 loadLLMConfig();
 showPage();setStep(1);configProducts().catch(e=>flowMessage('配置加载失败：'+e.message,true));

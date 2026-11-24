@@ -143,6 +143,7 @@ def score_case(case, result, latency):
         'actual_product_id': result.get('product_id'), 'actual_version': result.get('version'),
         'generation_mode': result.get('generation_mode'), 'generation_error': generation_error,
         'model_used': result.get('model_used'),
+        'retrieval_candidates': result.get('retrieval_candidates'), 'retrieval_fallback': result.get('retrieval_fallback'),
         'latency_ms': latency, 'score': score, 'strict_score': strict_score, 'status_ok': status_ok,
         'passed': status_ok and score == 100 and citation_ok is not False,
         'strict_passed': status_ok and strict_score == 100 and citation_ok is not False,
