@@ -513,13 +513,14 @@ def markdown_report(run):
     lines = [f'# RAG 评测报告 · {text(run["set_name"])}', '', f'运行 ID：{run["id"]}', '',
              f'时间：{run["created_at"]}', '', f'用例摘要：`{run["dataset_digest"]}`', '',
              f'资料摘要：`{run["corpus_digest"]}`', '',
-             '自动分数按预期状态和标注答案计算。人工评分独立汇总。检索指标只统计有证据标注的用例。', '',
-             '| 方案 | 用例通过 | 状态准确率 | 自动均分 | 人工均分（已评） | Hit@1 | Hit@3 | Hit@5 | MRR@5 | 拒答准确率 |',
-             '|---|---|---|---|---|---|---|---|---|---|']
+             '自动评分统一格式及常见等价单位，同时给出严格字符串口径。人工评分独立汇总。', '',
+             '| 方案 | 用例通过 | 严格通过 | 状态准确率 | 自动均分 | 人工均分（已评） | Hit@1 | Hit@3 | Hit@5 | MRR@5 | 拒答准确率 |',
+             '|---|---|---|---|---|---|---|---|---|---|---|']
     for item in run['variants']:
         metrics = item['metrics']
         hits = [percentage(metrics['hit_at_k'][str(k)]) for k in (1, 3, 5)]
-        lines.append('| ' + ' | '.join(map(str, [text(item['variant']['name']), f'{metrics["passed"]}/{metrics["total"]}',
+        strict = f'{metrics["strict_passed"]}/{metrics["total"]}' if 'strict_passed' in metrics else '—'
+        lines.append('| ' + ' | '.join(map(str, [text(item['variant']['name']), f'{metrics["passed"]}/{metrics["total"]}', strict,
                     percentage(metrics['status_accuracy']), metrics['average_score'], f'{metrics["human_average_score"] if metrics["human_average_score"] is not None else "—"} ({metrics["reviewed_cases"]})',
                     *hits, metrics['mrr_at_5'] if metrics['mrr_at_5'] is not None else '—', percentage(metrics['refusal_accuracy'])])) + ' |')
     for item in run['variants']:
@@ -534,11 +535,11 @@ def markdown_report(run):
             lines.append('- 实际模型：' + '、'.join(f'{text(name)} × {count}' for name, count in models.items()))
         if diagnostics:
             lines.append('- 诊断分布：' + '、'.join(f'{FAILURE_LABELS[reason]} × {count}' for reason, count in diagnostics.items()))
-        lines += ['', '### 逐题结果', '', '| 问题 | 预期 / 实际状态 | 自动分 | 人工分 | 证据排名 | 诊断 |',
-                  '|---|---|---|---|---|---|']
+        lines += ['', '### 逐题结果', '', '| 问题 | 预期 / 实际状态 | 自动分 | 严格分 | 人工分 | 证据排名 | 诊断 |',
+                  '|---|---|---|---|---|---|---|']
         for row in item['rows']:
             lines.append('| ' + ' | '.join(map(str, [text(row['case']['question']),
-                         f'{row["case"]["expected_status"]} / {row["actual_status"]}', row['score'],
+                         f'{row["case"]["expected_status"]} / {row["actual_status"]}', row['score'], row.get('strict_score', '—'),
                          row['review']['score'] if row['review'] else '—', row['evidence_rank'] or '—',
                          '；'.join(FAILURE_LABELS[reason] for reason in row['reasons']) or '—'])) + ' |')
         failures = [row for row in item['rows'] if not row['passed']]
@@ -556,6 +557,8 @@ def markdown_report(run):
                   f'新增 {len(item["new"])} 题，移除 {len(item["removed"])} 题，编辑 {len(item["edited"])} 题。']
         if item.get('same_corpus') is False:
             lines.extend(['', '本次与基线的知识资料快照有变化。'])
+        if item.get('comparison_scoring') == 'literal':
+            lines.extend(['', '历史评分版本不同，本次回归按双方的严格口径比较。'])
         for title, key in [('通过退步', 'regressions'), ('分数下降', 'score_drops'), ('证据排名下降', 'retrieval_drops')]:
             if item[key]:
                 lines.extend(['', f'### {title}', ''])

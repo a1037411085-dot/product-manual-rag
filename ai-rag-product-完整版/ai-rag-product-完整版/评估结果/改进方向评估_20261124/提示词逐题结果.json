@@ -1,0 +1,668 @@
+{
+  "model": "Qwen/Qwen2.5-0.5B-Instruct",
+  "model_revision": "7ae557604adf67be50417f59c2c2f167def9a775",
+  "weights_sha256": "fdf756fa7fcbe7404d5c60e26bff1a0c8b8aa1f72ced49e7dd0210fe288fb7fe",
+  "transformers": "4.57.6",
+  "torch": "2.8.0",
+  "settings": {
+    "greedy": true,
+    "max_new_tokens": 88,
+    "device": "cpu",
+    "dtype": "float32"
+  },
+  "prompt_sha256": {
+    "A": "3e44a47d3c879e30a7d008bf6412d136eda7792b19acf78bbf7b4a45f9096b1c",
+    "B": "d271d29c45977be7966ed4e8c4061c4bcd46385a3eab44ecf4bec21b3759c684",
+    "C": "7a7b6117a7eaf2fe003768bce7278989e63dec9fd0d55ee7a5054fc58095ecc7"
+  },
+  "inputs": [
+    {
+      "id": "p01",
+      "source": "01_洗衣机_米家WM090MJA08HK.txt",
+      "question": "额定洗涤容量是多少？",
+      "expected_terms": [
+        "9 kg"
+      ],
+      "evidence": [
+        "额定洗涤容量：9 kg"
+      ]
+    },
+    {
+      "id": "p02",
+      "source": "01_洗衣机_米家WM090MJA08HK.txt",
+      "question": "米家洗衣机的净重和毛重分别是多少？",
+      "expected_terms": [
+        "55 kg",
+        "59 kg"
+      ],
+      "evidence": [
+        "产品净重：55 kg",
+        "产品毛重：59 kg"
+      ]
+    },
+    {
+      "id": "p03",
+      "source": "04_冰箱_海尔BCD-600WGHSS17NZU1.txt",
+      "question": "BCD-601WGHSS17B8U1 的总容积是多少？",
+      "expected_terms": [
+        "601L"
+      ],
+      "evidence": [
+        "型号：BCD-601WGHSS17B8U1\n气候类型：SN.N.ST.T 型\n防触电保护类别：I类\n总容积：601L\n冷冻室容积：195L\n二星级部分容积：26L"
+      ]
+    },
+    {
+      "id": "p04",
+      "source": "05_空调_美的KFR-51LW_BP3DN8Y-YA401(1).txt",
+      "question": "使用遥控器应该离空调多远？",
+      "expected_terms": [
+        "8 米"
+      ],
+      "evidence": [
+        "- 使用时，需保持遥控器与空调器 8 米范围内，将遥控器对准室内机信号接收窗；"
+      ]
+    },
+    {
+      "id": "p05",
+      "source": "02_手持吸尘器_Xiaomi_G10_Plus.txt",
+      "question": "内置滤网清洗后至少要晾晒多久？",
+      "expected_terms": [
+        "24 小时"
+      ],
+      "evidence": [
+        "4. 将内置滤网晾晒至少 24 小时，以确保彻底干燥。"
+      ]
+    },
+    {
+      "id": "p06",
+      "source": "03_扫拖机器人_Xiaomi_S20.txt",
+      "question": "这款扫拖机器人支持什么 Wi-Fi 频段？",
+      "expected_terms": [
+        "2.4 GHz"
+      ],
+      "evidence": [
+        "本产品仅支援连接2.4 GHz 频段的 Wi-Fi 网路。"
+      ]
+    },
+    {
+      "id": "p07",
+      "source": "02_手持吸尘器_Xiaomi_G10_Plus.txt",
+      "question": "说明书列了哪三种需用清水冲洗的集尘部件？",
+      "expected_terms": [
+        "前置过滤网",
+        "旋风系统组件",
+        "集尘桶"
+      ],
+      "evidence": [
+        "5. 使用清水冲洗前置过滤网、旋风系统组件及集尘桶，直至干净为止。冲洗完毕后，晾晒至少 24 小时以确保彻底干燥。"
+      ]
+    },
+    {
+      "id": "p08",
+      "source": "03_扫拖机器人_Xiaomi_S20.txt",
+      "question": "额定功率多少？",
+      "expected_terms": [
+        "45 W"
+      ],
+      "evidence": [
+        "额定功率：45 W"
+      ]
+    },
+    {
+      "id": "n01",
+      "source": "01_洗衣机_米家WM090MJA08HK.txt",
+      "question": "为什么厂商选择把额定洗涤容量设计成 9 kg？",
+      "expected_terms": [],
+      "evidence": [
+        "额定洗涤容量：9 kg"
+      ]
+    },
+    {
+      "id": "n02",
+      "source": "04_冰箱_海尔BCD-600WGHSS17NZU1.txt",
+      "question": "为什么厂商把这个冰箱的总容积设计成 601L？",
+      "expected_terms": [],
+      "evidence": [
+        "型号：BCD-601WGHSS17B8U1\n气候类型：SN.N.ST.T 型\n防触电保护类别：I类\n总容积：601L\n冷冻室容积：195L\n二星级部分容积：26L"
+      ]
+    },
+    {
+      "id": "n03",
+      "source": "03_扫拖机器人_Xiaomi_S20.txt",
+      "question": "边刷安装后工作效率可以提高百分之多少？",
+      "expected_terms": [],
+      "evidence": [
+        "取出边刷，安装至图示扣位处，听到「嗒」一声，表示安装到位。"
+      ]
+    },
+    {
+      "id": "n04",
+      "source": "05_空调_美的KFR-51LW_BP3DN8Y-YA401(1).txt",
+      "question": "遥控器在水下几米还能用？",
+      "expected_terms": [],
+      "evidence": [
+        "- 使用时，需保持遥控器与空调器 8 米范围内，将遥控器对准室内机信号接收窗；"
+      ]
+    },
+    {
+      "id": "n05",
+      "source": "03_扫拖机器人_Xiaomi_S20.txt",
+      "question": "扫拖机器人内置 4K 摄像头的分辨率是多少？",
+      "expected_terms": [],
+      "evidence": [
+        "本产品仅支援连接2.4 GHz 频段的 Wi-Fi 网路。"
+      ]
+    },
+    {
+      "id": "n06",
+      "source": "04_冰箱_海尔BCD-600WGHSS17NZU1.txt",
+      "question": "这款冰箱的建议零售价是多少？",
+      "expected_terms": [],
+      "evidence": [
+        "型号：BCD-601WGHSS17B8U1\n气候类型：SN.N.ST.T 型\n防触电保护类别：I类\n总容积：601L\n冷冻室容积：195L\n二星级部分容积：26L"
+      ]
+    },
+    {
+      "id": "n07",
+      "source": "02_手持吸尘器_Xiaomi_G10_Plus.txt",
+      "question": "为什么内置滤网需要晾晒 24 小时而不是 23 小时？",
+      "expected_terms": [],
+      "evidence": [
+        "4. 将内置滤网晾晒至少 24 小时，以确保彻底干燥。"
+      ]
+    }
+  ],
+  "groups": {
+    "A": [
+      {
+        "id": "p01",
+        "answer": "现有产品资料中暂未找到相关说明。",
+        "passed": false,
+        "refused": true,
+        "exact_refusal": true,
+        "citation_range_ok": false,
+        "max_token_limit_reached": false,
+        "latency_s": 0.59
+      },
+      {
+        "id": "p02",
+        "answer": "现有产品资料中暂未找到相关说明。",
+        "passed": false,
+        "refused": true,
+        "exact_refusal": true,
+        "citation_range_ok": false,
+        "max_token_limit_reached": false,
+        "latency_s": 0.5
+      },
+      {
+        "id": "p03",
+        "answer": "BCD-601WGHSS17B8U1 的总容积是 601L。",
+        "passed": true,
+        "refused": false,
+        "exact_refusal": false,
+        "citation_range_ok": false,
+        "max_token_limit_reached": false,
+        "latency_s": 1.1
+      },
+      {
+        "id": "p04",
+        "answer": "现有产品资料中暂未找到相关说明。",
+        "passed": false,
+        "refused": true,
+        "exact_refusal": true,
+        "citation_range_ok": false,
+        "max_token_limit_reached": false,
+        "latency_s": 0.5
+      },
+      {
+        "id": "p05",
+        "answer": "资料中提到，内置滤网晾晒至少 24 小时，以确保彻底干燥。",
+        "passed": true,
+        "refused": false,
+        "exact_refusal": false,
+        "citation_range_ok": false,
+        "max_token_limit_reached": false,
+        "latency_s": 0.91
+      },
+      {
+        "id": "p06",
+        "answer": "现有产品资料中暂未找到相关说明。",
+        "passed": false,
+        "refused": true,
+        "exact_refusal": true,
+        "citation_range_ok": false,
+        "max_token_limit_reached": false,
+        "latency_s": 0.49
+      },
+      {
+        "id": "p07",
+        "answer": "现有产品资料中暂未找到相关说明。",
+        "passed": false,
+        "refused": true,
+        "exact_refusal": true,
+        "citation_range_ok": false,
+        "max_token_limit_reached": false,
+        "latency_s": 0.5
+      },
+      {
+        "id": "p08",
+        "answer": "额定功率：45 W",
+        "passed": true,
+        "refused": false,
+        "exact_refusal": false,
+        "citation_range_ok": false,
+        "max_token_limit_reached": false,
+        "latency_s": 0.38
+      },
+      {
+        "id": "n01",
+        "answer": "现有产品资料中暂未找到相关说明。",
+        "passed": true,
+        "refused": true,
+        "exact_refusal": true,
+        "citation_range_ok": false,
+        "max_token_limit_reached": false,
+        "latency_s": 0.48
+      },
+      {
+        "id": "n02",
+        "answer": "因为BCD-601WGHSS17B8U1的总容积设计成601L，是为了满足不同家庭对冰箱容量的需求，同时考虑到冰箱的制冷效果和使用便利性。",
+        "passed": false,
+        "refused": false,
+        "exact_refusal": false,
+        "citation_range_ok": false,
+        "max_token_limit_reached": false,
+        "latency_s": 1.84
+      },
+      {
+        "id": "n03",
+        "answer": "边刷安装后工作效率可以提高百分之多少？资料中没有提供具体数值，建议人工确认。",
+        "passed": false,
+        "refused": false,
+        "exact_refusal": false,
+        "citation_range_ok": false,
+        "max_token_limit_reached": false,
+        "latency_s": 0.9
+      },
+      {
+        "id": "n04",
+        "answer": "资料中提到，遥控器与空调器的距离需要保持在 8 米范围内，才能在水下使用。因此，遥控器在水下几米还能用，具体距离需要根据实际情况调整。",
+        "passed": false,
+        "refused": false,
+        "exact_refusal": false,
+        "citation_range_ok": false,
+        "max_token_limit_reached": false,
+        "latency_s": 1.68
+      },
+      {
+        "id": "n05",
+        "answer": "现有产品资料中暂未找到相关说明。",
+        "passed": true,
+        "refused": true,
+        "exact_refusal": true,
+        "citation_range_ok": false,
+        "max_token_limit_reached": false,
+        "latency_s": 0.49
+      },
+      {
+        "id": "n06",
+        "answer": "现有产品资料中暂未找到相关说明。",
+        "passed": true,
+        "refused": true,
+        "exact_refusal": true,
+        "citation_range_ok": false,
+        "max_token_limit_reached": false,
+        "latency_s": 0.51
+      },
+      {
+        "id": "n07",
+        "answer": "资料中提到，内置滤网需要晾晒至少24小时以确保彻底干燥。",
+        "passed": false,
+        "refused": false,
+        "exact_refusal": false,
+        "citation_range_ok": false,
+        "max_token_limit_reached": false,
+        "latency_s": 0.81
+      }
+    ],
+    "B": [
+      {
+        "id": "p01",
+        "answer": "现有产品资料中暂未找到相关说明。",
+        "passed": false,
+        "refused": true,
+        "exact_refusal": true,
+        "citation_range_ok": false,
+        "max_token_limit_reached": false,
+        "latency_s": 0.55
+      },
+      {
+        "id": "p02",
+        "answer": "现有产品资料中暂未找到相关说明。",
+        "passed": false,
+        "refused": true,
+        "exact_refusal": true,
+        "citation_range_ok": false,
+        "max_token_limit_reached": false,
+        "latency_s": 0.56
+      },
+      {
+        "id": "p03",
+        "answer": "BCD-601WGHSS17B8U1 的总容积是 601L。",
+        "passed": true,
+        "refused": false,
+        "exact_refusal": false,
+        "citation_range_ok": false,
+        "max_token_limit_reached": false,
+        "latency_s": 1.18
+      },
+      {
+        "id": "p04",
+        "answer": "现有产品资料中暂未找到相关说明。",
+        "passed": false,
+        "refused": true,
+        "exact_refusal": true,
+        "citation_range_ok": false,
+        "max_token_limit_reached": false,
+        "latency_s": 0.57
+      },
+      {
+        "id": "p05",
+        "answer": "4. 将内置滤网晾晒至少 24 小时，以确保彻底干燥。",
+        "passed": true,
+        "refused": false,
+        "exact_refusal": false,
+        "citation_range_ok": false,
+        "max_token_limit_reached": false,
+        "latency_s": 0.98
+      },
+      {
+        "id": "p06",
+        "answer": "现有产品资料中暂未找到相关说明。",
+        "passed": false,
+        "refused": true,
+        "exact_refusal": true,
+        "citation_range_ok": false,
+        "max_token_limit_reached": false,
+        "latency_s": 0.56
+      },
+      {
+        "id": "p07",
+        "answer": "现有产品资料中暂未找到相关说明。",
+        "passed": false,
+        "refused": true,
+        "exact_refusal": true,
+        "citation_range_ok": false,
+        "max_token_limit_reached": false,
+        "latency_s": 0.56
+      },
+      {
+        "id": "p08",
+        "answer": "资料中明确指出额定功率为45 W。",
+        "passed": true,
+        "refused": false,
+        "exact_refusal": false,
+        "citation_range_ok": false,
+        "max_token_limit_reached": false,
+        "latency_s": 0.6
+      },
+      {
+        "id": "n01",
+        "answer": "资料中明确指出，额定洗涤容量设计成9kg是为了确保洗衣机能够有效地洗涤9kg的衣物，以满足日常洗衣需求。",
+        "passed": false,
+        "refused": false,
+        "exact_refusal": false,
+        "citation_range_ok": false,
+        "max_token_limit_reached": false,
+        "latency_s": 1.25
+      },
+      {
+        "id": "n02",
+        "answer": "现有产品资料中暂未找到相关说明。",
+        "passed": true,
+        "refused": true,
+        "exact_refusal": true,
+        "citation_range_ok": false,
+        "max_token_limit_reached": false,
+        "latency_s": 0.58
+      },
+      {
+        "id": "n03",
+        "answer": "边刷安装后工作效率可以提高百分之多少？资料中没有明确回答，只能根据现有产品资料中暂未找到相关说明。",
+        "passed": true,
+        "refused": true,
+        "exact_refusal": false,
+        "citation_range_ok": false,
+        "max_token_limit_reached": false,
+        "latency_s": 1.2
+      },
+      {
+        "id": "n04",
+        "answer": "资料中没有明确回答遥控器在水下几米还能用的问题。",
+        "passed": false,
+        "refused": false,
+        "exact_refusal": false,
+        "citation_range_ok": false,
+        "max_token_limit_reached": false,
+        "latency_s": 0.77
+      },
+      {
+        "id": "n05",
+        "answer": "现有产品资料中暂未找到相关说明。",
+        "passed": true,
+        "refused": true,
+        "exact_refusal": true,
+        "citation_range_ok": false,
+        "max_token_limit_reached": false,
+        "latency_s": 0.56
+      },
+      {
+        "id": "n06",
+        "answer": "现有产品资料中暂未找到相关说明。",
+        "passed": true,
+        "refused": true,
+        "exact_refusal": true,
+        "citation_range_ok": false,
+        "max_token_limit_reached": false,
+        "latency_s": 0.58
+      },
+      {
+        "id": "n07",
+        "answer": "现有产品资料中暂未找到相关说明。",
+        "passed": true,
+        "refused": true,
+        "exact_refusal": true,
+        "citation_range_ok": false,
+        "max_token_limit_reached": false,
+        "latency_s": 0.56
+      }
+    ],
+    "C": [
+      {
+        "id": "p01",
+        "answer": "现有产品资料中暂未找到相关说明。",
+        "passed": false,
+        "refused": true,
+        "exact_refusal": true,
+        "citation_range_ok": false,
+        "max_token_limit_reached": false,
+        "latency_s": 0.67
+      },
+      {
+        "id": "p02",
+        "answer": "现有产品资料中暂未找到相关说明。",
+        "passed": false,
+        "refused": true,
+        "exact_refusal": true,
+        "citation_range_ok": false,
+        "max_token_limit_reached": false,
+        "latency_s": 0.69
+      },
+      {
+        "id": "p03",
+        "answer": "BCD-601WGHSS17B8U1 的总容积是 601L。",
+        "passed": true,
+        "refused": false,
+        "exact_refusal": false,
+        "citation_range_ok": false,
+        "max_token_limit_reached": false,
+        "latency_s": 1.34
+      },
+      {
+        "id": "p04",
+        "answer": "使用遥控器应该离空调器 8 米范围内。",
+        "passed": true,
+        "refused": false,
+        "exact_refusal": false,
+        "citation_range_ok": false,
+        "max_token_limit_reached": false,
+        "latency_s": 0.86
+      },
+      {
+        "id": "p05",
+        "answer": "4. 将内置滤网晾晒至少 24 小时，以确保彻底干燥。",
+        "passed": true,
+        "refused": false,
+        "exact_refusal": false,
+        "citation_range_ok": false,
+        "max_token_limit_reached": false,
+        "latency_s": 1.13
+      },
+      {
+        "id": "p06",
+        "answer": "这款扫拖机器人仅支持连接2.4 GHz 频段的Wi-Fi网络。",
+        "passed": true,
+        "refused": false,
+        "exact_refusal": false,
+        "citation_range_ok": false,
+        "max_token_limit_reached": false,
+        "latency_s": 1.05
+      },
+      {
+        "id": "p07",
+        "answer": "说明书列出了三种需用清水冲洗的集尘部件：前置过滤网、旋风系统组件及集尘桶。",
+        "passed": true,
+        "refused": false,
+        "exact_refusal": false,
+        "citation_range_ok": false,
+        "max_token_limit_reached": false,
+        "latency_s": 1.29
+      },
+      {
+        "id": "p08",
+        "answer": "额定功率为45W。",
+        "passed": true,
+        "refused": false,
+        "exact_refusal": false,
+        "citation_range_ok": false,
+        "max_token_limit_reached": false,
+        "latency_s": 0.59
+      },
+      {
+        "id": "n01",
+        "answer": "厂商选择把额定洗涤容量设计成 9 kg 是为了确保洗衣机能够高效地洗涤衣物，同时考虑到实际操作中的洗涤效果和成本效益。9 kg 的洗涤容量意味着洗衣机能够完成9公斤的衣物洗涤，这在大多数情况下是足够的，但具体效果可能因洗涤类型和衣物材质而异。此外，9 kg 的洗涤容量也便于用户在购买时进行比较，便于选择适合自己的",
+        "passed": false,
+        "refused": false,
+        "exact_refusal": false,
+        "citation_range_ok": false,
+        "max_token_limit_reached": true,
+        "latency_s": 3.54
+      },
+      {
+        "id": "n02",
+        "answer": "厂商把这个冰箱的总容积设计成 601L，主要是为了满足不同用户的需求。具体来说，601L的容积在制冷效果和空间利用率上都有一定的优势。此外，601L的总容积也使得冰箱在设计和制造上更加紧凑，便于安装和维护。",
+        "passed": false,
+        "refused": false,
+        "exact_refusal": false,
+        "citation_range_ok": false,
+        "max_token_limit_reached": false,
+        "latency_s": 2.94
+      },
+      {
+        "id": "n03",
+        "answer": "边刷安装后，工作效率可以提高百分之多少？",
+        "passed": false,
+        "refused": false,
+        "exact_refusal": false,
+        "citation_range_ok": false,
+        "max_token_limit_reached": false,
+        "latency_s": 0.71
+      },
+      {
+        "id": "n04",
+        "answer": "遥控器在水下 8 米内还能用。",
+        "passed": false,
+        "refused": false,
+        "exact_refusal": false,
+        "citation_range_ok": false,
+        "max_token_limit_reached": false,
+        "latency_s": 0.79
+      },
+      {
+        "id": "n05",
+        "answer": "现有产品资料中暂未找到相关说明。",
+        "passed": true,
+        "refused": true,
+        "exact_refusal": true,
+        "citation_range_ok": false,
+        "max_token_limit_reached": false,
+        "latency_s": 0.68
+      },
+      {
+        "id": "n06",
+        "answer": "现有产品资料中暂未找到相关说明。",
+        "passed": true,
+        "refused": true,
+        "exact_refusal": true,
+        "citation_range_ok": false,
+        "max_token_limit_reached": false,
+        "latency_s": 0.72
+      },
+      {
+        "id": "n07",
+        "answer": "内置滤网需要晾晒 24 小时，以确保彻底干燥。",
+        "passed": false,
+        "refused": false,
+        "exact_refusal": false,
+        "citation_range_ok": false,
+        "max_token_limit_reached": false,
+        "latency_s": 0.98
+      }
+    ]
+  },
+  "counts": {
+    "A": {
+      "total": 15,
+      "positive_n": 8,
+      "positive_keyword_correct": 3,
+      "positive_refused": 5,
+      "negative_n": 7,
+      "negative_refused": 3,
+      "negative_exact_refusal": 3,
+      "positive_valid_citation_format": 0,
+      "token_limit": 0
+    },
+    "B": {
+      "total": 15,
+      "positive_n": 8,
+      "positive_keyword_correct": 3,
+      "positive_refused": 5,
+      "negative_n": 7,
+      "negative_refused": 5,
+      "negative_exact_refusal": 4,
+      "positive_valid_citation_format": 0,
+      "token_limit": 0
+    },
+    "C": {
+      "total": 15,
+      "positive_n": 8,
+      "positive_keyword_correct": 6,
+      "positive_refused": 2,
+      "negative_n": 7,
+      "negative_refused": 2,
+      "negative_exact_refusal": 2,
+      "positive_valid_citation_format": 0,
+      "token_limit": 1
+    }
+  }
+}

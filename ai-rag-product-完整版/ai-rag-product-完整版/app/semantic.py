@@ -75,7 +75,7 @@ def index_chunks(connect, product_id=None, version=None):
     _, _, _, identity = config()
     with connect() as db:
         ensure_schema(db)
-        rows = db.execute('''SELECT c.*,s.content_hash FROM chunks c
+        rows = db.execute('''SELECT c.id,c.text,s.content_hash FROM chunks c
             LEFT JOIN semantic_vectors s ON s.chunk_id=c.id AND s.identity=?
             WHERE (? IS NULL OR c.product_id=?) AND (? IS NULL OR c.version=?)
             ORDER BY c.id''', (identity, product_id, product_id, version, version)).fetchall()
@@ -106,7 +106,7 @@ def retrieve(connect, question, product_id, version, top_k):
     faiss.omp_set_num_threads(int(os.getenv('RAG_EMBEDDING_THREADS', '1')))
     index_chunks(connect, product_id, version)
     with connect() as db:
-        rows = db.execute('''SELECT c.*,s.vector AS semantic_vector,s.dimension
+        rows = db.execute('''SELECT c.id,c.source,c.category,c.text,s.vector AS semantic_vector,s.dimension
             FROM chunks c JOIN semantic_vectors s ON s.chunk_id=c.id
             WHERE c.product_id=? AND c.version=? AND s.identity=? ORDER BY c.id''',
             (product_id, version, config()[3])).fetchall()

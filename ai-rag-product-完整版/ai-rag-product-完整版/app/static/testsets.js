@@ -292,7 +292,7 @@ async function openRun(id, reveal = false) {
 }
 
 function renderMetrics(run) {
-  const header = ['方案', '通过', '状态准确率', '自动均分', '人工均分', 'Hit@1', 'Hit@3', 'Hit@5', 'MRR@5', '引用命中', '拒答准确率', '平均耗时'];
+  const header = ['方案', '通过', '严格通过', '状态准确率', '自动均分', '人工均分', 'Hit@1', 'Hit@3', 'Hit@5', 'MRR@5', '引用命中', '拒答准确率', '平均耗时'];
   const rows = run.variants.map(({variant, metrics}) => {
     const config = element('div');
     config.append(element('strong', variant.name),
@@ -300,13 +300,15 @@ function renderMetrics(run) {
       element('p', '证据标注 ' + metrics.evidence_cases + ' 条', 'muted'));
     const models = Object.entries(metrics.observed_models || {});
     if (models.length) config.append(element('p', '实际模型：' + models.map(([name, count]) => name + ' × ' + count).join('、'), 'muted'));
-    return [config, metrics.passed + '/' + metrics.total, percent(metrics.status_accuracy), point(metrics.average_score),
+    return [config, metrics.passed + '/' + metrics.total,
+      metrics.strict_passed == null ? '—' : metrics.strict_passed + '/' + metrics.total,
+      percent(metrics.status_accuracy), point(metrics.average_score),
       point(metrics.human_average_score) + '（' + metrics.reviewed_cases + '）',
       ...['1', '3', '5'].map(k => percent(metrics.hit_at_k[k])),
       metrics.mrr_at_5 ?? '—', percent(metrics.citation_accuracy), percent(metrics.refusal_accuracy), point(metrics.mean_latency_ms) + ' ms'];
   });
   $('metrics').replaceChildren(table(header, rows),
-    element('p', '自动分按状态、关键词覆盖或参考答案匹配计算。人工分单独汇总。检索指标只统计已标注证据的用例。', 'muted'));
+    element('p', '自动分统一格式和常见等价单位，严格口径逐字匹配。两者均核对状态，人工分单独汇总。检索指标只统计已标注证据的用例。', 'muted'));
 }
 
 function renderComparisons(comparisons) {
@@ -315,7 +317,8 @@ function renderComparisons(comparisons) {
     const group = element('details', null, 'comparison');
     group.append(element('summary', item.baseline + ' → ' + item.candidate + ' · 退步 ' + item.regressions.length + ' · 改善 ' + item.improvements.length),
       element('p', '可比较 ' + item.comparable + ' 题。新增 ' + item.new.length + '，移除 ' + item.removed.length + '，标注变更 ' + item.edited.length + '。' +
-        (item.same_corpus === false ? ' 两次运行的知识资料快照有变化。' : ''), 'muted'));
+        (item.same_corpus === false ? ' 两次运行的知识资料快照有变化。' : '') +
+        (item.comparison_scoring === 'literal' ? ' 两次评分版本不同，回归采用严格口径。' : ''), 'muted'));
     const types = {regressions: '通过变未通过', improvements: '未通过变通过', score_drops: '分数下降', score_gains: '分数提升', retrieval_drops: '证据排名下降', edited: '标注变更', new: '新增', removed: '移除'};
     for (const [key, label] of Object.entries(types)) {
       if (!item[key].length) continue;
@@ -413,6 +416,7 @@ function resultDetail(run, item, row) {
     if (test.product_id) detail.append(element('p', '预期范围 ' + productName(test.product_id) + ' / ' + test.version + ' · 实际范围 ' +
       (row.actual_product_id ? productName(row.actual_product_id) + ' / ' + (row.actual_version || '—') : '—'), 'muted'));
     if (row.reasons.length) detail.append(element('p', row.reasons.map(reason => run.failure_labels[reason]).join('；'), 'error'));
+    if (row.strict_score != null) detail.append(element('p', '等价口径 ' + row.score + ' 分 · 严格口径 ' + row.strict_score + ' 分', 'muted'));
     detail.append(element('h3', '实际回答'), element('pre', row.actual_answer || '无'));
     if (test.expected_answer) detail.append(element('h3', '参考答案'), element('pre', test.expected_answer));
     if (test.history.length) detail.append(element('p', '前置问句：' + test.history.join(' → '), 'muted'));

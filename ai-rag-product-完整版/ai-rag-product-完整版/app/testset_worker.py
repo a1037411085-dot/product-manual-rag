@@ -9,6 +9,7 @@ import sys
 import time
 import unicodedata
 from contextlib import closing
+from decimal import Decimal
 from pathlib import Path
 import sqlite3
 
@@ -29,6 +30,18 @@ FAILURE_LABELS = {
     'citation_mismatch': '回答引用与标注证据不符',
 }
 
+SCORING_VERSION = 'literal-and-units-v1'
+UNITS = {
+    '毫安时': 'mah', '千克': 'kg', '公斤': 'kg', '克': 'g', '升': 'l', '瓦': 'w',
+    '伏': 'v', '安培': 'a', '小时': 'h', '分钟': 'min', '秒钟': 's', '秒': 's',
+    '毫米': 'mm', '厘米': 'cm', '平方米': 'm2', '米': 'm', '摄氏度': '°c',
+}
+MEASUREMENT = re.compile(
+    r'(?<![a-z0-9.])(?P<signed>[+-]?\d+(?:\.\d+)?)\s*(?P<unit>'
+    + '|'.join(sorted(set(UNITS) | set(UNITS.values()), key=lambda value: (-len(value), value)))
+    + r')(?![a-z/])'
+)
+
 
 def normalized(text):
     return re.sub(r'\s+', '', unicodedata.normalize('NFKC', text).casefold())
@@ -43,6 +56,40 @@ def contains(text, expected):
     if term[-1].isdigit():
         term += r'(?!\d|\.\d)'
     return bool(re.search(term, normalized(text)))
+
+
+def normalize_units(text):
+    text = unicodedata.normalize('NFKC', text).casefold()
+
+    def measurement(match):
+        value = Decimal(match['signed'])
+        number = format(value, 'f')
+        if '.' in number:
+            number = number.rstrip('0').rstrip('.')
+        return number + UNITS.get(match['unit'], match['unit'])
+
+    return MEASUREMENT.sub(measurement, text)
+
+
+def answer_scores(case, answer, status_ok):
+    if case['expected_status'] != 'answered':
+        credit = 100 if status_ok else 0
+        return credit, credit, []
+    terms = case['expected_terms'] or [case['expected_answer']]
+    missing_strict = [term for term in terms if term not in answer]
+    equivalent = normalize_units(answer)
+    measurements = {item[0] for item in MEASUREMENT.finditer(equivalent)}
+    missing = []
+    for term in terms:
+        expected = normalize_units(term).strip()
+        matched = expected in measurements if MEASUREMENT.fullmatch(expected) else contains(equivalent, expected)
+        if not matched:
+            missing.append(term)
+    if not status_ok:
+        scores = 0, 0
+    else:
+        scores = tuple(round(100 * (1 - len(missed) / len(terms)), 2) for missed in (missing_strict, missing))
+    return scores[0], scores[1], missing
 
 
 def matching_evidence(case, candidates):
@@ -66,15 +113,7 @@ def score_case(case, result, latency):
     scope_ok = not case['product_id'] or not answerable or (
         result.get('product_id') == case['product_id'] and result.get('version') == case['version'])
     status_ok = actual_status == case['expected_status'] and not generation_error and scope_ok
-    missing_terms = [term for term in case['expected_terms'] if not contains(actual_answer, term)]
-    if not status_ok:
-        score = 0
-    elif not answerable:
-        score = 100
-    elif case['expected_terms']:
-        score = round(100 * (1 - len(missing_terms) / len(case['expected_terms'])), 2)
-    else:
-        score = 100 if contains(actual_answer, case['expected_answer']) else 0
+    strict_score, score, missing_terms = answer_scores(case, actual_answer, status_ok)
 
     reasons = []
     if result.get('failure'):
@@ -104,7 +143,9 @@ def score_case(case, result, latency):
         'actual_product_id': result.get('product_id'), 'actual_version': result.get('version'),
         'generation_mode': result.get('generation_mode'), 'generation_error': generation_error,
         'model_used': result.get('model_used'),
-        'latency_ms': latency, 'score': score, 'status_ok': status_ok, 'passed': status_ok and score == 100 and citation_ok is not False,
+        'latency_ms': latency, 'score': score, 'strict_score': strict_score, 'status_ok': status_ok,
+        'passed': status_ok and score == 100 and citation_ok is not False,
+        'strict_passed': status_ok and strict_score == 100 and citation_ok is not False,
         'missing_terms': missing_terms, 'sources': sources, 'retrieved': retrieved,
         'evidence_rank': rank, 'evidence_labeled': evidence_labeled, 'citation_ok': citation_ok,
         'reasons': reasons,
@@ -143,6 +184,7 @@ def summarize(rows):
             observed_models[model] = observed_models.get(model, 0) + 1
     return {
         'total': len(rows), 'passed': sum(row['passed'] for row in rows),
+        'strict_passed': sum(row['strict_passed'] for row in rows), 'scoring_version': SCORING_VERSION,
         'status_accuracy': mean([r['status_ok'] for r in rows]),
         'average_score': mean([r['score'] for r in rows]),
         'mean_latency_ms': mean([r['latency_ms'] for r in rows]),
@@ -160,11 +202,23 @@ def compare_rows(baseline, candidate):
     changes = {key: [] for key in ('regressions', 'improvements', 'score_drops', 'score_gains',
                                    'retrieval_drops', 'new', 'removed', 'edited')}
     comparable = 0
+    same_scoring = all('strict_score' in row for row in baseline + candidate)
+
+    def score(value):
+        if same_scoring:
+            return value['score']
+        return answer_scores(value['case'], value['actual_answer'], value['status_ok'])[0]
+
+    def passed(value):
+        if same_scoring:
+            return value['passed']
+        return value['status_ok'] and score(value) == 100 and value['citation_ok'] is not False
+
     for case_id, row in after.items():
         old = before.get(case_id)
         case = row['case']
-        item = {'case_id': case_id, 'question': case['question'], 'before_score': old['score'] if old else None,
-                'after_score': row['score'], 'before_rank': old['evidence_rank'] if old else None,
+        item = {'case_id': case_id, 'question': case['question'], 'before_score': score(old) if old else None,
+                'after_score': score(row), 'before_rank': old['evidence_rank'] if old else None,
                 'after_rank': row['evidence_rank']}
         if old is None:
             changes['new'].append(item)
@@ -173,19 +227,19 @@ def compare_rows(baseline, candidate):
             changes['edited'].append(item)
             continue
         comparable += 1
-        if old['passed'] and not row['passed']:
+        if passed(old) and not passed(row):
             changes['regressions'].append(item)
-        elif not old['passed'] and row['passed']:
+        elif not passed(old) and passed(row):
             changes['improvements'].append(item)
-        if row['score'] < old['score']:
+        if item['after_score'] < item['before_score']:
             changes['score_drops'].append(item)
-        elif row['score'] > old['score']:
+        elif item['after_score'] > item['before_score']:
             changes['score_gains'].append(item)
         if old['evidence_rank'] and (not row['evidence_rank'] or row['evidence_rank'] > old['evidence_rank']):
             changes['retrieval_drops'].append(item)
     changes['removed'] = [{'case_id': case_id, 'question': row['case']['question']}
                           for case_id, row in before.items() if case_id not in after]
-    return {'comparable': comparable, **changes}
+    return {'comparable': comparable, 'comparison_scoring': 'normalized_units' if same_scoring else 'literal', **changes}
 
 
 def run(payload):

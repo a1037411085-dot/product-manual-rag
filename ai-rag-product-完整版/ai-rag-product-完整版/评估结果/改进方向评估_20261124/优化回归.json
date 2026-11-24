@@ -1,0 +1,439 @@
+{
+  "scope": "现有5款家电的本地诊断回归。口语与专项题参与过开发验证。缺少CHAM-QA v7.1冻结题集和对应语料。",
+  "source_code_sha256": {
+    "app/core.py": "8905e79ee1056ce560865c58ed06c1716905f1d4317dd59aa0589d60b8269112",
+    "app/query.py": "7bf47d5f0dac5f6684681e7e18d21d6b6db18be1f69b9d83b56538e3815be914",
+    "app/semantic.py": "8036514950c7b93244af432a5618c44e92da5e0f2564e053bdff59d13d1ab9b8",
+    "app/testset_worker.py": "fa5866dff85aa568e0a31bc8913770b10ee7ca301ed583d2949f46def72075bd",
+    "prompts/answer.txt": "a0a1a720a0ff808e753843d25c1327e7f926410f64b29deec786e7e6b0f1d47d"
+  },
+  "input_sha256": {
+    "data/sms.sqlite3": "28125642debd5e73c61183d9d395747d4d647fb3ad88e436483ba3ed28ab9b2b",
+    "data/eval_auto.json": "2f1eac0a34fe7b397d84640edd6af9e5f51cc24a07669c915d7e8e8620dc1e39",
+    "评估报告/同义改写题_10条.json": "ca00473196a5e308a430dac88be4778f90d4dad692f93cf00c76f1493f741041",
+    "评估结果/sms_eval_online.json": "d8cde5c9e9127f03f4f17e2a1fe867f05c92607dc57c8a28f76f6967aa5d6e6e",
+    "说明书/01_洗衣机_米家WM090MJA08HK.txt": "015a8b14e8528c7b6fe61180c7b84ffe3278a596c13c0d025478c3fd0795bbce",
+    "说明书/02_手持吸尘器_Xiaomi_G10_Plus.txt": "9850121c85d023abfa9d7c344bf88830a3038ff48cd30c0d8f72aa02c7dcdf64",
+    "说明书/03_扫拖机器人_Xiaomi_S20.txt": "99c3cbd1219723503061d2c0166c29a007090cecf8a68384edc2fd5bdc678196",
+    "说明书/04_冰箱_海尔BCD-600WGHSS17NZU1.txt": "4006ba4588e13fd5ae01a2205398a282edaee92b6dc8f56bd66aab3fd90e1f24",
+    "说明书/05_空调_美的KFR-51LW_BP3DN8Y-YA401(1).txt": "f7a93fe33505baedf60669095e31ba3b23bedb71dc0f9d061ea902126fef9282"
+  },
+  "before": {
+    "hash": {
+      "auto": {
+        "n": 158,
+        "strict": 126,
+        "equivalent": 132,
+        "status_ok": 154,
+        "evidence_n": 138,
+        "hits": {
+          "1": 107,
+          "3": 130,
+          "5": 131
+        },
+        "mrr_at5": 0.8589,
+        "positive_n": 138,
+        "positive_refused": 1,
+        "negative_n": 15,
+        "negative_refused": 12,
+        "handoff_n": 5,
+        "handoff_correct": 5
+      },
+      "paraphrase": {
+        "n": 10,
+        "strict": 0,
+        "equivalent": 0,
+        "status_ok": 3,
+        "evidence_n": 10,
+        "hits": {
+          "1": 1,
+          "3": 3,
+          "5": 3
+        },
+        "mrr_at5": 0.1833,
+        "positive_n": 10,
+        "positive_refused": 7,
+        "negative_n": 0,
+        "negative_refused": 0,
+        "handoff_n": 0,
+        "handoff_correct": 0
+      },
+      "ops": {
+        "n": 11,
+        "strict": 6,
+        "equivalent": 6,
+        "status_ok": 10,
+        "evidence_n": 11,
+        "hits": {
+          "1": 6,
+          "3": 6,
+          "5": 6
+        },
+        "mrr_at5": 0.5455,
+        "positive_n": 11,
+        "positive_refused": 1,
+        "negative_n": 0,
+        "negative_refused": 0,
+        "handoff_n": 0,
+        "handoff_correct": 0
+      }
+    },
+    "semantic": {
+      "auto": {
+        "n": 158,
+        "strict": 71,
+        "equivalent": 74,
+        "status_ok": 143,
+        "evidence_n": 138,
+        "hits": {
+          "1": 62,
+          "3": 99,
+          "5": 110
+        },
+        "mrr_at5": 0.5908,
+        "positive_n": 138,
+        "positive_refused": 0,
+        "negative_n": 15,
+        "negative_refused": 0,
+        "handoff_n": 5,
+        "handoff_correct": 5
+      },
+      "paraphrase": {
+        "n": 10,
+        "strict": 5,
+        "equivalent": 5,
+        "status_ok": 10,
+        "evidence_n": 10,
+        "hits": {
+          "1": 5,
+          "3": 6,
+          "5": 8
+        },
+        "mrr_at5": 0.59,
+        "positive_n": 10,
+        "positive_refused": 0,
+        "negative_n": 0,
+        "negative_refused": 0,
+        "handoff_n": 0,
+        "handoff_correct": 0
+      },
+      "ops": {
+        "n": 11,
+        "strict": 2,
+        "equivalent": 2,
+        "status_ok": 11,
+        "evidence_n": 11,
+        "hits": {
+          "1": 1,
+          "3": 5,
+          "5": 5
+        },
+        "mrr_at5": 0.2576,
+        "positive_n": 11,
+        "positive_refused": 0,
+        "negative_n": 0,
+        "negative_refused": 0,
+        "handoff_n": 0,
+        "handoff_correct": 0
+      }
+    },
+    "routes": {
+      "n": 13,
+      "strict": 6,
+      "equivalent": 6,
+      "status_ok": 6,
+      "evidence_n": 0,
+      "hits": {
+        "1": 0,
+        "3": 0,
+        "5": 0
+      },
+      "mrr_at5": null,
+      "positive_n": 3,
+      "positive_refused": 0,
+      "negative_n": 4,
+      "negative_refused": 2,
+      "handoff_n": 6,
+      "handoff_correct": 1
+    },
+    "models": {
+      "n": 3,
+      "strict": 0,
+      "equivalent": 0,
+      "status_ok": 3,
+      "evidence_n": 3,
+      "hits": {
+        "1": 0,
+        "3": 0,
+        "5": 0
+      },
+      "mrr_at5": 0.0,
+      "positive_n": 3,
+      "positive_refused": 0,
+      "negative_n": 0,
+      "negative_refused": 0,
+      "handoff_n": 0,
+      "handoff_correct": 0
+    },
+    "dialogues": {
+      "independent": 10,
+      "false_triggers": 9,
+      "followups": 5,
+      "correct_followups": 2
+    }
+  },
+  "after": {
+    "hash": {
+      "auto": {
+        "n": 158,
+        "strict": 129,
+        "equivalent": 135,
+        "status_ok": 157,
+        "evidence_n": 138,
+        "hits": {
+          "1": 107,
+          "3": 130,
+          "5": 131
+        },
+        "mrr_at5": 0.8589,
+        "positive_n": 138,
+        "positive_refused": 1,
+        "negative_n": 15,
+        "negative_refused": 15,
+        "handoff_n": 5,
+        "handoff_correct": 5
+      },
+      "paraphrase": {
+        "n": 10,
+        "strict": 10,
+        "equivalent": 10,
+        "status_ok": 10,
+        "evidence_n": 10,
+        "hits": {
+          "1": 10,
+          "3": 10,
+          "5": 10
+        },
+        "mrr_at5": 1.0,
+        "positive_n": 10,
+        "positive_refused": 0,
+        "negative_n": 0,
+        "negative_refused": 0,
+        "handoff_n": 0,
+        "handoff_correct": 0
+      },
+      "ops": {
+        "n": 11,
+        "strict": 6,
+        "equivalent": 6,
+        "status_ok": 10,
+        "evidence_n": 11,
+        "hits": {
+          "1": 6,
+          "3": 6,
+          "5": 6
+        },
+        "mrr_at5": 0.5455,
+        "positive_n": 11,
+        "positive_refused": 1,
+        "negative_n": 0,
+        "negative_refused": 0,
+        "handoff_n": 0,
+        "handoff_correct": 0
+      },
+      "routes": {
+        "n": 13,
+        "strict": 13,
+        "equivalent": 13,
+        "status_ok": 13,
+        "evidence_n": 0,
+        "hits": {
+          "1": 0,
+          "3": 0,
+          "5": 0
+        },
+        "mrr_at5": null,
+        "positive_n": 3,
+        "positive_refused": 0,
+        "negative_n": 4,
+        "negative_refused": 4,
+        "handoff_n": 6,
+        "handoff_correct": 6
+      },
+      "models": {
+        "n": 3,
+        "strict": 3,
+        "equivalent": 3,
+        "status_ok": 3,
+        "evidence_n": 3,
+        "hits": {
+          "1": 3,
+          "3": 3,
+          "5": 3
+        },
+        "mrr_at5": 1.0,
+        "positive_n": 3,
+        "positive_refused": 0,
+        "negative_n": 0,
+        "negative_refused": 0,
+        "handoff_n": 0,
+        "handoff_correct": 0
+      },
+      "dialogues": {
+        "independent": 10,
+        "false_triggers": 0,
+        "followups": 5,
+        "correct_followups": 3
+      }
+    },
+    "semantic": {
+      "auto": {
+        "n": 158,
+        "strict": 86,
+        "equivalent": 89,
+        "status_ok": 158,
+        "evidence_n": 138,
+        "hits": {
+          "1": 62,
+          "3": 99,
+          "5": 110
+        },
+        "mrr_at5": 0.5908,
+        "positive_n": 138,
+        "positive_refused": 0,
+        "negative_n": 15,
+        "negative_refused": 15,
+        "handoff_n": 5,
+        "handoff_correct": 5
+      },
+      "paraphrase": {
+        "n": 10,
+        "strict": 5,
+        "equivalent": 5,
+        "status_ok": 10,
+        "evidence_n": 10,
+        "hits": {
+          "1": 5,
+          "3": 6,
+          "5": 8
+        },
+        "mrr_at5": 0.59,
+        "positive_n": 10,
+        "positive_refused": 0,
+        "negative_n": 0,
+        "negative_refused": 0,
+        "handoff_n": 0,
+        "handoff_correct": 0
+      },
+      "ops": {
+        "n": 11,
+        "strict": 2,
+        "equivalent": 2,
+        "status_ok": 11,
+        "evidence_n": 11,
+        "hits": {
+          "1": 1,
+          "3": 5,
+          "5": 5
+        },
+        "mrr_at5": 0.2576,
+        "positive_n": 11,
+        "positive_refused": 0,
+        "negative_n": 0,
+        "negative_refused": 0,
+        "handoff_n": 0,
+        "handoff_correct": 0
+      },
+      "routes": {
+        "n": 13,
+        "strict": 13,
+        "equivalent": 13,
+        "status_ok": 13,
+        "evidence_n": 0,
+        "hits": {
+          "1": 0,
+          "3": 0,
+          "5": 0
+        },
+        "mrr_at5": null,
+        "positive_n": 3,
+        "positive_refused": 0,
+        "negative_n": 4,
+        "negative_refused": 4,
+        "handoff_n": 6,
+        "handoff_correct": 6
+      },
+      "models": {
+        "n": 3,
+        "strict": 3,
+        "equivalent": 3,
+        "status_ok": 3,
+        "evidence_n": 3,
+        "hits": {
+          "1": 3,
+          "3": 3,
+          "5": 3
+        },
+        "mrr_at5": 1.0,
+        "positive_n": 3,
+        "positive_refused": 0,
+        "negative_n": 0,
+        "negative_refused": 0,
+        "handoff_n": 0,
+        "handoff_correct": 0
+      },
+      "dialogues": {
+        "independent": 10,
+        "false_triggers": 0,
+        "followups": 5,
+        "correct_followups": 2
+      }
+    },
+    "reimported_operations": {
+      "n": 11,
+      "strict": 7,
+      "equivalent": 7,
+      "status_ok": 10,
+      "evidence_n": 11,
+      "hits": {
+        "1": 7,
+        "3": 8,
+        "5": 8
+      },
+      "mrr_at5": 0.6818,
+      "positive_n": 11,
+      "positive_refused": 1,
+      "negative_n": 0,
+      "negative_refused": 0,
+      "handoff_n": 0,
+      "handoff_correct": 0
+    }
+  },
+  "default_prompt": {
+    "sha256": "d271d29c45977be7966ed4e8c4061c4bcd46385a3eab44ecf4bec21b3759c684",
+    "same_as_evaluated_group_b": true,
+    "testing_model": "Qwen/Qwen2.5-0.5B-Instruct",
+    "group_A": {
+      "total": 15,
+      "positive_n": 8,
+      "positive_keyword_correct": 3,
+      "positive_refused": 5,
+      "negative_n": 7,
+      "negative_refused": 3,
+      "negative_exact_refusal": 3,
+      "positive_valid_citation_format": 0,
+      "token_limit": 0
+    },
+    "group_B": {
+      "total": 15,
+      "positive_n": 8,
+      "positive_keyword_correct": 3,
+      "positive_refused": 5,
+      "negative_n": 7,
+      "negative_refused": 5,
+      "negative_exact_refusal": 4,
+      "positive_valid_citation_format": 0,
+      "token_limit": 0
+    }
+  }
+}

@@ -21,13 +21,13 @@ from .faq import ANSWER, QUESTION, extract_faqs, extract_import_faqs, extract_tr
 from .html_extract import extract_html_text
 from . import semantic
 from . import llm_config
+from . import query
 
 ROOT = Path(__file__).resolve().parents[1]
 DB_PATH = Path(os.getenv('RAG_DB', ROOT / 'data' / 'rag.sqlite3'))
 VECTORIZER = HashingVectorizer(analyzer='char', ngram_range=(2, 4), n_features=4096,
                                alternate_sign=False, norm='l2', lowercase=True)
-HANDOFF_WORDS = ('退款', '投诉', '退货', '账户权限', '修改权限', '人工', '注销账户')
-FOLLOWUP_WORDS = ('它', '这个', '那个', '最多', '多少', '怎么', '呢', '还', '是否')
+NO_ANSWER = '现有产品资料中暂未找到相关说明'
 
 
 def connect():
@@ -90,6 +90,7 @@ def init_db():
         CREATE INDEX IF NOT EXISTS idx_chunks_scope ON chunks(product_id, version);
         CREATE INDEX IF NOT EXISTS idx_faqs_scope ON faqs(product_id, version);
         CREATE INDEX IF NOT EXISTS idx_faqs_document ON faqs(document_id);
+        CREATE INDEX IF NOT EXISTS idx_messages_session ON messages(session_id,id);
         ''')
         columns = {row['name'] for row in db.execute('PRAGMA table_info(documents)')}
         if 'cleaning_report' not in columns:
@@ -100,6 +101,8 @@ def init_db():
             db.execute('''UPDATE messages SET product_id=(
                 SELECT product_id FROM sessions WHERE sessions.id=messages.session_id)
                 WHERE role='user' ''')
+        if 'version' not in message_columns:
+            db.execute('ALTER TABLE messages ADD COLUMN version TEXT')
         unanswered_columns = {row['name'] for row in db.execute('PRAGMA table_info(unanswered)')}
         if 'version' not in unanswered_columns:
             db.execute('ALTER TABLE unanswered ADD COLUMN version TEXT')
@@ -238,6 +241,15 @@ def prepare_document(product_id, version, filename, content, *, remove_page_mark
     extractor = extract_import_faqs if include_training else extract_faqs
     faqs = extractor(text, product['name'])
     chunks = split_text(text, max_chars, overlap)
+    if include_training:
+        headers = query.table_headers(text)
+        if headers:
+            for index, chunk in enumerate(chunks):
+                body = chunk.split('\n', 1)[-1]
+                if body in headers and len(headers[body]) + len(body) < max_chars:
+                    chunks[index] = f'{headers[body]}\n{body}'
+        chunks.extend(f'{heading}\n{fact}' for _, heading, fact in query.model_sections(text)
+                      if len(heading) + len(fact) < max_chars)
     chunk_bodies = {chunk.split('\n', 1)[-1] for chunk in chunks}
     for faq in faqs:
         answer = faq['answer']
@@ -498,7 +510,43 @@ def detect_product(question, explicit, prior):
     return explicit or prior
 
 
+def scoped_model_facts(question, product_id, version):
+    models = query.model_ids(question)
+    field = query.field_name(question)
+    if not models or not field:
+        return None
+    if len(models) > 1:
+        return []
+    # Use source text to recover model groups even in older indexes where the
+    # headings and values were split apart or identical facts were deduplicated.
+    with connect() as db:
+        documents = db.execute('''SELECT d.id,d.source,d.category,t.text FROM documents d
+            LEFT JOIN document_texts t ON t.document_id=d.id
+            WHERE d.product_id=? AND d.version=? ORDER BY d.rowid''', (product_id, version)).fetchall()
+        matches, related = [], []
+        for doc in documents:
+            texts = ([doc['text']] if doc['text'] is not None else [row['text'] for row in db.execute(
+                'SELECT text FROM chunks WHERE document_id=? ORDER BY rowid', (doc['id'],))])
+            facts = (fact for text in texts for fact in query.model_sections(text))
+            for model, heading, fact in facts:
+                label = fact.split(':', 1)[0].split('：', 1)[0].strip()
+                generic = field in ('重量', '功率', '电压', '容量', '噪音', '噪声') and label.endswith(field)
+                if model != models[0] or (label != field and not generic):
+                    continue
+                passage = f'{heading}\n{fact}'
+                row = db.execute('SELECT id FROM chunks WHERE document_id=? AND text=?',
+                                 (doc['id'], passage)).fetchone()
+                target = matches if label == field else related
+                target.append({'chunk_id': row['id'] if row else None, 'document_id': doc['id'],
+                               'source': doc['source'], 'category': doc['category'], 'text': passage, 'score': 1.0})
+        matches = matches or related
+        return matches if len({item['text'].split('\n', 1)[-1] for item in matches}) <= 1 else []
+
+
 def retrieve(question, product_id, version, top_k=4):
+    scoped = scoped_model_facts(question, product_id, version)
+    if scoped is not None:
+        return scoped[:top_k]
     if os.getenv('RAG_RETRIEVER', 'hash') == 'semantic':
         return semantic.retrieve(connect, question, product_id, version, top_k)
     with connect() as db:
@@ -514,19 +562,40 @@ def retrieve(question, product_id, version, top_k=4):
     for phrase in ('追问', '最多', '多少', '支持', '是否', '可以', '有没有', '是什么', '怎么', '如何', '这个', '那个', '它', '请问', '限制为', '限制是'):
         clean = clean.replace(phrase, '')
     clean = re.sub(r'[\s，。？！：；,.?!:;0-9]+', '', clean)
-    query_vec = VECTORIZER.transform([clean or question]).astype(np.float32).toarray()[0]
-    scored = []
+    alternatives = query.synonyms(question, product_id)
+    texts = [clean or question, *(clean + ' ' + term for term in alternatives)]
+    query_vectors = VECTORIZER.transform(texts).astype(np.float32).toarray()
+    query_grams = [{value[i:i+2] for i in range(len(value)-1) if ' ' not in value[i:i+2]}
+                   for value in [clean, *texts[1:]]]
+    scored, matches = [], []
+    procedural = bool(query.PROCEDURE.search(question))
     for row in rows:
         vec = np.frombuffer(row['vector'], dtype=np.float32)
-        cosine = float(np.dot(query_vec, vec))
-        # Character overlap improves ranking of short Chinese parameter questions.
-        a = set(clean[i:i+2] for i in range(len(clean)-1))
         body = row['text'].split('\n', 1)[-1]
         b = set(body[i:i+2] for i in range(len(body)-1))
-        overlap = len(a & b) / max(1, len(a))
-        score = 0.7 * cosine + 0.3 * overlap
-        scored.append({'chunk_id': row['id'], 'source': row['source'], 'category': row['category'],
-                       'text': row['text'], 'score': round(score, 4)})
+        scores = [0.7 * float(np.dot(vector, vec)) + 0.3 * len(grams & b) / max(1, len(grams))
+                  for vector, grams in zip(query_vectors, query_grams)]
+        if procedural and row['text'].startswith(('操作步骤\n', '故障处理\n')):
+            coverage = len(query_grams[0] & b) / max(1, len(query_grams[0]))
+            if coverage >= 0.35:
+                scores[0] = min(1.0, scores[0] + 0.12 * coverage)
+        item = {'chunk_id': row['id'], 'source': row['source'], 'category': row['category'],
+                'text': row['text'], 'score': round(scores[0], 4)}
+        scored.append(item)
+        for label, score in zip(alternatives, scores[1:]):
+            if label in body:
+                matches.append({**item, 'score': round(score, 4)})
+    if alternatives and matches:
+        # Preserve direct matches with the target concept; a generic similarity
+        # score alone is insufficient to crowd out a precise terminology match.
+        best = max(scored, key=lambda item: item['score'])
+        direct_target = any(term in best['text'] for term in alternatives)
+        if not direct_target or best['score'] < 0.16:
+            merged = {item['chunk_id']: item for item in scored}
+            for item in matches:
+                if item['score'] > merged[item['chunk_id']]['score']:
+                    merged[item['chunk_id']] = item
+            scored = list(merged.values())
     return sorted(scored, key=lambda x: x['score'], reverse=True)[:top_k]
 
 
@@ -666,16 +735,19 @@ def match_faq(question, product_id, version):
                        'text': row['answer'], 'score': round(score, 4)}}
 
 
-def llm_answer(question, sources, *, model_details=None):
+def llm_answer(question, sources, *, model_details=None, history=()):
     config = llm_config.effective(DB_PATH)
     endpoint, key, model = config['base_url'], config['api_key'], config['model']
     if not llm_config.enabled(DB_PATH):
         return None
     prompt = answer_prompt_config()['prompt']
     context = '\n\n'.join(f"[{i+1}] {s['text']}" for i, s in enumerate(sources))
+    current = f'问题：{question}\n\n资料：\n{context}'
+    if history:
+        current += '\n\n以上为本轮资料。此前消息仅用于理解指代，事实依据仅限本轮编号资料。'
     payload = json.dumps({'model': model, 'temperature': 0, 'messages': [
-        {'role': 'system', 'content': prompt},
-        {'role': 'user', 'content': f'问题：{question}\n\n资料：\n{context}'}
+        {'role': 'system', 'content': prompt}, *history,
+        {'role': 'user', 'content': current}
     ]}).encode()
     request = urllib.request.Request(endpoint + '/chat/completions', data=payload,
                                      headers={'Authorization': 'Bearer ' + key, 'Content-Type': 'application/json'})
@@ -685,6 +757,50 @@ def llm_answer(question, sources, *, model_details=None):
     if model_details is not None and isinstance(result.get('model'), str):
         model_details['model_used'] = result['model'][:200]
     return answer
+
+
+def enough_evidence(question, sources, threshold, retriever, product_id):
+    if not sources:
+        return False
+    top = sources[0]
+    text = query.normalize(top['text']).casefold()
+    field = query.field_name(question)
+    anchors = (*query.synonyms(question, product_id), *((field,) if field else ()))
+    # Only relax short-fact gating if the candidate names the requested fact.
+    body = top['text'].split('\n', 1)[-1].casefold()
+    if (retriever == 'hash' and threshold == 0.16 and len(body) <= 36
+            and any(re.match(re.escape(anchor.casefold()) + r'\s*[:：]', body) for anchor in anchors)):
+        threshold = 0.12
+    if top['score'] < threshold:
+        return False
+    if not query.contains_requested_fact(question, text):
+        return False
+    if any(term.casefold() not in text for term in re.findall(r'[A-Za-z]{3,}', question)
+           if term.casefold() not in ('nova', 'notes', 'orbit', 'tasks')):
+        return False
+    topic = query.required_feature(question)
+    if len(topic) < 4 or topic.startswith(('哪些', '哪种', '什么', '多少', '多久', '如何', '怎么')):
+        return True
+    topic_grams = {topic[i:i+2] for i in range(len(topic) - 1)}
+    compact = re.sub(r'\W+', '', text)
+    return sum(gram in compact for gram in topic_grams) >= max(1, (len(topic_grams) + 2) // 3)
+
+
+def generation_evidence(sources, threshold, aggregate):
+    limit = 6 if aggregate else 3
+    floor = max(threshold, sources[0]['score'] * 0.55)
+    selected, texts = [], []
+    for source in sources:
+        text = query.normalize(source['text']).strip().casefold()
+        if not text or any(text in other or other in text for other in texts):
+            continue
+        if aggregate and selected and source['score'] < floor:
+            continue
+        selected.append(source)
+        texts.append(text)
+        if len(selected) == limit:
+            break
+    return selected
 
 
 def handoff(db, session_id, question, product_id, version, reason):
@@ -731,22 +847,21 @@ def ask(question, session_id=None, product_id=None, version=None, *, include_ret
     minimum_score = float(os.getenv('RAG_MIN_SCORE', '0.35' if retriever == 'semantic' else '0.16'))
     if not np.isfinite(minimum_score) or not 0 <= minimum_score <= 1:
         raise ValueError('RAG_MIN_SCORE 必须为 0 到 1 的有限数值')
-    if retriever == 'semantic':
+    routed = query.needs_handoff(question)
+    discovery = is_discovery_question(question)
+    if retriever == 'semantic' and not (routed or discovery):
         # Model calls and index writes must finish before the conversation write lock.
         semantic.index_chunks(connect)
     generation_mode, generation_error = 'rule', None
     model_details = {}
     session_id = session_id or uuid.uuid4().hex
-    discovery = is_discovery_question(question)
-    matched_products = search_products(question) if discovery else []
+    matched_products = search_products(question) if discovery and not routed else []
     if discovery:
         version = None
     with connect() as db:
         old = db.execute('SELECT * FROM sessions WHERE id=?', (session_id,)).fetchone()
         if not old:
             db.execute('INSERT INTO sessions VALUES(?,?,?,?)', (session_id, None, None, now()))
-        prev = db.execute("SELECT text FROM messages WHERE session_id=? AND role='user' ORDER BY id DESC LIMIT 1",
-                          (session_id,)).fetchone()
         selected_product = product_id
         product_id = (None if discovery else
                       detect_product(question, product_id, old['product_id'] if old else None))
@@ -758,19 +873,39 @@ def ask(question, session_id=None, product_id=None, version=None, *, include_ret
                 row = lookup.execute('SELECT version FROM documents WHERE product_id=? ORDER BY created_at DESC, rowid DESC LIMIT 1',
                                      (product_id,)).fetchone()
             version = row['version'] if row else None
+        same_scope = bool(product_id and version and old and old['product_id'] == product_id and old['version'] == version)
+        history_rows = []
+        if same_scope and query.FOLLOWUP.search(question) and not routed:
+            recent = db.execute('''SELECT role,text,status,product_id,version FROM messages
+                                   WHERE session_id=? ORDER BY id DESC LIMIT 4''', (session_id,))
+            for row in recent:
+                if row['product_id'] != product_id or row['version'] != version or row['status'] == 'handoff':
+                    break
+                history_rows.append(row)
+        previous = next((row['text'] for row in history_rows if row['role'] == 'user'), '')
+        rewritten, ambiguous = query.rewrite(question, previous) if same_scope or not old else (question, False)
+        previous_models = query.model_ids(previous)
+        current_models = query.model_ids(question)
+        if history_rows and current_models and current_models != previous_models:
+            history_rows = []
+        elif history_rows and len(previous_models) == 1 and not current_models and query.field_name(rewritten):
+            rewritten = previous_models[0] + ' ' + rewritten
         if not discovery:
             db.execute('UPDATE sessions SET product_id=?,version=? WHERE id=?', (product_id, version, session_id))
-        db.execute('INSERT INTO messages(session_id,role,text,created_at,product_id) VALUES(?,?,?,?,?)',
-                   (session_id, 'user', question, now(), product_id))
-        rewritten = question
-        if prev and any(word in question for word in FOLLOWUP_WORDS):
-            rewritten = prev['text'] + '；追问：' + question
-        sources = retrieve(rewritten, product_id, version, top_k=5 if include_retrieved else 4) if product_id and version and not discovery else []
-        retrieved = sources
-        faq = match_faq(rewritten, product_id, version) if product_id and version and not discovery else None
+        db.execute('INSERT INTO messages(session_id,role,text,created_at,product_id,version) VALUES(?,?,?,?,?,?)',
+                   (session_id, 'user', question, now(), product_id, version))
+        eligible = product_id and version and not (discovery or routed or ambiguous)
+        aggregate = bool(query.AGGREGATE.search(rewritten))
+        depth = 8 if aggregate and answer_mode != 'extractive' else (5 if include_retrieved else 4)
+        sources = retrieve(rewritten, product_id, version, top_k=depth) if eligible else []
+        retrieved = sources[:5]
+        model_field = query.model_ids(rewritten) and query.field_name(rewritten)
+        faq = match_faq(rewritten, product_id, version) if eligible and not model_field else None
+        if faq and not faq['conflict'] and not query.contains_requested_fact(rewritten, query.normalize(faq['answer']).casefold()):
+            faq = None
         top = sources[0]['score'] if sources else 0
         ticket_id = None
-        if any(word in question for word in HANDOFF_WORDS):
+        if routed:
             status = 'handoff'
             answer = '此问题需要人工客服处理，已为你生成转人工记录。'
             ticket_id = handoff(db, session_id, question, product_id, version, '敏感业务或用户要求人工')
@@ -790,6 +925,9 @@ def ask(question, session_id=None, product_id=None, version=None, *, include_ret
             status = 'no_product'
             answer = '该产品尚无已导入的知识资料，请联系人工客服。'
             sources = []
+        elif ambiguous:
+            status = 'no_answer'
+            answer = '请补充想了解的参数或操作，例如容量、功率或连接步骤。'
         elif faq and faq['conflict']:
             status = 'handoff'
             answer = '产品资料对这个问题给出了冲突答案，请联系人工客服确认。'
@@ -801,19 +939,22 @@ def ask(question, session_id=None, product_id=None, version=None, *, include_ret
             sources = [faq['source']]
             top = faq['score']
             generation_mode = 'faq'
-        elif top < minimum_score or (sources and any(term.lower() not in sources[0]['text'].lower() for term in re.findall(r'[A-Za-z]{3,}', question) if term.lower() not in ('nova', 'notes', 'orbit', 'tasks'))):
+        elif not enough_evidence(rewritten, sources, minimum_score, retriever, product_id):
             status = 'no_answer'
             answer = '现有产品资料中暂未找到相关说明，请补充问题或联系人工客服。'
             sources = []
         else:
             status = 'answered'
+            selected = generation_evidence(sources, minimum_score, aggregate)
+            history = [{'role': row['role'], 'content': row['text'][:700]} for row in reversed(history_rows)]
             try:
                 if answer_mode == 'extractive':
                     generated = None
-                elif include_retrieved:
-                    generated = llm_answer(rewritten, sources[:3], model_details=model_details)
                 else:
-                    generated = llm_answer(rewritten, sources[:3])
+                    options = {'model_details': model_details} if include_retrieved else {}
+                    if history:
+                        options['history'] = history
+                    generated = llm_answer(rewritten, selected, **options)
             except Exception as error:
                 generated = None
                 generation_error = ('HTTP' + str(error.code) if isinstance(error, urllib.error.HTTPError)
@@ -821,20 +962,23 @@ def ask(question, session_id=None, product_id=None, version=None, *, include_ret
             # Offline mode presents a verbatim retrieved passage, never invented facts.
             answer = generated or sources[0]['text']
             generation_mode = 'llm' if generated else 'extractive'
+            sources = selected if generated else sources[:3]
             if answer_mode == 'llm' and not generated:
                 status = 'no_answer'
                 generation_mode = 'error'
                 generation_error = generation_error or 'LLMNotConfiguredOrEmpty'
                 answer = llm_config.error_message(generation_error)
-            elif generated and '现有产品资料中暂未找到相关说明' in generated:
+            elif generated and (NO_ANSWER in generated or any(not 1 <= int(i) <= len(sources)
+                    for i in re.findall(r'\[(\d{1,9})\]', generated))):
                 status = 'no_answer'
+                answer = NO_ANSWER + '。'
         if status in ('no_answer', 'no_product'):
             db.execute('INSERT INTO unanswered(session_id,question,product_id,version,created_at) VALUES(?,?,?,?,?)',
                        (session_id, question, product_id, version, now()))
-        message_id = db.execute('INSERT INTO messages(session_id,role,text,status,created_at) VALUES(?,?,?,?,?)',
-                                (session_id, 'assistant', answer, status, now())).lastrowid
+        message_id = db.execute('INSERT INTO messages(session_id,role,text,status,created_at,product_id,version) VALUES(?,?,?,?,?,?,?)',
+                                (session_id, 'assistant', answer, status, now(), product_id, version)).lastrowid
         product_name_row = db.execute('SELECT name FROM products WHERE id=?', (product_id,)).fetchone() if product_id else None
-        display_answer = (answer if generation_mode == 'error' else
+        display_answer = (answer if generation_mode == 'error' or ambiguous else
                           conversational_answer(question, answer, status,
                                                product_name_row['name'] if product_name_row else None, version))
         suggested_questions = []
@@ -858,7 +1002,7 @@ def ask(question, session_id=None, product_id=None, version=None, *, include_ret
             'message_id': message_id,
             'rewritten_question': rewritten, 'answer': answer, 'display_answer': display_answer,
             'suggested_questions': suggested_questions, 'status': status,
-            'confidence': round(top, 4), 'sources': sources[:3] if status == 'answered' else [],
+            'confidence': round(top, 4), 'sources': sources if status == 'answered' else [],
             'matched_products': matched_products, 'handoff_id': ticket_id,
             'retriever': retriever, 'generation_mode': generation_mode,
             'generation_error': generation_error,
