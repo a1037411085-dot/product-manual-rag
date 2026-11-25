@@ -1,6 +1,7 @@
 import tempfile
 import unittest
 from pathlib import Path
+from unittest.mock import patch
 
 from app import core
 
@@ -38,6 +39,35 @@ class ConversationalAnswerTests(unittest.TestCase):
         self.assertIn('没在', result['display_answer'])
         self.assertEqual(result['sources'], [])
         self.assertEqual(result['suggested_questions'], [])
+
+    def test_legacy_messages_are_preserved_and_new_turns_record_version(self):
+        with core.connect() as db:
+            db.execute('ALTER TABLE messages DROP COLUMN version')
+            db.execute("INSERT INTO sessions VALUES('legacy', 'cloud_box', '2.0', '2026-11-24')")
+            db.execute('''INSERT INTO messages(session_id,role,text,created_at,product_id)
+                          VALUES('legacy','user','旧消息','2026-11-24','cloud_box')''')
+        core.init_db()
+        core.init_db()
+        result = core.ask('云盒如何重置密码？', 'legacy')
+        self.assertEqual(result['status'], 'answered')
+        with core.connect() as db:
+            rows = db.execute("SELECT text,version FROM messages WHERE session_id='legacy' ORDER BY id")
+            self.assertEqual([tuple(row) for row in rows], [
+                ('旧消息', None), ('云盒如何重置密码？', '2.0'), (result['answer'], '2.0'),
+            ])
+
+    def test_grounded_partial_answer_and_full_refusal_have_distinct_statuses(self):
+        partial = ('在登录页点击找回密码，通过注册邮箱重置。[1]\n'
+                   '对于链接有效期，现有产品资料中暂未找到相关说明。')
+        refusal = '现有产品资料中暂未找到相关说明。资料未写明链接有效期。'
+        with patch.dict('os.environ', {'RAG_ANSWER_MODE': 'llm'}):
+            for answer, status in ((partial, 'answered'), (refusal, 'no_answer')):
+                with self.subTest(status=status), patch.object(core, 'llm_answer', return_value=answer):
+                    result = core.ask('云盒如何重置密码？', product_id='cloud_box', version='2.0')
+                    self.assertEqual(result['status'], status)
+                    self.assertEqual(result['answer'], answer)
+                    self.assertIn(answer, result['display_answer'])
+                    self.assertEqual(bool(result['sources']), status == 'answered')
 
 
 if __name__ == '__main__':

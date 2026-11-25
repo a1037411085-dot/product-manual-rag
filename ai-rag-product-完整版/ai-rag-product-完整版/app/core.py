@@ -45,6 +45,7 @@ def connect():
 def init_db():
     with connect() as db:
         db.executescript('''
+        BEGIN IMMEDIATE;
         CREATE TABLE IF NOT EXISTS products(id TEXT PRIMARY KEY, name TEXT NOT NULL, aliases TEXT NOT NULL DEFAULT '[]');
         CREATE TABLE IF NOT EXISTS documents(id TEXT PRIMARY KEY, product_id TEXT NOT NULL, version TEXT NOT NULL,
             category TEXT NOT NULL, title TEXT NOT NULL, source TEXT NOT NULL, created_at TEXT NOT NULL,
@@ -63,7 +64,7 @@ def init_db():
             source_end_line INTEGER NOT NULL, FOREIGN KEY(faq_id) REFERENCES faqs(id) ON DELETE CASCADE);
         CREATE TABLE IF NOT EXISTS sessions(id TEXT PRIMARY KEY, product_id TEXT, version TEXT, created_at TEXT NOT NULL);
         CREATE TABLE IF NOT EXISTS messages(id INTEGER PRIMARY KEY AUTOINCREMENT, session_id TEXT NOT NULL,
-            role TEXT NOT NULL, text TEXT NOT NULL, status TEXT, created_at TEXT NOT NULL, product_id TEXT);
+            role TEXT NOT NULL, text TEXT NOT NULL, status TEXT, created_at TEXT NOT NULL, product_id TEXT, version TEXT);
         CREATE TABLE IF NOT EXISTS handoffs(id TEXT PRIMARY KEY, session_id TEXT NOT NULL, summary TEXT NOT NULL,
             status TEXT NOT NULL DEFAULT 'open', created_at TEXT NOT NULL);
         CREATE TABLE IF NOT EXISTS feedback(id INTEGER PRIMARY KEY AUTOINCREMENT, session_id TEXT NOT NULL,
@@ -920,6 +921,7 @@ def ask(question, session_id=None, product_id=None, version=None, *, include_ret
         eligible = product_id and version and not (discovery or routed or ambiguous)
         aggregate = bool(query.AGGREGATE.search(rewritten))
         depth = 8 if aggregate and answer_mode != 'extractive' else (5 if include_retrieved else 4)
+        # A missing or stale BM25 index needs to write within this transaction.
         options = {'db': db, 'details': retrieval_details} if retriever == 'bm25' else {}
         sources = retrieve(rewritten, product_id, version, top_k=depth, **options) if eligible else []
         retrieved = sources[:5]
@@ -992,17 +994,20 @@ def ask(question, session_id=None, product_id=None, version=None, *, include_ret
                 generation_mode = 'error'
                 generation_error = generation_error or 'LLMNotConfiguredOrEmpty'
                 answer = llm_config.error_message(generation_error)
-            elif generated and (NO_ANSWER in generated or any(not 1 <= int(i) <= len(sources)
-                    for i in re.findall(r'\[(\d{1,9})\]', generated))):
+            elif generated and any(not 1 <= int(i) <= len(sources)
+                                   for i in re.findall(r'\[(\d{1,9})\]', generated)):
                 status = 'no_answer'
                 answer = NO_ANSWER + '。'
+            elif generated and generated.lstrip().startswith(NO_ANSWER):
+                status = 'no_answer'
         if status in ('no_answer', 'no_product'):
             db.execute('INSERT INTO unanswered(session_id,question,product_id,version,created_at) VALUES(?,?,?,?,?)',
                        (session_id, question, product_id, version, now()))
         message_id = db.execute('INSERT INTO messages(session_id,role,text,status,created_at,product_id,version) VALUES(?,?,?,?,?,?,?)',
                                 (session_id, 'assistant', answer, status, now(), product_id, version)).lastrowid
         product_name_row = db.execute('SELECT name FROM products WHERE id=?', (product_id,)).fetchone() if product_id else None
-        display_answer = (answer if generation_mode == 'error' or ambiguous else
+        display_answer = (answer if generation_mode == 'error' or ambiguous or
+                          (generation_mode == 'llm' and status == 'no_answer') else
                           conversational_answer(question, answer, status,
                                                product_name_row['name'] if product_name_row else None, version))
         suggested_questions = []

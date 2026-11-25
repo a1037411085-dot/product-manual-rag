@@ -37,15 +37,21 @@ class Bm25Tests(unittest.TestCase):
 
     def test_chinese_short_terms_and_scope_filter_in_chat(self):
         self.require_fts()
+        with TestClient(app) as client:
+            self.assertFalse(client.get('/api/rag/status').json()['bm25']['built'])
+            response = client.post('/api/ask', json={'question': '童锁开启后有什么影响？',
+                                                     'product_id': 'one', 'version': '1.0'})
+            self.assertEqual(response.status_code, 200, response.text)
+            chat = response.json()
+            self.assertEqual(client.get('/api/rag/status').json()['bm25']['pending_scopes'], 0)
+        self.assertEqual(chat['retriever'], 'bm25')
+        self.assertEqual(chat['status'], 'answered')
+        self.assertIn('禁用按键', chat['answer'])
         details = {}
         result = core.retrieve('童锁', 'one', '1.0', details=details)
         self.assertEqual([row['source'] for row in result], ['current.txt'])
         self.assertEqual(details['retrieval_candidates'], 1)
         self.assertNotIn('retrieval_fallback', details)
-        chat = core.ask('童锁开启后有什么影响？', product_id='one', version='1.0')
-        self.assertEqual(chat['retriever'], 'bm25')
-        self.assertEqual(chat['status'], 'answered')
-        self.assertIn('禁用按键', chat['answer'])
 
     def test_index_refreshes_after_append_and_cascade_delete(self):
         self.require_fts()
@@ -56,6 +62,10 @@ class Bm25Tests(unittest.TestCase):
             self.document('one', '1.0', 'new.txt', '净重：45 公斤。')
             self.assertEqual(client.get('/api/rag/status').json()['bm25']['pending_scopes'], 1)
             self.assertEqual(client.delete('/api/documents/' + self.first).status_code, 200)
+            response = client.post('/api/ask', json={'question': '净重是多少？',
+                                                     'product_id': 'one', 'version': '1.0'})
+            self.assertEqual(response.status_code, 200, response.text)
+            self.assertIn('45', response.json()['answer'])
             details = {}
             found = core.retrieve('净重', 'one', '1.0', details=details)
             self.assertEqual([row['source'] for row in found], ['new.txt'])
