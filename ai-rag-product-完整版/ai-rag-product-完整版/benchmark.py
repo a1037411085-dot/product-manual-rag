@@ -5,11 +5,12 @@ import json
 import os
 import platform
 import tempfile
+from contextlib import contextmanager
 from datetime import datetime, timezone
 from pathlib import Path
 from unittest.mock import patch
 
-from app import core, experiments, semantic, llm_config
+from app import chroma_index, core, experiments, llm_config, postgres, semantic, snapshots
 
 
 def write_report(report, output):
@@ -48,16 +49,35 @@ def write_report(report, output):
     (output / 'RESULTS.md').write_text('\n'.join(lines) + '\n', encoding='utf-8')
 
 
+@contextmanager
+def experiment_database(use_chroma=False):
+    if postgres.enabled():
+        with snapshots.schema_snapshot(copy_knowledge=False) as schema:
+            with patch.dict(os.environ, {'RAG_POSTGRES_SCHEMA': schema}):
+                try:
+                    yield
+                finally:
+                    if use_chroma and chroma_index.configured():
+                        try:
+                            chroma_index.delete_collection()
+                        except Exception:
+                            print('无法清理本次评测的 Chroma 集合。')
+    else:
+        with tempfile.TemporaryDirectory(prefix='rag-benchmark-') as temp:
+            with patch.object(core, 'DB_PATH', Path(temp) / 'experiment.sqlite3'):
+                yield
+
+
 def main():
     parser = argparse.ArgumentParser(description=__doc__)
-    parser.add_argument('--retrievers', nargs='+', choices=['hash', 'bm25', 'semantic'], default=['hash', 'semantic'])
+    parser.add_argument('--retrievers', nargs='+', choices=['hash', 'bm25', 'semantic', 'chroma'], default=['hash', 'semantic'])
     parser.add_argument('--with-llm', action='store_true', help='Include strict LLM runs; never silently fall back')
     parser.add_argument('--output', type=Path, default=Path('reports/latest'))
     args = parser.parse_args()
     cases = json.loads((core.ROOT / 'data/eval_extended.json').read_text(encoding='utf-8'))
     corpus = experiments.load_corpus()
-    model_config = llm_config.effective(core.DB_PATH)
-    model_ready = llm_config.enabled(core.DB_PATH)
+    model_config = llm_config.effective(core.llm_settings_path())
+    model_ready = llm_config.enabled(core.llm_settings_path())
     report = {'created_at': datetime.now(timezone.utc).isoformat(), 'python': platform.python_version(),
               'dataset_sha256': experiments.dataset_digest(cases),
               'corpus_sha256': experiments.dataset_digest(corpus),
@@ -65,48 +85,49 @@ def main():
               'fictional_corpus': True, 'embedding_model': semantic.config()[1],
               'llm_model': model_config['model'] if args.with_llm and model_ready else None,
               'runs': {}, 'skipped': {}}
-    original_db = core.DB_PATH
-    try:
-        with tempfile.TemporaryDirectory(prefix='rag-benchmark-') as temp:
-            core.DB_PATH = Path(temp) / 'experiment.sqlite3'
-            experiments.seed_experiment()
-            with core.connect() as db:
-                report['chunks'] = db.execute('SELECT count(*) FROM chunks').fetchone()[0]
-                report['faqs'] = db.execute('SELECT count(*) FROM faqs').fetchone()[0]
-                report['cleaning_reports'] = [json.loads(r[0]) for r in db.execute('SELECT cleaning_report FROM documents')]
-            for retriever in args.retrievers:
-                if retriever == 'bm25':
-                    with core.connect() as db:
-                        if not core.bm25.available(db):
-                            report['skipped']['bm25'] = '当前 SQLite 未启用 FTS5'
-                            continue
-                        core.bm25.refresh(db)
-                if retriever == 'semantic':
-                    try:
-                        import faiss
-                        semantic.index_chunks(core.connect)
-                    except Exception as error:
-                        report['skipped']['semantic'] = type(error).__name__ + '：语义依赖、模型或服务不可用'
+    with experiment_database(use_chroma='chroma' in args.retrievers):
+        experiments.seed_experiment()
+        with core.connect() as db:
+            report['chunks'] = db.execute('SELECT count(*) FROM chunks').fetchone()[0]
+            report['faqs'] = db.execute('SELECT count(*) FROM faqs').fetchone()[0]
+            report['cleaning_reports'] = [json.loads(r[0]) for r in db.execute('SELECT cleaning_report FROM documents')]
+        for retriever in args.retrievers:
+            if retriever == 'bm25' and not postgres.enabled():
+                with core.connect() as db:
+                    if not core.bm25.available(db):
+                        report['skipped']['bm25'] = '当前 SQLite 未启用 FTS5'
                         continue
-                for mode in (['extractive', 'llm'] if args.with_llm else ['extractive']):
-                    name = retriever + '_' + mode
-                    if mode == 'llm' and not model_ready:
-                        report['skipped'][name] = '未配置完整 LLM 服务，未执行真实模型实验'
-                        continue
-                    # Thresholds are explicitly fixed before evaluating; no tuning on this set.
-                    threshold = '0.35' if retriever == 'semantic' else '0.16'
-                    environment = {'RAG_RETRIEVER': retriever, 'RAG_ANSWER_MODE': mode, 'RAG_MIN_SCORE': threshold}
-                    if mode == 'llm':
-                        environment.update(LLM_BASE_URL=model_config['base_url'], LLM_API_KEY=model_config['api_key'],
-                                           LLM_MODEL=model_config['model'])
-                    with patch.dict(os.environ, environment):
-                        print('running', name, flush=True)
-                        report['runs'][name] = experiments.run_cases(cases)
-                        report['runs'][name]['threshold'] = float(threshold)
-            if not args.with_llm:
-                report['skipped']['llm'] = '未请求真实模型实验；配置服务后加 --with-llm'
-    finally:
-        core.DB_PATH = original_db
+                    core.bm25.refresh(db)
+            if retriever == 'chroma':
+                try:
+                    chroma_index.reindex(core.connect)
+                except Exception as error:
+                    report['skipped']['chroma'] = type(error).__name__ + '：Chroma 或 Embedding 服务不可用'
+                    continue
+            if retriever == 'semantic':
+                try:
+                    import faiss
+                    semantic.index_chunks(core.connect)
+                except Exception as error:
+                    report['skipped']['semantic'] = type(error).__name__ + '：语义依赖、模型或服务不可用'
+                    continue
+            for mode in (['extractive', 'llm'] if args.with_llm else ['extractive']):
+                name = retriever + '_' + mode
+                if mode == 'llm' and not model_ready:
+                    report['skipped'][name] = '未配置完整 LLM 服务，未执行真实模型实验'
+                    continue
+                # Thresholds are explicitly fixed before evaluating; no tuning on this set.
+                threshold = '0.35' if retriever in ('semantic', 'chroma') else '0.16'
+                environment = {'RAG_RETRIEVER': retriever, 'RAG_ANSWER_MODE': mode, 'RAG_MIN_SCORE': threshold}
+                if mode == 'llm':
+                    environment.update(LLM_BASE_URL=model_config['base_url'], LLM_API_KEY=model_config['api_key'],
+                                       LLM_MODEL=model_config['model'])
+                with patch.dict(os.environ, environment):
+                    print('running', name, flush=True)
+                    report['runs'][name] = experiments.run_cases(cases)
+                    report['runs'][name]['threshold'] = float(threshold)
+        if not args.with_llm:
+            report['skipped']['llm'] = '未请求真实模型实验；配置服务后加 --with-llm'
     write_report(report, args.output)
     print(json.dumps({k: {'cases': v['cases'], 'passed': v['passed']} for k, v in report['runs'].items()}, ensure_ascii=False))
     print('saved:', args.output)

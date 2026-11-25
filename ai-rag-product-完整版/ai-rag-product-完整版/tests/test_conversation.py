@@ -1,6 +1,8 @@
 import tempfile
 import unittest
+from concurrent.futures import ThreadPoolExecutor
 from pathlib import Path
+from threading import Event
 from unittest.mock import patch
 
 from app import core
@@ -68,6 +70,43 @@ class ConversationalAnswerTests(unittest.TestCase):
                     self.assertEqual(result['answer'], answer)
                     self.assertIn(answer, result['display_answer'])
                     self.assertEqual(bool(result['sources']), status == 'answered')
+
+    def test_overlapping_followup_is_regenerated_with_latest_committed_history(self):
+        initial = core.ask('云盒如何重置密码？', product_id='cloud_box', version='2.0')
+        sid = initial['session_id']
+        started, release = Event(), Event()
+        histories = []
+        new_answer = '请在登录页点击找回密码，再使用注册邮箱。[1]'
+
+        def generate(question, sources, *, history=()):
+            if history:
+                histories.append(history)
+                if len(histories) == 1:
+                    started.set()
+                    if not release.wait(10):
+                        raise TimeoutError('test did not release generation')
+                return '在登录页点击找回密码。[1]'
+            return new_answer
+
+        with patch.dict('os.environ', {'RAG_ANSWER_MODE': 'llm'}), \
+                patch.object(core, 'llm_answer', side_effect=generate), ThreadPoolExecutor() as pool:
+            followup = pool.submit(core.ask, '那云盒如何重置密码呢？', sid)
+            try:
+                self.assertTrue(started.wait(5))
+                concurrent = pool.submit(core.ask, '云盒如何重置密码？', sid).result(timeout=3)
+                self.assertEqual(concurrent['answer'], new_answer)
+            finally:
+                release.set()
+            result = followup.result(timeout=3)
+
+        self.assertEqual(result['status'], 'answered')
+        self.assertEqual(len(histories), 2)
+        self.assertEqual(histories[1][-1]['content'], new_answer)
+        with core.connect() as db:
+            rows = db.execute('SELECT id,role FROM messages WHERE session_id=? ORDER BY id', (sid,)).fetchall()
+        self.assertEqual([row['role'] for row in rows], ['user', 'assistant'] * 3)
+        self.assertEqual([row['id'] for row in rows[1::2]],
+                         [initial['message_id'], concurrent['message_id'], result['message_id']])
 
 
 if __name__ == '__main__':

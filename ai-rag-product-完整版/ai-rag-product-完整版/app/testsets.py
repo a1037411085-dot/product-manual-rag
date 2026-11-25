@@ -12,6 +12,7 @@ import sqlite3
 import subprocess
 import sys
 import tempfile
+import time
 import uuid
 import zipfile
 from contextlib import closing, contextmanager
@@ -21,7 +22,7 @@ from typing import Literal, Optional
 from fastapi import APIRouter, BackgroundTasks, File, HTTPException, Response, UploadFile
 from pydantic import BaseModel, Field, ValidationError
 
-from . import core, experiments, llm_config, semantic
+from . import core, experiments, llm_config, postgres, semantic, snapshots
 from .testset_worker import FAILURE_LABELS, compare_rows
 
 
@@ -52,7 +53,7 @@ class CaseInput(BaseModel):
 
 class Variant(BaseModel):
     name: str = Field(min_length=1, max_length=80)
-    retriever: Literal['hash', 'bm25', 'semantic'] = 'hash'
+    retriever: Literal['hash', 'bm25', 'semantic', 'chroma'] = 'hash'
     answer_mode: Literal['auto', 'extractive', 'llm'] = 'extractive'
     model: str = Field('', max_length=200)
     threshold: Optional[float] = Field(None, ge=0, le=1)
@@ -78,7 +79,10 @@ def dump(value):
 def transaction(write=False):
     with closing(core.connect()) as db, db:
         if write:
-            db.execute('BEGIN IMMEDIATE')
+            if postgres.enabled():
+                db.lock('testsets')
+            else:
+                db.execute('BEGIN IMMEDIATE')
         yield db
 
 
@@ -320,31 +324,45 @@ def knowledge_digest(db):
     return digest.hexdigest()
 
 
+def run_worker(environment, cases, variants, credentials):
+    for key in ('LLM_BASE_URL', 'LLM_API_KEY', 'LLM_MODEL'):
+        environment.pop(key, None)
+    process = subprocess.run([sys.executable, '-m', 'app.testset_worker'], cwd=core.ROOT,
+                             env=environment, input=dump({'cases': cases, 'variants': variants, 'llm': credentials}),
+                             encoding='utf-8', capture_output=True, timeout=RUN_TIMEOUT, check=True)
+    return json.loads(process.stdout)
+
+
+def legacy_worker(cases, variants, credentials):
+    with tempfile.TemporaryDirectory(prefix='rag-test-run-') as directory:
+        snapshot = Path(directory) / 'knowledge.sqlite3'
+        with closing(core.connect()) as source, closing(sqlite3.connect(snapshot)) as target:
+            source.backup(target)
+            with target:
+                for table in ('test_sets', 'test_cases', 'test_runs', 'test_reviews'):
+                    target.execute(f'DROP TABLE {table}')
+                for table in ('sessions', 'messages', 'feedback', 'handoffs', 'unanswered'):
+                    target.execute(f'DELETE FROM {table}')
+                target.execute("INSERT OR IGNORE INTO settings(key,value) VALUES('answer_prompt',?)",
+                               (core.default_answer_prompt(),))
+            target.execute('VACUUM')
+            corpus_digest = knowledge_digest(target)
+        environment = os.environ.copy()
+        environment['RAG_DB'] = str(snapshot)
+        return run_worker(environment, cases, variants, credentials), corpus_digest
+
+
 def evaluate_run(run_id, cases, variants, credentials, baseline):
     try:
         with transaction(write=True) as db:
             db.execute("UPDATE test_runs SET status='running',updated_at=? WHERE id=?", (core.now(), run_id))
-        with tempfile.TemporaryDirectory(prefix='rag-test-run-') as directory:
-            snapshot = Path(directory) / 'knowledge.sqlite3'
-            with closing(core.connect()) as source, closing(sqlite3.connect(snapshot)) as target:
-                source.backup(target)
-                with target:
-                    for table in ('test_sets', 'test_cases', 'test_runs', 'test_reviews'):
-                        target.execute(f'DROP TABLE {table}')
-                    for table in ('sessions', 'messages', 'feedback', 'handoffs', 'unanswered'):
-                        target.execute(f'DELETE FROM {table}')
-                    target.execute("INSERT OR IGNORE INTO settings(key,value) VALUES('answer_prompt',?)",
-                                   (core.default_answer_prompt(),))
-                target.execute('VACUUM')
-                corpus_digest = knowledge_digest(target)
-            environment = os.environ.copy()
-            for key in ('LLM_BASE_URL', 'LLM_API_KEY', 'LLM_MODEL'):
-                environment.pop(key, None)
-            environment['RAG_DB'] = str(snapshot)
-            process = subprocess.run([sys.executable, '-m', 'app.testset_worker'], cwd=core.ROOT,
-                                     env=environment, input=dump({'cases': cases, 'variants': variants, 'llm': credentials}),
-                                     encoding='utf-8', capture_output=True, timeout=RUN_TIMEOUT, check=True)
-            reports = json.loads(process.stdout)
+        if postgres.enabled():
+            with snapshots.schema_snapshot() as schema:
+                with closing(core.connect(schema)) as target:
+                    corpus_digest = knowledge_digest(target)
+                reports = run_worker(snapshots.environment(schema), cases, variants, credentials)
+        else:
+            reports, corpus_digest = legacy_worker(cases, variants, credentials)
         comparisons = [{'baseline': reports[0]['variant']['name'], 'candidate': item['variant']['name'],
                         **compare_rows(reports[0]['rows'], item['rows'])} for item in reports[1:]]
         if baseline:
@@ -366,9 +384,9 @@ def evaluate_run(run_id, cases, variants, credentials, baseline):
 def expire_runs(db):
     db.execute("""UPDATE test_runs SET status='failed',updated_at=?,error='运行已中断或超时，请重新执行'
                   WHERE status IN ('queued','running')
-                  AND julianday('now','localtime') - julianday(updated_at) > ? / 86400.0""",
-               (core.now(), RUN_TIMEOUT + 120))
-    if os.name != 'posix':
+                  AND updated_at < ?""",
+               (core.now(), time.strftime('%Y-%m-%d %H:%M:%S', time.localtime(time.time() - RUN_TIMEOUT - 120))))
+    if postgres.enabled() or os.name != 'posix':
         return
     active = db.execute("SELECT id,owner_pid FROM test_runs WHERE status IN ('queued','running')").fetchone()
     if active and active['owner_pid'] != os.getpid():
@@ -405,9 +423,9 @@ def prepare_variants(variants):
         if not variant['name'] or any(item['name'] == variant['name'] for item in output):
             raise HTTPException(400, '方案名称须非空且互不相同')
         if data.threshold is None:
-            variant['threshold'] = 0.35 if data.retriever == 'semantic' else 0.16
+            variant['threshold'] = 0.35 if data.retriever in ('semantic', 'chroma') else 0.16
         if data.answer_mode == 'llm':
-            provider = provider or llm_config.effective(core.DB_PATH)
+            provider = provider or llm_config.effective(core.llm_settings_path())
             if os.getenv('RAG_LLM_DISABLED') == '1' or not all(provider[key] for key in ('base_url', 'api_key', 'model')):
                 raise HTTPException(400, '请先在知识配置中保存可用的大模型服务与 API Key')
             variant['model'] = variant['model'] or provider['model']
@@ -416,7 +434,7 @@ def prepare_variants(variants):
             variant['provider'] = provider['provider_id']
         else:
             variant['model'] = ''
-        if data.retriever == 'semantic':
+        if data.retriever in ('semantic', 'chroma'):
             embedding_provider, model, _, identity = semantic.config()
             variant.update(embedding_provider=embedding_provider, embedding_model=model, embedding_identity=identity)
         output.append(variant)
@@ -462,7 +480,7 @@ def start_run(set_id: str, data: RunInput, tasks: BackgroundTasks):
 
 def load_run(run_id, detailed):
     with transaction() as db:
-        db.execute('BEGIN')
+        db.execute('SET TRANSACTION ISOLATION LEVEL REPEATABLE READ' if postgres.enabled() else 'BEGIN')
         row = require(db.execute('SELECT * FROM test_runs WHERE id=?', (run_id,)).fetchone(), '评测记录')
         result = run_metadata(row)
         if detailed and row['report']:

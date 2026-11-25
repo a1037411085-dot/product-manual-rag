@@ -1,7 +1,9 @@
 """Evaluate fixed examples against a database snapshot, without touching live data."""
 import json
+import os
+import sys
 
-from . import core
+from . import chroma_index, core, postgres
 
 
 def run():
@@ -46,4 +48,12 @@ def run():
 
 
 if __name__ == '__main__':
-    print(json.dumps(run(), ensure_ascii=False))
+    try:
+        print(json.dumps(run(), ensure_ascii=False))
+    finally:
+        if postgres.enabled() and os.getenv('RAG_POSTGRES_SCHEMA', '').startswith('rag_eval_') and \
+                os.getenv('RAG_RETRIEVER', core.default_retriever()) == 'chroma':
+            try:
+                chroma_index.delete_collection()
+            except Exception:
+                print('无法清理本次评测的 Chroma 集合。', file=sys.stderr)

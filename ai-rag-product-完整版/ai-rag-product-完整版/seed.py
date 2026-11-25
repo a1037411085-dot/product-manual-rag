@@ -2,14 +2,14 @@
 import json
 import sys
 from pathlib import Path
-from app import core
+from app import core, postgres
 
 core.init_db()
 if '--if-empty' in sys.argv:
     with core.connect() as db:
         existing = db.execute('SELECT count(*) FROM documents').fetchone()[0]
     if existing:
-        print(f'已发现 {existing} 份资料，跳过演示数据导入：{core.DB_PATH.resolve()}')
+        print(f'已发现 {existing} 份资料，跳过演示数据导入：{postgres.schema_name() if postgres.enabled() else core.DB_PATH.resolve()}')
         sys.exit(0)
 items = json.loads((Path(__file__).parent / 'data' / 'demo_knowledge.json').read_text(encoding='utf-8'))
 if '--course' in sys.argv:

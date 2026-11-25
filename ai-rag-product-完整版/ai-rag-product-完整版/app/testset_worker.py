@@ -13,7 +13,7 @@ from decimal import Decimal
 from pathlib import Path
 import sqlite3
 
-from . import core, experiments
+from . import core, chroma_index, postgres, snapshots, experiments
 
 
 FAILURE_LABELS = {
@@ -243,24 +243,47 @@ def compare_rows(baseline, candidate):
     return {'comparable': comparable, 'comparison_scoring': 'normalized_units' if same_scoring else 'literal', **changes}
 
 
+def execute_variant(payload, variant):
+    with closing(core.connect()) as db:
+        scopes = {tuple(row) for row in db.execute('SELECT DISTINCT product_id,version FROM documents')}
+    rows = [execute_case(case, scopes) for case in payload['cases']]
+    return {'variant': variant, 'metrics': summarize(rows), 'rows': rows}
+
+
 def run(payload):
-    original = Path(os.environ['RAG_DB'])
     reports = []
+    if not postgres.enabled():
+        original = Path(os.environ['RAG_DB'])
     for index, variant in enumerate(payload['variants']):
-        working_db = original.with_name(f'variant-{index}.sqlite3')
-        with closing(sqlite3.connect(original)) as source, closing(sqlite3.connect(working_db)) as target:
-            source.backup(target)
-        core.DB_PATH = working_db
         os.environ.update(RAG_RETRIEVER=variant['retriever'], RAG_ANSWER_MODE=variant['answer_mode'],
                           RAG_MIN_SCORE=str(variant['threshold']),
                           RAG_LLM_DISABLED='0' if variant['answer_mode'] == 'llm' else '1')
         if variant['answer_mode'] == 'llm':
             os.environ.update(LLM_BASE_URL=payload['llm']['base_url'], LLM_API_KEY=payload['llm']['api_key'],
                               LLM_MODEL=variant['model'])
-        with closing(core.connect()) as db:
-            scopes = {tuple(row) for row in db.execute('SELECT DISTINCT product_id,version FROM documents')}
-        rows = [execute_case(case, scopes) for case in payload['cases']]
-        reports.append({'variant': variant, 'metrics': summarize(rows), 'rows': rows})
+        if postgres.enabled():
+            parent = os.environ.get('RAG_POSTGRES_SCHEMA')
+            with snapshots.schema_snapshot() as schema:
+                os.environ['RAG_POSTGRES_SCHEMA'] = schema
+                try:
+                    reports.append(execute_variant(payload, variant))
+                finally:
+                    if variant['retriever'] == 'chroma' and chroma_index.configured():
+                        try:
+                            chroma_index.delete_collection()
+                        except Exception:
+                            # Cleanup should not discard completed evaluation rows.
+                            print('无法清理本次评测的 Chroma 集合。', file=sys.stderr)
+                    if parent is None:
+                        os.environ.pop('RAG_POSTGRES_SCHEMA', None)
+                    else:
+                        os.environ['RAG_POSTGRES_SCHEMA'] = parent
+        else:
+            working_db = original.with_name(f'variant-{index}.sqlite3')
+            with closing(sqlite3.connect(original)) as source, closing(sqlite3.connect(working_db)) as target:
+                source.backup(target)
+            core.DB_PATH = working_db
+            reports.append(execute_variant(payload, variant))
     return reports
 
 

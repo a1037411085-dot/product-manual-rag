@@ -1,5 +1,7 @@
 import os
+from concurrent.futures import ThreadPoolExecutor
 from pathlib import Path
+from threading import Event
 import tempfile
 import unittest
 from unittest.mock import patch
@@ -90,6 +92,35 @@ class Bm25Tests(unittest.TestCase):
             first, second = report['variants']
             self.assertEqual(first['metrics']['strict_passed'], second['metrics']['strict_passed'])
             self.assertEqual(second['rows'][0]['retrieval_candidates'], 1)
+
+    def test_cold_direct_chat_commits_index_and_allows_other_writers_during_generation(self):
+        self.require_fts()
+        started, release = Event(), Event()
+
+        def generate(question, sources):
+            if '童锁' in question:
+                started.set()
+                if not release.wait(10):
+                    raise TimeoutError('test did not release generation')
+                return '童锁开启后会禁用按键。[1]'
+            return '净重为 45 公斤。[1]'
+
+        with patch.dict(os.environ, {'RAG_ANSWER_MODE': 'llm'}), \
+                patch.object(core, 'llm_answer', side_effect=generate), ThreadPoolExecutor() as pool:
+            first = pool.submit(core.ask, '童锁开启后有什么影响？', 'first', 'one', '1.0')
+            try:
+                self.assertTrue(started.wait(5))
+                with core.connect() as db:
+                    self.assertTrue(bm25.status(db)['built'])
+                    self.assertIsNone(db.execute("SELECT id FROM sessions WHERE id='first'").fetchone())
+                added = pool.submit(self.document, 'one', '1.0', 'new.txt', '净重：45 公斤。')
+                added.result(timeout=3)
+                second = pool.submit(core.ask, '净重是多少？', 'second', 'one', '1.0').result(timeout=3)
+                self.assertEqual(second['status'], 'answered')
+                self.assertEqual(second['sources'][0]['source'], 'new.txt')
+            finally:
+                release.set()
+            self.assertEqual(first.result(timeout=3)['status'], 'answered')
 
     def test_missing_fts_uses_character_ranking(self):
         details = {}

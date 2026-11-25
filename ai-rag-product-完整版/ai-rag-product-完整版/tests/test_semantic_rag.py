@@ -3,13 +3,15 @@ import importlib.util
 import io
 import json
 import os
+import sys
 import tempfile
 import unittest
 from pathlib import Path
-from unittest.mock import patch
+from types import SimpleNamespace
+from unittest.mock import Mock, patch
 
 import numpy as np
-from app import core, semantic, experiments
+from app import chroma_index, core, semantic, experiments
 from review_results import aggregate
 from fastapi.testclient import TestClient
 from app.main import app
@@ -75,6 +77,43 @@ class SemanticRagTests(unittest.TestCase):
         for values in ([[0, 0]], [[float('nan'), 1]], [1, 2]):
             with self.assertRaises(ValueError):
                 semantic.normalize(values)
+
+    def test_missing_query_model_never_downloads_in_the_request(self):
+        with patch.object(semantic, 'load_sentence_transformer', side_effect=OSError('missing weights')) as load:
+            with self.assertRaisesRegex(semantic.EmbeddingNotReady, '模型尚未就绪'):
+                semantic.embed(['问题'])
+        load.assert_called_once_with('test-fixture', local_files_only=True)
+
+    def test_offline_loading_passes_a_snapshot_directory_to_transformers(self):
+        snapshot = Mock(return_value='/local/cached/snapshot')
+        transformer = Mock()
+        with patch.dict(sys.modules, {
+            'huggingface_hub': SimpleNamespace(snapshot_download=snapshot),
+            'sentence_transformers': SimpleNamespace(SentenceTransformer=transformer),
+            'torch': SimpleNamespace(set_num_threads=Mock()),
+        }), patch.dict(os.environ):
+            semantic.load_sentence_transformer('fixtures/embedding-model', local_files_only=True)
+        self.assertTrue(snapshot.call_args.kwargs['local_files_only'])
+        transformer.assert_called_once_with('/local/cached/snapshot', local_files_only=True)
+
+    def test_explicit_model_setup_downloads_after_offline_lookup_fails(self):
+        with patch.dict(os.environ), patch.object(semantic, 'load_sentence_transformer',
+                                                   side_effect=[AttributeError('missing checkpoint'), object()]) as load:
+            semantic.prepare_local_model()
+        self.assertEqual([item.kwargs['local_files_only'] for item in load.call_args_list], [True, False])
+
+    def test_ask_reports_model_preparation_to_the_browser(self):
+        with patch.object(core, 'ask', side_effect=semantic.EmbeddingNotReady('本地模型尚未就绪')):
+            response = TestClient(app).post('/api/ask', json={'question': '支持离线保存吗？'})
+        self.assertEqual(response.status_code, 503)
+        self.assertEqual(response.json()['detail'], '本地模型尚未就绪')
+
+    def test_chroma_prefers_an_exact_parameter_with_a_value(self):
+        hits = [{'text': '最大洗涤容量:6 kg', 'score': .9},
+                {'text': '额定洗涤容量:/', 'score': .89},
+                {'text': '规格表\n额定洗涤容量：9 kg', 'score': .88}]
+        self.assertEqual(chroma_index.rank_hits('额定洗涤容量是多少？', hits)[0], hits[2])
+        self.assertEqual(chroma_index.rank_hits('如何设置额定洗涤容量？', hits), hits)
 
     def test_strict_llm_never_counts_fallback_as_model_answer(self):
         sources = [{'chunk_id': 'fixture', 'text': '文件支持离线保存。', 'source': 'source.md',

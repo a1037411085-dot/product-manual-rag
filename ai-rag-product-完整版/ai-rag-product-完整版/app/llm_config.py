@@ -32,7 +32,8 @@ PROVIDERS = [
 
 
 def config_path(db_path):
-    return Path(db_path).with_suffix('.llm.json')
+    path = Path(db_path)
+    return path if path.name.endswith('.llm.json') else path.with_suffix('.llm.json')
 
 
 def read_local(db_path):

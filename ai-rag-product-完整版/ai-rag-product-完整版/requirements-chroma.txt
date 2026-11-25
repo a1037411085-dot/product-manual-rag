@@ -1,0 +1,3 @@
+-r requirements.txt
+chromadb-client>=1.1,<2
+sentence-transformers>=3,<4

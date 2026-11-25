@@ -16,6 +16,8 @@ def main():
     candidates = [p for name in roots for p in (ROOT / name).rglob('*') if p.is_file()]
     candidates += [p for p in ROOT.iterdir() if p.is_file() and p.suffix in {'.py', '.md', '.txt', '.ps1', '.bat', '.command', '.docx'}]
     candidates.append(ROOT / '.env.example')
+    if (ROOT / 'compose.yaml').is_file():
+        candidates.append(ROOT / 'compose.yaml')
     selected = sorted({p for p in candidates if (p.suffix in allowed or p.parent == ROOT)
                        and '__pycache__' not in p.parts and not p.name.startswith('~$')
                        and p.suffix not in {'.sqlite3', '.db', '.pyc'} and not p.name.startswith('.env')

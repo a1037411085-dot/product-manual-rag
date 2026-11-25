@@ -93,3 +93,30 @@ def candidates(db, product_id, version, text, alternatives, top_k):
             raise
         return None, 'fts5_unavailable'
     return [row[0] for row in hits], None
+
+
+def postgres_candidates(db, product_id, version, text, alternatives, top_k):
+    """Score the current product/version with BM25 and return IDs for reranking."""
+    from collections import Counter
+    from math import log1p
+
+    keywords = set(islice(dict.fromkeys(terms(' '.join((*alternatives, text)))), 72))
+    if not keywords:
+        return None, 'no_index_terms'
+    rows = db.execute('SELECT id,text FROM chunks WHERE product_id=? AND version=? ORDER BY rowid',
+                      (product_id, version)).fetchall()
+    documents = [(row['id'], Counter(terms(row['text']))) for row in rows]
+    lengths = [sum(tokens.values()) for _, tokens in documents]
+    average_length = sum(lengths) / max(1, len(lengths)) or 1
+    frequencies = Counter(term for _, tokens in documents for term in keywords & tokens.keys())
+    weights = {term: log1p((len(documents) - count + .5) / (count + .5))
+               for term, count in frequencies.items()}
+    scored = []
+    for length, (chunk_id, tokens) in zip(lengths, documents):
+        norm = 1.2 * (.25 + .75 * length / average_length)
+        score = sum(weights[term] * tokens[term] * 2.2 / (tokens[term] + norm)
+                    for term in keywords & tokens.keys())
+        if score:
+            scored.append((chunk_id, score))
+    scored.sort(key=lambda item: item[1], reverse=True)
+    return [chunk_id for chunk_id, _ in scored[:max(CANDIDATE_LIMIT, top_k)]], None

@@ -101,6 +101,11 @@ dialog.evaluation{width:min(1100px,calc(100vw - 32px));max-width:none;max-height
 <button id="reindexSemantic" class="secondary" type="button">补建语义向量索引</button>
 <button id="reindexBm25" class="secondary" type="button">构建 BM25 索引</button>
 <p id="ragIndexResult" class="hint" aria-live="polite">本地模型首次运行需要下载；已建索引可复用。</p>
+</details></section><section class="card prompt-card"><details open><summary>旧库迁移</summary>
+<p id="migrationSource" class="hint">正在检查迁移源…</p>
+<p class="hint">请先停止写入旧库的服务。迁移会导入 PostgreSQL 并同步 Chroma。</p>
+<button id="migrateLegacy" type="button" aria-describedby="migrationSource migrationStatus" disabled>一键迁移旧库</button>
+<p id="migrationStatus" class="hint" role="status"></p>
 </details></section><section class="card prompt-card"><details open><summary>免费 API 与模型选择</summary>
 <label for="llmProvider">服务商</label><select id="llmProvider"><option>正在加载…</option></select>
 <label for="llmModel">模型</label><select id="llmModel"></select>
@@ -158,7 +163,14 @@ dialog.evaluation{width:min(1100px,calc(100vw - 32px));max-width:none;max-height
 </dialog>
 <script>
 const $=id=>document.getElementById(id); let sessionId=null,currentGapId=null,citationCounter=0,promptLoaded=false;
-async function api(path,opts={}){const r=await fetch(path,opts);const d=await r.json();if(!r.ok)throw Error(d.detail||'请求失败');return d}
+async function api(path,opts={}){
+  const r=await fetch(path,opts);
+  if(!r.ok){
+    const error=await r.json().catch(()=>null);
+    throw Error(typeof error?.detail==='string'?error.detail:`请求失败（HTTP ${r.status}）`);
+  }
+  return r.json();
+}
 function node(tag,text,cls){const x=document.createElement(tag);x.textContent=text;if(cls)x.className=cls;return x}
 function scoreLabel(value){const n=Number(value);return Number.isFinite(n)?Math.round(n*100)+'%':'—'}
 function answerBubble(result){
@@ -412,8 +424,11 @@ $('gapForm').onsubmit=async e=>{
 };
 async function send(){
   const q=$('question').value.trim();if(!q)return;const box=$('conversation');box.append(node('div',q,'bubble user'));$('question').value='';const pending=node('div','正在检索并生成回答…','bubble bot pending');pending.style.opacity='.65';box.append(pending);$('messages').scrollTop=$('messages').scrollHeight;
+  const controller=new AbortController();
+  const timeout=setTimeout(()=>controller.abort(),90000);
   try{
-    const x=await api('/api/ask',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({question:q,session_id:sessionId,product_id:$('product').value||null,version:$('version').value||null})});sessionId=x.session_id;
+    const x=await api('/api/ask',{method:'POST',signal:controller.signal,headers:{'Content-Type':'application/json'},body:JSON.stringify({question:q,session_id:sessionId,product_id:$('product').value||null,version:$('version').value||null})});sessionId=x.session_id;
+    pending.remove();
     if(x.status==='product_found'||(x.status==='no_product'&&!x.product_id)){
       sessionId=null;$('product').value='';versions();docs();$('currentScope').textContent=scopeLabel();
     }
@@ -421,7 +436,7 @@ async function send(){
     if(x.matched_products&&x.matched_products.length)showProductList(x.matched_products,'点击产品名称开始问答：',false);
     if(x.status==='answered')box.append(feedbackControls(x));
     await refresh();
-  }catch(e){box.append(node('div',e.message,'error'))}finally{pending.remove()}$('messages').scrollTop=$('messages').scrollHeight;
+  }catch(e){box.append(node('div',e.name==='AbortError'?'问答等待超时，请稍后重试。':e.message,'error'))}finally{clearTimeout(timeout);pending.remove()}$('messages').scrollTop=$('messages').scrollHeight;
 }
 $('send').onclick=send;$('question').onkeydown=e=>{if(e.key==='Enter'&&!e.shiftKey){e.preventDefault();send()}};
 $('reset').onclick=()=>{sessionId=null;if($('product').value){$('conversation').replaceChildren(node('div',`已开始 ${$('product').selectedOptions[0].text} 的新会话。`,'bubble bot'));loadFaqSuggestions()}else{$('conversation').replaceChildren();$('productChooser').hidden=false;$('productChooser').open=true;featured()}};
@@ -559,7 +574,48 @@ $('commitImport').onclick=async()=>{
 };
 $('nextImport').onclick=()=>{completedImport=null;$('file').value='';setStep(1);flowMessage('选择下一份资料生成预览。')};
 $('testImported').onclick=()=>{if(!completedImport)return;selectProduct(completedImport.product_id);$('version').value=completedImport.version;sessionId=null;$('currentScope').textContent=scopeLabel();loadFaqSuggestions();location.hash='chat'};
-async function loadRagStatus(){try{const r=await api('/api/rag/status');const names={hash:'字符检索基线',bm25:'BM25 + 字符重排',semantic:'语义向量 + FAISS'};const index=r.bm25;const bm25Status=!index.available?'当前 SQLite 缺少 FTS5':!index.built?'待构建':index.pending_scopes?`${index.pending_scopes} 个范围待更新`:'已就绪';$('ragStatus').textContent=`检索：${names[r.retriever]||r.retriever}；回答模式：${r.answer_mode}；模型服务：${r.llm_configured?'已配置（需实际调用验证）':'未配置'}。语义向量 ${r.indexed_chunks}/${r.chunks}。BM25 索引：${bm25Status}。`;$('reindexBm25').disabled=!index.available;}catch(e){$('ragStatus').textContent='状态读取失败：'+e.message}}
+async function loadRagStatus(){try{const r=await api('/api/rag/status');const names={hash:'字符检索基线',bm25:'BM25 + 字符重排',semantic:'语义向量 + FAISS',chroma:'语义向量 + Chroma'};const index=r.bm25;const bm25Status=index.implementation==='postgres_scope'?'按产品版本实时计算':!index.available?'当前 SQLite 缺少 FTS5':!index.built?'待构建':index.pending_scopes?`${index.pending_scopes} 个范围待更新`:'已就绪';$('ragStatus').textContent=`检索：${names[r.retriever]||r.retriever}；回答模式：${r.answer_mode}；模型服务：${r.llm_configured?'已配置（需实际调用验证）':'未配置'}。语义向量 ${r.indexed_chunks}/${r.chunks}。${r.database==='postgresql'?'PostgreSQL；Chroma '+(r.chroma_configured?'已配置':'未配置')+'。':''}BM25 索引：${bm25Status}。`;$('reindexBm25').hidden=index.implementation==='postgres_scope';$('reindexBm25').disabled=!index.available;}catch(e){$('ragStatus').textContent='状态读取失败：'+e.message}}
+let migrationPoll, migrationStarted=false;
+async function loadMigrationStatus(){
+  clearTimeout(migrationPoll);
+  try{
+    const status=await api('/api/rag/migration');
+    const running=status.status==='running';
+    const button=$('migrateLegacy');
+    $('migrationSource').textContent=`迁移源：${status.source}`;
+    button.disabled=running||!status.available;
+    button.textContent=running?'迁移中…':status.status==='failed'?'重试迁移':'一键迁移旧库';
+    $('migrationStatus').textContent=status.problem||status.message||'';
+    if(running){
+      migrationStarted=true;
+      migrationPoll=setTimeout(loadMigrationStatus,1500);
+      return;
+    }
+    if(status.status==='completed'){
+      const {postgres_tables, chroma}=status.result;
+      $('migrationStatus').textContent=`迁移完成。PostgreSQL 已导入 ${postgres_tables.documents||0} 份资料、${postgres_tables.messages||0} 条历史消息。Chroma 已同步 ${chroma.indexed} 个向量。`;
+      if(migrationStarted){
+        await Promise.allSettled([loadRagStatus(),products().then(featured),configProducts(),refresh()]);
+      }
+    }
+    migrationStarted=false;
+  }catch(e){
+    $('migrationStatus').textContent='暂时无法读取迁移状态：'+e.message;
+    migrationPoll=setTimeout(loadMigrationStatus,2500);
+  }
+}
+$('migrateLegacy').onclick=async()=>{
+  $('migrateLegacy').disabled=true;
+  $('migrationStatus').textContent='正在启动迁移…';
+  try{
+    await api('/api/rag/migration',{method:'POST',headers:{'Content-Type':'application/json'},body:'{}'});
+    migrationStarted=true;
+    await loadMigrationStatus();
+  }catch(e){
+    $('migrationStatus').textContent='无法启动迁移：'+e.message;
+    $('migrateLegacy').disabled=false;
+  }
+};
 let llmProviders=[],savedLLMConfig=null;
 function renderLLMProvider(providerId,modelId=''){
   const provider=llmProviders.find(p=>p.id===providerId);if(!provider)return;
@@ -593,9 +649,10 @@ async function saveLLM(test=false){
 }
 $('saveLLM').onclick=()=>saveLLM(false);$('testLLM').onclick=()=>saveLLM(true);
 $('resetLLM').onclick=async()=>{setLLMBusy(true);try{await api('/api/llm/config',{method:'DELETE'});await loadLLMConfig();await loadRagStatus();await loadPrompt();$('llmConfigStatus').textContent='本机保存的服务配置和密钥已清除；如启动环境中有模型配置，则恢复使用环境变量。';}catch(e){$('llmConfigStatus').textContent='清除失败：'+e.message}finally{setLLMBusy(false)}};
-$('reindexSemantic').onclick=async()=>{const b=$('reindexSemantic');b.disabled=true;$('ragIndexResult').textContent='正在构建索引，首次下载可能需要几分钟…';try{const r=await api('/api/rag/reindex',{method:'POST'});$('ragIndexResult').textContent=`共 ${r.chunks} 个片段，本次新增向量 ${r.embedded} 个。`;await loadRagStatus()}catch(e){$('ragIndexResult').textContent=e.message}finally{b.disabled=false}};
+$('reindexSemantic').onclick=async()=>{const b=$('reindexSemantic');b.disabled=true;$('ragIndexResult').textContent='正在构建索引，首次下载可能需要几分钟…';try{const r=await api('/api/rag/reindex',{method:'POST'});$('ragIndexResult').textContent=`共 ${r.chunks} 个片段，本次新增向量 ${r.embedded} 个。${r.indexed===undefined?'':'Chroma 已索引 '+r.indexed+' 个片段。'}`;await loadRagStatus()}catch(e){$('ragIndexResult').textContent=e.message}finally{b.disabled=false}};
 $('reindexBm25').onclick=async()=>{const b=$('reindexBm25');b.disabled=true;$('ragIndexResult').textContent='正在构建本地 BM25 索引…';try{const r=await api('/api/rag/reindex/bm25',{method:'POST'});$('ragIndexResult').textContent=`BM25 索引已覆盖 ${r.chunks} 个片段。`;await loadRagStatus()}catch(e){$('ragIndexResult').textContent=e.message;b.disabled=false}};
 loadRagStatus();
+loadMigrationStatus();
 loadLLMConfig();
 showPage();setStep(1);configProducts().catch(e=>flowMessage('配置加载失败：'+e.message,true));
 products().then(featured).then(refresh).catch(e=>{$('productChooserTitle').textContent='产品列表加载失败，请刷新页面后重试。';$('conversation').append(node('div',e.message,'error'))});

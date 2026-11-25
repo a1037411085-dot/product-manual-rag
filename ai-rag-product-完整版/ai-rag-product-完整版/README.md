@@ -1,26 +1,47 @@
 # 产品说明智能问答机器人（课堂演示）
 
-根据设计文档实现的可运行问答系统，包含字符基线与可选语义 RAG。内置的“星云笔记”和“轨道任务”完全是**虚构演示产品**；评估结果只说明这组小样例的表现，不代表生产效果。
+根据设计文档实现的可运行问答系统，包含 Chroma 语义检索和字符基线。内置的“星云笔记”和“轨道任务”完全是**虚构演示产品**；评估结果只说明这组小样例的表现，不代表生产效果。
 
 项目模块、数据流和数据库设计见 [架构文档](ARCHITECTURE.md)；操作人员的上手流程见 [业务操作手册](BUSINESS_OPERATIONS.md)。
 
+## PostgreSQL + Chroma 启动与旧库迁移
+
+新版默认使用 `chroma` 检索。PostgreSQL 保存原文、产品、FAQ、对话、反馈和评测记录。应用使用 Embedding 生成向量，Chroma 存储向量、片段 ID、产品和版本，并返回相似片段。引用原文从 PostgreSQL 读取。
+
+1. 复制 `.env.example` 为 `.env`。使用本地 PostgreSQL 时填写 `POSTGRES_PASSWORD` 并启动 Docker Desktop，应用启动脚本会自动通过 Compose 启动数据库并等待就绪。使用已有 PostgreSQL 时填写 `RAG_DATABASE_URL`。应用数据库角色需要在目标 schema 建表，评测隔离还需要创建 schema 的权限。
+2. 留空 Chroma 配置时，启动脚本会通过 Docker Compose 启动本地 Chroma，确认可用后把 `CHROMA_MANAGED`、`CHROMA_HOST`、`CHROMA_PORT` 和 `CHROMA_SSL` 写入 `.env`。默认地址为 `127.0.0.1:8001`，数据保存在 Docker 数据卷中。这个 Chroma 单节点容器内部使用 SQLite。如果部署要求彻底避免 SQLite，请配置 Chroma Cloud（`CHROMA_API_KEY`、`CHROMA_TENANT`、`CHROMA_DATABASE`）或符合该要求的已有 Chroma 服务（`CHROMA_HOST` 等）。切换到已有服务前，请移除 `.env` 中自动生成的本地 Chroma 配置。
+3. 停止仍在写旧库的服务，双击 macOS 的 `start_mac.command` 或 Windows 的 `启动.bat`。在新版页面打开「知识配置 → 旧库迁移」，点击「一键迁移旧库」。默认读取 `data/rag.sqlite3`，也可通过 `RAG_LEGACY_DB` 指定其他旧库。
+
+也可以使用终端命令完成迁移并启动新版：
+
+```bash
+python run_server.py --migrate-sqlite data/rag.sqlite3
+```
+
+后续可直接运行 `python run_server.py` 启动。两个平台脚本均接受 `--migrate-sqlite 路径`，也可用 `--setup-only` 检查服务并初始化数据库，或用 `--setup-chroma` 只准备 Chroma。单独调用 `migrate_sqlite.py` 或 `seed.py` 时，请先设置 PostgreSQL 与 Chroma 连接环境变量。
+
+- 迁移只读旧库，复用同一 Embedding 模型下内容指纹匹配的向量，缺失或变动的片段自动补建。命令输出各 PostgreSQL 表的导入行数和 Chroma 向量核对结果。Chroma 同步发生故障后可用同一个源文件重试。同一目标 schema 已有业务数据时，请换用空 schema。
+- 默认 Embedding 为 `sentence-transformers/paraphrase-multilingual-MiniLM-L12-v2`。服务启动时会在后台准备本地模型。已有语料向量可直接导入，实际问答仍需要同一个模型编码新问题。首次模型下载未完成时，问答会提示重试。也可在终端运行 `python run_server.py --setup-embedding` 单独准备模型，或配置兼容的 Embedding API。
+- 资料更新后会在对应产品版本的下次语义查询前同步。也可点击「知识配置 → 补建语义向量索引」或运行 `python reindex.py` 主动同步。不同部署共享一个 Chroma 数据库时，请用不同的 `CHROMA_COLLECTION` 命名空间。
+- 旧 SQLite 旁边的模型配置是单独的本地文件。新版可以在网页重新保存，或使用 `RAG_LLM_CONFIG` 指向已有配置文件。不需要把密钥导入 PostgreSQL 或 Chroma。
+- 新版的在线评测使用隔离 PostgreSQL schema；「测试集与评测」可显式选 Chroma、FAISS、BM25 或字符检索做对照。BM25 在 PostgreSQL 模式按当前产品版本计算，旧 SQLite FTS5 的历史性能数字不可直接套用。
+
+开发回归可设置 `RAG_LEGACY_TEST=1` 保留旧版行为测试。集成测试需要显式设置 `RAG_INTEGRATION_DATABASE_URL` 与 Chroma 连接变量。
+
 ## 快速启动
 
-macOS 双击 `start_mac.command`，或在终端运行 `./start_mac.command`。脚本使用已安装的 Python 3.9+（SQLite 3.35+），创建或复用 `.venv`，并在缺少依赖时安装基础依赖。首次安装依赖需要联网。
-
-默认使用字符检索和原文回答。首次启动会将内置说明书库 `data/sms.sqlite3` 复制到 `data/rag.sqlite3`。后续复用本地库，也可通过 `RAG_DB` 指定数据库。空库会导入虚构演示资料。运行 `./start_mac.command --setup-only` 可只准备环境和数据库。正常启动后，在浏览器打开终端显示的地址。
+两个平台的启动脚本都会创建或复用 `.venv`，并在缺少依赖时安装 `requirements-chroma.txt`。首次安装依赖需要联网。启动入口读取项目根目录的 `.env`，同名进程环境变量优先。关闭问答应用后，本地 PostgreSQL、Chroma 容器和数据卷会继续保留。
 
 macOS 也可以在项目目录手动运行：
 
 ```bash
 python3 -m venv .venv
 source .venv/bin/activate
-pip install -r requirements.txt
-python seed.py
-uvicorn app.main:app --reload
+pip install -r requirements-chroma.txt
+python run_server.py
 ```
 
-Windows 可在项目目录运行 `start_windows.bat --setup-only`，仅准备环境和初始化空库，不启动服务；直接双击仍会正常启动。脚本接受 Python 3.9 及以上，跳过 Python 2.x 和 3.8 及以下；多版本共存时优先复用可用的 `.venv`，否则逐个尝试候选解释器，依赖无法安装或应用模块无法导入时继续尝试其他版本。已配置 `.github/workflows/windows-startup.yml`，在 Windows x64 上分别用 Python 3.9–3.14、含空格的项目路径和 Windows PowerShell 5.1 验证启动准备、原生命令传参及应用测试。该工作流需在 GitHub Actions 中实际运行后，才能确认各版本的 Windows 启动结果。
+Windows 在项目目录运行 `启动.bat`，或直接双击。带 `--setup-only` 时执行同样的服务检查，完成后退出。
 
 访问启动终端打印的地址（通常为 http://127.0.0.1:8000 ，若该端口被旧服务占用则自动换用其他端口）。API 文档位于 `/docs`。`python evaluate.py` 会在临时数据库中导入示例资料并运行 8 个可复现的问题，不会污染演示数据。
 
@@ -75,16 +96,15 @@ Windows 可在项目目录运行 `start_windows.bat --setup-only`，仅准备环
 
 ## 设计与边界
 
-- `app/core.py`：文档解析、按事实行切片、4096 维字符 n-gram HashingVectorizer、SQLite 中保存向量、产品和版本过滤、余弦检索与字符重叠重排、会话编排与转人工。字符向量是**离线检索基线**，不是预训练语义 Embedding；新增语义模型与 FAISS 路径见文末补充；生产部署仍需扩展性能与权限。
+- `app/core.py`：文档解析、按事实行切片、4096 维字符 n-gram HashingVectorizer、PostgreSQL 中保存向量、产品和版本过滤、余弦检索与字符重叠重排、会话编排与转人工。字符向量是**离线检索基线**，不是预训练语义 Embedding；新增语义模型与 FAISS 路径见文末补充；生产部署仍需扩展性能与权限。
 - `app/main.py`：FastAPI 接口。`app/static/index.html`：问答、导入和看板页面。
 - 热门产品只统计已有资料的产品，按用户提问次数排序，最多展示 6 个；完全没有咨询记录时展示所有已有知识库的产品。“换产品”始终列出所有已有知识库的产品。产品搜索会匹配名称、别名及知识片段，并把相似结果作为候选交给用户选择。匹配不足时提示联系人工，不自动把相似产品当成目标产品。
 - `data/demo_knowledge.json`：虚构语料；`data/eval_cases.json`、`evaluate.py`：测试问题、期望状态、答案关键字和来源命中率。
-- `prompts/answer.txt`：可选 LLM 的默认系统提示词。页面“模型 Prompt 配置”可保存覆盖内容到 SQLite，调用模型时立即读取；恢复默认后重新使用文件内容。设置 `LLM_BASE_URL`、`LLM_API_KEY`、`LLM_MODEL` 后调用兼容 Chat Completions 的接口；未设置时直接返回命中原文。FAQ 直接使用已存答案，页面中的固定话术由 `app/core.py` 的 `conversational_answer` 控制，不受该 Prompt 影响。不要把真实密钥提交或打包。
+- `prompts/answer.txt`：可选 LLM 的默认系统提示词。页面“模型 Prompt 配置”可保存覆盖内容到 PostgreSQL，调用模型时立即读取；恢复默认后重新使用文件内容。设置 `LLM_BASE_URL`、`LLM_API_KEY`、`LLM_MODEL` 后调用兼容 Chat Completions 的接口；未设置时直接返回命中原文。FAQ 直接使用已存答案，页面中的固定话术由 `app/core.py` 的 `conversational_answer` 控制，不受该 Prompt 影响。不要把真实密钥提交或打包。
 - 检索阈值 0.16 仅为演示样例的起点。上线前应扩大测试集、标注正确证据，校准阈值并补充冲突检测。扫描版 PDF 没有 OCR。Excel 和 CSV 用于测试用例导入；知识库资料仍使用文档上传入口。
 
-数据默认保存在项目目录的 `data/rag.sqlite3`，也可由 `RAG_DB` 环境变量指定路径。新增数据库文件由 `.gitignore` 排除；历史仓库曾跟踪该文件，忽略规则不会自动移除已跟踪文件。提交打包脚本会明确排除所有 SQLite 运行数据。复制不含数据库的代码到另一台机器时，不会带上已上传资料、聊天记录、人工问答和自定义 Prompt。需要迁移时，先停止原机器和目标机器的服务，将原机器的 `data/rag.sqlite3` 复制到目标项目的 `data/rag.sqlite3`，再启动目标机器；若设置了 `RAG_DB`，应复制到该变量指向的位置。启动终端打印的“当前数据库”路径可用于核对是否读到了目标文件。手动执行 `python seed.py` 会重建演示资料；双击启动脚本只会在空库时导入演示数据。删除数据库文件可重置。演示服务默认无鉴权，请仅在本机运行。
+业务数据保存在 PostgreSQL。移动部署时请使用 PostgreSQL 备份和恢复，并用相同模型重新同步 Chroma。SQLite 文件可保留用于旧版数据导入。
 
-服务启动时会自动迁移所选数据库，补齐旧版缺少的 `messages.version` 等字段，并保留历史消息。单独调用 `app.core.ask()` 的脚本应先运行一次 `core.init_db()`。
 
 ## 失败案例与改进方向
 
@@ -98,13 +118,13 @@ Windows 可在项目目录运行 `start_windows.bat --setup-only`，仅准备环
 
 ## BM25 倒排召回
 
-macOS 在项目目录运行 `RAG_RETRIEVER=bm25 ./start_mac.command`，手动启动可在 `python run_server.py` 前设置同一环境变量。默认启动仍使用字符检索。BM25 按产品版本从 SQLite FTS5 召回 30 个候选，再使用现有字符算法重排，适用于「童锁」「净重」这类两字查询。默认回答阈值为 0.16。
+正常运行默认使用 Chroma。可显式设置 `RAG_RETRIEVER=bm25` 进行对照。BM25 按产品版本召回 30 个候选，再使用现有字符算法重排。
 
-首次 BM25 查询会建立本地索引。也可在「知识配置 → 检索与生成状态」点击「构建 BM25 索引」，预先完成构建。资料新增、修改或删除后，系统在下次查询时更新受影响的产品版本。SQLite 缺少 FTS5 或查询无索引命中时，系统使用现有字符检索。
+PostgreSQL 模式按当前产品版本计算 BM25，无候选时使用字符检索。
 
 在「测试集与评测」可添加「字符检索」和「BM25 + 字符重排」两个方案，复用同一快照比较 Hit@5、严格通过数及逐题候选。`python scripts/benchmark_bm25.py` 可用内置说明书快照测量两个检索器的 P50/P95 和索引构建时间，输出为 JSON。
 ## 2026-11-03：课程 RAG 链路补充
-本次保留字符检索基线，新增本地/API 语义 Embedding、FAISS 精确索引、严格模型模式和 45 题可复现实验。默认启动仍为 hash + auto；需要语义检索时安装可选依赖并设置环境变量。
+FAISS 作为语义检索对照保留。使用前安装可选依赖并在已配置的 PostgreSQL 上设置环境变量。下方评测结果为历史记录。
 
 ```bash
 source .venv/bin/activate
@@ -112,7 +132,7 @@ python -m pip install -r requirements-rag.txt
 python seed.py --course
 export RAG_RETRIEVER=semantic
 export RAG_ANSWER_MODE=extractive
-python reindex.py
+python reindex.py --backend semantic
 python run_server.py
 ```
 
@@ -146,6 +166,6 @@ python scripts/package_project.py
 
 知识配置页已新增服务商与模型下拉框，默认预选 OpenRouter 免费路由；另有 Groq Free Plan、Gemini 免费层及自定义兼容 API。填入自己的 Key 后保存并测试，无需改源码或重启。额度以账户和官方政策为准，不自动切换收费模型。
 
-配置由 app/llm_config.py 管理，密钥保存在数据库旁的 *.llm.json 本机文件，不写入 SQLite、不回显、不进入提交包。配置接口为 GET/PUT/DELETE /api/llm/config；POST /api/llm/test 仅发送固定测试短句。网页配置优先于环境变量；清除后恢复环境变量方式。benchmark.py --with-llm 可读取已保存服务，离线回归禁止远程调用。
+配置由 app/llm_config.py 管理，密钥保存在本机 *.llm.json 配置文件，数据库、界面响应和提交包均不包含密钥。配置接口为 GET/PUT/DELETE /api/llm/config；POST /api/llm/test 仅发送固定测试短句。网页配置优先于环境变量；清除后恢复环境变量方式。benchmark.py --with-llm 可读取已保存服务，离线回归禁止远程调用。
 
 完整操作、限制与官方链接见 [免费 API 配置说明](docs/FREE_API_SETUP.md)。本次已完成协议与错误路径测试，真实平台连通性需要用户自备 Key 后验证。

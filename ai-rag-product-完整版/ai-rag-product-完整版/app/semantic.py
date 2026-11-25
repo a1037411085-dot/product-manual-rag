@@ -2,16 +2,25 @@
 
 Hash vectors remain a separate baseline. Models/configurations never share vectors.
 """
+from contextlib import closing
 import hashlib
 import json
 import os
 import urllib.request
 from functools import lru_cache
 from pathlib import Path
+from threading import Lock
 
 import numpy as np
 
+from . import postgres
+
 os.environ.setdefault('HF_HOME', str(Path(__file__).resolve().parents[1] / '.cache/huggingface'))
+model_lock = Lock()
+
+
+class EmbeddingNotReady(RuntimeError):
+    """The configured query embedding model could not be loaded from disk."""
 
 
 def config():
@@ -24,14 +33,51 @@ def config():
     return provider, model, endpoint, identity
 
 
-@lru_cache(maxsize=2)
-def local_model(name):
+def load_sentence_transformer(name, *, local_files_only):
     import torch
     # Keep torch/FAISS OpenMP pools bounded on small classroom machines.
     torch.set_num_threads(int(os.getenv('RAG_EMBEDDING_THREADS', '1')))
     os.environ.setdefault('TOKENIZERS_PARALLELISM', 'false')
     from sentence_transformers import SentenceTransformer
-    return SentenceTransformer(name)
+    model_path = name
+    if local_files_only and not Path(name).is_dir():
+        from huggingface_hub import snapshot_download
+
+        # Pass a directory so tokenizer initialization cannot request Hub metadata.
+        model_path = snapshot_download(name, local_files_only=True,
+                                       cache_dir=os.getenv('SENTENCE_TRANSFORMERS_HOME'))
+    return SentenceTransformer(model_path, local_files_only=local_files_only)
+
+
+@lru_cache(maxsize=2)
+def cached_local_model(name):
+    return load_sentence_transformer(name, local_files_only=True)
+
+
+def local_model(name):
+    with model_lock:
+        try:
+            return cached_local_model(name)
+        except ImportError as error:
+            raise EmbeddingNotReady('缺少本地 Embedding 依赖，请通过项目启动脚本安装依赖后重试。') from error
+        # Some Transformers releases raise AttributeError on an incomplete checkpoint cache.
+        except (OSError, ValueError, AttributeError) as error:
+            raise EmbeddingNotReady('本地 Embedding 模型尚未就绪。请稍后重试，或在终端运行 python run_server.py --setup-embedding。') from error
+
+
+def prepare_local_model():
+    provider, model, _, _ = config()
+    if provider != 'local':
+        return
+    os.environ.setdefault('HF_HUB_ETAG_TIMEOUT', '5')
+    os.environ.setdefault('HF_HUB_DOWNLOAD_TIMEOUT', '25')
+    os.environ.setdefault('HF_HUB_DISABLE_XET', '1')
+    try:
+        local_model(model)
+    except EmbeddingNotReady:
+        print(f'正在下载本地 Embedding 模型 {model}，下载完成前网页仍可查看和管理资料。', flush=True)
+        load_sentence_transformer(model, local_files_only=False)
+    print('本地 Embedding 模型已就绪。', flush=True)
 
 
 def normalize(values):
@@ -65,7 +111,7 @@ def embed(texts):
 def ensure_schema(db):
     db.execute('''CREATE TABLE IF NOT EXISTS semantic_vectors(
         chunk_id TEXT NOT NULL, identity TEXT NOT NULL, content_hash TEXT NOT NULL,
-        vector BLOB NOT NULL, dimension INTEGER NOT NULL,
+        vector BYTEA NOT NULL, dimension INTEGER NOT NULL,
         PRIMARY KEY(chunk_id,identity),
         FOREIGN KEY(chunk_id) REFERENCES chunks(id) ON DELETE CASCADE)''')
 
@@ -73,8 +119,9 @@ def ensure_schema(db):
 def index_chunks(connect, product_id=None, version=None):
     """Embed missing/changed chunks in batches, outside the write transaction."""
     _, _, _, identity = config()
-    with connect() as db:
-        ensure_schema(db)
+    with closing(connect()) as db, db:
+        if not postgres.enabled():
+            ensure_schema(db)
         rows = db.execute('''SELECT c.id,c.text,s.content_hash FROM chunks c
             LEFT JOIN semantic_vectors s ON s.chunk_id=c.id AND s.identity=?
             WHERE (? IS NULL OR c.product_id=?) AND (? IS NULL OR c.version=?)
@@ -89,11 +136,14 @@ def index_chunks(connect, product_id=None, version=None):
         vectors = embed([row['text'] for row, _ in batch])
         if len(vectors) != len(batch):
             raise ValueError('Embedding 数量不匹配')
-        with connect() as db:
+        with closing(connect()) as db, db:
             for (row, digest), vector in zip(batch, vectors):
-                # A document may have been deleted while the model was running.
-                if db.execute('SELECT 1 FROM chunks WHERE id=?', (row['id'],)).fetchone():
-                    db.execute('INSERT OR REPLACE INTO semantic_vectors VALUES(?,?,?,?,?)',
+                # Confirm the stored text still matches the completed embedding.
+                current = 'SELECT 1 FROM chunks WHERE id=? AND text=?'
+                if postgres.enabled():
+                    current += ' FOR SHARE'
+                if db.execute(current, (row['id'], row['text'])).fetchone():
+                    db.execute('INSERT INTO semantic_vectors VALUES(?,?,?,?,?) ON CONFLICT(chunk_id,identity) DO UPDATE SET content_hash=excluded.content_hash,vector=excluded.vector,dimension=excluded.dimension',
                                (row['id'], identity, digest, vector.tobytes(), len(vector)))
     return {'chunks': len(rows), 'embedded': len(pending), 'identity': identity,
             'model': config()[1]}
@@ -105,7 +155,7 @@ def retrieve(connect, question, product_id, version, top_k):
     import faiss
     faiss.omp_set_num_threads(int(os.getenv('RAG_EMBEDDING_THREADS', '1')))
     index_chunks(connect, product_id, version)
-    with connect() as db:
+    with closing(connect()) as db, db:
         rows = db.execute('''SELECT c.id,c.source,c.category,c.text,s.vector AS semantic_vector,s.dimension
             FROM chunks c JOIN semantic_vectors s ON s.chunk_id=c.id
             WHERE c.product_id=? AND c.version=? AND s.identity=? ORDER BY c.id''',

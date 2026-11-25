@@ -3,7 +3,7 @@
 const $ = id => document.getElementById(id);
 const statusLabels = {answered: '有答案', no_answer: '拒答', handoff: '转人工', no_product: '未找到产品', product_found: '找到产品', error: '执行失败'};
 const runLabels = {queued: '排队中', running: '运行中', completed: '已完成', failed: '失败'};
-const retrieverLabels = {hash: '字符检索', bm25: 'BM25 + 字符重排', semantic: '语义检索'};
+const retrieverLabels = {hash: '字符检索', bm25: 'BM25 + 字符重排', semantic: 'FAISS 语义检索', chroma: 'Chroma 语义检索'};
 const answerLabels = {extractive: '原文回答', auto: 'FAQ 优先 / 原文', llm: 'LLM 生成'};
 const pageSize = 20;
 let group, products = [], runs = [], activeRun, editingCase, editingSet, resultPage = 0, pollTimer, viewRequest = 0, variantCounter = 0;
@@ -230,7 +230,7 @@ function addVariant(saved) {
   labeledField(fieldset, token, 'threshold', '检索阈值', threshold);
   const modelWrap = labeledField(fieldset, token, 'model', '模型 ID · 当前服务商', model);
   mode.onchange = () => { modelWrap.hidden = mode.value !== 'llm'; };
-  retriever.onchange = () => { threshold.placeholder = retriever.value === 'semantic' ? '默认 0.35' : '默认 0.16'; };
+  retriever.onchange = () => { threshold.placeholder = ['semantic', 'chroma'].includes(retriever.value) ? '默认 0.35' : '默认 0.16'; };
   retriever.value = saved?.retriever || 'hash';
   mode.value = saved?.answer_mode || 'extractive';
   model.value = saved?.model || '';
