@@ -11,7 +11,7 @@ from types import SimpleNamespace
 from unittest.mock import Mock, patch
 
 import numpy as np
-from app import chroma_index, core, semantic, experiments
+from app import chroma_index, core, hybrid, semantic, experiments
 from review_results import aggregate
 from fastapi.testclient import TestClient
 from app.main import app
@@ -114,6 +114,31 @@ class SemanticRagTests(unittest.TestCase):
                 {'text': '规格表\n额定洗涤容量：9 kg', 'score': .88}]
         self.assertEqual(chroma_index.rank_hits('额定洗涤容量是多少？', hits)[0], hits[2])
         self.assertEqual(chroma_index.rank_hits('如何设置额定洗涤容量？', hits), hits)
+
+    def test_hybrid_groups_only_the_matching_fault_and_preserves_conditions(self):
+        document = {'id': 'guide', 'source': 'guide.txt', 'text':
+                    '故障现象:无法连接 Wi-Fi\n解决方法:\n请确认 Wi-Fi 密码是否正确。\n'
+                    '主机不支援 5 GHz 网络频段,请使用\n2.4 GHz 网络。\n'
+                    '故障现象:电量不足\n解决方法:请给主机充电。'}
+        question = '扫拖机器人连不上 Wi-Fi，应该怎么排查？'
+        passage, = hybrid.matched_blocks(question, [document])
+        self.assertEqual((passage['source_line'], passage['source_end_line']), (1, 5))
+        self.assertNotIn('请给主机充电', passage['text'])
+        self.assertIn('请使用 2.4 GHz 网络', hybrid.format_procedure(passage))
+        self.assertFalse(hybrid.actionable_evidence(question, {'text': '请给扫拖机器人充电后再次尝试。'}))
+        self.assertFalse(hybrid.actionable_evidence(question, {'text': '无法连接 Wi-Fi'}))
+
+    def test_hybrid_keeps_exact_specs_and_checks_fault_code_boundaries(self):
+        question = '故障码 E1 是什么？'
+        literal = {'chunk_id': '1', 'text': '故障码 E1:排水异常', 'score': .4}
+        unrelated = {'chunk_id': '10', 'text': '故障码 E10:进水异常', 'score': .95}
+        self.assertEqual([x['chunk_id'] for x in hybrid.rank_candidates(question, [literal], [unrelated], [], 4)], ['1'])
+        precise = {'chunk_id': 'value', 'text': '额定洗涤容量:9 kg', 'score': .75}
+        related = {'chunk_id': 'related', 'text': '最大洗涤容量:6 kg', 'score': .94}
+        question = '额定洗涤容量是多少？'
+        self.assertEqual(hybrid.rank_candidates(question, [related], [precise], [], 4)[0]['chunk_id'], 'value')
+        self.assertEqual(hybrid.format_parameter(question, precise),
+                         '额定洗涤容量为 9 kg。')
 
     def test_strict_llm_never_counts_fallback_as_model_answer(self):
         sources = [{'chunk_id': 'fixture', 'text': '文件支持离线保存。', 'source': 'source.md',

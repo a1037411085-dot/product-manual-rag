@@ -124,7 +124,7 @@ def main():
     from dotenv import load_dotenv
 
     load_dotenv(ROOT / '.env', interpolate=False)
-    retriever = os.environ.setdefault('RAG_RETRIEVER', 'chroma')
+    retriever = os.environ.setdefault('RAG_RETRIEVER', 'hybrid')
     if args.setup_embedding:
         from app import semantic
 
@@ -137,7 +137,7 @@ def main():
         if args.setup_chroma:
             prepare_chroma()
             return
-        prepare_services(use_chroma=retriever == 'chroma' or args.migrate_sqlite is not None)
+        prepare_services(use_chroma=retriever in ('chroma', 'hybrid') or args.migrate_sqlite is not None)
     except RuntimeError as error:
         parser.exit(1, f'启动失败：{error}\n')
 
@@ -158,7 +158,7 @@ def main():
     print(f'\n产品知识问答演示：http://127.0.0.1:{port}/\n', flush=True)
     print(f'当前数据库：PostgreSQL / {postgres.schema_name()}\n', flush=True)
     model_setup = None
-    if retriever in ('chroma', 'semantic') and semantic.config()[0] == 'local':
+    if retriever in ('chroma', 'semantic', 'hybrid') and semantic.config()[0] == 'local':
         model_setup = subprocess.Popen([sys.executable, str(ROOT / 'run_server.py'), '--setup-embedding'], cwd=ROOT)
     try:
         uvicorn.run('app.main:app', host='127.0.0.1', port=port)

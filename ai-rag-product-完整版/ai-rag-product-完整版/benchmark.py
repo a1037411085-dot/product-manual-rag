@@ -70,7 +70,7 @@ def experiment_database(use_chroma=False):
 
 def main():
     parser = argparse.ArgumentParser(description=__doc__)
-    parser.add_argument('--retrievers', nargs='+', choices=['hash', 'bm25', 'semantic', 'chroma'], default=['hash', 'semantic'])
+    parser.add_argument('--retrievers', nargs='+', choices=['hash', 'bm25', 'semantic', 'chroma', 'hybrid'], default=['hash', 'semantic'])
     parser.add_argument('--with-llm', action='store_true', help='Include strict LLM runs; never silently fall back')
     parser.add_argument('--output', type=Path, default=Path('reports/latest'))
     args = parser.parse_args()
@@ -85,7 +85,7 @@ def main():
               'fictional_corpus': True, 'embedding_model': semantic.config()[1],
               'llm_model': model_config['model'] if args.with_llm and model_ready else None,
               'runs': {}, 'skipped': {}}
-    with experiment_database(use_chroma='chroma' in args.retrievers):
+    with experiment_database(use_chroma=bool({'chroma', 'hybrid'} & set(args.retrievers))):
         experiments.seed_experiment()
         with core.connect() as db:
             report['chunks'] = db.execute('SELECT count(*) FROM chunks').fetchone()[0]
@@ -98,11 +98,11 @@ def main():
                         report['skipped']['bm25'] = '当前 SQLite 未启用 FTS5'
                         continue
                     core.bm25.refresh(db)
-            if retriever == 'chroma':
+            if retriever in ('chroma', 'hybrid'):
                 try:
                     chroma_index.reindex(core.connect)
                 except Exception as error:
-                    report['skipped']['chroma'] = type(error).__name__ + '：Chroma 或 Embedding 服务不可用'
+                    report['skipped'][retriever] = type(error).__name__ + '：Chroma 或 Embedding 服务不可用'
                     continue
             if retriever == 'semantic':
                 try:

@@ -53,7 +53,7 @@ class CaseInput(BaseModel):
 
 class Variant(BaseModel):
     name: str = Field(min_length=1, max_length=80)
-    retriever: Literal['hash', 'bm25', 'semantic', 'chroma'] = 'hash'
+    retriever: Literal['hash', 'bm25', 'semantic', 'chroma', 'hybrid'] = 'hash'
     answer_mode: Literal['auto', 'extractive', 'llm'] = 'extractive'
     model: str = Field('', max_length=200)
     threshold: Optional[float] = Field(None, ge=0, le=1)
@@ -434,7 +434,7 @@ def prepare_variants(variants):
             variant['provider'] = provider['provider_id']
         else:
             variant['model'] = ''
-        if data.retriever in ('semantic', 'chroma'):
+        if data.retriever in ('semantic', 'chroma', 'hybrid'):
             embedding_provider, model, _, identity = semantic.config()
             variant.update(embedding_provider=embedding_provider, embedding_model=model, embedding_identity=identity)
         output.append(variant)

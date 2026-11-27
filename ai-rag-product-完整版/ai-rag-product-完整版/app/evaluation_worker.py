@@ -52,7 +52,7 @@ if __name__ == '__main__':
         print(json.dumps(run(), ensure_ascii=False))
     finally:
         if postgres.enabled() and os.getenv('RAG_POSTGRES_SCHEMA', '').startswith('rag_eval_') and \
-                os.getenv('RAG_RETRIEVER', core.default_retriever()) == 'chroma':
+                os.getenv('RAG_RETRIEVER', core.default_retriever()) in ('chroma', 'hybrid'):
             try:
                 chroma_index.delete_collection()
             except Exception:

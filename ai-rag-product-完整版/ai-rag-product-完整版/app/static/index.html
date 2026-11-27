@@ -189,7 +189,8 @@ function answerBubble(result){
   if(sources.length){
     for(const source of sources){
       const item=node('div','', 'citation-source');
-      item.append(node('div',`${source.source||'未知来源'} · ${source.category||'未分类'} · 相关度 ${scoreLabel(source.score)}`,'citation-source-label'));
+      const labels=[source.source||'未知来源',source.category||'未分类',qaOrigin(source),`相关度 ${scoreLabel(source.score)}`];
+      item.append(node('div',labels.filter(Boolean).join(' · '),'citation-source-label'));
       item.append(node('div',source.text||'','citation-source-text'));panel.append(item);
     }
   }else panel.append(node('div','本条回复未引用知识库资料。'));
@@ -574,7 +575,7 @@ $('commitImport').onclick=async()=>{
 };
 $('nextImport').onclick=()=>{completedImport=null;$('file').value='';setStep(1);flowMessage('选择下一份资料生成预览。')};
 $('testImported').onclick=()=>{if(!completedImport)return;selectProduct(completedImport.product_id);$('version').value=completedImport.version;sessionId=null;$('currentScope').textContent=scopeLabel();loadFaqSuggestions();location.hash='chat'};
-async function loadRagStatus(){try{const r=await api('/api/rag/status');const names={hash:'字符检索基线',bm25:'BM25 + 字符重排',semantic:'语义向量 + FAISS',chroma:'语义向量 + Chroma'};const index=r.bm25;const bm25Status=index.implementation==='postgres_scope'?'按产品版本实时计算':!index.available?'当前 SQLite 缺少 FTS5':!index.built?'待构建':index.pending_scopes?`${index.pending_scopes} 个范围待更新`:'已就绪';$('ragStatus').textContent=`检索：${names[r.retriever]||r.retriever}；回答模式：${r.answer_mode}；模型服务：${r.llm_configured?'已配置（需实际调用验证）':'未配置'}。语义向量 ${r.indexed_chunks}/${r.chunks}。${r.database==='postgresql'?'PostgreSQL；Chroma '+(r.chroma_configured?'已配置':'未配置')+'。':''}BM25 索引：${bm25Status}。`;$('reindexBm25').hidden=index.implementation==='postgres_scope';$('reindexBm25').disabled=!index.available;}catch(e){$('ragStatus').textContent='状态读取失败：'+e.message}}
+async function loadRagStatus(){try{const r=await api('/api/rag/status');const names={hash:'字符检索基线',bm25:'BM25 + 字符重排',semantic:'语义向量 + FAISS',chroma:'语义向量 + Chroma',hybrid:'BM25 + Chroma 混合检索'};const index=r.bm25;const bm25Status=index.implementation==='postgres_scope'?'按产品版本实时计算':!index.available?'当前 SQLite 缺少 FTS5':!index.built?'待构建':index.pending_scopes?`${index.pending_scopes} 个范围待更新`:'已就绪';$('ragStatus').textContent=`检索：${names[r.retriever]||r.retriever}；回答模式：${r.answer_mode}；模型服务：${r.llm_configured?'已配置（需实际调用验证）':'未配置'}。语义向量 ${r.indexed_chunks}/${r.chunks}。${r.database==='postgresql'?'PostgreSQL；Chroma '+(r.chroma_configured?'已配置':'未配置')+'。':''}BM25 索引：${bm25Status}。`;$('reindexBm25').hidden=index.implementation==='postgres_scope';$('reindexBm25').disabled=!index.available;}catch(e){$('ragStatus').textContent='状态读取失败：'+e.message}}
 let migrationPoll, migrationStarted=false;
 async function loadMigrationStatus(){
   clearTimeout(migrationPoll);

@@ -23,7 +23,7 @@ from .html_extract import extract_html_text
 from . import semantic
 from . import llm_config
 from . import query
-from . import bm25, chroma_index, postgres
+from . import bm25, chroma_index, hybrid, postgres
 
 ROOT = Path(__file__).resolve().parents[1]
 DB_PATH = Path(os.getenv('RAG_DB', ROOT / 'data' / 'rag.sqlite3'))
@@ -573,7 +573,7 @@ def scoped_model_facts(question, product_id, version):
 
 
 def default_retriever():
-    return 'chroma' if postgres.enabled() else 'hash'
+    return 'hybrid' if postgres.enabled() else 'hash'
 
 
 @contextmanager
@@ -596,6 +596,12 @@ def retrieve(question, product_id, version, top_k=4, *, db=None, details=None):
         return chroma_index.retrieve(connect, question, product_id, version, top_k)
     if retriever == 'semantic':
         return semantic.retrieve(connect, question, product_id, version, top_k)
+    if retriever == 'hybrid':
+        return retrieve_hybrid(question, product_id, version, top_k, details)
+    return retrieve_lexical(question, product_id, version, top_k, retriever, db=db, details=details)
+
+
+def retrieve_lexical(question, product_id, version, top_k, retriever, *, db=None, details=None):
     with retrieval_connection(db) as connection:
         product = connection.execute('SELECT name,aliases FROM products WHERE id=?', (product_id,)).fetchone()
         clean, alternatives = character_query(question, product_id, product)
@@ -615,6 +621,26 @@ def retrieve(question, product_id, version, top_k=4, *, db=None, details=None):
     if not rows:
         return []
     return rank_characters(question, clean, alternatives, rows, top_k)
+
+
+def retrieve_hybrid(question, product_id, version, top_k, details):
+    depth = max(8, top_k)
+    lexical = retrieve_lexical(question, product_id, version, depth, 'bm25', details=details)
+    passages = []
+    if hybrid.is_procedure(question):
+        with closing(connect()) as db:
+            documents = db.execute('''SELECT d.id,d.source,t.text FROM documents d
+                                      JOIN document_texts t ON t.document_id=d.id
+                                      WHERE d.product_id=? AND d.version=? ORDER BY d.rowid''',
+                                   (product_id, version)).fetchall()
+        passages = hybrid.matched_blocks(question, documents)
+    try:
+        dense = chroma_index.retrieve(connect, question, product_id, version, depth)
+    except semantic.EmbeddingNotReady:
+        dense = []
+        if details is not None:
+            details['retrieval_fallback'] = 'embedding_not_ready'
+    return hybrid.rank_candidates(question, lexical, dense, passages, top_k)
 
 
 def character_query(question, product_id, product):
@@ -833,7 +859,9 @@ def enough_evidence(question, sources, threshold, retriever, product_id):
     anchors = (*query.synonyms(question, product_id), *((field,) if field else ()))
     # Only relax short-fact gating if the candidate names the requested fact.
     body = top['text'].split('\n', 1)[-1].casefold()
-    if (retriever in ('hash', 'bm25') and threshold == 0.16 and len(body) <= 36
+    if retriever == 'hybrid' and top.get('match_mode') == 'chroma':
+        threshold = max(threshold, .35)
+    if (retriever in ('hash', 'bm25', 'hybrid') and threshold == 0.16 and len(body) <= 36
             and any(re.match(re.escape(anchor.casefold()) + r'\s*[:：]', body) for anchor in anchors)):
         threshold = 0.12
     if top['score'] < threshold:
@@ -913,8 +941,8 @@ def ask(question, session_id=None, product_id=None, version=None, *, include_ret
         raise ValueError('问题长度需为 1–1000 字')
     retriever = os.getenv('RAG_RETRIEVER', default_retriever())
     answer_mode = llm_config.effective(llm_settings_path())['answer_mode']
-    if retriever not in ('hash', 'bm25', 'semantic', 'chroma') or answer_mode not in ('auto', 'extractive', 'llm'):
-        raise ValueError('RAG_RETRIEVER 应为 hash/bm25/semantic/chroma，RAG_ANSWER_MODE 应为 auto/extractive/llm')
+    if retriever not in ('hash', 'bm25', 'semantic', 'chroma', 'hybrid') or answer_mode not in ('auto', 'extractive', 'llm'):
+        raise ValueError('RAG_RETRIEVER 应为 hash/bm25/semantic/chroma/hybrid，RAG_ANSWER_MODE 应为 auto/extractive/llm')
     minimum_score = float(os.getenv('RAG_MIN_SCORE', '0.35' if retriever in ('semantic', 'chroma') else '0.16'))
     if not np.isfinite(minimum_score) or not 0 <= minimum_score <= 1:
         raise ValueError('RAG_MIN_SCORE 必须为 0 到 1 的有限数值')
@@ -970,11 +998,22 @@ def _ask_turn(question, session_id, product_id, version, retriever, answer_mode,
         aggregate = bool(query.AGGREGATE.search(rewritten))
         depth = 8 if aggregate and answer_mode != 'extractive' else (5 if include_retrieved else 4)
         # Retrieval owns and commits index writes before FAQ lookup or generation.
-        options = {'details': retrieval_details} if retriever == 'bm25' else {}
+        options = {'details': retrieval_details} if retriever in ('bm25', 'hybrid') else {}
         sources = retrieve(rewritten, product_id, version, top_k=depth, **options) if eligible else []
         retrieved = sources[:5]
+        procedural = retriever == 'hybrid' and hybrid.is_procedure(rewritten)
+        if procedural:
+            sources = [source for source in sources if hybrid.actionable_evidence(rewritten, source)]
+        structured = sources[0] if sources and sources[0].get('procedure_body') else None
+        parameter_answer = (hybrid.format_parameter(rewritten, sources[0])
+                            if retriever == 'hybrid' and sources and not aggregate else None)
         model_field = query.model_ids(rewritten) and query.field_name(rewritten)
         faq = match_faq(rewritten, product_id, version) if eligible and not model_field else None
+        if faq and retriever == 'hybrid':
+            terms = hybrid.identifiers(rewritten)
+            if (not hybrid.contains_identifiers(terms, faq['answer']) or
+                    (procedural and not hybrid.actionable_evidence(rewritten, faq['source']))):
+                faq = None
         if faq and not faq['conflict'] and not query.contains_requested_fact(rewritten, query.normalize(faq['answer']).casefold()):
             faq = None
         top = sources[0]['score'] if sources else 0
@@ -1007,7 +1046,7 @@ def _ask_turn(question, session_id, product_id, version, retriever, answer_mode,
             answer = '产品资料对这个问题给出了冲突答案，请联系人工客服确认。'
             handoff_reason = '同一常见问题存在冲突答案'
             sources = []
-        elif faq and answer_mode == 'auto':
+        elif faq and answer_mode == 'auto' and not structured and not parameter_answer:
             status = 'answered'
             answer = faq['answer']
             sources = [faq['source']]
@@ -1019,7 +1058,7 @@ def _ask_turn(question, session_id, product_id, version, retriever, answer_mode,
             sources = []
         else:
             status = 'answered'
-            selected = generation_evidence(sources, minimum_score, aggregate)
+            selected = [structured] if structured else generation_evidence(sources, minimum_score, aggregate)
             history = [{'role': row['role'], 'content': row['text'][:700]} for row in reversed(history_rows)]
             try:
                 if answer_mode == 'extractive':
@@ -1036,7 +1075,7 @@ def _ask_turn(question, session_id, product_id, version, retriever, answer_mode,
             # Offline mode presents a verbatim retrieved passage, never invented facts.
             answer = generated or sources[0]['text']
             generation_mode = 'llm' if generated else 'extractive'
-            sources = selected if generated else sources[:3]
+            sources = selected if generated or structured else sources[:3]
             if answer_mode == 'llm' and not generated:
                 status = 'no_answer'
                 generation_mode = 'error'
@@ -1046,13 +1085,18 @@ def _ask_turn(question, session_id, product_id, version, retriever, answer_mode,
                                    for i in re.findall(r'\[(\d{1,9})\]', generated)):
                 status = 'no_answer'
                 answer = NO_ANSWER + '。'
-            elif generated and generated.lstrip().startswith(NO_ANSWER):
+            elif generated and generated.lstrip().startswith('现有产品资料中暂未找到'):
                 status = 'no_answer'
         product_name_row = db.execute('SELECT name FROM products WHERE id=?', (product_id,)).fetchone() if product_id else None
         display_answer = (answer if generation_mode == 'error' or ambiguous or
                           (generation_mode == 'llm' and status == 'no_answer') else
                           conversational_answer(question, answer, status,
                                                product_name_row['name'] if product_name_row else None, version))
+        if structured and generation_mode == 'extractive' and status == 'answered':
+            display_answer = hybrid.format_procedure(structured)
+        elif parameter_answer and generation_mode == 'extractive' and status == 'answered':
+            display_answer = parameter_answer
+            sources = sources[:1]
         suggested_questions = []
         if status == 'answered' and product_name_row:
             current_key = faq_terms(question, product_name_row['name'])

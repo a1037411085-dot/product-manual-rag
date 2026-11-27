@@ -136,7 +136,7 @@ def rag_status():
 @app.post('/api/rag/reindex')
 def reindex():
     try:
-        if postgres.enabled() and os.getenv('RAG_RETRIEVER', core.default_retriever()) == 'chroma':
+        if postgres.enabled() and os.getenv('RAG_RETRIEVER', core.default_retriever()) in ('chroma', 'hybrid'):
             return chroma_index.reindex(core.connect)
         return semantic.index_chunks(core.connect)
     except semantic.EmbeddingNotReady as error:

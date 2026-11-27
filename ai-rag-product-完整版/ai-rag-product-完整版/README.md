@@ -6,7 +6,7 @@
 
 ## PostgreSQL + Chroma 启动与旧库迁移
 
-新版默认使用 `chroma` 检索。PostgreSQL 保存原文、产品、FAQ、对话、反馈和评测记录。应用使用 Embedding 生成向量，Chroma 存储向量、片段 ID、产品和版本，并返回相似片段。引用原文从 PostgreSQL 读取。
+新版默认使用 `hybrid` 混合检索。BM25 优先找到精确规格，Chroma 补充语义相似的候选。针对操作和故障，系统可从已保存的原文按小节组合证据，保留适用条件和操作顺序。PostgreSQL 保存原文、产品、FAQ、对话、反馈和评测记录。Chroma 保存向量、片段 ID、产品和版本，引用原文从 PostgreSQL 读取。
 
 1. 复制 `.env.example` 为 `.env`。使用本地 PostgreSQL 时填写 `POSTGRES_PASSWORD` 并启动 Docker Desktop，应用启动脚本会自动通过 Compose 启动数据库并等待就绪。使用已有 PostgreSQL 时填写 `RAG_DATABASE_URL`。应用数据库角色需要在目标 schema 建表，评测隔离还需要创建 schema 的权限。
 2. 留空 Chroma 配置时，启动脚本会通过 Docker Compose 启动本地 Chroma，确认可用后把 `CHROMA_MANAGED`、`CHROMA_HOST`、`CHROMA_PORT` 和 `CHROMA_SSL` 写入 `.env`。默认地址为 `127.0.0.1:8001`，数据保存在 Docker 数据卷中。这个 Chroma 单节点容器内部使用 SQLite。如果部署要求彻底避免 SQLite，请配置 Chroma Cloud（`CHROMA_API_KEY`、`CHROMA_TENANT`、`CHROMA_DATABASE`）或符合该要求的已有 Chroma 服务（`CHROMA_HOST` 等）。切换到已有服务前，请移除 `.env` 中自动生成的本地 Chroma 配置。
@@ -24,7 +24,7 @@ python run_server.py --migrate-sqlite data/rag.sqlite3
 - 默认 Embedding 为 `sentence-transformers/paraphrase-multilingual-MiniLM-L12-v2`。服务启动时会在后台准备本地模型。已有语料向量可直接导入，实际问答仍需要同一个模型编码新问题。首次模型下载未完成时，问答会提示重试。也可在终端运行 `python run_server.py --setup-embedding` 单独准备模型，或配置兼容的 Embedding API。
 - 资料更新后会在对应产品版本的下次语义查询前同步。也可点击「知识配置 → 补建语义向量索引」或运行 `python reindex.py` 主动同步。不同部署共享一个 Chroma 数据库时，请用不同的 `CHROMA_COLLECTION` 命名空间。
 - 旧 SQLite 旁边的模型配置是单独的本地文件。新版可以在网页重新保存，或使用 `RAG_LLM_CONFIG` 指向已有配置文件。不需要把密钥导入 PostgreSQL 或 Chroma。
-- 新版的在线评测使用隔离 PostgreSQL schema；「测试集与评测」可显式选 Chroma、FAISS、BM25 或字符检索做对照。BM25 在 PostgreSQL 模式按当前产品版本计算，旧 SQLite FTS5 的历史性能数字不可直接套用。
+- 新版的在线评测使用隔离 PostgreSQL schema；「测试集与评测」可选混合检索、Chroma、FAISS、BM25 或字符检索做对照。BM25 在 PostgreSQL 模式按当前产品版本计算，旧 SQLite FTS5 的历史性能数字不可直接套用。
 
 开发回归可设置 `RAG_LEGACY_TEST=1` 保留旧版行为测试。集成测试需要显式设置 `RAG_INTEGRATION_DATABASE_URL` 与 Chroma 连接变量。
 
@@ -118,7 +118,7 @@ Windows 在项目目录运行 `启动.bat`，或直接双击。带 `--setup-only
 
 ## BM25 倒排召回
 
-正常运行默认使用 Chroma。可显式设置 `RAG_RETRIEVER=bm25` 进行对照。BM25 按产品版本召回 30 个候选，再使用现有字符算法重排。
+正常运行默认使用 BM25 与 Chroma 的混合检索。可显式设置 `RAG_RETRIEVER=bm25` 或 `RAG_RETRIEVER=chroma` 进行单路对照。BM25 按产品版本召回 30 个候选，再使用现有字符算法重排。
 
 PostgreSQL 模式按当前产品版本计算 BM25，无候选时使用字符检索。
 

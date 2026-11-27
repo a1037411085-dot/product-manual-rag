@@ -268,7 +268,7 @@ def run(payload):
                 try:
                     reports.append(execute_variant(payload, variant))
                 finally:
-                    if variant['retriever'] == 'chroma' and chroma_index.configured():
+                    if variant['retriever'] in ('chroma', 'hybrid') and chroma_index.configured():
                         try:
                             chroma_index.delete_collection()
                         except Exception:
